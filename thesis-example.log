@@ -1,11 +1,11 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2017.2.2)  2 FEB 2017 10:48
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2017.2.13)  10 MAR 2017 15:47
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
 **thesis-example.tex
 (./thesis-example.tex
 LaTeX2e <2016/02/01>
-Babel <3.9q> and hyphenation patterns for 81 language(s) loaded.
+Babel <3.9q> and hyphenation patterns for 12 language(s) loaded.
 (/usr/share/texlive/texmf-dist/tex/latex/base/report.cls
 Document Class: report 2014/09/29 v1.4h Standard LaTeX document class
 (/usr/share/texlive/texmf-dist/tex/latex/base/size12.clo
@@ -42,21 +42,40 @@ LaTeX Font Info:    Redeclaring font encoding OT1 on input line 48.
 (/usr/share/texlive/texmf-dist/tex/generic/babel/babel.sty
 Package: babel 2016/02/24 3.9q The Babel package
 
-(/usr/share/texlive/texmf-dist/tex/generic/babel-finnish/finnish.ldf
-Language: finnish 2007/10/20 v1.3q Finnish support from the babel system
+
+! Package babel Error: Unknown option `finnish'. Either you misspelled it
+(babel)                or the language definition file finnish.ldf was not foun
+d.
+
+See the babel package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.310 \ProcessOptions*
+                      
+? 
+
+! Package babel Error: Unknown option `swedish'. Either you misspelled it
+(babel)                or the language definition file swedish.ldf was not foun
+d.
+
+See the babel package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.310 \ProcessOptions*
+                      
+? 
+(/usr/share/texlive/texmf-dist/tex/generic/babel-english/english.ldf
+Language: english 2012/08/20 v3.3p English support from the babel system
 
 (/usr/share/texlive/texmf-dist/tex/generic/babel/babel.def
 File: babel.def 2016/02/24 3.9q Babel common definitions
 \babel@savecnt=\count88
 \U@D=\dimen103
 )
-Package babel Info: Making " an active character on input line 89.
-)
-(/usr/share/texlive/texmf-dist/tex/generic/babel-swedish/swedish.ldf
-Language: swedish 2005/03/31 v2.3d Swedish support from the babel system
-)
-(/usr/share/texlive/texmf-dist/tex/generic/babel-english/english.ldf
-Language: english 2012/08/20 v3.3p English support from the babel system
+\l@british = a dialect from \language\l@english 
+\l@UKenglish = a dialect from \language\l@english 
 \l@canadian = a dialect from \language\l@american 
 \l@australian = a dialect from \language\l@british 
 \l@newzealand = a dialect from \language\l@british 
@@ -857,176 +876,223 @@ LaTeX Info: Redefining \nameref on input line 391.
  [1
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
-<images/aalto-logo-en.pdf, id=107, 302.3837pt x 132.96776pt>
+<images/aalto-logo-en.pdf, id=220, 302.3837pt x 132.96776pt>
 File: images/aalto-logo-en.pdf Graphic file (type pdf)
 
 <use images/aalto-logo-en.pdf>
 Package pdftex.def Info: images/aalto-logo-en.pdf used on input line 437.
 (pdftex.def)             Requested size: 174.709pt x 76.82234pt.
  [2 <./images/aalto-logo-en.pdf>]
-<images/aalto-logo-fi.pdf, id=122, 284.79599pt x 133.24078pt>
+
+! Package babel Error: You haven't defined the language finnish yet.
+
+See the babel package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.459 ... mutta kest‰v‰mp‰‰ kuin esimerkiksi puu.}
+                                                  
+? 
+<images/aalto-logo-fi.pdf, id=235, 284.79599pt x 133.24078pt>
 File: images/aalto-logo-fi.pdf Graphic file (type pdf)
 
 <use images/aalto-logo-fi.pdf>
 Package pdftex.def Info: images/aalto-logo-fi.pdf used on input line 459.
 (pdftex.def)             Requested size: 164.20834pt x 76.82234pt.
-Package babel Info: Redefining finnish shorthand "|
-(babel)             in language  on input line 459.
-Package babel Info: Redefining finnish shorthand "|
-(babel)             in language  on input line 459.
  [3 <./images/aalto-logo-fi.pdf>]
-<images/aalto-logo-se.pdf, id=133, 315.62114pt x 132.96677pt>
+
+! Package babel Error: You haven't defined the language swedish yet.
+
+See the babel package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.482 ˆgonbryn bland l‰sarna.}
+                              
+? 
+<images/aalto-logo-se.pdf, id=246, 315.62114pt x 132.96677pt>
 File: images/aalto-logo-se.pdf Graphic file (type pdf)
 
 <use images/aalto-logo-se.pdf>
 Package pdftex.def Info: images/aalto-logo-se.pdf used on input line 482.
 (pdftex.def)             Requested size: 182.35724pt x 76.82234pt.
-Package babel Info: Redefining swedish shorthand "|
-(babel)             in language  on input line 482.
-Package babel Info: Redefining swedish shorthand "~
-(babel)             in language  on input line 482.
-Package babel Info: Redefining swedish shorthand "|
-(babel)             in language  on input line 482.
-Package babel Info: Redefining swedish shorthand "~
-(babel)             in language  on input line 482.
  [4 <./images/aalto-logo-se.pdf>] [5
 
 ]
 (./acronyms.tex) [6
 
 
-] (./thesis-example.toc)
+] (./thesis-example.toc [7
+
+
+])
 \tf@toc=\write5
 \openout5 = `thesis-example.toc'.
 
- [7
-
-
-] (./1introduction.tex
+ [8] (./1introduction.tex
 Chapter 1.
-[8
+) (./2background.tex [9
 
 
-]) (./2background.tex [9]
+]
 Chapter 2.
+
+Underfull \hbox (badness 10000) in paragraph at lines 16--18
+
+ []
+
 [10
 
 ]
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 79.
- (/usr/share/texlive/texmf-dist/tex/latex/base/omscmr.fd
+Underfull \hbox (badness 10000) in paragraph at lines 33--35
+
+ []
+
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 36.
+(/usr/share/texlive/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 79.
- [11] [12]
-[13]) (./3environment.tex [14]
-Chapter 3.
-[15
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 36.
 
-] <images/indica_model.pdf, id=260, 261.97874pt x 88.33pt>
-File: images/indica_model.pdf Graphic file (type pdf)
 
-<use images/indica_model.pdf>
-Package pdftex.def Info: images/indica_model.pdf used on input line 67.
-(pdftex.def)             Requested size: 390.0pt x 131.49863pt.
- <images/ihaa.jpg, id=262, 401.5pt x 293.4965pt>
-File: images/ihaa.jpg Graphic file (type jpg)
+! LaTeX Error: Command \textcurrency unavailable in encoding OT1.
 
-<use images/ihaa.jpg>
-Package pdftex.def Info: images/ihaa.jpg used on input line 77.
-(pdftex.def)             Requested size: 256.0748pt x 187.20119pt.
- [16 <./images/indica_model.pdf>] (./images/page-merge.tex
-\spexx=\skip63
-\spexy=\skip64
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.36     Dippaty√∂st√§
+                       TOWARDS AN EMPIRICAL EVALUATION
+? 
+
+Underfull \hbox (badness 10000) in paragraph at lines 36--40
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 36--40
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 41--51
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 41--51
+
+ []
+
+[11]
+Underfull \hbox (badness 10000) in paragraph at lines 52--63
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 52--63
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 64--69
+
+ []
+
 )
-\graphdotsize=\skip65
-\graphgridsize=\skip66
- (./images/obstruction-grouped.tex
-\oggs=\skip67
-) (./images/general-star-graphs.tex))
-(./4methods.tex [17 <./images/ihaa.jpg>] [18]
-Chapter 4.
-) (./5implementation.tex [19
+Underfull \hbox (badness 10000) in paragraph at lines 70--560
 
-] [20]
-Chapter 5.
-) (./6evaluation.tex [21
+ []
+
+[12] (./3environment.tex [13]
+Chapter 3.
+) (./4methods.tex [14
 
 ]
+Chapter 4.
+
+Underfull \hbox (badness 10000) in paragraph at lines 5--8
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 12--13
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 14--16
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 17--21
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 17--21
+
+ []
+
+[15
+
+]
+! Misplaced alignment tab character &.
+l.28 ...e of a "champion" in influencing the use &
+                                                   first impressions\newline
+? 
+
+Underfull \hbox (badness 10000) in paragraph at lines 27--30
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 27--30
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 31--34
+
+ []
+
+) (./5implementation.tex [16]
+Chapter 5.
+
+Underfull \hbox (badness 10000) in paragraph at lines 6--9
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 13--14
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 17--20
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 22--23
+
+ []
+
+) (./6evaluation.tex) (./7discussion.tex [17
+
+] [18]
 Chapter 6.
-) (./7discussion.tex [22
+) (./8conclusions.tex [19
 
 ]
 Chapter 7.
-) (./8conclusions.tex [23
+) (./thesis-example.bbl [20
 
-]
-Chapter 8.
-) (./thesis-example.bbl [24
+] [21
 
-] [25
-
-]) (./appendices.tex [26]
+]) (./appendices.tex [22]
 Appendix A.
 File: images/aalto-logo-en.pdf Graphic file (type pdf)
 <use images/aalto-logo-en.pdf>
@@ -1043,44 +1109,40 @@ Package pdftex.def Info: images/aalto-logo-se.pdf used on input line 13.
 (pdftex.def)             Requested size: 312.00119pt x 131.45084pt.
 ) 
 AED: lastpage setting LastPage
-[27
+[23
 
-] [28]
+] [24]
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 594.
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 594.
  (./thesis-example.aux)
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 594.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 594.
 Package rerunfilecheck Info: File `thesis-example.out' has not changed.
-(rerunfilecheck)             Checksum: 8CB186D913509EAFAC0E865D0A6140E9;1385.
+(rerunfilecheck)             Checksum: 9BBEDC9DF457F840FD2188608F748E0F;3628.
  ) 
 Here is how much of TeX's memory you used:
- 21589 strings out of 493029
- 427388 string characters out of 6136235
- 578111 words of memory out of 5000000
- 24575 multiletter control sequences out of 15000+600000
- 16932 words of font info for 60 fonts, out of 8000000 for 9000
- 1143 hyphenation exceptions out of 8191
- 55i,13n,73p,780b,1159s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 20948 strings out of 494497
+ 414675 string characters out of 6172400
+ 516962 words of memory out of 5000000
+ 23824 multiletter control sequences out of 15000+600000
+ 12269 words of font info for 44 fonts, out of 8000000 for 9000
+ 266 hyphenation exceptions out of 8191
+ 55i,12n,67p,780b,479s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></us
 r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/shar
 e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/share/tex
-live/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/t
-exmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/texmf-d
-ist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fon
-ts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type
-1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public
-/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfont
-s/cm/cmsl12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/c
-msy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.
-pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></
-usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti8.pfb></usr/sha
-re/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/share/tex
-live/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
-Output written on thesis-example.pdf (28 pages, 343452 bytes).
+live/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/te
+xmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dis
+t/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/
+type1/public/amsfonts/cm/cmsl12.pfb></usr/share/texlive/texmf-dist/fonts/type1/
+public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public
+/amsfonts/cm/cmti12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfo
+nts/cm/cmtt10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm
+/cmtt12.pfb>
+Output written on thesis-example.pdf (24 pages, 201246 bytes).
 PDF statistics:
- 439 PDF objects out of 1000 (max. 8388607)
- 376 compressed objects within 4 object streams
- 84 named destinations out of 1000 (max. 500000)
- 222 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 489 PDF objects out of 1000 (max. 8388607)
+ 438 compressed objects within 5 object streams
+ 96 named destinations out of 1000 (max. 500000)
+ 436 words of extra memory for PDF output out of 10000 (max. 10000000)
 
