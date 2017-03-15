@@ -1,9 +1,57 @@
 \chapter{Background}
 \label{chapter:background} 
 
-\section{JVM}
-\section{Quality assurance}
-\section{Automated testing}
+\section{JVM} %1p
+\section{Software Quality assurance} %2p
+    %Tähän jostain QA definition lähteestä
+    To fully understand \textbf{software quality assurance (SQA)} and why it is important, first the software quality concept in itself is illustrated.
+    Motivation for practicing QA is examined second and third the overall activities in SQA are explained briefly.
+    \subsection{Definitions of quality}
+    Quality in software development is a multifaceted entity that has had many viewpoints for a long time.
+    Some of these earlier views include \textit{product-, transcendental-, user-, manufacturing-} and \textit{value based} -view~\cite{kitchenham1996elusive}.
+    Because there exists so many viewpoints to what software quality is, it makes the measuring of quality hard~\cite{kitchenham1996elusive}.
+    Business goals and their priorities should determine the needed level of software quality~\cite{kitchenham1996elusive} so therefore
+    quality in itself is not set in stone, but it can alter between software services and products to fit the purpose.
+    This can be easily demonstrated with an example of software inside a missile defence system or an online dating application.
+    Two different systems with different goals and consequences of use and therefore obviously different standards for needed quality.
+
+    \begin{figure}[ht]
+      \begin{center}
+        \includegraphics[width=10cm]{images/alternativeQM.png}
+        \caption{Alternative Quality Model}
+        \label{fig:AQM}
+      \end{center}
+    \end{figure}
+
+    New alternative view on software quality by Denning~\cite{denning2016sq} includes user experience directly in the core of quality.
+    This view is called the \textbf{alternative quality model (AQM)} and it defines quality software as software that delights
+    the end user~\cite{denning2016sq}. Figure \ref{fig:AQM} displays the full scale of AQM.
+    In my opinion, this view on software quality has strong correlation to customer value. Customer value can be seen as
+    the benefits and sacrifices the end user experiences using the product~\cite{woodruff1997customer}. Therefore traditional
+    defect free software quality is an important part of providing end user with software that delights, as defects
+    can be seen as sacrifices that devour the trust towards software. Nevertheless this is not the only part of AQM,
+    but providing software that delights the end user needs to also solve the right problem for the user.
+    Thus software quality on the AQM is almost directly linked to customer value; it needs to be defect free but also
+    provide benefits in use to delight the end user. While this research is mainly interested in aspects of producing traditional defect free quality software,
+    later on in this chapter \textbf{Behavior Driven Development (BDD)} is examined in detail.
+    BDD can be seen to directly try to increase software quality on the AQM.
+
+    \subsection{Motivation for SQA}
+    Many software projects fail but also many of them are successful. Success and failure in this context have multidimensional meaning with
+    \textit{technical-, economic-, behavioral-, psychological-} and \textit{political} aspects ~\cite{mcleod2011factors}. Aggressive
+    schedule can be usually seen as one of the primary causes for software project failure~\cite{cerpa2009did}. This can cause
+    problems on many of the projects multidimensional axis, for instance in technical- and economical aspects. Projects might go
+    over the budget, schedule, not meet the user needs and eventually be released with low quality ~\cite{cerpa2009did}.
+    Although many of the problems are related to requirements engineering \textbf{(RE)}, a lot of them are fixes or rework needed after launch~\cite{lessons}.
+    If quality is measured on the AQM, then both RE and SQA are intertwined in the concept of software quality and SQA-work
+    is essential for the success of software project. Even if software quality is only limited to mean defect free software, SQA has
+    major role in preventing project failures.
+
+    \subsection{Activities in SQA}
+    Quality assurance practices and activities differ greatly in rhythm and also to a lesser degree in practices used in traditional waterfall-model
+    software projects vs agile projects~\cite{huo2004software}.
+
+\section{Automated testing} %3p
     \subsection{Levels of automation}
     \subsection{Low level testing explained}
     \subsection{Benefits and drawbacks}
@@ -12,24 +60,24 @@
     %-Cost approximately 30percent more development time\newline
     %-Relative decrease in defects found by customer in first 2 years of use\newline
     %-Developers feel more confident in refactoring and modifying code due to precense of automated unit tests\newline
-\section{xUnit testing frameworks}
+\section{xUnit testing frameworks} %2p
 -JUnit\newline
 -Java Spring testing with with JUnit\newline
-\section{Test Driven Development}
+\section{Test Driven Development} %2p
     \subsection{Definition}
     \subsection{Benefits and drawbacks}
-\section{Behavior Driven Development}
+\section{Behavior Driven Development} %2p
     \subsection{Definition}
     \subsection{BDD vs TDD}
     \subsection{Levels of specification}
     \subsection{Tools}
     \subsection{Benefits and drawbacks}
-\section{Behavior Driven low level testing frameworks}
+\section{Behavior Driven low level testing frameworks} % 5p
     \subsection{Spec family}
             -Rspec and Spectrum\newline
             -Rspec / BDD Helps to shift viewpoint from 1-1 relationship between test-code and only one test method per function
     \subsection{Spock}
-\section{Related research}
+\section{Related research} % 2p
     -Analysis of problems found from automated testing surveys\newline
     -Reference to future research introduced in thesis work\newline
 
@@ -66,7 +114,7 @@
    -Unit test motivation in agile: test suites could function as a specification\newline
    -Maintaining was found to take much effort\newline
    -Developer motivation working with unit tests needs improvement\newline
-\section{Research hypothesis}
+\section{Research hypothesis} %1p
     Discussion about research hypothesis (BD-testing vs JUnit) and how it relates to problems found (8) and benefits mentioned in section 6-7.\newline
     -Developers will write more granular test cases\newline
         %-Ubiquitous language

@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-pdflatex "$@"
+pdflatex "$@.tex"
 bibtex "$@"
-pdflatex "$@"
-pdflatex "$@"
+pdflatex "$@.tex"
+pdflatex "$@.tex"
