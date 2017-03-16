@@ -2,13 +2,18 @@
 \label{chapter:background} 
 
 \section{JVM} %1p
-\section{Software Quality assurance} %2p
-    %Tähän jostain QA definition lähteestä
-    To fully understand \textbf{software quality assurance (SQA)} and why it is important, first the software quality concept in itself is illustrated.
-    Motivation for practicing QA is examined second and third the overall activities in SQA are explained briefly.
+\section{Software quality assurance} %2p
+    The standard definition of quality assurance states it to be:
+        \textit{"A planned and systematic pattern
+        of all actions necessary to provide adequate confidence
+        that the item or product conforms to established
+        technical requirements"}~\cite{buckley1978standard}.
+    Although modern \textbf{software quality assurance (SQA)} differs from the original standard definition, it is still definitely found
+    at the core of SQA. To fully understand SQA and why it is important, first the software quality concept in itself is illustrated.
+    Motivation for practicing SQA is examined second and third the overall activities in SQA are explained briefly.
     \subsection{Definitions of quality}
     Quality in software development is a multifaceted entity that has had many viewpoints for a long time.
-    Some of these earlier views include \textit{product-, transcendental-, user-, manufacturing-} and \textit{value based} -view~\cite{kitchenham1996elusive}.
+    Some of these earlier views include \textit{product, transcendental, user, manufacturing} and \textit{value based} view~\cite{kitchenham1996elusive}.
     Because there exists so many viewpoints to what software quality is, it makes the measuring of quality hard~\cite{kitchenham1996elusive}.
     Business goals and their priorities should determine the needed level of software quality~\cite{kitchenham1996elusive} so therefore
     quality in itself is not set in stone, but it can alter between software services and products to fit the purpose.
@@ -38,7 +43,7 @@
 
     \subsection{Motivation for SQA}
     Many software projects fail but also many of them are successful. Success and failure in this context have multidimensional meaning with
-    \textit{technical-, economic-, behavioral-, psychological-} and \textit{political} aspects ~\cite{mcleod2011factors}. Aggressive
+    \textit{technical, economic, behavioral, psychological} and \textit{political} aspects ~\cite{mcleod2011factors}. Aggressive
     schedule can be usually seen as one of the primary causes for software project failure~\cite{cerpa2009did}. This can cause
     problems on many of the projects multidimensional axis, for instance in technical- and economical aspects. Projects might go
     over the budget, schedule, not meet the user needs and eventually be released with low quality ~\cite{cerpa2009did}.
@@ -48,10 +53,46 @@
     major role in preventing project failures.
 
     \subsection{Activities in SQA}
-    Quality assurance practices and activities differ greatly in rhythm and also to a lesser degree in practices used in traditional waterfall-model
-    software projects vs agile projects~\cite{huo2004software}.
+    Quality assurance practices and activities differ greatly in rhythm and also to a lesser degree in practices used in
+    traditional waterfall-model software projects vs agile projects~\cite{huo2004software}. Waterfall-projects have a rule set
+    of their own for quality assurance, but for the topic of thesis agile methodologies and their SQA-practices are more relevant.
+    SQA-practices can be generally categorized to \textit{defect detection, code enhancement, verification \& validation (V\&V)} of artifacts,
+    and \textit{collaboration \& communication} between stakeholders.
+
+    Defect detection can be split into two categories: \textbf{explicit} and \textbf{implicit} defect detection activities~\cite{mantyla2014software}.
+    Implicit defect detection means finding defects as a secondary result when the goal was to perform another activity,
+    such as demo presentation or giving training about the software use~\cite{mantyla2014software}. Explicit defect detection activities
+    hold ones such as \textit{testing} and artifact \textit{inspection}, but they are found to have a lower
+    defect detection rate than implicit ones~\cite{mantyla2014software}. \textit{Continuous integration} can also be seen
+    as a explicit defect detection as it illustrates integration defects and problems with frequent integration cycle~\cite{huo2004software}.
+
+    Code enhancement activities aim to produce better design and maintainability of the codebase and these include practices
+    like \textit{pair programming, refactoring}~\cite{huo2004software} and \textit{code reviews}~\cite{rigby2013convergent}.
+    Although code reviews are also a form of inspection and explicit defect detection, one of their primary uses in modern
+    code review is to share knowledge between team members~\cite{mantyla2014software}~\cite{rigby2013convergent}.
+
+    Verification \& Validation aims to guarantee the quality of product or intermediate products and it can be used for
+    example to design and requirement artifacts. It is a static method, which involves stakeholder(s)
+    inspecting the artifact. It is more of a traditional waterfall software project activity, but agile practices such as code reviews
+    can be categorized as a V\&V activity. ~\cite{huo2004software}
+
+    Collaboration and communication between stakeholders are used in agile methodologies frequently being one of the
+    cornerstones of agile practices in general~\cite{huo2004software}. Frequent customer collaboration with \textit{On-site customer}~\cite{huo2004software}
+    is an agile SQA-practice that establishes a foundation for many agile practices and is essential in delivering
+    quality on the AQM.
+
+    There are many more specific SQA-practicies that have their foundations on the activities mentioned in this section.
+    Next in this thesis testing is examined in detail through automated testing as it provides a base for \textbf{Test Driven Development (TDD)}
+    and BDD.
 
 \section{Automated testing} %3p
+    Agile methodologies do not prefer or deny separate testers inside a project, but for a modern quality centered
+    development separate testers might hinder the experience. Teams without separate testers have one aspect in common,
+    they rely heavily on test automation as the core for quality. One of the most important properties in these kind of
+    teams is the rapid and direct feedback that test automation can provide. ~\cite{prechelt2016quality}
+
+    First in this section different levels of test automation are explored. Second lower levels of test automation are explained in more
+    detail and third overall benefits and drawbacks of test automation are discussed.
     \subsection{Levels of automation}
     \subsection{Low level testing explained}
     \subsection{Benefits and drawbacks}
