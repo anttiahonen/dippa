@@ -9,49 +9,51 @@
 \contentsline {section}{\numberline {1.2}Problem statement}{1}{section.1.2}
 \contentsline {section}{\numberline {1.3}Structure of the thesis}{1}{section.1.3}
 \contentsline {chapter}{\numberline {2}Background}{2}{chapter.2}
-\contentsline {section}{\numberline {2.1}JVM}{2}{section.2.1}
-\contentsline {section}{\numberline {2.2}Software quality assurance}{2}{section.2.2}
-\contentsline {subsection}{\numberline {2.2.1}Definitions of quality}{2}{subsection.2.2.1}
-\contentsline {subsection}{\numberline {2.2.2}Motivation for SQA}{3}{subsection.2.2.2}
-\contentsline {subsection}{\numberline {2.2.3}Activities in SQA}{4}{subsection.2.2.3}
-\contentsline {section}{\numberline {2.3}Automated testing}{5}{section.2.3}
-\contentsline {subsection}{\numberline {2.3.1}Levels of automation}{5}{subsection.2.3.1}
-\contentsline {subsection}{\numberline {2.3.2}Low level testing explained}{5}{subsection.2.3.2}
-\contentsline {subsection}{\numberline {2.3.3}Benefits and drawbacks}{5}{subsection.2.3.3}
-\contentsline {section}{\numberline {2.4}xUnit testing frameworks}{5}{section.2.4}
-\contentsline {section}{\numberline {2.5}Test Driven Development}{6}{section.2.5}
-\contentsline {subsection}{\numberline {2.5.1}Definition}{6}{subsection.2.5.1}
-\contentsline {subsection}{\numberline {2.5.2}Benefits and drawbacks}{6}{subsection.2.5.2}
-\contentsline {section}{\numberline {2.6}Behavior Driven Development}{6}{section.2.6}
-\contentsline {subsection}{\numberline {2.6.1}Definition}{6}{subsection.2.6.1}
-\contentsline {subsection}{\numberline {2.6.2}BDD vs TDD}{6}{subsection.2.6.2}
-\contentsline {subsection}{\numberline {2.6.3}Levels of specification}{6}{subsection.2.6.3}
-\contentsline {subsection}{\numberline {2.6.4}Tools}{6}{subsection.2.6.4}
-\contentsline {subsection}{\numberline {2.6.5}Benefits and drawbacks}{6}{subsection.2.6.5}
-\contentsline {section}{\numberline {2.7}Behavior Driven low level testing frameworks}{6}{section.2.7}
-\contentsline {subsection}{\numberline {2.7.1}Spec family}{6}{subsection.2.7.1}
-\contentsline {subsection}{\numberline {2.7.2}Spock}{6}{subsection.2.7.2}
-\contentsline {section}{\numberline {2.8}Related research}{6}{section.2.8}
-\contentsline {section}{\numberline {2.9}Research hypothesis}{8}{section.2.9}
-\contentsline {chapter}{\numberline {3}Environment}{9}{chapter.3}
-\contentsline {section}{\numberline {3.1}Java8 \& Spectrum}{9}{section.3.1}
-\contentsline {section}{\numberline {3.2}Groovy \& Spock}{9}{section.3.2}
-\contentsline {section}{\numberline {3.3}JRuby \& Rspec}{9}{section.3.3}
-\contentsline {chapter}{\numberline {4}Methods}{10}{chapter.4}
-\contentsline {section}{\numberline {4.1}Research questions}{10}{section.4.1}
-\contentsline {section}{\numberline {4.2}Emperical study}{10}{section.4.2}
-\contentsline {subsection}{\numberline {4.2.1}Process for selecting teams and developers}{10}{subsection.4.2.1}
-\contentsline {subsection}{\numberline {4.2.2}Interview for demographic purposes}{10}{subsection.4.2.2}
-\contentsline {subsection}{\numberline {4.2.3}Questionnaire about low level automated testing}{11}{subsection.4.2.3}
-\contentsline {section}{\numberline {4.3}Quantative research}{11}{section.4.3}
-\contentsline {section}{\numberline {4.4}Threats to validity}{11}{section.4.4}
-\contentsline {section}{\numberline {4.5}Limitations of the case study}{11}{section.4.5}
-\contentsline {chapter}{\numberline {5}Results}{12}{chapter.5}
-\contentsline {section}{\numberline {5.1}Technical configuration}{12}{section.5.1}
-\contentsline {subsection}{\numberline {5.1.1}How teams chose their testing framework}{12}{subsection.5.1.1}
-\contentsline {subsection}{\numberline {5.1.2}Configuration of selected testing framework for project}{12}{subsection.5.1.2}
-\contentsline {section}{\numberline {5.2}Empirical study analyzed}{12}{section.5.2}
-\contentsline {section}{\numberline {5.3}Quantative research analyzed}{13}{section.5.3}
-\contentsline {chapter}{\numberline {6}Discussion}{14}{chapter.6}
-\contentsline {chapter}{\numberline {7}Conclusions}{15}{chapter.7}
-\contentsline {chapter}{\numberline {A}First appendix}{18}{appendix.A}
+\contentsline {section}{\numberline {2.1}Java Virtual Machine}{2}{section.2.1}
+\contentsline {section}{\numberline {2.2}Software quality assurance}{4}{section.2.2}
+\contentsline {subsection}{\numberline {2.2.1}Definitions of quality}{4}{subsection.2.2.1}
+\contentsline {subsection}{\numberline {2.2.2}Motivation for SQA}{5}{subsection.2.2.2}
+\contentsline {subsection}{\numberline {2.2.3}Activities in SQA}{5}{subsection.2.2.3}
+\contentsline {section}{\numberline {2.3}Automated testing}{6}{section.2.3}
+\contentsline {subsection}{\numberline {2.3.1}Levels of automation}{6}{subsection.2.3.1}
+\contentsline {subsection}{\numberline {2.3.2}Low level testing explained}{7}{subsection.2.3.2}
+\contentsline {subsection}{\numberline {2.3.3}Benefits and drawbacks of automated testing}{8}{subsection.2.3.3}
+\contentsline {section}{\numberline {2.4}xUnit testing frameworks}{9}{section.2.4}
+\contentsline {subsection}{\numberline {2.4.1}JUnit}{10}{subsection.2.4.1}
+\contentsline {subsection}{\numberline {2.4.2}Extending JUnit for Spring Framework domain}{11}{subsection.2.4.2}
+\contentsline {section}{\numberline {2.5}Test Driven Development}{12}{section.2.5}
+\contentsline {subsection}{\numberline {2.5.1}Definition}{12}{subsection.2.5.1}
+\contentsline {subsection}{\numberline {2.5.2}Benefits and drawbacks}{12}{subsection.2.5.2}
+\contentsline {section}{\numberline {2.6}Behavior Driven Development}{12}{section.2.6}
+\contentsline {subsection}{\numberline {2.6.1}Definition}{12}{subsection.2.6.1}
+\contentsline {subsection}{\numberline {2.6.2}BDD vs TDD}{12}{subsection.2.6.2}
+\contentsline {subsection}{\numberline {2.6.3}Levels of specification}{12}{subsection.2.6.3}
+\contentsline {subsection}{\numberline {2.6.4}Tools}{12}{subsection.2.6.4}
+\contentsline {subsection}{\numberline {2.6.5}Benefits and drawbacks}{12}{subsection.2.6.5}
+\contentsline {section}{\numberline {2.7}Behavior Driven low level testing frameworks}{12}{section.2.7}
+\contentsline {subsection}{\numberline {2.7.1}Spec family}{12}{subsection.2.7.1}
+\contentsline {subsection}{\numberline {2.7.2}Spock}{12}{subsection.2.7.2}
+\contentsline {section}{\numberline {2.8}Related research}{12}{section.2.8}
+\contentsline {section}{\numberline {2.9}Research hypothesis}{14}{section.2.9}
+\contentsline {chapter}{\numberline {3}Environment}{15}{chapter.3}
+\contentsline {section}{\numberline {3.1}Java8 \& Spectrum}{15}{section.3.1}
+\contentsline {section}{\numberline {3.2}Groovy \& Spock}{15}{section.3.2}
+\contentsline {section}{\numberline {3.3}JRuby \& Rspec}{15}{section.3.3}
+\contentsline {chapter}{\numberline {4}Methods}{16}{chapter.4}
+\contentsline {section}{\numberline {4.1}Research questions}{16}{section.4.1}
+\contentsline {section}{\numberline {4.2}Emperical study}{16}{section.4.2}
+\contentsline {subsection}{\numberline {4.2.1}Process for selecting teams and developers}{16}{subsection.4.2.1}
+\contentsline {subsection}{\numberline {4.2.2}Interview for demographic purposes}{16}{subsection.4.2.2}
+\contentsline {subsection}{\numberline {4.2.3}Questionnaire about low level automated testing}{17}{subsection.4.2.3}
+\contentsline {section}{\numberline {4.3}Quantative research}{17}{section.4.3}
+\contentsline {section}{\numberline {4.4}Threats to validity}{17}{section.4.4}
+\contentsline {section}{\numberline {4.5}Limitations of the case study}{17}{section.4.5}
+\contentsline {chapter}{\numberline {5}Results}{18}{chapter.5}
+\contentsline {section}{\numberline {5.1}Technical configuration}{18}{section.5.1}
+\contentsline {subsection}{\numberline {5.1.1}How teams chose their testing framework}{18}{subsection.5.1.1}
+\contentsline {subsection}{\numberline {5.1.2}Configuration of selected testing framework for project}{18}{subsection.5.1.2}
+\contentsline {section}{\numberline {5.2}Empirical study analyzed}{18}{section.5.2}
+\contentsline {section}{\numberline {5.3}Quantative research analyzed}{19}{section.5.3}
+\contentsline {chapter}{\numberline {6}Discussion}{20}{chapter.6}
+\contentsline {chapter}{\numberline {7}Conclusions}{21}{chapter.7}
+\contentsline {chapter}{\numberline {A}First appendix}{25}{appendix.A}

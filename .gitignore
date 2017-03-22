@@ -1,5 +1,8 @@
 *.iml
-.idea
-.aux
-.out
-.log
+*.idea
+*.aux
+*.out
+*.log
+*.pdf
+*.bbl
+*.blg
