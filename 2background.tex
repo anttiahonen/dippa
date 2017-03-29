@@ -1,10 +1,9 @@
 \chapter{Background}
 \label{chapter:background} 
 
-This thesis has its foundations in \textbf{software quality assurance (SQA)} and practices building on top of it. The context of research
-is based in Java-projects and testing Java-code. \textbf{Java Virtual Machine (JVM)} and its implementation in \textbf{Java Runtime Environment (JRE)}
-produces the environment for Java-projects~\cite{wiki:jvm}. Therefore first in this section brief details of JVM are examined.
+First in this section brief details of JVM are examined.
 Before exploring the quality assurance aspects of Java-projects running on JRE (JVM), general concepts of software quality and SQA are explained.
+Last in this chapter, agile methodologies TDD, ATDD and BDD are reviewed.
 
 \section{Java Virtual Machine} %1p
     JVM and its programming language Java was originally designed for building software on networked devices~\cite{lindholm2015java}. From there
@@ -25,7 +24,7 @@ Before exploring the quality assurance aspects of Java-projects running on JRE (
     JVM also hosts an array of new programming languages such as \textit{Scala, Clojure} and \textit{Groovy}~\cite{wiki:jvm}.
 
     The possibilities of these additional JVM programming languages are crucial part of this thesis. Later on testing Java-code is examined with
-    different implementation level \textbf{Behavior Driven Development (BDD)} -frameworks from various JVM languages.
+    different implementation level \textbf{Behavior Driven Development (BDD)} -testing frameworks from various JVM languages.
 
     \begin{figure}[ht]
       \begin{center}
@@ -34,8 +33,6 @@ Before exploring the quality assurance aspects of Java-projects running on JRE (
         \label{fig:JVM}
       \end{center}
     \end{figure}
-
-    \clearpage
 
 \section{Software quality assurance}
     The standard definition of quality assurance states it to be:
@@ -66,14 +63,9 @@ Before exploring the quality assurance aspects of Java-projects running on JRE (
     New alternative view on software quality by Denning~\cite{denning2016sq} includes user experience directly in the core of quality.
     This view is called the \textbf{alternative quality model (AQM)} and it defines quality software as software that delights
     the end user~\cite{denning2016sq}. Figure \ref{fig:AQM} displays the full scale of AQM.
-    In my opinion, this view on software quality has strong correlation to customer value. Customer value can be seen as
-    the benefits and sacrifices the end user experiences using the product~\cite{woodruff1997customer}. Therefore traditional
-    defect free software quality is an important part of providing end user with software that delights, as defects
-    can be seen as sacrifices that devour the trust towards software. Nevertheless this is not the only part of AQM,
-    but providing software that delights the end user needs to also solve the right problem for the user.
-    Thus software quality on the AQM is almost directly linked to customer value; it needs to be defect free but also
-    provide benefits in use to delight the end user. While this research is mainly interested in aspects of producing traditional defect free quality software,
-    later on in this chapter BDD is examined in detail. BDD can be seen to directly try to increase software quality on the AQM.
+    While this research is mainly interested in aspects of producing traditional defect free quality software,
+    later on in this chapter BDD is examined in detail. BDD can be seen to directly try to increase software quality on the AQM,
+    providing value for end users and other stakeholders with minimizing defects~\cite{chelimsky2010rspec}.
 
     \subsection{Motivation for SQA}
     Many software projects fail but also many of them are successful. Success and failure in this context have multidimensional meaning with
@@ -116,8 +108,8 @@ Before exploring the quality assurance aspects of Java-projects running on JRE (
     quality on the AQM.
 
     There are many more specific SQA practices that have their foundations on the activities mentioned in this section.
-    Next in this thesis testing is examined in detail through automated testing as it provides a base for \textbf{Test Driven Development (TDD)}
-    and BDD.
+    Next in this thesis testing is examined in detail through automated testing as it provides a base for agile SQA practices \textbf{Test Driven Development (TDD)},
+    \textbf{Acceptance Test Driven Development (ATDD)} and BDD.
 
 \section{Automated testing}
     First in this section different levels of test automation are explored. Second lower levels of test automation are explained in more
@@ -218,8 +210,7 @@ Before exploring the quality assurance aspects of Java-projects running on JRE (
     for different domains. ~\cite{hamill2004unit}
 
     This thesis is interested in developer practices with JUnit and their perception towards it, therefore next the xUnit family architecture
-    is examined with JUnit. After architecture, a closer look is taken to see how JUnit can be extended for Spring Framework
-    integration testing.
+    is examined with JUnit.
 
     \subsection{JUnit}
     JUnit acts as the reference implementation of the xUnit family and it is also the most popular instance of them~\cite{hamill2004unit}.
@@ -246,97 +237,258 @@ Before exploring the quality assurance aspects of Java-projects running on JRE (
     be used with TestRunner. \textbf{TestResult} class is used to collect test method outcomes from TestSuites and TestCases.
     Figure \ref{fig:junit} visualizes the relationships between the core classes, interfaces and methods of JUnit architecture. ~\cite{hamill2004unit}
 
-    \subsection{Extending JUnit for Spring Framework domain}
-    \textbf{Spring} is a framework for Java, described as:
-    \textit{"core support for dependency injection, transaction management, web applications, data access, messaging, testing and more."}~\cite{spring}
-    It is targeted for Java enterprise applications, providing teams with a framework that allows them to primarily focus on
-    application's business logic~\cite{spring}. Spring framework ships with a lot modules and features that needs to be
-    configured for the project~\cite{wiki:spring}. \textbf{Spring Boot} is \textit{convention-over-configuration} solution
-    composed of the Spring Framework components, that enables rapid application development with minimal effort to get started~\cite{wiki:spring}.
-
-    Spring Framework integration testing can be done by extending JUnit with custom Spring JUnit runner class or by using Spring JUnit class and
-    method rules. Runner class and the Spring JUnit rules both provide standard Spring test context
-    for integration tests with features such as dependency injection and transactional test method execution. ~\cite{springintegration}
-
-    \begin{figure}[ht]
-      \begin{center}
-        \includegraphics[width=13.5cm]{images/springrunner.png}
-        \caption{JUnit extended for Spring integration testing}
-        \label{fig:springrunner}
-      \end{center}
-    \end{figure}
-
-    Figure \ref{fig:springrunner} shows example of a Spring Boot JUnit integration test, where the context and its configuration are
-    loaded with lines 33 and 34. Line 33. is an example of extending JUnit with custom runner. Lines 42-43 show example of injected dependency
-    via Spring Framework.
-
-    JUnit and its extensions provide a base for automated low level testing of Java-code.
-    Next in this thesis, before examing alternatives for low level testing of Java-projects, agile methodologies Test Driven Development
-    and Behavior Driven Development are reviewed.
+    In the next chapter, examples of JUnit are provided together with extending JUnit for integration testing of Spring Framework domain.
+    Also alternatives for automated low level testing of Java-code are reviewed there. Next in this chapter,
+    agile methodologies TDD, ATDD and BDD are reviewed.
 
 \section{Test Driven Development} %2p
     \subsection{Definition}
+    Kent Beck~\cite{beck2003test} defines TDD as techniques aimed to produce clean code that works.
+    This is done by driving development with automated tests - Test Driven Development. TDD consists of two basic rules:
+    \textit{write new production code only when automated test fails} and
+    \textit{eliminate duplicated code}. These two rules are the base for \textbf{Red-Green cycle} of TDD:
+    \begin{enumerate}
+    \item \textbf{Red}: Design and write a small simple test. Run it and see it fail.
+    \item \textbf{Green}: Add code sufficient to make the earlier written test pass.
+    \item \textbf{Refactor}: Refactor for clean code. Improve the structure of the production code and test code.
+    Run all tests to ensure refactoring didn't break anything.
+    \item \textbf{Repeat}: Repeat the cycle to add more functionality.
+    \end{enumerate}
+    \begin{figure}[ht]
+      \begin{center}
+        \includegraphics[width=10.0cm]{images/tdd.png}
+        \caption{TDD related to system design}
+        \label{fig:TDD}
+      \end{center}
+    \end{figure}
+    The tests written in TDD cycle are unit tests, providing incremental functionality to small pieces of software at a time~\cite{bissi2016effects}.
+    Beck~\cite{beck2001aim} also defines test-first principle to be much more than just testing and he states that TDD is
+    also a software design technique. Figure \ref{fig:TDD} illustrates how component design and unit testing are now in a relation
+    where both can affect each other. Code is produced only through design captured in unit tests.
+
     \subsection{Benefits and drawbacks}
+    \textbf{Benefits} of TDD are not totally clear and exact. On earlier systematic literature review by Kollanus~\cite{kollanus2010test} in 2010 there was found
+    weak evidence regarding better \textbf{external software quality} with TDD and even less evidence for better \textbf{internal software quality} with TDD.
+    In any case, there was still results pointing to better quality, even though evidence was not uniform.
+    External quality was measured with two methods, passing acceptance tests done by researchers and number of defects found before
+    reported by the customer. Internal quality had multiple metrics, such as \textit{code coverage, number of test cases, method size, cyclomatic complexity}
+    and so on. The metrics was found at times contradicting and consensus of internal quality was left unclear.
+
+    In 2016 systematic literature review of TDD by Bissi et al.~\cite{bissi2016effects} the benefits of TDD was found more uniform and quite
+    promising. 88\% of studies showed significant increase in external software quality and 76\% of studies identified
+    significant increase in internal software quality. This time external quality was measured only with acceptance tests and compared
+    to TLD approach. Internal quality was inspected with the only common metric found in the literature: code coverage. It could
+    be argued how good of a metric code coverage is for internal quality, but at least the production code has more instructions
+    tested with fast and repeatable automated tests when comparing TDD to TLD.
+
+    Some of the more specific benetifs of TDD was found by Williams et al.~\cite{williams2009effectiveness} to include developers
+    creating more tests that are executed more frequently. This seems to correlate with earlier mentioned increased internal
+    quality measured by test coverage. TDD was also shown to promote more precise and accurate test cases than TLD~\cite{williams2009effectiveness}.
+
+    \textbf{Drawbacks} of TDD was found unanimously to include increase in development time~\cite{kollanus2010test}~\cite{bissi2016effects}~\cite{williams2009effectiveness}.
+    For example in the study done by Williams et al.~\cite{williams2009effectiveness} the increase was ranging from 15\% to 35\%.
+    This could be in my opinion a result of two factors: more tests written and learning curve to practice TDD.
+    As earlier mentioned, Beck~\cite{beck2001aim} defined TDD to be also a design technique. This aspect could make TDD too demanding practice for junior
+    level developers~\cite{hammond2012test}.
+
+    TDD \textbf{requires discipline}, that even senior level developers seem to lack when using it. This is shown for example as
+    frequent deviation from the basic rule of starting the process with the \textit{simplest test}. Also the \textit{refactoring}
+    of test code is frequently omitted by developers of all experience levels. ~\cite{aniche2010most}
+
+    BDD literature frequently states that TDD can have a tendency to shift viewpoint in testing to verifying system state
+    rather than behavior of it. This can lead to brittle tests that are tightly coupled to what the object is, instead of
+    what the object does. ~\cite{chelimsky2010rspec}~\cite{astels2006new}~\cite{amodeo2015learning}
+
+    In conclusion, it could be said that TDD \textbf{is not} the \textbf{silver bullet} for software development that solves all the quality problems.
+    The two systematic reviews mentioned provide somewhat conflicting results. Nevertheless, it could be argued that in the right
+    context benefits of TDD outweigh the drawbacks of it.
+
+\section{Acceptance Test Driven Development}
+    ATDD is an agile practice that has many forms and names: \textit{Specification by Example, Agile Acceptance Testing, Story Testing} and
+    obviously \textit{Acceptance Test Driven Development}~\cite{gartner2012atdd}. BDD inholds also
+    ATDD~\cite{gartner2012atdd}, but as later is discovered, it is actually a superset of it.
+
+    ATDD is an collaboration tool for stakeholders of the project~\cite{gartner2012atdd}~\cite{haugset2012automated}. It means driving the
+    development with features specified with executable acceptance level tests~\cite{gartner2012atdd}~\cite{haugset2012automated}.
+    ATDD can have many formats, such as \textit{Gherkin, Keyword-driven testing and Tabular formats} ~\cite{gartner2012atdd}.
+
+    Instead of traditional automated testing, ATDD can be seen as a mixture of documentation centric traditional RE and communication focused agile RE~\cite{haugset2012automated}.
+    The key is the communication and collaboration between stakeholders~\cite{haugset2012automated}. The executable automated tests are a very useful byproduct.
+    Although the name of ATDD holds the word acceptance in it, passing tests doesn't mean that the system works perfectly~\cite{gartner2012atdd}. Instead it is
+    only a starting point for more quality assurance work; the system is stable enough to be manually tested further~\cite{acceptance2010}.
+
+    \subsection{Benefits and drawbacks}
+    One of the major \textbf{benefits} of ATDD is the frequent collaboration \& communication between
+    the development team and other stakeholders. This improves the understanding of requirements~\cite{haugset2012automated}
+    between all people involved. ATDD can potentially reduce the \textit{ambiquity, noise} and \textit{over-specfication}~\cite{haugset2012automated}
+    in requirements through the use of shared language. ATDD also promotes faster feedback loop~\cite{haugset2012automated} and traceability from requirements
+    to code~\cite{hayes2009towards}.
+
+    Eventually the use of ATDD seems to promote high trust between stakeholders involved, although
+    this is an incremental process taking time. ATDD also promotes better coverage for testing
+    and reduces overhead for new people starting to work with the project. ~\cite{haugset2012automated}
+
+    \textbf{Drawbacks} of ATDD include usually the needed frequent collaboration of stakeholders in it. Customers
+    might not have the time and effort needed for low response times of ATDD. ATDD was also found to have a high
+    upfront cost, that should scale better overtime. This is not always the case if the requirements change all the time. ~\cite{haugset2012automated}
+
+    ATDD has learning curve for both the development team and customers, and especially the learning curve for customers
+    could be found too high to take the method in to use. ATDD is not for all contextes and doesn't work well for all features.
+    ATDD as its counterpart TDD are both demanding practices that require
+    disclipline to use properly.~\cite{haugset2012automated}
+
+    Next section explores Behavior Driven Development
+    in detail to see how it relates to TDD and ATDD and how it combines the two approaches.
 
 \section{Behavior Driven Development} %2p
+    This section will first examine the history behind BDD. Second BDD definition is explained.
+    Third the BDD process and different levels in it are examined, together with tools to support them. Finally
+    the benefits and drawbacks of BDD are discussed.
+
+    \subsection{History}
+    BDD is an fairly new practice from the start of 21st century with groundwork by Dan North~\cite{bdd2006north} and Dave Astels~\cite{astels2006new}.
+    North~\cite{bdd2006north} originally introduced BDD as a solution to problems that new practitioners of TDD faced.
+    These included aspects such as not knowing \textit{what to test, where to start} and \textit{how to name tests}. The
+    big shift was to change the language used in testing; \textbf{replacing the word test with should}. This helped to make
+    the test method names more expressive and enabled developers to start thinking more about object behavior in testing.
+    Later on North extended his work in changing how testing is used to accommodate also acceptance level testing to BDD with \textbf{JBehave}.
+
+    Astels~\cite{astels2006new} continued with North's ideas, resulting in creation of \textbf{RSpec}. Astels had also found
+    out that the used language in testing was crucial and the testing language changed from test-centric vocabulary to behavior oriented.
+    He introduced more granular way of testing, the idea of one assert per test method to produce behavior documentation of code.
+    The vocabulary was also changed in test condition checking \textbf{from assertions to expectations}.
+
     \subsection{Definition}
-    \subsection{BDD vs TDD}
+    BDD is seen as an evolution of TDD and ATDD~\cite{solis2011study}. It expands on the idea of driving system design with
+    tests. North~\cite{bdd2006north} brought in the concept of \textit{ubiquitous language} to acceptance level BDD from \textbf{Domain Driven Design}.
+    This ubiquitous language is used throughout the development lifecycle~\cite{solis2011study} and it should be executable~\cite{bdd2006north}.
+    The main reason for ubiquitous language is to build a common understanding between stakeholders~\cite{solis2011study} through
+    continuous communication and collaboration.
+    Domain Driven Design aspect of BDD is also visible through implementing the software by describing its behavior from
+    the stakeholder perspectives in the domain context~\cite{chelimsky2010rspec}.
+
+    BDD is a second generation agile methodology~\cite{chelimsky2010rspec}, as it incorporates into existing agile practices such as
+    \textit{Extreme Programming, Scrum} or \textit{Kanban}~\cite{smart2014bdd}. It is also used iteratively \& incrementally and the behavior
+    of system should be derived from business outcomes~\cite{solis2011study}.
+    No clear definition of BDD exists~\cite{okolnychyi2016study}, but it can be seen as describing behavior of the system
+    at all levels of granularity~\cite{chelimsky2010rspec}.
+    In addition to these, one of the core values of BDD is \textit{"enough is enough"};
+    the minimal sufficient amount of effort should be given to \textit{planning, analysis, design} and \textit{automation}~\cite{chelimsky2010rspec}.
+    This means doing activities just enough to incrementally provide small pieces of value, but not with the expense of
+    quality.
+    \clearpage
+    \subsection{Process}
+    The driving factor of BDD is the analysis process through user stories and their format:\newline\
+    \begin{addmargin}[2em]{2em}
+    \textbf{As a} \{user\}\newline
+    \textbf{I want} \{feature\}\newline
+    \textbf{so that} \{value\}\newline
+    \end{addmargin}
+    The full cycle of BDD starts with \textit{outside-in} approach. First, purpose of the project is defined and after that,
+    business outcomes or goals for stakeholders are identified. After this feature sets are described.
+    Individual features are analyzed for feature sets.~\cite{chelimsky2010rspec}
+    \begin{figure}[ht]
+      \begin{center}
+        \includegraphics[width=10.0cm]{images/BDD.png}
+        \caption{BDD related to system development}
+        \label{fig:BDD}
+      \end{center}
+    \end{figure}
+
+    \textbf{Value} is the \textbf{driving force} to start the progress with features.
+    To be implemented, feature must have business value related to business outcomes~\cite{bdd2006north}.
+    From there, through different levels of system, implementation is driven with tests first to specify behavior~\cite{chelimsky2010rspec}.
+    This all correlates well with quality measured by the earlier introduced alternative quality model. BDD
+    process aims to provide features with value in use and high internal \& external software quality. This happens through
+    \textit{collaboration, incremental delivery} and \textit{vast \& repeatable automated test suites}~\cite{chelimsky2010rspec}~\cite{smart2014bdd}.
+    The outcome should be quality that delights the end user, thus performing well on the AQM~\cite{denning2016sq}.
+    Figure \ref{fig:BDD} visualizes how business outcomes and the value derived from them drive the process from outside-in through
+    test automation levels to code.
+
+    To fully understand the different levels of automated specification illustrated in figure \ref{fig:BDD}, the whole
+    automation level BDD cycle~\cite{chelimsky2010rspec} needs to be explained:
+    \begin{figure}[ht]
+      \begin{center}
+        \includegraphics[width=12.0cm]{images/bdd-cycle.png}
+        \caption{Automated BDD cycle}
+        \label{fig:bdd-cycle}
+      \end{center}
+    \end{figure}\newline
+    Figure \ref{fig:bdd-cycle} shows the BDD-cycle that can be automated with BDD tools.
+    Steps 1 through 4 relate to acceptance level and steps from 5 to 9 are for implementation level. Step #11 is the refactoring
+    of acceptance level code. Implementation level steps can be seen as the earlier introduced \textbf{red-green cycle of TDD}, preferably done
+    with behavior driven implementation level testing frameworks~\cite{smart2014bdd}. There exists also the outer red-green cycle, which
+    is the outside-in aspect of BDD. The development is started with failing acceptance level, which passes later when the
+    BDD cycle has progresses through all levels of behavior definition and its implementing code~\cite{chelimsky2010rspec}. By repeating the steps,
+    the end result will be a working feature providing value related to business outcomes~\cite{chelimsky2010rspec}.
+
     \subsection{Levels of specification}
-    \subsection{Tools}
+    The first automation level is \textbf{acceptance level} testing ~\cite{chelimsky2010rspec}~\cite{solis2011study}~\cite{smart2014bdd}~\cite{okolnychyi2016study}.
+    This level can be seen as a form of ATDD~\cite{gartner2012atdd}. As earlier explained, BDD also includes the ubiquitous language~\cite{bdd2006north}
+    from Domain Driven Design and thus all ATDD does not pass as acceptance level BDD.
+
+    At acceptance level, features will be written down as feature files (exact naming depends on the used framework), where they are
+    expressed as user stories ~\cite{chelimsky2010rspec}. Acceptance criteria is presented as executable scenarios~\cite{bdd2006north}, that usually
+    follow predetermined ubiquitous language \textbf{Gherkin}~\cite{okolnychyi2016study}. Gherkin will be studied in more detail in the next
+    section when testing framework Spock is examined. Figure \ref{fig:BDD} shows how these stories and scenarios relate to system design.
+    The stakeholder audience for acceptance level BDD include all stakeholders interested in development of the product~\cite{smart2014bdd}.
+
+    Some of the BDD acceptance level tools for JVM include \textit{Cucumber-JVM, Concordion} and \textit{JBehave}~\cite{okolnychyi2016study}. Other
+    environments have also BDD tools for this level, for instance \textit{SpecFlow} for .NET and \textit{Behave} for Python~\cite{smart2014bdd}.
+    Main characteristic of acceptance level tools is business readable plain text input that is expressed with the earlier mentioned
+    user stories and their scenarios~\cite{okolnychyi2016study}.
+
+    The second automated level in BDD is \textbf{implementation level} testing ~\cite{chelimsky2010rspec}~\cite{solis2011study}~\cite{smart2014bdd}~\cite{okolnychyi2016study}.
+    Implementation level can be seen as testing, where behavior of objects and components are described with examples~\cite{chelimsky2010rspec}.
+    This means the earlier mentioned \textit{unit} and \textit{integration} testing done with a new point of view. BDD is not limited to acceptancel level
+    only, as one of the core values in it is:
+    \textit{"it's all behavior"}~\cite{chelimsky2010rspec}. Every level can be broken down to examples describing behavior.
+    Figure \ref{fig:BDD} illustrates how these implementation level specifications relate to system design. Figure \ref{fig:bdd-cycle}
+    shows how the two explained automation levels in BDD work together in a cycle.
+
+    Implementation level BDD can be seen to follow the principles of TDD, like the earlier mentioned red-green cycle driving
+    the design~\cite{smart2014bdd}. The tests produced by BDD differ from TDD tests, they are more granular pieces of
+    describing examples of used code~\cite{astels2006new}. They help to shift the viewpoint from test centric approach by
+    changing the often found 1-1 mappings between test cases and test methods to classes and their methods with more descriptive naming~\cite{astels2006new}.
+
+    The outcome from implementation level BDD specifications is readable, behavior oriented living documentation aimed for developers~\cite{chelimsky2010rspec}~\cite{smart2014bdd}.
+    Although implementation level BDD can be done with traditional xUnit tools,
+    there exists dedicated BDD tools for writing easily \textbf{more concise} and \textbf{more expressive} low level specifications~\cite{smart2014bdd}.
+    These implementation level BDD tools provide the base for research work
+    in this thesis, therefore they will be examined in more detail later with reviewing testing frameworks \textit{RSpec, Spock} and
+    \textit{Spectrum}.
+
     \subsection{Benefits and drawbacks}
-\section{Behavior Driven low level testing frameworks} % 5p
-    \subsection{Spec family}
-            -Rspec and Spectrum\newline
-            -Rspec / BDD Helps to shift viewpoint from 1-1 relationship between test-code and only one test method per function
-    \subsection{Spock}
-\section{Related research} % 2p
-    -Analysis of problems found from automated testing surveys\newline
-    -Reference to future research introduced in thesis work\newline
+    \textbf{Benefits} (and drawbacks) of \textbf{acceptance level BDD} are almost fully the same as in ATDD. This is the result of
+    acceptance level BDD being a form of ATDD~\cite{gartner2012atdd}. Compared to ATDD, Acceptance level BDD introduces the ubiquitous language
+    and it can have the effect of changing all stakeholders to think about testing to describe
+    behavior instead of internal structures of the system~\cite{okolnychyi2016study}. The emphasis on providing value with
+    features can also reduce production of features that are not used~\cite{smart2014bdd}.
+    \textbf{Drawbacks} of acceptance level BDD are identical to the earlier mentioned ones of ATDD.
 
-    Dippatyöstä TOWARDS AN EMPIRICAL EVALUATION
-                OF BEHAVIOUR - DRIVEN DEVELOPMENT\newline
-    -Suora lainaus: The benefits of developing a system written in a static language such as Java, while specifying its
-     behaviours using a more flexible dynamic language such as JRuby could be analyzed.\newline\newline
+    \textbf{Benefits} of \textbf{implementation level BDD} share the same characteristics of TDD. Although there exists no research
+    on how the external and internal quality of software changes with BDD, it should share the same traits as described
+    earlier with benefits of TDD. This is a result of implementation level BDD being an evolution of TDD~\cite{astels2006new}.
+    As mentioned before, compared to TDD, BDD should help to focus on verifying the right aspects regarding the component.
+    This means verifying the behavior of the component instead its structure~\cite{chelimsky2010rspec}~\cite{astels2006new}~\cite{amodeo2015learning}.
 
-    A Survey on Unit Testing Practices and Problems:\newline
-    -Developers are striving to find realistic scenarios.\newline
-    -Isolating unit under test was found hard (mocking etc)\newline
-    -There clearly is potential for unit testing research to help developers produce better tests that make debugging and fixing easier\newline
-    -Understanding code is bigger problem than understanding test code\newline
-    --> If good tests can be generated, then these may help in understanding the code.\newline
-    -Only half of the respondents enjoy writing unit tests\newline
-    --> There is a need for tools that rise the enjoyment\newline
-    -Maintaining unit tests is found harder than writing unit tests\newline
-    --> Need for easier maintaining. Can better readability, Easy parametrization and code repetition removal practices help?\newline\newline
+    Implementation level BDD aims to produce more granular and descriptive test methods and test cases than TDD~\cite{chelimsky2010rspec}~\cite{astels2006new}.
+    These test cases are also describing the behavior of production code by examples~\cite{chelimsky2010rspec}.
+    This can help the system maintenance, providing up-to-date documentation for future developers or even the original developer
+    later on in the future~\cite{smart2014bdd}. \textbf{Drawbacks} of implementation level BDD are not clear, as empirical research on the topic is nonexistent.
+    Because of the close relation to TDD, practicing it should introduce a growth in development time~\cite{kollanus2010test}~\cite{bissi2016effects}~\cite{williams2009effectiveness}.
+    BDD as whole needs discipline~\cite{smart2014bdd}, therefore it might not be a good fit for all projects and their stakeholders.
+    It was also found that BDD is most beneficial when it is used as a holistic approach~\cite{solis2011study}.
+    This means including both levels of specification and accommodating working practices to fully support it}.
 
-    Automatically Documenting Unit Test Cases:\newline
-    -Majority of developers (60.38percent) found understanding of unit test cases to be at least moderately difficult\newline
-    -Developers find up-to-date documentation and comments within test cases to be useful\newline
-    -Writing comments to unit tests is a practice rarely or never done\newline
-    -In order to effectively maintain test cases, it is important that developers understand the impact of each unit
-     test case and the particular functionality that it aims to test.\newline
-    -Developers feel that tests should be self-documentating\newline
-    -More than half of the developers indicated a difficulty of moderate to very hard in terms of understanding unit tests.\newline
-    -Emphasizing this importance, we observed that 89.15percent of developers agree or strongly agree that maintaining test cases
-      impacts the quality of the system. This suggests that developers could benefit from tools that support them in maintaining unit test
-       cases during software evolution and maintenance\newline\newline
+    As the research on this implementation level of BDD is very limited, this thesis focuses on tools used in it. The main topic of interest is how well
+    they could replace traditional xUnit testing family even without tests first principle.
+    In the next section implementation level BDD testing frameworks are examined in more detail. These frameworks are later on used to study
+    the differences in developer low level testing practices and perception towards automated low level testing
+    compared to traditional xUnit family framework JUnit.
 
-   Tsiigaa myos Berner ja testware maintenance problems~\cite{berner2005observations}
 
-   Per Runeson: A Survey of Unit Testing Practices\newline
-   -Unit tests are documented in test code rather than in text\newline
-   -Unit test motivation in agile: test suites could function as a specification\newline
-   -Maintaining was found to take much effort\newline
-   -Developer motivation working with unit tests needs improvement\newline
-\section{Research hypothesis} %1p
-    Discussion about research hypothesis (BD-testing vs JUnit) and how it relates to problems found (8) and benefits mentioned in section 6-7.\newline
-    -Developers will write more granular test cases\newline
-        %-Ubiquitous language
-        %-BDD Helps to shift viewpoint from 1-1 relationship between test-code and only one test method per function
-    -Developers will find easier to understand test cases\newline
-        %-More comments, longer descriptions naturally in use through ubiquitous language
-        %-Test Code should describe the behaviors of the object
-    -Developers will find it easier to maintain code\newline
-         %-Test Code should be part of system’s documentation
-         %-Test Code should have less repetition
-    -Developers will perceive working with low level automated testing more enjoyable\newline
+
+
+
+

@@ -1,10 +1,83 @@
 \chapter{Methods}
 \label{chapter:methods}
+This chapter discusses the design of the study. First, research questions are introduced. Second, related research on low
+level testing practices and perception are discussed together with available thesis studies done on BDD.
+Third, research hypothesis is made based on the practices reviewed in the chapter \ref{chapter:background} and with the related research findings.
+After this, the empirical study and quantitative analysis methodology are explained in detail. Finally, limitations
+to the study methods are discussed.
 
 \section{Research questions}
-RQ1:How does behavior driven testing frameworks change developer practices working with automated testing compared to xUnit (JUnit) framework?\newline
-RQ2:How does behavior driven testing frameworks change developer perception of working with automated testing compared to xUnit (JUnit) framework?\newline
-RQ3:How does behavior driven testing frameworks change written test cases and test code coverage compared to xUnit (JUnit) framework?\newline
+This thesis studies low level testing done with testing framework JUnit and how it changes after putting
+an implementation level BDD testing framework into operation. The scope in research is testing Java-code. The following
+research questions are aimed to highlight the change in low level testing after the testing framework change:
+\begin{enumerate}
+\item \textbf{RQ1}: How does behavior driven testing frameworks change developer practices working with automated low level testing compared to xUnit (JUnit) framework?
+\item \textbf{RQ2}: How does behavior driven testing frameworks change developer perception of working with automated low level testing compared to xUnit (JUnit) framework?
+\item \textbf{RQ3}: How does behavior driven testing frameworks change written low level test cases and test code coverage compared to xUnit (JUnit) framework?
+\end{enumerate}
+
+\section{Related research} % 2p
+    Although BDD and BDD testing frameworks have been around over a decade, empirical research made on the topic is limited.
+    BDD testing frameworks are in heavy use in certain programming languages and frameworks, such as \textit{RSpec} in Ruby on Rails testing~\cite{lerner2009forge},
+    \textit{Jasmine} in JavaScript testing~\cite{amodeo2015learning} and \textit{Spock} in Groovy testing. There exists no exact research on how
+    popular practicing BDD is on the mentioned environments, but the reality probably is that these BDD implementation level
+    frameworks are used largely only for testing purposes, not practicing BDD. Therefore, the findings in studies done on low level testing
+    are the most important ones regarding this thesis. The scope is to study the changes in low level testing from introducing
+    BDD implementation level testing frameworks without the practice of BDD.
+
+
+    A Survey on Unit Testing Practices and Problems:\newline
+    -Developers are striving to find realistic scenarios.\newline
+    -Isolating unit under test was found hard (mocking etc)\newline
+    -There clearly is potential for unit testing research to help developers produce better tests that make debugging and fixing easier\newline
+    -Understanding code is bigger problem than understanding test code\newline
+    --> If good tests can be generated, then these may help in understanding the code.\newline
+    -Only half of the respondents enjoy writing unit tests\newline
+    --> There is a need for tools that rise the enjoyment\newline
+    -Maintaining unit tests is found harder than writing unit tests\newline
+    --> Need for easier maintaining. Can better readability, Easy parametrization and code repetition removal practices help?\newline\newline
+
+    Automatically Documenting Unit Test Cases:\newline
+    -Majority of developers (60.38percent) found understanding of unit test cases to be at least moderately difficult\newline
+    -Developers find up-to-date documentation and comments within test cases to be useful\newline
+    -Writing comments to unit tests is a practice rarely or never done\newline
+    -In order to effectively maintain test cases, it is important that developers understand the impact of each unit
+     test case and the particular functionality that it aims to test.\newline
+    -Developers feel that tests should be self-documentating\newline
+    -More than half of the developers indicated a difficulty of moderate to very hard in terms of understanding unit tests.\newline
+    -Emphasizing this importance, we observed that 89.15percent of developers agree or strongly agree that maintaining test cases
+      impacts the quality of the system. This suggests that developers could benefit from tools that support them in maintaining unit test
+       cases during software evolution and maintenance\newline\newline
+
+   Tsiigaa myos Berner ja testware maintenance problems~\cite{berner2005observations}
+
+   Per Runeson: A Survey of Unit Testing Practices\newline
+   -Unit tests are documented in test code rather than in text\newline
+   -Unit test motivation in agile: test suites could function as a specification\newline
+   -Maintaining was found to take much effort\newline
+   -Developer motivation working with unit tests needs improvement\newline
+
+   -Analysis of problems found from automated testing surveys\newline
+   -Reference to future research introduced in thesis work\newline
+
+   Tänne dippatyö-analyysit
+
+   Dippatyöstä TOWARDS AN EMPIRICAL EVALUATION
+               OF BEHAVIOUR - DRIVEN DEVELOPMENT\newline
+   -Suora lainaus: The benefits of developing a system written in a static language such as Java, while specifying its
+    behaviours using a more flexible dynamic language such as JRuby could be analyzed.\newline\newline
+\section{Research hypothesis} %1p
+    Discussion about research hypothesis (BD-testing vs JUnit) and how it relates to problems found (8) and benefits mentioned in section 6-7.\newline
+    -Developers will write more granular test cases\newline
+        %-Ubiquitous language
+        %-BDD Helps to shift viewpoint from 1-1 relationship between test-code and only one test method per function
+    -Developers will find easier to understand test cases\newline
+        %-More comments, longer descriptions naturally in use through ubiquitous language
+        %-Test Code should describe the behaviors of the object
+    -Developers will find it easier to maintain code\newline
+         %-Test Code should be part of system’s documentation
+         %-Test Code should have less repetition
+    -Developers will perceive working with low level automated testing more enjoyable\newline
 
 \section{Emperical study}
 -Define the type of study
@@ -19,7 +92,9 @@ RQ3:How does behavior driven testing frameworks change written test cases and te
     -Implementation of JUnit survey / screenshots / questions shown\newline
     -Implementation of Spock/Spectrum survey / screenshots / questions shown\newline\newline
 
-\section{Quantative research}
+
+
+\section{Quantitative research}
 -Mine repositories test code\newline
     -Define all software measures fully, including the entity, attribute, unit and counting rules.
 
