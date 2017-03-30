@@ -2,7 +2,8 @@
 \label{chapter:background} 
 
 First in this section brief details of JVM are examined.
-Before exploring the quality assurance aspects of Java-projects running on JRE (JVM), general concepts of software quality and SQA are explained.
+Second, general concepts of software quality and SQA are explained.
+Third, SQA practice automated testing is inspected in more detail.
 Last in this chapter, agile methodologies TDD, ATDD and BDD are reviewed.
 
 \section{Java Virtual Machine} %1p
@@ -201,45 +202,8 @@ Last in this chapter, agile methodologies TDD, ATDD and BDD are reviewed.
     These include \textit{unit testing of GUI}, \textit{competency of developers} working with unit tests and \textit{unit test maintenance}~\cite{runeson2006survey} .
     Also the cost of unit test versus the value it provides was found problematic amongst unit testing practitioners~\cite{runeson2006survey}.
 
-\section{xUnit testing frameworks} %2p
-    xUnit family of testing frameworks are free, open source software for various programming languages that
-    all share the same basic architecture. The first implementation of a xUnit test framework was \textit{SUnit}
-    for Smalltalk in 1999.  From there the same idea was ported for Java and thus \textit{JUnit} was born. There exists also many other
-    xUnit family members, for instance \textit{CppUnit} for C++, \textit{NUnit} for .NET languages and \textit{PyUnit} for Python.
-    These unit testing frameworks are extensible with different types of extensions. Extensions can add for example integration testing capabilities
-    for different domains. ~\cite{hamill2004unit}
-
-    This thesis is interested in developer practices with JUnit and their perception towards it, therefore next the xUnit family architecture
-    is examined with JUnit.
-
-    \subsection{JUnit}
-    JUnit acts as the reference implementation of the xUnit family and it is also the most popular instance of them~\cite{hamill2004unit}.
-    It is used for Java-code testing and it can be extended for many domains in Java testing~\cite{hamill2004unit}.
-    Current stable version of JUnit is \textit{JUnit4}~\cite{junit4}, but \textit{JUnit5} is scheduled to release in Q5 of 2017~\cite{junit5schedule}
-    providing many new features for Java testing. The examples of JUnit and empirical research in this thesis are all based on JUnit4.
-
-    \begin{figure}[ht]
-      \begin{center}
-        \includegraphics[width=13cm]{images/junit.png}
-        \caption{JUnit architecture}
-        \label{fig:junit}
-      \end{center}
-    \end{figure}
-
-    The basic architecture of JUnit consists of classes \textit{TestCase, TestRunner, TestFixture, TestSuite} and \textit{TestResult}.
-    \textbf{TestCase} is the unit test base class, that holds runnable \textbf{test methods}.
-    It implements the interface \textbf{Test} and its \textit{run()}-method. Test methods use \textbf{assertions} inside them to evaluate test conditions.
-    \textbf{TestRunner} class is for extending JUnit and running multiple test cases at once and reporting
-    them. \textbf{TestFixture} class is used to ensure test isolation and creating a separate test environment for each test method.
-    TestFixtures provide a common shared context for test methods, but the environment is created from scratch for each test.
-    This is enabled by providing the test case with common setup and teardown functionality for class and method level.
-    \textbf{TestSuite} is a class made for grouping TestCases and it also implements Test. TestSuite makes it possible to run multiple TestCases and can
-    be used with TestRunner. \textbf{TestResult} class is used to collect test method outcomes from TestSuites and TestCases.
-    Figure \ref{fig:junit} visualizes the relationships between the core classes, interfaces and methods of JUnit architecture. ~\cite{hamill2004unit}
-
-    In the next chapter, examples of JUnit are provided together with extending JUnit for integration testing of Spring Framework domain.
-    Also alternatives for automated low level testing of Java-code are reviewed there. Next in this chapter,
-    agile methodologies TDD, ATDD and BDD are reviewed.
+    The next sections agile methodologies TDD, ATDD and BDD are all build on top of automated testing practices, operating on different levels
+    of automation.
 
 \section{Test Driven Development} %2p
     \subsection{Definition}
@@ -483,8 +447,8 @@ Last in this chapter, agile methodologies TDD, ATDD and BDD are reviewed.
 
     As the research on this implementation level of BDD is very limited, this thesis focuses on tools used in it. The main topic of interest is how well
     they could replace traditional xUnit testing family even without tests first principle.
-    In the next section implementation level BDD testing frameworks are examined in more detail. These frameworks are later on used to study
-    the differences in developer low level testing practices and perception towards automated low level testing
+    In the next section, xUnit testing frameworks and implementation level BDD testing frameworks are examined in more detail.
+    These BDD frameworks are later on used to study the differences in developer low level testing practices and perception towards automated low level testing
     compared to traditional xUnit family framework JUnit.
 
 

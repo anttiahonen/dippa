@@ -1,7 +1,50 @@
 \chapter{Environment}
 \label{chapter:environment}
+This chapter demonstrates few of the different options available for low level automated testing in Java-projects. First,
+\textbf{xUnit testing frameworks} are explained with JUnit as an example of them. Second, \textbf{implementation level BDD testing frameworks}
+running on top of JVM programming languages are demonstrated as an alternative for automated low level Java-code testing.
 
-\section{Extending JUnit for Spring Framework domain}
+\section{xUnit testing frameworks} %2p
+    xUnit family of testing frameworks are free, open source software for various programming languages that
+    all share the same basic architecture. The first implementation of a xUnit test framework was \textit{SUnit}
+    for Smalltalk in 1999.  From there the same idea was ported for Java and thus \textit{JUnit} was born. There exists also many other
+    xUnit family members, for instance \textit{CppUnit} for C++, \textit{NUnit} for .NET languages and \textit{PyUnit} for Python.
+    These unit testing frameworks are extensible with different types of extensions. Extensions can add for example integration testing capabilities
+    for different domains. ~\cite{hamill2004unit}
+
+    This thesis is interested in developer practices with JUnit and their perception towards it, therefore next the xUnit family architecture
+    is examined with JUnit.
+
+    \subsection{JUnit}
+    JUnit acts as the reference implementation of the xUnit family and it is also the most popular instance of them~\cite{hamill2004unit}.
+    It is used for Java-code testing and it can be extended for many domains in Java testing~\cite{hamill2004unit}.
+    Current stable version of JUnit is \textit{JUnit4}~\cite{junit4}, but \textit{JUnit5} is scheduled to release in Q5 of 2017~\cite{junit5schedule}
+    providing many new features for Java testing. The examples of JUnit and empirical research in this thesis are all based on JUnit4.
+
+    \begin{figure}[ht]
+      \begin{center}
+        \includegraphics[width=13cm]{images/junit.png}
+        \caption{JUnit architecture}
+        \label{fig:junit}
+      \end{center}
+    \end{figure}
+
+    The basic architecture close to reference implementation of xUnit testing family~\cite{hamill2004unit} is explained with
+    \textit{JUnit3}. The architecture of JUnit3 consists of classes \textit{TestCase, TestRunner, TestFixture, TestSuite} and \textit{TestResult}.
+    \textbf{TestCase} is the unit test base class, that holds runnable \textbf{test methods}.
+    It implements the interface \textbf{Test} and its \textit{run()}-method. Test methods use \textbf{assertions} inside them to evaluate test conditions.
+    \textbf{TestRunner} class is for extending JUnit and running multiple test cases at once and reporting
+    them. \textbf{TestFixture} class is used to ensure test isolation and creating a separate test environment for each test method.
+    TestFixtures provide a common shared context for test methods, but the environment is created from scratch for each test.
+    This is enabled by providing the test case with common setup and teardown functionality for class and method level.
+    \textbf{TestSuite} is a class made for grouping TestCases and it also implements Test. TestSuite makes it possible to run multiple TestCases and can
+    be used with TestRunner. \textbf{TestResult} class is used to collect test method outcomes from TestSuites and TestCases.
+    Figure \ref{fig:junit} visualizes the relationships between the core classes, interfaces and methods of JUnit architecture. ~\cite{hamill2004unit}
+
+    In the next section, example is provided of a JUnit4 test case extended for integration testing of Spring Framework domain.
+
+    \subsection{Extending JUnit for Spring Framework domain}
+    \label{section:junit-extend}
     \textbf{Spring} is a framework for Java, described as:
     \textit{"core support for dependency injection, transaction management, web applications, data access, messaging, testing and more."}~\cite{spring}
     It is targeted for Java enterprise applications, providing teams with a framework that allows them to primarily focus on
@@ -40,24 +83,27 @@
     xSpec family testing frameworks are restricted to implementation level~\cite{solis2011study}. xSpec style testing
     is examined in more detail in this section through \textbf{RSpec} via JRuby, but it also demonstrated with
     Java 8 -based \textbf{Spectrum}. There exists also other possibilities for xSpec family testing in JVM enviroment,
-    for example Scala-based \textbf{FunSpec}~\cite{funspec} for ScalaTest, but they are not examined in detail.
+    one of them being for example Scala-based \textbf{FunSpec}~\cite{funspec} for ScalaTest, but it is not examined in detail.
+
     \subsubsection{RSpec}
     Ruby community has been for a long time a steady advocate of TDD~\cite{lerner2009forge}. It is also the birth place
-    of first implementation level BDD testing framework: \textbf{RSpec}~\cite{astels2006new}. Whereas first BDD framework
+    of first implementation level BDD testing framework: RSpec~\cite{astels2006new}. Whereas first BDD framework
     JBehave~\cite{bdd2006north} was aimed for acceptance level and all stakeholders, RSpec brought the behavior driven thinking for developer
     audience~\cite{astels2006new}.
 
     RSpec is the founding framework in xSpec family of testing. In its current version 3.5, it is a mature holistic testing
     framework including \textit{expectations} library (assertions), \textit{mocking capabilities, integrations} to Ruby frameworks and the \textit{core runner}~\cite{rspecdoc}.
-    In the next chapter RSpec usage for testing Java-code both at unit and integration level for Spring framework is reviewed,
-    but before this, the core concepts of RSpec are illustrated.
+    Later on in this section, RSpec usage for testing Java-code both at unit and integration level for Spring framework is reviewed.
+    Before this, the core concepts of RSpec are illustrated.
 
-    The main functionality of RSpec comes from the core runner. It includes the code \textbf{example groups} that can hold runnable
+    The main functionality of RSpec comes from the rspec-core library~\cite{rspecdoc}. It includes the code \textbf{example groups} that can hold runnable
     specification \textbf{code examples}~\cite{chelimsky2010rspec}. These examples and groups are created into a \textbf{spec} file~\cite{chelimsky2010rspec}.
     Example groups can be initialized with keywords \textit{describe}
     and \textit{context}, which both are aliases for each other~\cite{rspec-core}. Example groups can inherit each other nested in a single
     file, creating nested context groups~\cite{rspec-core}. This can help immensively on removing repetition from the test code
-    and achieving easily readable test outputs~\cite{chelimsky2010rspec}.
+    and achieving easily readable test outputs~\cite{chelimsky2010rspec}. This enabled by easily used \textbf{lifecycle hooks},
+    such as \textit{before, after} and \textit{around}~\cite{chelimsky2010rspec}.
+    These lifecycle hooks can be used to run separately for each example or just once for all examples in the example group.
 
     Specification code examples can be created with the keywords \textit{it, specify} and \textit{example}~\cite{rspec-core}.
     These examples create executable pieces of behavior of the code under specification~\cite{chelimsky2010rspec}. Code examples
@@ -65,22 +111,148 @@
     be seen as assertions from xUnit testing family, but the reason for changing the language is to support better communication
     between stakeholders, in this case developers~\cite{chelimsky2010rspec}. As BDD is an evolution of TDD, expectations
     was created to establish a better language for what the code to be developed \textit{should} do, instead of verifying it
-    with assertions~\cite{astels2006new}. The guideline is for the code examples to hold only one expectation per example~\cite{chelimsky2010rspec}.
+    with assertions~\cite{astels2006new}. The guideline for the code examples is to hold only one expectation per example~\cite{chelimsky2010rspec}.
     This allows separate info about failing situations~\cite{chelimsky2010rspec} and provides a rule \textbf{one assert per test method}
     for living specification~\cite{astels2006new}. This rule was originally created by Astels~\cite{astels2006new} to
     help TDD practitioners to change viewpoint from 1-1 relationship between test classes and methods to production classes
     and methods.
-
-    Examples of RSpec spec files are introduced in the next chapter.
     The following table shows the relationships between RSpec testing terms compared to xUnit architecture components~\cite{chelimsky2010rspec}:
     \begin{longtable}{@{}p{0.25\textwidth}p{0.7\textwidth}@{}}
     Expectations & \Longrightarrow  \textrm{Assertions} \\
     Code Example & \Longrightarrow  \textrm{Test Method} \\
     Example Group & \Longrightarrow  \textrm{Test Case} \\
     Spec File & \Longrightarrow  \textrm{Test Suite} \\
+    Lifecycle Hook & \Longrightarrow  \textrm{Test Fixture} \\
     \end{longtable}
 
+    \begin{figure}[ht]
+      \begin{center}
+        \includegraphics[width=13.7cm]{images/rspec-init.png}
+        \caption{RSpec spec file initializing}
+        \label{fig:rspec-init}
+      \end{center}
+    \end{figure}
+    Figure \ref{fig:rspec-init} displays the creation of a spec file. The spec file example is created for unit testing
+    of \textit{GameService} Java-class. Line 16. shows the creation of example group with the keyword \textit{describe}. Lines from
+    18 to 25 show the lifecycle hook \textit{before}, that is used once before all code examples in the example group.
+    In the before hook, BDD Gherkin inspired Java mocking library \textbf{Mockito}~\cite{mockito} is used for
+    creating test double objects that replace the dependencies of GameService.
+
+    Figure \ref{fig:rspec-example} illustrates use of nested example groups that contains two examples in the second
+    level nested example group. Line 27. is the first example group, that is created with keyword \textit{describe}. The second
+    level nested example group starts at line 36. and it is initialized with the keyword \textit{context}. The \textbf{context} of
+    example method is a combined from the lifecycle hooks and variable declarations of the nested example group structure.
+    \begin{figure}[ht]
+      \begin{center}
+        \includegraphics[width=13.7cm]{images/rspec-example.png}
+        \caption{RSpec nested example groups with code examples}
+        \label{fig:rspec-example}
+      \end{center}
+    \end{figure}
+    RSpec lets to define the \textbf{action} of the example group with the keyword \textit{subject}~\cite{rspec-subject}. Example of used subject is at
+    line 44. The two code examples are at lines 46-48 and 50-52.  Both examples show \textbf{expectations} given with keyword \textit{expect}
+    at lines 47 and 51. The two expectations are separated from each other following the \textit{one assert per test method}
+    to create more granular documentation of behavior. As mentioned earlier, this separation also allows independently failing code examples.
+
+    \begin{figure}[ht]
+      \begin{center}
+        \includegraphics[width=12.5cm]{images/rspec-result.png}
+        \caption{RSpec code example run output}
+        \label{fig:rspec-result}
+      \end{center}
+    \end{figure}
+    Figure \ref{fig:rspec-result} shows the output of code examples run in Integrated Development Environment (IDE) \textit{Intellij Idea}~\cite{intellij}.
+    The nested structure of example groups
+    is seen with accordion elements. At the leaf of the nested tree structure is the code example and its run result. In
+    reporting, the output of first code example is formatted as
+    \begin{center}
+    \textit{Java::FiAaltoEkanbanServices::GameService startGame() with normal difficulty should create game with given name}
+    \end{center}
+
+    To be included in the build process, getting RSpec in use for testing Java-code needs more setup than
+    other testing frameworks reviewed in this chapter. Appendix \ref{chapter:gradle-build} figure \ref{fig:rspec-build}
+    displays the full build configuration
+    needed to make RSpec a part of a \textit{Gradle}~\cite{gradle} build. To be able to run the tests in IDE \textit{Intellij Idea}},
+    JRuby environment with the needed \textit{ruby gems}~\cite{rubygems} (dependencies) installed is required.
+
+    \begin{figure}[ht]
+      \begin{center}
+        \includegraphics[width=12.0cm]{images/rspec-config.png}
+        \caption{RSpec extension for Spring Framework integration testing}
+        \label{fig:rspec-config}
+      \end{center}
+    \end{figure}
+
+    Extending RSpec for Spring Framework domain integration testing needs to be done different route than with JUnit. RSpec
+    runner can't use custom JUnit Spring runner or JUnit Spring context rules. Example group also can't be annotated with
+    spring configuration. Configuration annotation can be used with other demonstrated testing frameworks in this chapter. Figure \ref{fig:rspec-config}
+    displays the configuration that enables Spring Framework context for RSpec testing. At line 14, it scans the given
+    package for dependencies. At lines 15-17 test specific configuration is registered for the test context. Lines 25-27
+    display how to retrieve web server port for integration testing.
+
+    Figure \ref{fig:rspec-autowire}
+    illustrates how-to inject dependencies for RSpec integration testing through Spring Framework dependency injection container.
+    At line 13 the Spring Framework test context is created and at line 14 additional dependency is retrieved
+    through the initialized singleton integration test context object.
+
+    \begin{figure}[ht]
+      \begin{center}
+        \includegraphics[width=12.0cm]{images/rspec-autowire.png}
+        \caption{Spring Framework dependency injection example for RSpec}
+        \label{fig:rspec-autowire}
+      \end{center}
+    \end{figure}
+
     \subsubsection{Spectrum}
+    Spectrum is a Java 8 -based BDD-style \testbf{test runner for JUnit 4}. It is influenced by BDD implementation
+    level testing frameworks \textit{Jasmine} and \textit{RSpec}. It is used via custom runner for JUnit, and thus has good support for
+    IDEs and reporting tools that are used with JUnit. Version 1.1.0 of Spectrum supports both xSpec family specification style and Gherkin
+    family structure. This thesis inspects Spectrum more closely as a RSpec alternative for xSpec family style testing of Java-code.~\cite{spectrum}
+
+    Spectrum used in examples and later on in projects is version 1.0.2. It supports nested example groups initialized
+    with the keyword \textit{describe} and code examples with keyword \textit{it}. Both the example groups and their code
+    examples are build with Java 8 lambda blocks. It has also support for lifecycle hooks \textit{before} and \textit{after}. ~\cite{spectrum-102}
+
+    Figure \ref{fig:spectrum-example} displays the exact same Java-based specification as the JRuby RSpec one in figure \ref{fig:rspec-example}.
+    The main difference is the added verbosity from Java compared to Ruby. Otherwise the used terms and code examples
+    match one to one, except for the missing keywords \textit{context} and \textit{subject}. Figure \ref{fig:spectrum-result}
+    displays the output of code example runs in IDE Intellij Idea.
+    \begin{figure}[ht]
+      \begin{center}
+        \includegraphics[width=13.7cm]{images/spectrum-example.png}
+        \caption{Spectrum nested example groups with code examples}
+        \label{fig:spectrum-example}
+      \end{center}
+    \end{figure}
+    \begin{figure}[ht]
+      \begin{center}
+        \includegraphics[width=13.7cm]{images/spectrum-result.png}
+        \caption{Spectrum code example run output}
+        \label{fig:spectrum-result}
+      \end{center}
+    \end{figure}
+
+    Extending Spectrum 1.0.2 for Spring Framework domain integration testing happens with context configuration and imperative
+    creation of test context. At line 21 in Figure \ref{fig:spectrum-init}, JUnit is extended with custom \textit{Spectrum-runner}.
+    This enables the usage of example groups and code examples. Line 22 shows the annotation based configuration of the Spring Boot
+    test context. As mentioned in section \ref{section:junit-extend} about extending JUnit for Spring Framework,
+    the normal extending for Spring Framework would
+    happen with custom \textit{JUnit Spring runner} or \textit{JUnit rules}. Neither of these options work with the Spectrum version in use,
+    but line 33 displays alternative imperative way of loading test context. Lines 25-26 and 28-29 display the dependency
+    injection feature of Spring Framework.
+
+    \begin{figure}[ht]
+      \begin{center}
+        \includegraphics[width=13.7cm]{images/spectrum-init.png}
+        \caption{Spectrum extension for Spring Framework integration testing}
+        \label{fig:spectrum-init}
+      \end{center}
+    \end{figure}
+
+    Essentially Spectrum is a Java-based implementation of a \textbf{subset of features present in RSpec}. It is at early version,
+    and is not yet mature or widely used framework. Still, it can be considered as a fully working instance of a xSpec family
+    testing framework. Next section examines the alternative implementation level BDD testing approach: Gherkin family.
+
 
     \subsection{Gherkin family}
     Gherkin family is a term defined in this thesis, containing BDD testing frameworks that use predetermined ubiquitous
@@ -89,16 +261,24 @@
     implementation level with Gherkin, JVM offers for example \textbf{Spock}~\cite{spock} via Groovy, Java 8 -based \textbf{Spectrum}~\cite{spectrum},
     JRuby-based \textbf{RSpec-given}~\cite{rspec-given} for Rspec and Scala-based \textbf{FeatureSpec}~\cite{featurespec} for ScalaTest.
     Spock will be used as an example for inspecting implementation level testing with a Gherkin family framework.
+
     \subsubsection{Spock}
-    \textbf{Spock} is a BDD testing framework for JVM programming language Groovy~\cite{kapelonis2016java}. It supports
+    Spock is a BDD testing framework for JVM programming language Groovy~\cite{kapelonis2016java}. It supports
     testing both Java and Groovy code and it can be considered a superset of JUnit, as it extends the JUnit runner~\cite{spock}.
     As a result of this, it is considered "enterprise ready" with \textit{support for IDEs, JUnit rules, external tools} that use
     JUnit runner and easy \textit{build tool integrations}~\cite{kapelonis2016java}.
+
     Spock is capable of testing the whole automated BDD cycle from acceptance level to unit level~\cite{kapelonis2016java}.
-    It holds unit test support with integrated mocking and stubbing capabilities and integration testing support with extending it for
-    example Spring Framework~\cite{kapelonis2016java}. Spock also supports Data Driven Testing with tabular format readable DSL~\cite{spock}.
-    Data Driven Testing can drastically remove repetition from test code and makes it easier to test different parameter
-    variations~\cite{kapelonis2016java}. Figure \ref{fig:spock-debug} displays console debugger of Spock related to
+    It holds unit test support with integrated mocking and stubbing capabilities~\cite{spock}.
+    Spock can also be extended for integration testing of different domains~\cite{kapelonis2016java}.
+    Spring Framework domain extension is done with \textit{spock-spring} dependency, that can be configured with
+    the \textit{@ContextConfiguration}-annotation of Spring~\cite{springintegration}.
+
+    Spock also supports \textbf{Data Driven Testing (DDT)} with tabular format readable
+    domain specific language~\cite{spock}.
+    DDT can drastically remove repetition from test code and makes it easier to test different parameter
+    variations~\cite{kapelonis2016java}.
+    Figure \ref{fig:spock-debug} displays console debugger of Spock related to
     condition checking. This display of objects and their values and the assertion checks straight in the console
     can reduce the need for explicit debugging~\cite{kapelonis2016java}.
     \begin{figure}[ht]
@@ -117,18 +297,76 @@
     Although Spock can be configured to use plain text Gherkin, its normal usage is aimed for developer audience at implementation
     level with test code and Gherkin descriptions mixed in together~\cite{okolnychyi2016study}.
 
+    \begin{figure}[ht]
+      \begin{center}
+        \includegraphics[width=13.7cm]{images/spock-init.png}
+        \caption{Spock specification file initialization}
+        \label{fig:spock-init}
+      \end{center}
+    \end{figure}
+
     Spock terminology consists of \textbf{specification} files containing \textbf{feature methods} and Given-When-Then
-    \textbf{blocks} inside them~\cite{spock}. Examples of Spock specification files can be found in the next chapter
-    when its setup for a Gradle project is demonstrated.
+    \textbf{blocks} inside them~\cite{spock}. Figure \ref{fig:spock-init} displays initialization of a Spock specification
+    file. At line 12. the specification class is created by extending the class \textit{Spock.lang.Specification}. Lines
+    14-16 show use of \textit{@Shared}-variables, which are used for long lived objects shared between feature methods~\cite{spock}.
+    Lines 18 to 24 show the use of \textit{setup}-fixture for creating a shared, isolated context for each feature method~\cite{spock}.
+    The fixture setup is used for initializing unit testing context, where the use of \textit{Mock}-objects~\cite{spock} can be seen.
+    Class under test \textit{GameService} has its dependencies replaced with test doubles.
+
     Spock makes heavy use of Gherkin's Given-When-Then with runnable code blocks for each steps, that can contain textual
     description~\cite{kapelonis2016java}:
     \begin{itemize}
     \item \textbf{Given} is a code block used to initialize the context of test
     \item \textbf{When} is a code block used to trigger the action, stimulus of the test
-    \item \textbf{Then} is a code block containing power assertions to verify \textbf{conditions}
+    \item \textbf{Then} is a code block containing assertions to verify \textbf{conditions}
     \end{itemize}
     JUnit testing literature also states to use this kind of structure with \textbf{Arrange-Act-Assert (AAA)},
     where different parts are separated from each other with space between them~\cite{langr2015pragmatic}.
     As this structure is not enforced in JUnit, there is the considerable possibility that it will not be used~\cite{kapelonis2016java}.
+    \begin{figure}[ht]
+      \begin{center}
+        \includegraphics[width=13.7cm]{images/spock-example.png}
+        \caption{Spock feature method}
+        \label{fig:spock-example}
+      \end{center}
+    \end{figure}
 
+    Figure \ref{fig:spock-example} illustrates the contents of a feature method and the use of Given-When-Then blocks.
+    Block definitions are at lines 29, 35, 38, 42, 45 and 48 together
+    with optional~\cite{spock} textual descriptions.
+    Lines 29-33 form a \textit{Setup}-block, which is an alias for Given-block~\cite{spock}.
+    Lines 42 and 45 display the creating of \textit{And}-block, which can be used as
+    an alias for the previously occurred main block (Given-When-Then) for more readable structure~\cite{kapelonis2016java}.
+
+    Lines 39-40 display the verifying of mock object actions and stubbing capabilities.
+    For example, at line 39
+    \begin{center}
+    \textit{1 * gameInitService.getInitializedGame(gameDifficulty, playerName)}
+    \end{center}
+    verifies that the mock object method is called exactly one time with exact defined parameters \textit{gameDifficulty} and \textit{playerName}.
+    The latter part after the verifying, \textit{"\textgreater\textgreater} \textit{newGame"}, is used to stub the return value for the
+    called mock object action.
+
+    DDT can be seen with lines 26 and 48-51.
+    Line 26 \textit{@Unroll} creates a separate test run for each parameter
+    variation defined in the \textit{Where}-block (lines 48-51). Line 49. defines the parameter names and lines 50-51 are
+    separate situations that creates an individual feature method run. Finally the line 27. holds the definition of
+    the feature method. The name of feature method can be inserted as a string description, allowing more easily to write
+    information in it~\cite{kapelonis2016java}. In the example, name holds test run output information with the embedded parameters inside it.
+    The result of feature method run on the IDE Intellij Idea can be seen in the figure \ref{fig:spock-example} as two separate test runs through the DDT.
+    \begin{figure}[ht]
+      \begin{center}
+        \includegraphics[width=12.5cm]{images/spock-result.png}
+        \caption{Spock feature method output}
+        \label{fig:spock-result}
+      \end{center}
+    \end{figure}
+
+    To get Spock integrated into \textit{Gradle} build cycle with full mocking capabilities, Spring Framework support and BDD styled HTML-reporting, it needs
+    quite a few dependencies. The build configuration can be found in Appendix \ref{chapter:gradle-build} figure \ref{fig:spock-build}.
+
+    All the examples displayed in the figures are of Spock used for testing Java-code. Although at first glance the test code might
+    look like Java, the programming language used is Groovy. Groovy is aimed to resemble Java with dynamic programming language
+    capabilities and less verbose syntax~\cite{kapelonis2016java}. In the given test code examples, Java production code classes are used directly
+    from Groovy.
 

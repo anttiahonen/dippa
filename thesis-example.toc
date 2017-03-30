@@ -18,44 +18,44 @@
 \contentsline {subsection}{\numberline {2.3.1}Levels of automation}{6}{subsection.2.3.1}
 \contentsline {subsection}{\numberline {2.3.2}Low level testing explained}{7}{subsection.2.3.2}
 \contentsline {subsection}{\numberline {2.3.3}Benefits and drawbacks of automated testing}{8}{subsection.2.3.3}
-\contentsline {section}{\numberline {2.4}xUnit testing frameworks}{9}{section.2.4}
-\contentsline {subsection}{\numberline {2.4.1}JUnit}{9}{subsection.2.4.1}
-\contentsline {section}{\numberline {2.5}Test Driven Development}{11}{section.2.5}
-\contentsline {subsection}{\numberline {2.5.1}Definition}{11}{subsection.2.5.1}
-\contentsline {subsection}{\numberline {2.5.2}Benefits and drawbacks}{11}{subsection.2.5.2}
-\contentsline {section}{\numberline {2.6}Acceptance Test Driven Development}{13}{section.2.6}
-\contentsline {subsection}{\numberline {2.6.1}Benefits and drawbacks}{13}{subsection.2.6.1}
-\contentsline {section}{\numberline {2.7}Behavior Driven Development}{14}{section.2.7}
-\contentsline {subsection}{\numberline {2.7.1}History}{14}{subsection.2.7.1}
-\contentsline {subsection}{\numberline {2.7.2}Definition}{14}{subsection.2.7.2}
-\contentsline {subsection}{\numberline {2.7.3}Process}{16}{subsection.2.7.3}
-\contentsline {subsection}{\numberline {2.7.4}Levels of specification}{18}{subsection.2.7.4}
-\contentsline {subsection}{\numberline {2.7.5}Benefits and drawbacks}{19}{subsection.2.7.5}
-\contentsline {chapter}{\numberline {3}Environment}{21}{chapter.3}
-\contentsline {section}{\numberline {3.1}Extending JUnit for Spring Framework domain}{21}{section.3.1}
+\contentsline {section}{\numberline {2.4}Test Driven Development}{9}{section.2.4}
+\contentsline {subsection}{\numberline {2.4.1}Definition}{9}{subsection.2.4.1}
+\contentsline {subsection}{\numberline {2.4.2}Benefits and drawbacks}{9}{subsection.2.4.2}
+\contentsline {section}{\numberline {2.5}Acceptance Test Driven Development}{11}{section.2.5}
+\contentsline {subsection}{\numberline {2.5.1}Benefits and drawbacks}{11}{subsection.2.5.1}
+\contentsline {section}{\numberline {2.6}Behavior Driven Development}{12}{section.2.6}
+\contentsline {subsection}{\numberline {2.6.1}History}{12}{subsection.2.6.1}
+\contentsline {subsection}{\numberline {2.6.2}Definition}{13}{subsection.2.6.2}
+\contentsline {subsection}{\numberline {2.6.3}Process}{14}{subsection.2.6.3}
+\contentsline {subsection}{\numberline {2.6.4}Levels of specification}{16}{subsection.2.6.4}
+\contentsline {subsection}{\numberline {2.6.5}Benefits and drawbacks}{17}{subsection.2.6.5}
+\contentsline {chapter}{\numberline {3}Environment}{19}{chapter.3}
+\contentsline {section}{\numberline {3.1}xUnit testing frameworks}{19}{section.3.1}
+\contentsline {subsection}{\numberline {3.1.1}JUnit}{19}{subsection.3.1.1}
+\contentsline {subsection}{\numberline {3.1.2}Extending JUnit for Spring Framework domain}{21}{subsection.3.1.2}
 \contentsline {section}{\numberline {3.2}Implementation level BDD testing frameworks for JVM}{22}{section.3.2}
 \contentsline {subsection}{\numberline {3.2.1}xSpec family}{22}{subsection.3.2.1}
 \contentsline {subsubsection}{\numberline {3.2.1.1}RSpec}{22}{subsubsection.3.2.1.1}
-\contentsline {subsubsection}{\numberline {3.2.1.2}Spectrum}{23}{subsubsection.3.2.1.2}
-\contentsline {subsection}{\numberline {3.2.2}Gherkin family}{23}{subsection.3.2.2}
-\contentsline {subsubsection}{\numberline {3.2.2.1}Spock}{24}{subsubsection.3.2.2.1}
-\contentsline {chapter}{\numberline {4}Methods}{26}{chapter.4}
-\contentsline {section}{\numberline {4.1}Research questions}{26}{section.4.1}
-\contentsline {section}{\numberline {4.2}Related research}{27}{section.4.2}
-\contentsline {section}{\numberline {4.3}Research hypothesis}{28}{section.4.3}
-\contentsline {section}{\numberline {4.4}Emperical study}{29}{section.4.4}
-\contentsline {subsection}{\numberline {4.4.1}Process for selecting teams and developers}{29}{subsection.4.4.1}
-\contentsline {subsection}{\numberline {4.4.2}Interview for demographic purposes}{29}{subsection.4.4.2}
-\contentsline {subsection}{\numberline {4.4.3}Questionnaire about low level automated testing}{29}{subsection.4.4.3}
-\contentsline {section}{\numberline {4.5}Quantitative research}{29}{section.4.5}
-\contentsline {section}{\numberline {4.6}Threats to validity}{29}{section.4.6}
-\contentsline {section}{\numberline {4.7}Limitations of the case study}{30}{section.4.7}
-\contentsline {chapter}{\numberline {5}Results}{31}{chapter.5}
-\contentsline {section}{\numberline {5.1}Technical configuration}{31}{section.5.1}
-\contentsline {subsection}{\numberline {5.1.1}How teams chose their testing framework}{31}{subsection.5.1.1}
-\contentsline {subsection}{\numberline {5.1.2}Configuration of selected testing framework for project}{31}{subsection.5.1.2}
-\contentsline {section}{\numberline {5.2}Empirical study analyzed}{31}{section.5.2}
-\contentsline {section}{\numberline {5.3}Quantative research analyzed}{32}{section.5.3}
-\contentsline {chapter}{\numberline {6}Discussion}{33}{chapter.6}
-\contentsline {chapter}{\numberline {7}Conclusions}{34}{chapter.7}
-\contentsline {chapter}{\numberline {A}First appendix}{40}{appendix.A}
+\contentsline {subsubsection}{\numberline {3.2.1.2}Spectrum}{26}{subsubsection.3.2.1.2}
+\contentsline {subsection}{\numberline {3.2.2}Gherkin family}{28}{subsection.3.2.2}
+\contentsline {subsubsection}{\numberline {3.2.2.1}Spock}{29}{subsubsection.3.2.2.1}
+\contentsline {chapter}{\numberline {4}Methods}{33}{chapter.4}
+\contentsline {section}{\numberline {4.1}Research questions}{33}{section.4.1}
+\contentsline {section}{\numberline {4.2}Related research}{34}{section.4.2}
+\contentsline {section}{\numberline {4.3}Research hypothesis}{35}{section.4.3}
+\contentsline {section}{\numberline {4.4}Emperical study}{36}{section.4.4}
+\contentsline {subsection}{\numberline {4.4.1}Process for selecting teams and developers}{36}{subsection.4.4.1}
+\contentsline {subsection}{\numberline {4.4.2}Interview for demographic purposes}{36}{subsection.4.4.2}
+\contentsline {subsection}{\numberline {4.4.3}Questionnaire about low level automated testing}{36}{subsection.4.4.3}
+\contentsline {section}{\numberline {4.5}Quantitative research}{36}{section.4.5}
+\contentsline {section}{\numberline {4.6}Threats to validity}{36}{section.4.6}
+\contentsline {section}{\numberline {4.7}Limitations of the case study}{37}{section.4.7}
+\contentsline {chapter}{\numberline {5}Results}{38}{chapter.5}
+\contentsline {section}{\numberline {5.1}Technical configuration}{38}{section.5.1}
+\contentsline {subsection}{\numberline {5.1.1}How teams chose their testing framework}{38}{subsection.5.1.1}
+\contentsline {subsection}{\numberline {5.1.2}Configuration of selected testing framework for project}{38}{subsection.5.1.2}
+\contentsline {section}{\numberline {5.2}Empirical study analyzed}{38}{section.5.2}
+\contentsline {section}{\numberline {5.3}Quantative research analyzed}{39}{section.5.3}
+\contentsline {chapter}{\numberline {6}Discussion}{40}{chapter.6}
+\contentsline {chapter}{\numberline {7}Conclusions}{41}{chapter.7}
+\contentsline {chapter}{\numberline {A}Gradle build configurations}{48}{appendix.A}
