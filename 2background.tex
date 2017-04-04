@@ -4,7 +4,8 @@
 First in this section brief details of JVM are examined.
 Second, general concepts of software quality and SQA are explained.
 Third, SQA practice automated testing is inspected in more detail.
-Last in this chapter, agile methodologies TDD, ATDD and BDD are reviewed.
+For the rest of this chapter, agile methodologies Test Driven Development \textbf{(TDD)}, Acceptance Test Driven Development
+\textbf{(ATDD)} and Behavior Driven Development \textbf{(BDD)} are reviewed.
 
 \section{Java Virtual Machine} %1p
     JVM and its programming language Java was originally designed for building software on networked devices~\cite{lindholm2015java}. From there
@@ -25,7 +26,7 @@ Last in this chapter, agile methodologies TDD, ATDD and BDD are reviewed.
     JVM also hosts an array of new programming languages such as \textit{Scala, Clojure} and \textit{Groovy}~\cite{wiki:jvm}.
 
     The possibilities of these additional JVM programming languages are crucial part of this thesis. Later on testing Java-code is examined with
-    different implementation level \textbf{Behavior Driven Development (BDD)} -testing frameworks from various JVM languages.
+    different implementation level BDD-testing frameworks from various JVM languages.
 
     \begin{figure}[ht]
       \begin{center}
@@ -66,7 +67,7 @@ Last in this chapter, agile methodologies TDD, ATDD and BDD are reviewed.
     the end user~\cite{denning2016sq}. Figure \ref{fig:AQM} displays the full scale of AQM.
     While this research is mainly interested in aspects of producing traditional defect free quality software,
     later on in this chapter BDD is examined in detail. BDD can be seen to directly try to increase software quality on the AQM,
-    providing value for end users and other stakeholders with minimizing defects~\cite{chelimsky2010rspec}.
+    providing value for end users and other stakeholders while at the same time minimizing defects~\cite{chelimsky2010rspec}.
 
     \subsection{Motivation for SQA}
     Many software projects fail but also many of them are successful. Success and failure in this context have multidimensional meaning with
@@ -109,8 +110,8 @@ Last in this chapter, agile methodologies TDD, ATDD and BDD are reviewed.
     quality on the AQM.
 
     There are many more specific SQA practices that have their foundations on the activities mentioned in this section.
-    Next in this thesis testing is examined in detail through automated testing as it provides a base for agile SQA practices \textbf{Test Driven Development (TDD)},
-    \textbf{Acceptance Test Driven Development (ATDD)} and BDD.
+    Next in this thesis testing is examined in detail through automated testing as it provides a base for agile SQA practices \textbf{TDD},
+    \textbf{ATDD} and \textbf{BDD}.
 
 \section{Automated testing}
     First in this section different levels of test automation are explored. Second lower levels of test automation are explained in more
@@ -172,7 +173,7 @@ Last in this chapter, agile methodologies TDD, ATDD and BDD are reviewed.
 
     \textbf{Benefits} of test automation are vast. Systematic literature review by Rafi et al.~\cite{rafi2012benefits} has found many
     of them through various sources. Some of them can be highlighted: \textit{improved product quality, test coverage increase,
-    increase in developer confidence} and \textit{reduced testing time}~\cite{rafi2012benefits}.
+    increase in developer confidence} and \textit{reduced testing time}.
 
     Automated testing was found also to allow \textit{shorter release cycles}. This is a result of
     tests executed more often and therefore allowing defects to be detected earlier with reduced cost to fix.
@@ -201,6 +202,16 @@ Last in this chapter, agile methodologies TDD, ATDD and BDD are reviewed.
     Runeson~\cite{runeson2006survey} also found unit testing drawbacks similar to the afore mentioned automated testing problems by other studies.
     These include \textit{unit testing of GUI}, \textit{competency of developers} working with unit tests and \textit{unit test maintenance}~\cite{runeson2006survey} .
     Also the cost of unit test versus the value it provides was found problematic amongst unit testing practitioners~\cite{runeson2006survey}.
+
+    \begin{center}
+        \begin{tabular}{ | l | p{3.5cm} | p{7cm} |}
+        \hline
+        \textbf{Type} & \textbf{Action} & \textbf{Description} \\ \hline
+        Benefit & 11C & A clear day with lots of sunshine.
+        However, the strong breeze will bring down the temperatures. \\ \hline
+        \hline
+        \end{tabular}
+    \end{center}
 
     The next sections agile methodologies TDD, ATDD and BDD are all build on top of automated testing practices, operating on different levels
     of automation.
@@ -251,7 +262,6 @@ Last in this chapter, agile methodologies TDD, ATDD and BDD are reviewed.
 
     \textbf{Drawbacks} of TDD was found unanimously to include increase in development time~\cite{kollanus2010test}~\cite{bissi2016effects}~\cite{williams2009effectiveness}.
     For example in the study done by Williams et al.~\cite{williams2009effectiveness} the increase was ranging from 15\% to 35\%.
-    This could be in my opinion a result of two factors: more tests written and learning curve to practice TDD.
     As earlier mentioned, Beck~\cite{beck2001aim} defined TDD to be also a design technique. This aspect could make TDD too demanding practice for junior
     level developers~\cite{hammond2012test}.
 
@@ -284,7 +294,7 @@ Last in this chapter, agile methodologies TDD, ATDD and BDD are reviewed.
     \subsection{Benefits and drawbacks}
     One of the major \textbf{benefits} of ATDD is the frequent collaboration \& communication between
     the development team and other stakeholders. This improves the understanding of requirements~\cite{haugset2012automated}
-    between all people involved. ATDD can potentially reduce the \textit{ambiquity, noise} and \textit{over-specfication}~\cite{haugset2012automated}
+    between all people involved. ATDD can potentially reduce the \textit{ambiquity, noise} and \textit{over-specification}~\cite{haugset2012automated}
     in requirements through the use of shared language. ATDD also promotes faster feedback loop~\cite{haugset2012automated} and traceability from requirements
     to code~\cite{hayes2009towards}.
 
@@ -394,7 +404,7 @@ Last in this chapter, agile methodologies TDD, ATDD and BDD are reviewed.
     At acceptance level, features will be written down as feature files (exact naming depends on the used framework), where they are
     expressed as user stories ~\cite{chelimsky2010rspec}. Acceptance criteria is presented as executable scenarios~\cite{bdd2006north}, that usually
     follow predetermined ubiquitous language \textbf{Gherkin}~\cite{okolnychyi2016study}. Gherkin will be studied in more detail in the next
-    section when testing framework Spock is examined. Figure \ref{fig:BDD} shows how these stories and scenarios relate to system design.
+    chapter when testing framework Spock is examined. Figure \ref{fig:BDD} shows how these stories and scenarios relate to system design.
     The stakeholder audience for acceptance level BDD include all stakeholders interested in development of the product~\cite{smart2014bdd}.
 
     Some of the BDD acceptance level tools for JVM include \textit{Cucumber-JVM, Concordion} and \textit{JBehave}~\cite{okolnychyi2016study}. Other
@@ -451,7 +461,86 @@ Last in this chapter, agile methodologies TDD, ATDD and BDD are reviewed.
     These BDD frameworks are later on used to study the differences in developer low level testing practices and perception towards automated low level testing
     compared to traditional xUnit family framework JUnit.
 
+\section{Related research} % 2p
+    Although BDD and BDD testing frameworks have been around over a decade, empirical research made on the topic is limited.
+    BDD testing frameworks are in heavy use in certain programming languages and frameworks, such as \textit{RSpec} in Ruby on Rails testing~\cite{lerner2009forge},
+    \textit{Jasmine} in JavaScript testing~\cite{amodeo2015learning} and \textit{Spock}~\cite{spock} in Groovy testing.
+    There exists no exact research on how popular practicing BDD is on the mentioned environments,
+    but the reality probably is that these BDD implementation level frameworks are used largely only for testing purposes, not practicing BDD.
+    The scope of this thesis is to study the changes in low level testing from introducing BDD implementation level testing
+    frameworks without the practice of BDD.
+    Therefore, the previous findings in studies done on low level testing are the most important ones regarding this thesis.
 
+    \textbf{Daka and Fraser}~\cite{daka2014survey} studied practitioners of unit testing for used practices and problems in unit testing with a survey.
+    They found out that developers are mainly trying to find realistic scenarios on what to test.
+    They made important findings of developer perception towards unit testing, such as:
+    \begin{itemize}
+    \item Developers finding \textit{isolating} of unit under test hard
+    \item \textit{Understanding} code is bigger problem than understanding test code
+    \item Only half of the survey respondents enjoy writing unit tests
+    \item \textit{Maintaining} unit tests was found harder than writing them
+    \end{itemize}
+    They state that good automated unit tests could help understanding the production code.
+    The finding of low enjoyment of practicing unit testing in developers can be seen as troublesome
+    and Daka and Fraser notice that there exists a need for tools that rise developer enjoyment in unit testing.
+    They also note that there is potential for unit testing research to help developers produce better tests for easier debugging and fixing
+    of found defects. It was also discovered that there exists a need for easier maintaining of unit tests.
+
+    \textbf{Li et al}.~\cite{li2016automatically} studied unit testing practices with a developer survey. They specialized in studying
+    the documentation of unit testing practices. One general major problem they found out was that 60.38\% of practitioners found understanding of
+    unit tests ranging from moderately difficult to very hard. Relevant findings with unit testing documention practices
+    were:
+
+    \begin{itemize}
+    \item Developers find updated documentation and comments in test cases useful
+    \item Writing comments to unit tests is rarely or never done
+    \item Developers feel that tests should be self-documenting without comments
+    \end{itemize}
+
+    Li et al. state that for effecting maintaining of test cases, it is important for developers to understand the impact and
+    functionality of the test case. They also observed that 89.15\% percent of developers agree or strongly agree that maintaining
+    of test cases impacts the quality of software system. They conclude that tools for supporting maintaining of unit tests could
+    benefit unit test practitioners.
+
+    \textbf{Runeson} ~\cite{runeson2006survey} studied unit testing practices in companies to define unit testing and to evaluate it.
+    He states that companies with unclear definition for unit testing face the risk to do bad or inconsistent
+    testing. Runeson also found out that unit testing strategies are usually emerging from developers own ambitions, instead of
+    management policies.
+    Related to problems in unit tests, it was found out that maintaining of unit tests takes much effort. Other
+    major problem was developer motivation, which seemed low when working with unit tests.
+
+    Runeson also surveyed developers about documenting practices in unit testing. He found out that unit tests
+    are documented preferably in test code rather than in text. He states that motivation to do unit testing in agile projects
+    could include test suites functioning as specification.
+
+    \textbf{Williams et al.}~\cite{williams2009effectiveness} studied effectiviness of unit test automation at Microsoft. They also
+    surveyed developers about perception towards unit testing.  Around 90\% of developers agree or strongly agree that unit
+    tests are useful for regression testing. Around same percentage of developers see unit tests helpful in aiding them to
+    produce higher quality code. 60-70\% of developers find unit tests helpful in understanding other peoples code and
+    unit tests also helped them to debug found problems.
+
+    \textbf{Berner et al.}~\cite{berner2005observations} report observations from their own and team members experiences of
+    automated testing in general. In their experience, test cases at all levels get corrupted easily if they are not
+    run frequently. They become inconsistent and difficult to understand. Neglecting test case maintenance effort can result
+    in test cases that lose their information value running capability. The cost to restore this type of test cases is very high.
+    Berner et al. state that inappropriate testware architecture can cause the observed problems.
+
+    In master's thesis by \textbf{Laplante}~\cite{laplante2009behavior} where she studied differences of TDD and BDD taken into use,
+    she found out through a survey that practitioners perceive BDD
+    specifications to produce more readable tests than TDD counterparts practiced with \textbf{xUnit family testing frameworks}. Laplante
+    also states as interesting future work studying the use of dynamic languages, such as JRuby, for Java testing on the JVM-platform.
+
+    \textbf{In conclusion}, unit testing was found to have many problematic areas from developers perspective.
+    These include aspects such as \textit{readability,
+    maintainability} and \textit{enjoyment in practicing unit tests}. Many unit testing practitioners also feel the need for
+    test code to be \textit{self-documenting}. Implementation level BDD testing tools are advertised to
+    help in creating living documentation for the code and also in providing features to help maintaining the test cases~\cite{smart2014bdd}.
+    Main topic of interest in later chapters of this thesis is in studying implementation level BDD testing frameworks and
+    if they can help with the unit test practitioner problems illustrated in this section.
+
+    Next chapter starts with first examining xUnit testing family tools. These tools are the traditional testing tools in use for the
+    related research explained in this section. After that, implementation level BDD testing frameworks are demonstrated in detail
+    with examples to see how they differ from the xUnit family.
 
 
 

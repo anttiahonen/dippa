@@ -41,6 +41,8 @@ running on top of JVM programming languages are demonstrated as an alternative f
     be used with TestRunner. \textbf{TestResult} class is used to collect test method outcomes from TestSuites and TestCases.
     Figure \ref{fig:junit} visualizes the relationships between the core classes, interfaces and methods of JUnit architecture. ~\cite{hamill2004unit}
 
+    JUnit is a \textit{"Spartan"} test framework, it contains only the mandatory features and has to use additional libraries
+    to provide additional testing features such as as mocking or \textbf{Data Driven Testing (DDT)}~\cite{kapelonis2016java}.
     In the next section, example is provided of a JUnit4 test case extended for integration testing of Spring Framework domain.
 
     \subsection{Extending JUnit for Spring Framework domain}
@@ -52,21 +54,50 @@ running on top of JVM programming languages are demonstrated as an alternative f
     configured for the project~\cite{wiki:spring}. \textbf{Spring Boot} is \textit{convention-over-configuration} solution
     composed of the Spring Framework components, that enables rapid application development with minimal effort to get started~\cite{wiki:spring}.
 
-    Spring Framework integration testing can be done by extending JUnit with custom Spring JUnit runner class or by using Spring JUnit class and
-    method rules. Runner class and the Spring JUnit rules both provide standard Spring test context
+    Spring Framework integration testing can be done by extending JUnit with custom \textit{Spring JUnit runner} class or by using Spring \textit{JUnit class and
+    method rules}. Runner class and the Spring JUnit rules both provide standard Spring test context
     for integration tests with features such as dependency injection and transactional test method execution. ~\cite{springintegration}
 
     \begin{figure}[ht]
       \begin{center}
-        \includegraphics[width=13.5cm]{images/springrunner.png}
+        \includegraphics[width=12.5cm]{images/junit-init.png}
         \caption{JUnit extended for Spring integration testing}
         \label{fig:springrunner}
       \end{center}
     \end{figure}
 
-    Figure \ref{fig:springrunner} shows example of a Spring Boot JUnit integration test, where the context and its configuration are
-    loaded with lines 33 and 34. Line 33. is an example of extending JUnit with custom runner. Lines 42-43 show example of injected dependency
-    via Spring Framework.
+    Figure \ref{fig:springrunner} shows example of a Spring Boot JUnit integration test, where the \textbf{context and its configuration} are
+    loaded with lines 16 and 17. Line 16. is an example of extending JUnit with custom runner. Lines 20-21 and 23-24 show
+    examples of \textbf{injected dependency} via Spring Framework.
+
+    \begin{figure}[ht]
+      \begin{center}
+        \includegraphics[width=13.7cm]{images/junit-integration.png}
+        \caption{JUnit Spring integration tests}
+        \label{fig:junit-examples}
+      \end{center}
+    \end{figure}
+
+    Figure \ref{fig:junit-examples} displays the usage of \textbf{fixture} and two \textbf{test methods}. At lines 29-33 the fixture method
+    inits separately before each test method run two common variables used in both tests. Lines 35-36 and 44-45 display two test method definitions with the
+    \textit{@Test}-annotation from JUnit4. When used, it marks the following method as a runnable test method. Both test methods
+    contain \textbf{assertions}. Assertions in use at lines 39-41 and 51 are \textit{Hamcrest matchers}~\cite{hamcrest}, that
+    allows more readable descriptions for used assertions than traditional JUnit assertions.
+
+    \begin{figure}[ht]
+      \begin{center}
+        \includegraphics[width=12.5cm]{images/junit-result.png}
+        \caption{JUnit test run results}
+        \label{fig:junit-result}
+      \end{center}
+    \end{figure}
+
+    Figure \ref{fig:junit-result} shows the result of the test case run. Even though the example test methods start with the word test,
+    JUnit4 allows free format naming of the test methods that don't need to start with test. This also allows to use JUnit as a tool for practicing
+    implementation level BDD with some added verbosity in test method naming~\cite{smart2014bdd}.
+
+    Build configuration of JUnit4 used in examples can be found in Appendix \ref{chapter:gradle-build} figure \ref{fig:junit-build}.
+    Used build tool is Groovy-based \textit{Gradle}~\cite{gradle}.
 
     JUnit and its extensions provide a base for automated low level testing of Java-code.
     In the next section alternatives for Java-code testing are presented with implementation level BDD testing frameworks from
@@ -96,12 +127,12 @@ running on top of JVM programming languages are demonstrated as an alternative f
     Later on in this section, RSpec usage for testing Java-code both at unit and integration level for Spring framework is reviewed.
     Before this, the core concepts of RSpec are illustrated.
 
-    The main functionality of RSpec comes from the rspec-core library~\cite{rspecdoc}. It includes the code \textbf{example groups} that can hold runnable
+    The main functionality of RSpec comes from the \textit{rspec-core} library~\cite{rspecdoc}. It includes the code \textbf{example groups} that can hold runnable
     specification \textbf{code examples}~\cite{chelimsky2010rspec}. These examples and groups are created into a \textbf{spec} file~\cite{chelimsky2010rspec}.
     Example groups can be initialized with keywords \textit{describe}
     and \textit{context}, which both are aliases for each other~\cite{rspec-core}. Example groups can inherit each other nested in a single
     file, creating nested context groups~\cite{rspec-core}. This can help immensively on removing repetition from the test code
-    and achieving easily readable test outputs~\cite{chelimsky2010rspec}. This enabled by easily used \textbf{lifecycle hooks},
+    and achieving easily readable test outputs~\cite{chelimsky2010rspec}. This is enabled by easily usable \textbf{lifecycle hooks},
     such as \textit{before, after} and \textit{around}~\cite{chelimsky2010rspec}.
     These lifecycle hooks can be used to run separately for each example or just once for all examples in the example group.
 
@@ -172,7 +203,7 @@ running on top of JVM programming languages are demonstrated as an alternative f
     To be included in the build process, getting RSpec in use for testing Java-code needs more setup than
     other testing frameworks reviewed in this chapter. Appendix \ref{chapter:gradle-build} figure \ref{fig:rspec-build}
     displays the full build configuration
-    needed to make RSpec a part of a \textit{Gradle}~\cite{gradle} build. To be able to run the tests in IDE \textit{Intellij Idea}},
+    needed to make RSpec a part of a \textit{Gradle} build. To be able to run the tests in IDE \textit{Intellij Idea}},
     JRuby environment with the needed \textit{ruby gems}~\cite{rubygems} (dependencies) installed is required.
 
     \begin{figure}[ht]
@@ -204,18 +235,20 @@ running on top of JVM programming languages are demonstrated as an alternative f
     \end{figure}
 
     \subsubsection{Spectrum}
-    Spectrum is a Java 8 -based BDD-style \testbf{test runner for JUnit 4}. It is influenced by BDD implementation
+    Spectrum is a Java 8 -based BDD-style \textbf{test runner for JUnit 4}. It is influenced by BDD implementation
     level testing frameworks \textit{Jasmine} and \textit{RSpec}. It is used via custom runner for JUnit, and thus has good support for
     IDEs and reporting tools that are used with JUnit. Version 1.1.0 of Spectrum supports both xSpec family specification style and Gherkin
     family structure. This thesis inspects Spectrum more closely as a RSpec alternative for xSpec family style testing of Java-code.~\cite{spectrum}
 
-    Spectrum used in examples and later on in projects is version 1.0.2. It supports nested example groups initialized
-    with the keyword \textit{describe} and code examples with keyword \textit{it}. Both the example groups and their code
-    examples are build with Java 8 lambda blocks. It has also support for lifecycle hooks \textit{before} and \textit{after}. ~\cite{spectrum-102}
+    Spectrum used in examples and later on in projects is version 1.0.2. It supports nested \textbf{example groups} initialized
+    with the keyword \textit{describe} and \textbf{code examples} with keyword \textit{it}. Both the example groups and their code
+    examples are build with Java 8 lambda blocks. It has also support for \textbf{lifecycle hooks} \textit{before} and \textit{after}. ~\cite{spectrum-102}
 
     Figure \ref{fig:spectrum-example} displays the exact same Java-based specification as the JRuby RSpec one in figure \ref{fig:rspec-example}.
-    The main difference is the added verbosity from Java compared to Ruby. Otherwise the used terms and code examples
-    match one to one, except for the missing keywords \textit{context} and \textit{subject}. Figure \ref{fig:spectrum-result}
+    The main difference is the added verbosity from Java compared to Ruby. Otherwise the used example groups and their code examples
+    match one to one. Exceptions in used terminology are missing keywords \textit{context} and \textit{subject}.
+    Deviation from RSpec is also the usage of \textbf{assertions} with \textit{Hamcrest matchers} instead of \textit{expectations}.
+    Figure \ref{fig:spectrum-result}
     displays the output of code example runs in IDE Intellij Idea.
     \begin{figure}[ht]
       \begin{center}
@@ -240,6 +273,9 @@ running on top of JVM programming languages are demonstrated as an alternative f
     happen with custom \textit{JUnit Spring runner} or \textit{JUnit rules}. Neither of these options work with the Spectrum version in use,
     but line 33 displays alternative imperative way of loading test context. Lines 25-26 and 28-29 display the dependency
     injection feature of Spring Framework.
+
+    Build configuration for shown examples can be found in Appendix \ref{chapter:gradle-build} figure \ref{fig:spectrum-build}.
+    The used build tool is \textit{Gradle}.
 
     \begin{figure}[ht]
       \begin{center}
@@ -274,7 +310,7 @@ running on top of JVM programming languages are demonstrated as an alternative f
     Spring Framework domain extension is done with \textit{spock-spring} dependency, that can be configured with
     the \textit{@ContextConfiguration}-annotation of Spring~\cite{springintegration}.
 
-    Spock also supports \textbf{Data Driven Testing (DDT)} with tabular format readable
+    Spock also supports \textbf{DDT} with tabular format readable
     domain specific language~\cite{spock}.
     DDT can drastically remove repetition from test code and makes it easier to test different parameter
     variations~\cite{kapelonis2016java}.
@@ -316,8 +352,8 @@ running on top of JVM programming languages are demonstrated as an alternative f
     Spock makes heavy use of Gherkin's Given-When-Then with runnable code blocks for each steps, that can contain textual
     description~\cite{kapelonis2016java}:
     \begin{itemize}
-    \item \textbf{Given} is a code block used to initialize the context of test
-    \item \textbf{When} is a code block used to trigger the action, stimulus of the test
+    \item \textbf{Given} is a code block used to initialize the \textbf{context} of test
+    \item \textbf{When} is a code block used to trigger the \textbf{action}, stimulus of the test
     \item \textbf{Then} is a code block containing assertions to verify \textbf{conditions}
     \end{itemize}
     JUnit testing literature also states to use this kind of structure with \textbf{Arrange-Act-Assert (AAA)},
