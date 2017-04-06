@@ -164,7 +164,26 @@ For the rest of this chapter, agile methodologies Test Driven Development \textb
     Integration tests are not usually as fasts as unit tests~\cite{artofunit2013}. Many times this results from including
     full context of the system through dependency injection container, such as \textit{Spring Framework} or \textit{Guice}~\cite{kapelonis2016java}.
 
-    \subsection{Benefits and drawbacks of automated testing}
+    \subsection{Benefits and drawbacks}
+
+    \begin{table}[H]
+        \begin{center}
+            \begin{tabular}{ | p{6.3cm} | p{6.3cm} |}
+            \hline
+            \textbf{Benefits} & \textbf{Drawbacks} \\ \hline
+            Rapid feedback~\cite{prechelt2016quality} & Can't replace manual testing~\cite{rafi2012benefits} \\ \hline
+            Improved product quality~\cite{rafi2012benefits}~\cite{williams2009effectiveness} & Maintaining difficulty~\cite{rafi2012benefits}~\cite{runeson2006survey} \\ \hline
+            Increased test coverage~\cite{rafi2012benefits} & Lack of skilled people~\cite{rafi2012benefits}~\cite{runeson2006survey} \\ \hline
+            Increased developer confidence~\cite{rafi2012benefits} & Hard to select correct testing strategies~\cite{rafi2012benefits}~\cite{berner2005observations} \\ \hline
+            Reduced testing time~\cite{rafi2012benefits} & Brittle tests~\cite{berner2005observations} \\ \hline
+            Shorter release cycle~\cite{berner2005observations} & More development time~\cite{williams2009effectiveness} \\ \hline
+            Increased testability design~\cite{berner2005observations} & Cost versus value~\cite{runeson2006survey} \\ \hline
+            Act as documentation~\cite{langr2015pragmatic}~\cite{chelimsky2010rspec}~\cite{kapelonis2016java} & Unmaintaned tests can lose all value~\cite{berner2005observations} \\ \hline
+            Continuous regression~\cite{williams2009effectiveness} &  \\ \hline
+            \end{tabular}
+            \caption {Automated Testing Benefits \& Drawbacks} \label{tab:automated-title}
+        \end{center}
+    \end{table}
     Agile methodologies do not prefer or deny separate testers inside a project, but for a modern quality centered
     development separate testers might hinder the experience~\cite{prechelt2016quality}. Teams without separate testers have one aspect in common,
     they rely heavily on test automation as the core of quality. One of the most important properties in these kind of
@@ -203,16 +222,6 @@ For the rest of this chapter, agile methodologies Test Driven Development \textb
     These include \textit{unit testing of GUI}, \textit{competency of developers} working with unit tests and \textit{unit test maintenance}~\cite{runeson2006survey} .
     Also the cost of unit test versus the value it provides was found problematic amongst unit testing practitioners~\cite{runeson2006survey}.
 
-    \begin{center}
-        \begin{tabular}{ | l | p{3.5cm} | p{7cm} |}
-        \hline
-        \textbf{Type} & \textbf{Action} & \textbf{Description} \\ \hline
-        Benefit & 11C & A clear day with lots of sunshine.
-        However, the strong breeze will bring down the temperatures. \\ \hline
-        \hline
-        \end{tabular}
-    \end{center}
-
     The next sections agile methodologies TDD, ATDD and BDD are all build on top of automated testing practices, operating on different levels
     of automation.
 
@@ -222,6 +231,7 @@ For the rest of this chapter, agile methodologies Test Driven Development \textb
     This is done by driving development with automated tests - Test Driven Development. TDD consists of two basic rules:
     \textit{write new production code only when automated test fails} and
     \textit{eliminate duplicated code}. These two rules are the base for \textbf{Red-Green cycle} of TDD:
+
     \begin{enumerate}
     \item \textbf{Red}: Design and write a small simple test. Run it and see it fail.
     \item \textbf{Green}: Add code sufficient to make the earlier written test pass.
@@ -242,6 +252,20 @@ For the rest of this chapter, agile methodologies Test Driven Development \textb
     where both can affect each other. Code is produced only through design captured in unit tests.
 
     \subsection{Benefits and drawbacks}
+
+    \begin{table}[H]
+        \begin{center}
+            \begin{tabular}{ | p{6.3cm} | p{6.3cm} |}
+            \hline
+            \textbf{Benefits} & \textbf{Drawbacks} \\ \hline
+            Increased external quality~\cite{kollanus2010test}~\cite{bissi2016effects} & Increased\newline development time~\cite{kollanus2010test}~\cite{bissi2016effects}~\cite{williams2009effectiveness}  \\ \hline
+            Increased test coverage~\cite{bissi2016effects} &  Requires high discipline~\cite{aniche2010most} \\ \hline
+            Tests executed more~\cite{williams2009effectiveness} & Can lead to brittle tests~\cite{chelimsky2010rspec}~\cite{astels2006new}~\cite{amodeo2015learning} \\ \hline
+            More precise test cases~\cite{williams2009effectiveness} &  \\ \hline
+            \end{tabular}
+            \caption {TDD Benefits \& Drawbacks} \label{tab:tdd-title}
+        \end{center}
+    \end{table}
     \textbf{Benefits} of TDD are not totally clear and exact. On earlier systematic literature review by Kollanus~\cite{kollanus2010test} in 2010 there was found
     weak evidence regarding better \textbf{external software quality} with TDD and even less evidence for better \textbf{internal software quality} with TDD.
     In any case, there was still results pointing to better quality, even though evidence was not uniform.
@@ -292,6 +316,23 @@ For the rest of this chapter, agile methodologies Test Driven Development \textb
     only a starting point for more quality assurance work; the system is stable enough to be manually tested further~\cite{acceptance2010}.
 
     \subsection{Benefits and drawbacks}
+
+    \begin{table}[H]
+        \begin{center}
+            \begin{tabular}{ | p{6.3cm} | p{6.3cm} |}
+            \hline
+            \textbf{Benefits} & \textbf{Drawbacks} \\ \hline
+            Frequent collaboration~\cite{haugset2012automated} & Demands frequent collaboration~\cite{haugset2012automated}  \\ \hline
+            Less ambiquity, noise and over-specification in requirements~\cite{haugset2012automated} & Needs active customer~\cite{haugset2012automated}  \\ \hline
+            Faster feedback~\cite{haugset2012automated} & High upfront cost~\cite{haugset2012automated}  \\ \hline
+            Increased requirement traceability~\cite{hayes2009towards} & Works bad with constantly changing requirements~\cite{haugset2012automated}  \\ \hline
+            Increased trust~\cite{haugset2012automated} & Learning curve~\cite{haugset2012automated} \\ \hline
+            Increased test coverage~\cite{haugset2012automated} & Not for all contextes~\cite{haugset2012automated}  \\ \hline
+            Faster start for new team members~\cite{haugset2012automated} & Requires high discipline~\cite{haugset2012automated}  \\ \hline
+            \end{tabular}
+            \caption {ATDD Benefits \& Drawbacks} \label{tab:atdd-title}
+        \end{center}
+    \end{table}
     One of the major \textbf{benefits} of ATDD is the frequent collaboration \& communication between
     the development team and other stakeholders. This improves the understanding of requirements~\cite{haugset2012automated}
     between all people involved. ATDD can potentially reduce the \textit{ambiquity, noise} and \textit{over-specification}~\cite{haugset2012automated}
@@ -350,7 +391,7 @@ For the rest of this chapter, agile methodologies Test Driven Development \textb
     the minimal sufficient amount of effort should be given to \textit{planning, analysis, design} and \textit{automation}~\cite{chelimsky2010rspec}.
     This means doing activities just enough to incrementally provide small pieces of value, but not with the expense of
     quality.
-    \clearpage
+
     \subsection{Process}
     The driving factor of BDD is the analysis process through user stories and their format:\newline\
     \begin{addmargin}[2em]{2em}
@@ -433,6 +474,26 @@ For the rest of this chapter, agile methodologies Test Driven Development \textb
     \textit{Spectrum}.
 
     \subsection{Benefits and drawbacks}
+
+    \begin{table}[H]
+        \begin{center}
+            \begin{tabular}{ | p{6.3cm} | p{6.3cm} |}
+            \hline
+            \textbf{Benefits} & \textbf{Drawbacks} \\ \hline
+            Frequent collaboration*~\cite{haugset2012automated} & Demands frequent collaboration*~\cite{haugset2012automated}  \\ \hline
+            Less ambiquity, noise and over-specification in requirements*~\cite{haugset2012automated} & Needs active customer*~\cite{haugset2012automated}  \\ \hline
+            Faster feedback*~\cite{haugset2012automated} & High upfront cost*~\cite{haugset2012automated}  \\ \hline
+            Increased requirement traceability*~\cite{hayes2009towards} & Works bad with constantly changing requirements*~\cite{haugset2012automated}  \\ \hline
+            Increased trust*~\cite{haugset2012automated} & Learning curve*~\cite{haugset2012automated} \\ \hline
+            Increased test coverage*~\cite{haugset2012automated} & Not for all contextes*~\cite{haugset2012automated}  \\ \hline
+            Faster start for new team members*~\cite{haugset2012automated} & Requires high discipline*~\cite{haugset2012automated}  \\ \hline
+            Ubiquitous language can help in testing right aspects ~\cite{okolnychyi2016study} &  \\ \hline
+            Can reduce futile feature development~\cite{smart2014bdd} &  \\ \hline
+            \end{tabular}
+            \caption {Acceptance Level BDD Benefits \& Drawbacks} \label{tab:bdd-acc-title}
+            \caption* {* = No actual source, based on implications}
+        \end{center}
+    \end{table}
     \textbf{Benefits} (and drawbacks) of \textbf{acceptance level BDD} are almost fully the same as in ATDD. This is the result of
     acceptance level BDD being a form of ATDD~\cite{gartner2012atdd}. Compared to ATDD, Acceptance level BDD introduces the ubiquitous language
     and it can have the effect of changing all stakeholders to think about testing to describe
@@ -440,6 +501,21 @@ For the rest of this chapter, agile methodologies Test Driven Development \textb
     features can also reduce production of features that are not used~\cite{smart2014bdd}.
     \textbf{Drawbacks} of acceptance level BDD are identical to the earlier mentioned ones of ATDD.
 
+    \begin{table}[H]
+        \begin{center}
+            \begin{tabular}{ | p{6.3cm} | p{6.3cm} |}
+            \hline
+            \textbf{Benefits} & \textbf{Drawbacks} \\ \hline
+            Increased external quality*~\cite{kollanus2010test}~\cite{bissi2016effects} & Increased\newline development time*~\cite{kollanus2010test}~\cite{bissi2016effects}~\cite{williams2009effectiveness} \\ \hline
+            Increased internal quality*~\cite{bissi2016effects} & Requires high discipline~\cite{smart2014bdd} \\ \hline
+            Helps to test right aspects of component~\cite{chelimsky2010rspec}~\cite{astels2006new}~\cite{amodeo2015learning} & \\ \hline
+            More granular test cases~\cite{chelimsky2010rspec}~\cite{astels2006new} & \\ \hline
+            Can help in maintenance~\cite{smart2014bdd} & \\ \hline
+            \end{tabular}
+            \caption {Implementation Level BDD Benefits \& Drawbacks} \label{tab:bdd-imp-title}
+            \caption*{* = No actual source, based on implications}
+        \end{center}
+    \end{table}
     \textbf{Benefits} of \textbf{implementation level BDD} share the same characteristics of TDD. Although there exists no research
     on how the external and internal quality of software changes with BDD, it should share the same traits as described
     earlier with benefits of TDD. This is a result of implementation level BDD being an evolution of TDD~\cite{astels2006new}.
@@ -449,19 +525,20 @@ For the rest of this chapter, agile methodologies Test Driven Development \textb
     Implementation level BDD aims to produce more granular and descriptive test methods and test cases than TDD~\cite{chelimsky2010rspec}~\cite{astels2006new}.
     These test cases are also describing the behavior of production code by examples~\cite{chelimsky2010rspec}.
     This can help the system maintenance, providing up-to-date documentation for future developers or even the original developer
-    later on in the future~\cite{smart2014bdd}. \textbf{Drawbacks} of implementation level BDD are not clear, as empirical research on the topic is nonexistent.
+    later on in the future~\cite{smart2014bdd}.
+
+    \textbf{Drawbacks} of implementation level BDD are not clear, as empirical research on the topic is nonexistent.
     Because of the close relation to TDD, practicing it should introduce a growth in development time~\cite{kollanus2010test}~\cite{bissi2016effects}~\cite{williams2009effectiveness}.
     BDD as whole needs discipline~\cite{smart2014bdd}, therefore it might not be a good fit for all projects and their stakeholders.
     It was also found that BDD is most beneficial when it is used as a holistic approach~\cite{solis2011study}.
     This means including both levels of specification and accommodating working practices to fully support it}.
 
     As the research on this implementation level of BDD is very limited, this thesis focuses on tools used in it. The main topic of interest is how well
-    they could replace traditional xUnit testing family even without tests first principle.
-    In the next section, xUnit testing frameworks and implementation level BDD testing frameworks are examined in more detail.
-    These BDD frameworks are later on used to study the differences in developer low level testing practices and perception towards automated low level testing
-    compared to traditional xUnit family framework JUnit.
+    they could replace traditional xUnit testing family even without tests first principle. Before inspecting these JVM testing
+    frameworks in detail, related research about low level testing practices are reviewed.
 
 \section{Related research} % 2p
+\label{section:research}
     Although BDD and BDD testing frameworks have been around over a decade, empirical research made on the topic is limited.
     BDD testing frameworks are in heavy use in certain programming languages and frameworks, such as \textit{RSpec} in Ruby on Rails testing~\cite{lerner2009forge},
     \textit{Jasmine} in JavaScript testing~\cite{amodeo2015learning} and \textit{Spock}~\cite{spock} in Groovy testing.

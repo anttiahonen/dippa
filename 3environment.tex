@@ -187,7 +187,7 @@ running on top of JVM programming languages are demonstrated as an alternative f
 
     \begin{figure}[ht]
       \begin{center}
-        \includegraphics[width=12.5cm]{images/rspec-result.png}
+        \includegraphics[width=12.0cm]{images/rspec-result.png}
         \caption{RSpec code example run output}
         \label{fig:rspec-result}
       \end{center}
@@ -200,13 +200,7 @@ running on top of JVM programming languages are demonstrated as an alternative f
     \textit{Java::FiAaltoEkanbanServices::GameService startGame() with normal difficulty should create game with given name}
     \end{center}
 
-    To be included in the build process, getting RSpec in use for testing Java-code needs more setup than
-    other testing frameworks reviewed in this chapter. Appendix \ref{chapter:gradle-build} figure \ref{fig:rspec-build}
-    displays the full build configuration
-    needed to make RSpec a part of a \textit{Gradle} build. To be able to run the tests in IDE \textit{Intellij Idea}},
-    JRuby environment with the needed \textit{ruby gems}~\cite{rubygems} (dependencies) installed is required.
-
-    \begin{figure}[ht]
+    \begin{figure}[H]
       \begin{center}
         \includegraphics[width=12.0cm]{images/rspec-config.png}
         \caption{RSpec extension for Spring Framework integration testing}
@@ -233,6 +227,12 @@ running on top of JVM programming languages are demonstrated as an alternative f
         \label{fig:rspec-autowire}
       \end{center}
     \end{figure}
+
+    To be included in the build process, getting JRuby-based RSpec in use for testing Java-code needs more setup than
+    other testing frameworks reviewed in this chapter. Appendix \ref{chapter:gradle-build} figure \ref{fig:rspec-build}
+    displays the full build configuration
+    needed to make RSpec a part of a \textit{Gradle} build. To be able to run the tests in IDE \textit{Intellij Idea}},
+    JRuby environment with the needed \textit{ruby gems}~\cite{rubygems} (dependencies) installed is required.
 
     \subsubsection{Spectrum}
     Spectrum is a Java 8 -based BDD-style \textbf{test runner for JUnit 4}. It is influenced by BDD implementation
@@ -311,7 +311,7 @@ running on top of JVM programming languages are demonstrated as an alternative f
     the \textit{@ContextConfiguration}-annotation of Spring~\cite{springintegration}.
 
     Spock also supports \textbf{DDT} with tabular format readable
-    domain specific language~\cite{spock}.
+    domain specific language (DSL)~\cite{spock}.
     DDT can drastically remove repetition from test code and makes it easier to test different parameter
     variations~\cite{kapelonis2016java}.
     Figure \ref{fig:spock-debug} displays console debugger of Spock related to
@@ -405,4 +405,7 @@ running on top of JVM programming languages are demonstrated as an alternative f
     look like Java, the programming language used is Groovy. Groovy is aimed to resemble Java with dynamic programming language
     capabilities and less verbose syntax~\cite{kapelonis2016java}. In the given test code examples, Java production code classes are used directly
     from Groovy.
+
+    Next chapter explains the research around testing Java-code with different testing possibilities explained in this environment
+    chapter. Chapter \ref{chapter:methods} will first explain what the empicical research focuses on and then how it does it.
 

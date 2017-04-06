@@ -17,45 +17,52 @@
 \contentsline {section}{\numberline {2.3}Automated testing}{6}{section.2.3}
 \contentsline {subsection}{\numberline {2.3.1}Levels of automation}{6}{subsection.2.3.1}
 \contentsline {subsection}{\numberline {2.3.2}Low level testing explained}{7}{subsection.2.3.2}
-\contentsline {subsection}{\numberline {2.3.3}Benefits and drawbacks of automated testing}{8}{subsection.2.3.3}
+\contentsline {subsection}{\numberline {2.3.3}Benefits and drawbacks}{8}{subsection.2.3.3}
 \contentsline {section}{\numberline {2.4}Test Driven Development}{9}{section.2.4}
 \contentsline {subsection}{\numberline {2.4.1}Definition}{9}{subsection.2.4.1}
-\contentsline {subsection}{\numberline {2.4.2}Benefits and drawbacks}{10}{subsection.2.4.2}
-\contentsline {section}{\numberline {2.5}Acceptance Test Driven Development}{11}{section.2.5}
-\contentsline {subsection}{\numberline {2.5.1}Benefits and drawbacks}{12}{subsection.2.5.1}
-\contentsline {section}{\numberline {2.6}Behavior Driven Development}{12}{section.2.6}
-\contentsline {subsection}{\numberline {2.6.1}History}{13}{subsection.2.6.1}
-\contentsline {subsection}{\numberline {2.6.2}Definition}{13}{subsection.2.6.2}
-\contentsline {subsection}{\numberline {2.6.3}Process}{14}{subsection.2.6.3}
-\contentsline {subsection}{\numberline {2.6.4}Levels of specification}{16}{subsection.2.6.4}
-\contentsline {subsection}{\numberline {2.6.5}Benefits and drawbacks}{17}{subsection.2.6.5}
-\contentsline {section}{\numberline {2.7}Related research}{18}{section.2.7}
-\contentsline {chapter}{\numberline {3}Environment}{21}{chapter.3}
-\contentsline {section}{\numberline {3.1}xUnit testing frameworks}{21}{section.3.1}
-\contentsline {subsection}{\numberline {3.1.1}JUnit}{21}{subsection.3.1.1}
-\contentsline {subsection}{\numberline {3.1.2}Extending JUnit for Spring Framework domain}{23}{subsection.3.1.2}
-\contentsline {section}{\numberline {3.2}Implementation level BDD testing frameworks for JVM}{25}{section.3.2}
-\contentsline {subsection}{\numberline {3.2.1}xSpec family}{25}{subsection.3.2.1}
-\contentsline {subsubsection}{\numberline {3.2.1.1}RSpec}{25}{subsubsection.3.2.1.1}
-\contentsline {subsubsection}{\numberline {3.2.1.2}Spectrum}{29}{subsubsection.3.2.1.2}
-\contentsline {subsection}{\numberline {3.2.2}Gherkin family}{31}{subsection.3.2.2}
-\contentsline {subsubsection}{\numberline {3.2.2.1}Spock}{32}{subsubsection.3.2.2.1}
-\contentsline {chapter}{\numberline {4}Methods}{36}{chapter.4}
-\contentsline {section}{\numberline {4.1}Research questions}{36}{section.4.1}
-\contentsline {section}{\numberline {4.2}Research hypothesis}{37}{section.4.2}
-\contentsline {section}{\numberline {4.3}Emperical study}{37}{section.4.3}
-\contentsline {subsection}{\numberline {4.3.1}Process for selecting teams and developers}{37}{subsection.4.3.1}
-\contentsline {subsection}{\numberline {4.3.2}Interview for demographic purposes}{37}{subsection.4.3.2}
-\contentsline {subsection}{\numberline {4.3.3}Questionnaire about low level automated testing}{37}{subsection.4.3.3}
-\contentsline {subsection}{\numberline {4.3.4}Quantitative research}{37}{subsection.4.3.4}
-\contentsline {section}{\numberline {4.4}Threats to validity}{38}{section.4.4}
-\contentsline {section}{\numberline {4.5}Limitations of the case study}{38}{section.4.5}
-\contentsline {chapter}{\numberline {5}Results}{39}{chapter.5}
-\contentsline {section}{\numberline {5.1}Technical configuration}{39}{section.5.1}
-\contentsline {subsection}{\numberline {5.1.1}How teams chose their testing framework}{39}{subsection.5.1.1}
-\contentsline {subsection}{\numberline {5.1.2}Configuration of selected testing framework for project}{39}{subsection.5.1.2}
-\contentsline {section}{\numberline {5.2}Empirical study analyzed}{39}{section.5.2}
-\contentsline {section}{\numberline {5.3}Quantative research analyzed}{40}{section.5.3}
-\contentsline {chapter}{\numberline {6}Discussion}{41}{chapter.6}
-\contentsline {chapter}{\numberline {7}Conclusions}{42}{chapter.7}
-\contentsline {chapter}{\numberline {A}Gradle build configurations}{49}{appendix.A}
+\contentsline {subsection}{\numberline {2.4.2}Benefits and drawbacks}{11}{subsection.2.4.2}
+\contentsline {section}{\numberline {2.5}Acceptance Test Driven Development}{12}{section.2.5}
+\contentsline {subsection}{\numberline {2.5.1}Benefits and drawbacks}{13}{subsection.2.5.1}
+\contentsline {section}{\numberline {2.6}Behavior Driven Development}{14}{section.2.6}
+\contentsline {subsection}{\numberline {2.6.1}History}{14}{subsection.2.6.1}
+\contentsline {subsection}{\numberline {2.6.2}Definition}{14}{subsection.2.6.2}
+\contentsline {subsection}{\numberline {2.6.3}Process}{15}{subsection.2.6.3}
+\contentsline {subsection}{\numberline {2.6.4}Levels of specification}{17}{subsection.2.6.4}
+\contentsline {subsection}{\numberline {2.6.5}Benefits and drawbacks}{18}{subsection.2.6.5}
+\contentsline {section}{\numberline {2.7}Related research}{20}{section.2.7}
+\contentsline {chapter}{\numberline {3}Environment}{23}{chapter.3}
+\contentsline {section}{\numberline {3.1}xUnit testing frameworks}{23}{section.3.1}
+\contentsline {subsection}{\numberline {3.1.1}JUnit}{23}{subsection.3.1.1}
+\contentsline {subsection}{\numberline {3.1.2}Extending JUnit for Spring Framework domain}{25}{subsection.3.1.2}
+\contentsline {section}{\numberline {3.2}Implementation level BDD testing frameworks for JVM}{27}{section.3.2}
+\contentsline {subsection}{\numberline {3.2.1}xSpec family}{27}{subsection.3.2.1}
+\contentsline {subsubsection}{\numberline {3.2.1.1}RSpec}{27}{subsubsection.3.2.1.1}
+\contentsline {subsubsection}{\numberline {3.2.1.2}Spectrum}{31}{subsubsection.3.2.1.2}
+\contentsline {subsection}{\numberline {3.2.2}Gherkin family}{33}{subsection.3.2.2}
+\contentsline {subsubsection}{\numberline {3.2.2.1}Spock}{34}{subsubsection.3.2.2.1}
+\contentsline {chapter}{\numberline {4}Methods}{38}{chapter.4}
+\contentsline {section}{\numberline {4.1}Research questions}{38}{section.4.1}
+\contentsline {section}{\numberline {4.2}Research hypothesis}{39}{section.4.2}
+\contentsline {section}{\numberline {4.3}Empirical study}{40}{section.4.3}
+\contentsline {subsection}{\numberline {4.3.1}Type of study and purpose}{40}{subsection.4.3.1}
+\contentsline {subsection}{\numberline {4.3.2}Process for selecting teams and developers}{41}{subsection.4.3.2}
+\contentsline {subsection}{\numberline {4.3.3}Data collection}{41}{subsection.4.3.3}
+\contentsline {subsubsection}{\numberline {4.3.3.1}Interview for demographic purposes}{42}{subsubsection.4.3.3.1}
+\contentsline {subsubsection}{\numberline {4.3.3.2}Survey about low level automated testing with JUnit}{42}{subsubsection.4.3.3.2}
+\contentsline {subsubsection}{\numberline {4.3.3.3}Survey about changes in low level automated testing after introduction of BDD testing frameworks}{43}{subsubsection.4.3.3.3}
+\contentsline {subsubsection}{\numberline {4.3.3.4}Interview about benefits and drawbacks of new BDD testing framework}{44}{subsubsection.4.3.3.4}
+\contentsline {subsubsection}{\numberline {4.3.3.5}Test code analysis}{44}{subsubsection.4.3.3.5}
+\contentsline {section}{\numberline {4.4}Threats to validity}{44}{section.4.4}
+\contentsline {section}{\numberline {4.5}Limitations of the case study}{44}{section.4.5}
+\contentsline {chapter}{\numberline {5}Results}{45}{chapter.5}
+\contentsline {section}{\numberline {5.1}Technical configuration}{45}{section.5.1}
+\contentsline {subsection}{\numberline {5.1.1}How teams chose their testing framework}{45}{subsection.5.1.1}
+\contentsline {subsection}{\numberline {5.1.2}Configuration of selected testing framework for project}{45}{subsection.5.1.2}
+\contentsline {section}{\numberline {5.2}Empirical study analyzed}{45}{section.5.2}
+\contentsline {section}{\numberline {5.3}Quantative research analyzed}{46}{section.5.3}
+\contentsline {chapter}{\numberline {6}Discussion}{47}{chapter.6}
+\contentsline {chapter}{\numberline {7}Conclusions}{48}{chapter.7}
+\contentsline {chapter}{\numberline {A}Gradle build configurations}{56}{appendix.A}
+\contentsline {chapter}{\numberline {B}Interview questions}{60}{appendix.B}
+\contentsline {section}{\numberline {B.1}Interview for demographic purposes}{60}{section.B.1}
+\contentsline {section}{\numberline {B.2}Interview about the testing framework changes}{61}{section.B.2}
