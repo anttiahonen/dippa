@@ -1,22 +1,174 @@
 \chapter{Results}
 \label{chapter:results}
 
-\section{Technical configuration}
-\subsection{How teams chose their testing framework}
-    -Describing how teams chose which testing framework to take in use\newline
-    -Examples of refactored tests how developers were convinced to take Spock or Spectrum in use\newline
-\subsection{Configuration of selected testing framework for project}
-    -Allu\newline
-    -BIT
-
-    -Problems with Spock BDD reports in BIT\newline
+This chapter covers the results and analysis of the case study. First the results of interview for demographic purposes are
+presented. Second, survey results regarding JUnit compared to Spock and Spectrum are analyzed. Third, the participant interview
+about BDD testing framework benefits and drawbacks are discussed. After this, the test code analysis is presented and finally
+with all the above mentioned results, Spock and Spectrum are compared against each other.
 
 
-\section{Empirical study analyzed}
--Define the population to which inferential statistics and predictive models apply.\newline
--RQ1 and RQ2 answered by comparing initial and post surveys\newline
--Comparing Spock and Spectrum vs each other\newline
+%-Define the population to which inferential statistics and predictive models apply.\newline
+%-RQ1 and RQ2 answered by comparing initial and post surveys\newline
+%-Comparing Spock and Spectrum vs each other\newline
+%-RQ3 answered by comparing observed actual test implementation changes\newline
 
-\section{Quantative research analyzed}
--RQ3 answered by comparing observed actual test implementation changes\newline
+\section{First interview: Demographics and projects}
+\label{section:demographics}
+
+\section{Surveys}
+\clearpage
+\newgeometry{left=1cm, right=1cm}
+    \begin{table}
+        \resizebox{\textwidth}{!}{%
+            \begin{tabular}{p{20.0cm}*{7}{p{2.0cm}}}
+            \hline
+            \textbf{Question} & \textbf{Answer options} &  &  &  &   &  & \\ \hline
+            \textbf{Q1: How do you spend your software development time (in percentages)} & Participant A & Participant B & Participant C & Average & & \\
+            & & & & & & & \\
+            1. Writing new code & 20\% & 40\% & 15\% & 25\%  \\
+            2. Writing new tests & 20\% & 25\% & 20\% & 21.67\% \\
+            3. Debugging/fixing & 30\% & 25\% & 25\% & 26.67\% \\
+            4. Refactoring & 20\%  & 10\% & 30\% & 23.33\% \\
+            5. Other & 10\% & 0\% & 10\% & 6.67\% \\
+            & \\ \hline
+
+            \textbf{Q2: How do you spend your low level automated testing time} & Participant A & Participant B & Participant C & Average & & \
+            & & & & & & & \\
+            1. How much approximately you use time per test case (minutes)? & 30 min & 30 min & 30 min & 30 min \\
+            2. How much of your initial effort goes to thinking about test case content without implementation (percentage)? & 50\% & 20\% & 15\% & 28.33\% \\
+            3. How much of your initial effort goes to initial test case structuring and implementation (percentage)? & 50\% & 80\% & 85\% & 71.67\% \\
+            4. How much of your overall testing effort goes to refactoring test code (percentage)? & 50\% & 5\% & 30\% & 28.33\% \\
+            & \\ \hline
+
+            \textbf{Q3: How important are the following aspects for you when you write new low level tests?} & & & & & & \\
+            & Not at all & Low \newline importance & Slightly important & Neutral & Moderately important & Very \newline important & Extremely important \\
+            1. Code coverage & 0 & 0 & 0 & ABC & 0 & 0 & 0 \\
+            2. Capturing all behavior of unit/feature with tests or assertions & 0 & 0 & B & A & 0 & C & 0 \\
+            3. Execution speed & 0 & C & 0 & 0 & B & A & 0 \\
+            4. Robustness against code changes (i.e., test does not break easily) & 0 & 0 & 0 & 0 & ABC & 0 & 0 \\
+            5. How realistic the test scenario is & 0 & 0 & AB & 0 & 0 & C & 0 \\
+            6. How easily faults can be localised/debugged if the test fails & 0 & 0 & B & 0 & AC & 0 & 0 \\
+            7. How easily the test can be updated when the underlying code changes & 0 & C & A & 0 & B & 0 & 0 \\
+            8. Sensitivity against code changes (i.e., test should detect even small code changes) & 0 & AB & 0 & C & 0 & 0 & 0 \\
+            & \\ \hline
+
+            & & & & & & \\
+            & Very easy & Easy & Moderate & Hard & Very hard & & \\
+            \textbf{Q4: How difficult is it for you to understand a low level test?} & 0 & 0 & BC & A & 0 \\
+            & \\ \hline
+
+            \textbf{Q5: In low level testing, how difficult is it for you to} & & & & & & \\
+            & Very easy & Easy & Slightly easy & Moderate & Slightly hard & Hard & Very hard \\
+            1. Structure and write information to context of test? & 0 & A & 0 & 0 & BC & 0 & 0 \\
+            2. Structure and write information to stimulus of test? & 0 & 0 & 0 & ABC & 0 & 0 & 0 \\
+            3. Structure and write information to assertions of test? & 0 & B & C & 0 & A & 0 & 0 \\
+            4. Read test case structure for information about context of test? & 0 & 0 & C & 0 & B & A & 0 \\
+            5. Read test case structure for information about stimulus of test? & 0 & 0 & C & B & A & 0 & 0 \\
+            6. Read test case structure for information about assertions of test? & 0 & B & C & 0 & 0 & A & 0 \\
+            & \\ \hline
+
+            & & & & & & \\
+            & Not at all & Hardly informative & Slightly informative & Somewhat informative & Moderately informative & Very informative & Extremely informative \\
+            \textbf{Q6: How informative you usually find the test case output?} & 0 & A & 0 & C & B & A & 0 \\
+            & \\ \hline
+
+            \textbf{Q7: How much are the following repetition reducing techniques used in your low level testing?} & & & & & & \\
+            & Never & Very rarely & Rarely & Occasionally & Frequently & Very \newline frequently & Always \\
+            1. Extract method (custom helper methods) & 0 & 0 & 0 & 0 & AB & C & 0 \\
+            2. Lifecycle hooks Before/After -class & 0 & 0 & 0 & C & AB & 0 & 0 \\
+            3. Lifecycle hooks Before/After (each) & 0 & 0 & 0 & 0 & AB & C & 0 \\
+            4. Automatic test case generation via test case parametrization & 0 & A & B & C & 0 & 0 & 0 \\
+            5. Common test initializer class inheritance & 0 & AC & B & 0 & 0 & 0 & 0 \\
+            & \\ \hline
+
+            & & & & & & \\
+            & Never & Rarely & Sometimes & Fairly often & Always & & \\
+            \textbf{Q8: How often do you add/write documentation comments to low level test cases?} & 0 & C & 0 & AB & 0 \\
+            & \\ \hline
+
+            & & & & & & \\
+            & Never & Rarely & Sometimes & Fairly often & Always & & \\
+            \textbf{Q9: When you make changes to low level tests, how often do you comment the changes (or update existing comments)?} & 0 & C & 0 & AB & 0 \\
+            & \\ \hline
+
+            \textbf{Q10: In unit testing, how many} & & & & & & \\
+            & 0 & 1 & 2-3 & 4-5 & 6-7 &  8-9 & 10 or more \\
+            1. Test methods do you usually write per class method? & 0 & 0 & AB & C & 0 & 0 & 0 \\
+            2. Assertions do you usually write per test method? & 0 & 0 & AB & C & 0 & 0 & 0 \\
+            & \\ \hline
+
+            & & & & & & \\
+            & Mockito & jMock & Powermock & Easymock & Other & & \\
+            \textbf{Q11: In unit testing, what mocking library do you normally use?} & ABC & 0 & 0 & 0 & 0 \\
+            & \\ \hline
+
+            \textbf{Q12: In unit testing, how difficult you find it to} & & & & & & \\
+            & Very easy & Easy & Slightly easy & Moderate & Slightly hard & Hard & Very hard \\
+            1. Mock objects? & 0 & BC & A & 0 & 0 & 0 & 0 \\
+            2. Stub method calls? & 0 & 0 & AC & 0 & B & 0 & 0 \\
+            3. Verify mock object actions? & 0 & BC & 0 & A & 0 & 0 & 0 \\
+            & \\ \hline
+
+            & & & & & & \\
+            & Before implementation & During implementation & After implementation & \\
+            \textbf{Q13: When do you add automated unit tests for developed code?} & 0 & BC & A \\
+            & \\ \hline
+
+            \end{tabular}}
+            \caption {JUnit developer low level testing practice questions with response data} \label{tab:junit-pt1}
+    \end{table}
+    \clearpage
+    \begin{table}[H]
+        \resizebox{\textwidth}{!}{%
+            \begin{tabular}{p{20.0cm}*{7}{p{2.0cm}}}
+            \hline
+            \textbf{Question} & \textbf{Answer options} &  &  &  &   &  & \\ \hline
+
+            \textbf{Q14: Please indicate your level of agreement with the following statements} & & & & & & \\
+            & Strongly disagree & Disagree & Somewhat disagree & Neither agree nor disagree & Somewhat agree & Agree & Strongly agree \\
+            1. Writing low level tests is difficult & 0 & 0 & C & 0 & AB & 0 & 0 \\
+            2. I enjoy writing low level tests & 0 & B & 0 & A & 0 & C & 0 \\
+            3. I would like to have more tool support when writing low level tests & 0 & 0 & B & A & C & 0 & 0 \\
+            4. I would like to have more low level tests & 0 & 0 & 0 & ABC & 0 & 0 & 0 \\
+            5. Maintaining low level tests is difficult & 0 & 0 & C & 0 & B & A & 0 \\
+            6. I think my low level tests will help other developers to understand the implemented unit/feature better & 0 & 0 & B & 0 & A & C & 0 \\
+            7. Low level automated testing helps me find defects in the code before other quality assurance phases & 0 & 0 & 0 & 0 & B & C & A \\
+            8. JUnit promotes me to write high quality test code & 0 & 0 & AC & B & 0 & 0 & 0 \\
+            & \\ \hline
+
+            \textbf{Q15: Please indicate your level of agreement with the following statements} & & & & & & \\
+            & Strongly disagree & Disagree & Neutral & Agree & Strongly agree & \\
+            1. Overall, low level tests help me produce higher quality code & 0 & 0 & 0 & B & AC \\
+            2. Maintaining good low level test cases and their documentations is important to the quality of a system & 0 & 0 & 0 & AB & C \\
+            & \\ \hline
+
+            \end{tabular}}
+            \caption {Likert scale questions with response data about developer perception towards JUnit} \label{tab:junit-pt2}
+    \end{table}
+    \vspace{20px}
+    \begin{table}[H]
+        \resizebox{\textwidth}{!}{%
+            \begin{tabular}{p{17.0cm}*{11}{p{1.55cm}}}
+            \hline
+            \textbf{Question} & \textbf{Answer options} &  &  &  &  &  &  &  &  & \\ \hline
+
+            \textbf{Q16: How likely are you to} &  &  &  &  &  &  &  &  &  &  \\
+            & 0 & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10 \\ \hline
+            1. Recommend low level automated testing for colleague as a software development practice? & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & B & 0 & AC \\
+            2. Recommend testing framework JUnit for future Spring projects where you take part in existing project? & 0 & 0 & 0 & 0 & 0 & 0 & 0 & C & 0 & B & A \\
+            3. Take testing framework JUnit in use for future Spring projects where you have technical lead role in a new starting project? & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & C & B & A \\
+            & \\ \hline
+
+            \end{tabular}}
+            \caption {NPS questions with response data about developer loyalty towards low level automated testing with JUnit } \label{tab:junit-pt3}
+
+    \end{table}
+    \clearpage
+\restoregeometry
+
+\section{Second interview: BDD framework feedback}
+
+\section{Test code analysis}
+
+\section{Comparison of BDD testing frameworks}
 
