@@ -9,11 +9,14 @@ Third, the empirical study and its methodology are explained in detail. Finally,
 This thesis studies low level testing done with xUnit family testing framework JUnit and how it changes after putting
 an implementation level BDD testing framework into operation. The scope in research is testing Java-code. The following
 research questions are aimed to highlight the change in low level testing after the testing framework change:
-\begin{enumerate}
-\item \textbf{RQ1}: How does behavior driven testing frameworks change developer practices working with automated low level testing compared to JUnit framework?
-\item \textbf{RQ2}: How does behavior driven testing frameworks change developer perception of working with automated low level testing compared to JUnit framework?
-\item \textbf{RQ3}: How does behavior driven testing frameworks change written low level test cases and test code coverage compared to JUnit framework?
-\end{enumerate}
+\begin{addmargin}[2em]{0em}
+\vspace{20px}
+\begin{itemize}
+\item[\textbf{RQ1:}] How does behavior driven testing frameworks change developer practices working with automated low level testing compared to JUnit framework?
+\item[\textbf{RQ2:}] How does behavior driven testing frameworks change developer perception of working with automated low level testing compared to JUnit framework?
+\item[\textbf{RQ3:}] How does behavior driven testing frameworks change written low level test cases and test code coverage compared to JUnit framework?
+\end{itemize}
+\end{addmargin}
 
 \section{Research hypothesis} %1p
     The following hypothesis statements are derived from the mentioned benefits of BDD literature in chapter \ref{chapter:background} and features of BDD
@@ -162,10 +165,8 @@ explained. Finally, threats to validity and limitations in this study are review
     The reason to use 7 point Likert scale was to increase the discriminating power of the questions~\cite{cummins2000we}.
     At the end of the survey \textbf{Network Promoter Score (NPS)}~\cite{reichheld2003one} was used to see how enthuastic and "loyal" the participants
     were at the beginning of the study to low level automated testing in general and in more specific to JUnit.
-    The implementation of survey, its questions and how it relates to related research survey questions can be found from Appendix...
-    %-Existing base questions explained with references to original publications\newline
-    %-NPS explained\newline
-    %-Implementation of JUnit survey / screenshots / questions shown\newline
+    The survey questions and how they are related to research survey questions and related research can be found
+    in Appendix \ref{chapter:surveys} section \ref{section:junit-survey}.
 
     \subsubsection{BDD testing frameworks survey}
     Second survey was built to directly get insight on RQ1 and RQ2 about automated low level testing
@@ -200,19 +201,20 @@ explained. Finally, threats to validity and limitations in this study are review
     The used question types were mostly 1 to 7 point Likert scale questions for the direct comparisons, combined with a few NPS questions for
     determining developer loyalty towards low level automated testing in general and also towards the new BDD testing framework.
     A few other type of questions were also added.
-    The implementation of survey, its questions and how it relates to related research survey questions can be found from Appendix...
-    %-Implementation of Spock/Spectrum survey / screenshots / questions shown\newline\newline
-
+    The survey questions and how they are related to research survey questions and related research can be found
+    in Appendix \ref{chapter:surveys} section \ref{section:bdd-survey}.
 
     \subsubsection{Interview about benefits and drawbacks of new BDD testing framework}
     At the end of the two month data collecting period, a loosely structured semi-structured interview was conducted with the participants
-    to get more input on the change period. The interview holds only two basic questions to start with:
+    to get more input on the change period. The interview holds only three basic questions to start with:
     \begin{enumerate}
     \item What were the main benefits of the new testing framework X over JUnit?
     \item What were the main drawbacks of the new testing framework X over JUnit?
+    \item How long was the learning curve to feel effective with framework X?
     \end{enumerate}
-    The idea to practice these two questions with a interview, instead of survey questions, was to lead the discussion
-    to possible new topics on the subject if they rose upon interviewing. Framework X part of the question relates
+    The idea to practice these questions with a interview, instead of survey questions, was to lead the discussion
+    to possible new topics on the subject if they rose upon interviewing. Also some clarifications were asked to interesting
+    answers on the second survey questions. Framework X part of the question relates
     to chosen BDD testing framework in the project, as it was not the same for both projects.
 
     \subsubsection{Test code analysis}
@@ -220,7 +222,7 @@ explained. Finally, threats to validity and limitations in this study are review
     First the baseline is calculated from existing automated low level tests with JUnit. Second, the same values are calculated
     after the two months period of using an implementation level BDD testing framework. These values are then compared
     against each other, to see how the following aspects of test code have changed:
-
+    \clearpage
     \begin{addmargin}[0em]{0em}
     \vspace{10px}
     \textbf{Automated unit testing level}
@@ -326,8 +328,9 @@ Internal validity threat includes the unexpected sources of bias~\cite{kitchenha
 in this study have a reasonable long history with BDD testing frameworks, it can result in too much enthusiasm in the introduction
 of new testing framework for the developer participants. As one of the key characteristics of company's developers is the
 high autonomy in projects, I first had the task of convincing participants to take a new BDD testing framework into use in the middle of the
-project. This process is explained in detail in section OOOO, but it can be summerized as an enthusiastic selling of the
-BDD testing frameworks and their features. This can cause some unwanted \textbf{response bias} influenced by a presence of a \textbf{"champion"}.
+project. This process is explained in detail in section \ref{section:teams}, but it can be summerized as an enthusiastic selling of the
+BDD testing frameworks and their features. This can cause some unwanted \textbf{response bias} influenced by a presence of a \textbf{"champion"}
+driving the change and initial impressions.
 \subsubsection{External validity}
 External validity threats are related to threats that hinder the possibility to generalize the findings from this study~\cite{runeson2012case}.
 The demographics which the study was applied can be found in section XXXXX. Major threat to generalizing the findings

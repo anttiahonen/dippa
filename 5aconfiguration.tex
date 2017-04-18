@@ -102,7 +102,16 @@ refactored into different BDD testing frameworks.
     After the reviewing of all refactored examples and possible positive changes against JUnit testing, project A developers chose to take
     Spectrum in use for new unit and integration test classes. Spectrum being a Java library was one the main reasons
     why developers chose it over Spock.
+
+    During the observed two months time of use, Spectrum had couple problems that later on was found to affect parts of the survey
+    results. First, the test run output with \textit{Maven}-build tool~\cite{maven} didn't show the \textit{code example group} and \textit{code example}
+    descriptions if the test failed. Only the \textit{assertions} were showing, therefore it hindered pinpointing the problematic test at failure.
+    Second problem was the 1.1.0 version of Spectrum, which added support for a lot of new features, but resulted in test
+    run output structure breaking in IDE in certain situations. Therefore during the study, the version used of Spectrum was 1.0.2,
+    which didn't have this problem.
+
     \clearpage
+
     \subsection{Project B}
     Prior the starting of study, project B had 80 test cases/files with 465 test methods of combined automated unit and integration level tests done with JUnit.
     Current backend developer of project B had a particular DDT JUnit test case in mind that he wanted to see as a refactored example
@@ -140,7 +149,8 @@ refactored into different BDD testing frameworks.
     Compared to JUnit, Spock and its DDT feature enabled more readable and concise test structure together with more information
     containing run output. At the time of research, project B had only one developer working with JUnit testing and
     he was convinced to take Spock into use after the illustrated refactored DDT example. Spock was used in new unit and
-    integration level test classes while keeping the old JUnit tests intact.
+    integration level test classes while keeping the old JUnit tests intact. This happened without any major
+    problems with the used build tool \textit{Maven}.
 
 \newgeometry{bottom=1cm}
     \begin{figure}[H]
