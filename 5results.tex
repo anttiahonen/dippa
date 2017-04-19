@@ -282,6 +282,7 @@ with all the above mentioned results, Spock and Spectrum are compared against ea
             9. Overall, low level tests with \textit{Spectrum/Spock} help me produce higher quality code than with JUnit & 0 & 0 &  {\colorbox{lightgray}A} & 0 & 0 & 0 & 0 \\
             10. Maintaining good low level test cases and their documentation with \textit{Spectrum/Spock} is more important for system quality than maintaining JUnit test cases & 0 & 0 & 0 & 0 & {\colorbox{lightgray}A} & 0 & 0 \\
             & \\ \hline
+            & \\ \hline
 
             \end{tabular}}
             \caption {Developer perception of low level testing and changes in it} \label{tab:junit-pt2}
@@ -307,6 +308,7 @@ with all the above mentioned results, Spock and Spectrum are compared against ea
             2. Recommend testing framework \textit{Spectrum/Spock} for future Spring projects where you take part in existing project? & 0 & 0 & 0 & 0 & 0 & 0 & {\colorbox{lightgray}A} & 0 & 0 & 0 & 0 \\
             3. Take testing framework \textit{Spectrum/Spock} in use for future Spring projects where you have technical lead role in a new starting project? & 0 & 0 & 0 & 0 & 0 & 0 & {\colorbox{lightgray}A} & 0 & 0 & 0 & 0 \\
             & \\ \hline
+            & \\ \hline
 
             \end{tabular}}
             \caption {NPS questions related to JUnit and \textit{Spectrum/Spock}} \label{tab:junit-pt3}
@@ -324,6 +326,7 @@ with all the above mentioned results, Spock and Spectrum are compared against ea
             1. Understandable low level tests with \textit{Spectrum/Spock} than with JUnit? & {\colorbox{lightgray}A} & 0 & 0 \\
             2. Maintainable low level tests with \textit{Spectrum/Spock} than with JUnit? & {\colorbox{lightgray}A} & 0 & 0  \\
             & \\ \hline
+            & \\ \hline
 
             \end{tabular}}
             \caption {Developer perception towards \textit{Spectrum/Spock}} \label{tab:spock-spectrum-pt3}
@@ -334,6 +337,82 @@ with all the above mentioned results, Spock and Spectrum are compared against ea
 \restoregeometry
 
 \section{Test code analysis}
+Test code analysis was done to answer \textbf{RQ3} with metrics defined in chapter \ref{chapter:methods} section \ref{subsub:test}.
+Test code analysis was done with master branches of projects A and B, \textbf{before} and \textbf{after} the introduction of new BDD testing framework, to related
+low level tests and their affected components. First the unit testing level changes are inspected with projects A and B.
+After this, the low level testing metrics and changes in them are demonstrated with both projects.
+
+\subsection{Automated unit testing level}
+At automated unit testing level, two metrics were used to study the changes in unit testing: average \textbf{count of test methods}
+per tested class methods and \textbf{code coverage}. Table \ref{tab:unit-metrics} displays these values before the introduction
+of new BDD testing framework and after. In \textbf{COTM} before values are calculated for JUnit unit tests only and after
+values only for new unit tests done with the selected BDD testing framework. In \textbf{CC}, before values are for the
+whole project at unit level with JUnit. After values are unit testing coverage for JUnit and new BDD testing framework
+combined.
+
+{\renewcommand{\arraystretch}{1.3}
+\begin{table}[H]
+    \resizebox{\textwidth}{!}{%
+        \begin{tabular}{p{6.0cm}*{4}{p{3cm}}}
+        \hline
+
+        \textbf{Metric} & \textbf{Project A} \newline JUnit & \textbf{Project A} \newline Spectrum & \textbf{Project B} \newline JUnit & \textbf{Project B} \newline Spock  \\ \hline
+        \textit{\textbf{COTM}} & \textbf{1.44} & & \textbf{3.49} & \\
+        \textit{Sum of tested class methods} & 61 &  & 93 & \\
+        \textit{Sum of unit test methods} & 88 & & 325 & \\ \hline
+
+        \textit{\textbf{Instruction CC}} & \textbf{25\%} & & \textbf{20\%} & \\
+        \textit{Total number of instructions} & 31,425 & & 49,895 & \\
+        \textit{\textbf{Branch CC}} & \textbf{24\%} & & \textbf{20\%} & \\
+        \textit{Total number of branches} & 724 & & 2,195 & \\ \hline
+        \end{tabular}}
+        \caption {Unit level testing metrics in projects and their change} \label{tab:unit-metrics}
+
+\end{table}
+}
+\clearpage
+\subsection{Automated unit \& integration testing levels}
+At automated low level testing level there were 5 inspected metrics: \textbf{code coverage}, average \textbf{count of assertions} per test method,
+average \textbf{count of comments} per test method, average \textbf{test method name word count} and ratio of \textbf{data driven test methods} to
+all low level test methods. \textbf{CC} is measured as combined JUnit and new BDD framework coverage. All other metrics
+are measured first from existing low level JUnit tests and after from new BDD testing framework specifications.
+Table \ref{tab:low-metrics} dislays the values of these metrics in projects A and B before and after introduction of BDD testing framework.
+
+
+{\renewcommand{\arraystretch}{1.3}
+\begin{table}[H]
+    \resizebox{\textwidth}{!}{%
+        \begin{tabular}{p{6.0cm}*{4}{p{3cm}}}
+        \hline
+
+        \textbf{Metric} & \textbf{Project A} \newline JUnit & \textbf{Project A} \newline Spectrum & \textbf{Project B} \newline JUnit & \textbf{Project B} \newline Spock  \\ \hline
+
+        \textit{\textbf{Instruction CC}} & \textbf{59\%} & & \textbf{47\%} & \\
+        \textit{Total number of instructions} & 31,425 & & 49,895 & \\
+        \textit{\textbf{Branch CC}} & \textbf{54\%} & & \textbf{39\%} & \\
+        \textit{Total number of branches} & 724 & & 2,195 & \\ \hline
+
+        \textit{\textbf{COA}} & \textbf{2.64} & & \textbf{2.82} & \\
+        \textit{Sum of assertions} & 493 & & 1,311 & \\
+        \textit{Sum of test methods} & 187 & & 465 & \\ \hline
+
+        \textit{\textbf{COC}} & \textbf{1.17} & & \textbf{0.04} & \\
+        \textit{Sum of comments} & 218 & & 20 & \\
+        \textit{Sum of test methods} & 187 & & 465 & \\ \hline
+
+        \textit{\textbf{TMNWC}} & \textbf{4.66} & & \textbf{5.61} & \\
+        \textit{Total words in test method names} & 872 & & 2607 & \\
+        \textit{Sum of test methods} & 187 & & 465 & \\ \hline
+
+        \textit{\textbf{DDTM}} & \textbf{0} & & \textbf{0.02} & \\
+        \textit{Sum of data driven test methods} & 0 & & 8 & \\
+        \textit{Sum of test methods} & 187 & & 465 & \\ \hline
+
+        \end{tabular}}
+        \caption {Low level testing metrics in projects and their change} \label{tab:low-metrics}
+
+\end{table}
+}
 
 \section{Comparison of BDD testing frameworks}
 

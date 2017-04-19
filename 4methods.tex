@@ -218,20 +218,22 @@ explained. Finally, threats to validity and limitations in this study are review
     to chosen BDD testing framework in the project, as it was not the same for both projects.
 
     \subsubsection{Test code analysis}
-    Research question 3 is answered with test code analysis done with observations from actual test data of the projects.
+    \label{subsub:test}
+    Research question 3 is answered with test code analysis done with observation metrics from actual test data of the projects.
     First the baseline is calculated from existing automated low level tests with JUnit. Second, the same values are calculated
-    after the two months period of using an implementation level BDD testing framework. These values are then compared
+    after the two months period of using an implementation level BDD testing framework. These metric values are then compared
     against each other, to see how the following aspects of test code have changed:
     \clearpage
     \begin{addmargin}[0em]{0em}
     \vspace{10px}
-    \textbf{Automated unit testing level}
+    \textbf{Automated unit testing level metrics}
     \vspace{5px}
     \newline
     \begin{enumerate}
     \item \textit{Count of test methods \textbf{(COTM)}}:
     Average count of test methods per class method (COTM) is defined at unit level. This is calculated through the sum
-    of unit test methods (UTM) divided by sum of class methods under test (CMUT).
+    of unit test methods (UTM) divided by sum of class methods under test (CMUT). Data driven test methods add to sum of UTM as
+    many separate methods as the the runner produces from it, for instance one data driven test method can produce 20 methods to UTM sum.
     \begin{align*}
         \sum_{i=1}^{n}\frac{UTM_{i}}{CMUT_{i}} && \text {where } UTM_{i} \geq 1 \text{ and } CMUT_{i} = 1
     \end{align*}
@@ -245,11 +247,15 @@ explained. Finally, threats to validity and limitations in this study are review
 
     \begin{addmargin}[0em]{0em}
     \vspace{10px}
-    \textbf{Automated unit \& integration testing levels}
+    \textbf{Automated unit \& integration testing level metrics}
     \vspace{5px}
     \newline
     \begin{enumerate}
     \setcounter{enumi}{2}
+    \item \textit{Code coverage \textbf{(CC)}}:
+    Measured code coverage for low level tests is done with \textit{JaCoCo} in the same manner as described earlier in
+    unit level code coverage definition.
+
     \item \textit{Count of Assertions \textbf{(COA)}}:
     Average count of assertions per test method (COA) is defined for low level test methods. This is calculated with
     the sum of assertions (A) in low level test methods divided by the total sum of low level test methods (LLTM).
@@ -305,9 +311,9 @@ explained. Finally, threats to validity and limitations in this study are review
     \end{align*}
 
     \item \textit{Data driven test methods \textbf{(DDTM)}}:
-    DDTM, Ratio of data driven low level test methods (DDLLTM) to standard low level test methods (SLLTM) is calculated by dividing the sum
-    of DDLLTM with the sum of SLLTM.
-    \[\frac{\sum_{i=0}^{n}DDLLTM_{i}}{\sum_{j=1}^{m}SLLTM_{j}}\]
+    DDTM, Ratio of data driven low level test methods (DDLLTM) to low level test methods (LLTM) is calculated by dividing the sum
+    of DDLLTM by LLTM.
+    \[\frac{\sum_{i=0}^{n}DDLLTM_{i}}{\sum_{j=1}^{m}LLTM_{j}}\]
     \end{enumerate}
     \end{addmargin}
 
