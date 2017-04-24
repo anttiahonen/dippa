@@ -1,8 +1,8 @@
 \chapter{Environment}
 \label{chapter:environment}
-This chapter demonstrates few of the different options available for low level automated testing in Java-projects. First,
+This chapter demonstrates few of the different options available for low-level automated testing in Java-projects. First,
 \textbf{xUnit testing frameworks} are explained with JUnit as an example of them. Second, \textbf{implementation level BDD testing frameworks}
-running on top of JVM programming languages are demonstrated as an alternative for automated low level Java-code testing.
+running on top of JVM programming languages are demonstrated as an alternative for automated low-level Java-code testing.
 
 \section{xUnit testing frameworks} %2p
     xUnit family of testing frameworks are free, open source software for various programming languages that
@@ -99,7 +99,7 @@ running on top of JVM programming languages are demonstrated as an alternative f
     Build configuration of JUnit4 used in examples can be found in Appendix \ref{chapter:gradle-build} figure \ref{fig:junit-build}.
     Used build tool is Groovy-based \textit{Gradle}~\cite{gradle}.
 
-    JUnit and its extensions provide a base for automated low level testing of Java-code.
+    JUnit and its extensions provide a base for automated low-level testing of Java-code.
     In the next section alternatives for Java-code testing are presented with implementation level BDD testing frameworks from
     various JVM programming languages.
 
@@ -131,7 +131,9 @@ running on top of JVM programming languages are demonstrated as an alternative f
     specification \textbf{code examples}~\cite{chelimsky2010rspec}. These examples and groups are created into a \textbf{spec} file~\cite{chelimsky2010rspec}.
     Example groups can be initialized with keywords \textit{describe}
     and \textit{context}, which both are aliases for each other~\cite{rspec-core}. Example groups can inherit each other nested in a single
-    file, creating nested context groups~\cite{rspec-core}. This can help immensively on removing repetition from the test code
+    file, creating nested context groups~\cite{rspec-core}. This can help immensively on removing
+    \newgeometry{bottom=2cm}
+    repetition from the test code
     and achieving easily readable test outputs~\cite{chelimsky2010rspec}. This is enabled by easily usable \textbf{lifecycle hooks},
     such as \textit{before, after} and \textit{around}~\cite{chelimsky2010rspec}.
     These lifecycle hooks can be used to run separately for each example or just once for all examples in the example group.
@@ -148,31 +150,35 @@ running on top of JVM programming languages are demonstrated as an alternative f
     help TDD practitioners to change viewpoint from 1-1 relationship between test classes and methods to production classes
     and methods.
     The following table shows the relationships between RSpec testing terms compared to xUnit architecture components~\cite{chelimsky2010rspec}:
+
     \begin{longtable}{@{}p{0.25\textwidth}p{0.7\textwidth}@{}}
-    Expectations & \Longrightarrow  \textrm{Assertions} \\
-    Code Example & \Longrightarrow  \textrm{Test Method} \\
-    Example Group & \Longrightarrow  \textrm{Test Case} \\
-    Spec File & \Longrightarrow  \textrm{Test Suite} \\
-    Lifecycle Hook & \Longrightarrow  \textrm{Test Fixture} \\
+    Expectations & $\Longrightarrow$  \textrm{Assertions} \\
+    Code Example & $\Longrightarrow$  \textrm{Test Method} \\
+    Example Group & $\Longrightarrow$  \textrm{Test Case} \\
+    Spec File & $\Longrightarrow$  \textrm{Test Suite} \\
+    Lifecycle Hook & $\Longrightarrow$  \textrm{Test Fixture} \\
     \end{longtable}
 
-    \begin{figure}[ht]
-      \begin{center}
-        \includegraphics[width=13.7cm]{images/rspec-init.png}
-        \caption{RSpec spec file initializing}
-        \label{fig:rspec-init}
-      \end{center}
-    \end{figure}
     Figure \ref{fig:rspec-init} displays the creation of a spec file. The spec file example is created for unit testing
     of \textit{GameService} Java-class. Line 16. shows the creation of example group with the keyword \textit{describe}. Lines from
     18 to 25 show the lifecycle hook \textit{before}, that is used once before all code examples in the example group.
     In the before hook, BDD Gherkin inspired Java mocking library \textbf{Mockito}~\cite{mockito} is used for
     creating test double objects that replace the dependencies of GameService.
 
+    \begin{figure}[H]
+      \begin{center}
+        \includegraphics[width=13.7cm]{images/rspec-init.png}
+        \caption{RSpec spec file initializing}
+        \label{fig:rspec-init}
+      \end{center}
+    \end{figure}
+    \restoregeometry
+    \newgeometry{bottom=3cm}
     Figure \ref{fig:rspec-example} illustrates use of nested example groups that contains two examples in the second
     level nested example group. Line 27. is the first example group, that is created with keyword \textit{describe}. The second
     level nested example group starts at line 36. and it is initialized with the keyword \textit{context}. The \textbf{context} of
     example method is a combined from the lifecycle hooks and variable declarations of the nested example group structure.
+
     \begin{figure}[ht]
       \begin{center}
         \includegraphics[width=13.7cm]{images/rspec-example.png}
@@ -180,18 +186,12 @@ running on top of JVM programming languages are demonstrated as an alternative f
         \label{fig:rspec-example}
       \end{center}
     \end{figure}
+
     RSpec lets to define the \textbf{action} of the example group with the keyword \textit{subject}~\cite{rspec-subject}. Example of used subject is at
     line 44. The two code examples are at lines 46-48 and 50-52.  Both examples show \textbf{expectations} given with keyword \textit{expect}
     at lines 47 and 51. The two expectations are separated from each other following the \textit{one assert per test method}
     to create more granular documentation of behavior. As mentioned earlier, this separation also allows independently failing code examples.
 
-    \begin{figure}[ht]
-      \begin{center}
-        \includegraphics[width=12.0cm]{images/rspec-result.png}
-        \caption{RSpec code example run output}
-        \label{fig:rspec-result}
-      \end{center}
-    \end{figure}
     Figure \ref{fig:rspec-result} shows the output of code examples run in Integrated Development Environment (IDE) \textit{Intellij Idea}~\cite{intellij}.
     The nested structure of example groups
     is seen with accordion elements. At the leaf of the nested tree structure is the code example and its run result. In
@@ -199,12 +199,13 @@ running on top of JVM programming languages are demonstrated as an alternative f
     \begin{center}
     \textit{Java::FiAaltoEkanbanServices::GameService startGame() with normal difficulty should create game with given name}
     \end{center}
+    \restoregeometry
 
-    \begin{figure}[H]
+    \begin{figure}[ht]
       \begin{center}
-        \includegraphics[width=12.0cm]{images/rspec-config.png}
-        \caption{RSpec extension for Spring Framework integration testing}
-        \label{fig:rspec-config}
+        \includegraphics[width=12.0cm]{images/rspec-result.png}
+        \caption{RSpec code example run output}
+        \label{fig:rspec-result}
       \end{center}
     \end{figure}
 
@@ -215,10 +216,21 @@ running on top of JVM programming languages are demonstrated as an alternative f
     package for dependencies. At lines 15-17 test specific configuration is registered for the test context. Lines 25-27
     display how to retrieve web server port for integration testing.
 
+    \begin{figure}[ht]
+      \begin{center}
+        \includegraphics[width=12.0cm]{images/rspec-config.png}
+        \caption{RSpec extension for Spring Framework integration testing}
+        \label{fig:rspec-config}
+      \end{center}
+    \end{figure}
+
+
     Figure \ref{fig:rspec-autowire}
     illustrates how-to inject dependencies for RSpec integration testing through Spring Framework dependency injection container.
     At line 13 the Spring Framework test context is created and at line 14 additional dependency is retrieved
     through the initialized singleton integration test context object.
+
+    \newgeometry{bottom=3cm}
 
     \begin{figure}[ht]
       \begin{center}
@@ -240,6 +252,16 @@ running on top of JVM programming languages are demonstrated as an alternative f
     IDEs and reporting tools that are used with JUnit. Version 1.1.0 of Spectrum supports both xSpec family specification style and Gherkin
     family structure. This thesis inspects Spectrum more closely as a RSpec alternative for xSpec family style testing of Java-code.~\cite{spectrum}
 
+    \begin{figure}[ht]
+      \begin{center}
+        \includegraphics[width=13.7cm]{images/spectrum-example.png}
+        \caption{Spectrum nested example groups with code examples}
+        \label{fig:spectrum-example}
+      \end{center}
+    \end{figure}
+
+    \restoregeometry
+
     Spectrum used in examples and later on in projects is version 1.0.2. It supports nested \textbf{example groups} initialized
     with the keyword \textit{describe} and \textbf{code examples} with keyword \textit{it}. Both the example groups and their code
     examples are build with Java 8 lambda blocks. It has also support for \textbf{lifecycle hooks} \textit{before} and \textit{after}. ~\cite{spectrum-102}
@@ -250,13 +272,8 @@ running on top of JVM programming languages are demonstrated as an alternative f
     Deviation from RSpec is also the usage of \textbf{assertions} with \textit{Hamcrest matchers} instead of \textit{expectations}.
     Figure \ref{fig:spectrum-result}
     displays the output of code example runs in IDE Intellij Idea.
-    \begin{figure}[ht]
-      \begin{center}
-        \includegraphics[width=13.7cm]{images/spectrum-example.png}
-        \caption{Spectrum nested example groups with code examples}
-        \label{fig:spectrum-example}
-      \end{center}
-    \end{figure}
+
+
     \begin{figure}[ht]
       \begin{center}
         \includegraphics[width=13.7cm]{images/spectrum-result.png}
@@ -389,7 +406,7 @@ running on top of JVM programming languages are demonstrated as an alternative f
     separate situations that creates an individual feature method run. Finally the line 27. holds the definition of
     the feature method. The name of feature method can be inserted as a string description, allowing more easily to write
     information in it~\cite{kapelonis2016java}. In the example, name holds test run output information with the embedded parameters inside it.
-    The result of feature method run on the IDE Intellij Idea can be seen in the figure \ref{fig:spock-example} as two separate test runs through the DDT.
+    The result of feature method run on the IDE Intellij Idea can be seen in the figure \ref{fig:spock-result} as two separate test runs through the DDT.
     \begin{figure}[ht]
       \begin{center}
         \includegraphics[width=12.5cm]{images/spock-result.png}

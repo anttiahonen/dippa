@@ -55,17 +55,29 @@ related research on the thesis study topic is presented.
     This can be easily demonstrated with an example of software inside a missile defence system or an online dating application.
     Two different systems with different goals and consequences of use and therefore obviously different standards for needed quality.
 
-    \begin{figure}[ht]
-      \begin{center}
-        \includegraphics[width=10cm]{images/alternativeQM.png}
-        \caption{Alternative Quality Model}
-        \label{fig:AQM}
-      \end{center}
-    \end{figure}
+    {\renewcommand{\arraystretch}{1.1}
+    \begin{table}[H]
+        \begin{center}
+            \begin{tabular}{ p{1cm} p{8cm} }
+            \topline
+            \headcol \multicolumn{2}{l}{{\large\textbf{Alternative Quality Model}}} \\
+            \headcol \multicolumn{2}{l}{\textbf{Six user levels of software quality assesment}} \\
+
+            \rowcol 4 & Software delights \\
+            3 & Software produces no negative consequences \\
+            \rowcol 2 & Software fits environment \\
+            1 & Software fulfills all basic promises \\
+            \rowcol 0 & Some trust, begrudging use, cynical satisfaction \\
+            -1 & No trust \\ \bottomlinec
+            \end{tabular}
+            \caption {Alternative Quality Model~\cite{denning2016sq}} \label{tab:aqm}
+        \end{center}
+    \end{table}
+    }
 
     New alternative view on software quality by Denning~\cite{denning2016sq} includes user experience directly in the core of quality.
     This view is called the \textbf{alternative quality model (AQM)} and it defines quality software as software that delights
-    the end user~\cite{denning2016sq}. Figure \ref{fig:AQM} displays the full scale of AQM.
+    the end user~\cite{denning2016sq}. Table \ref{tab:aqm} displays the full scale of AQM.
     While this research is mainly interested in aspects of producing traditional defect free quality software,
     later on in this chapter BDD is examined in detail. BDD can be seen to directly try to increase software quality on the AQM,
     providing value for end users and other stakeholders while at the same time minimizing defects~\cite{chelimsky2010rspec}.
@@ -119,19 +131,33 @@ related research on the thesis study topic is presented.
     detail and third overall benefits and drawbacks of test automation are discussed.
 
     \subsection{Levels of automation}
-    \begin{figure}[ht]
-      \begin{center}
-        \includegraphics[width=10cm]{images/testlevels.png}
-        \caption{Test last development regarding system and its design}
-        \label{fig:testlevels}
-      \end{center}
-    \end{figure}
+    {\renewcommand{\arraystretch}{1.3}
+    \begin{table}[H]
+        \begin{center}
+            \begin{tabular}{ p{4.5cm}p{0.5cm}p{4.5cm} }
+            \topline
+            \headcol {\large\textbf{Design level}} & & {\large\textbf{Level of \newline automation}} \\
+
+            \rowcol Requirements & $\Longrightarrow$ & Acceptance testing \\
+            Functional specification & $\Longrightarrow$ & System testing \\
+            \rowcol Architecture design & $\Longrightarrow$ & Integration testing \\
+            Component design & $\Longrightarrow$ & Unit testing \\ \hline
+            & & \\[-1.3em]
+            \multicolumn{1}{c}{{\large\textbf{$\wideDownarrow$}}} & & \multicolumn{1}{c}{{\large\textbf{$\wideUparrow$}}} \\
+            & & \\[-1.3em]
+            \headcol & & \\[-1em]
+            \headcol \multicolumn{3}{c}{{\large\textbf{Code}}} \\ \bottomline
+            \end{tabular}
+            \caption {Test last development regarding system and its design}} \label{tab:testlevels}
+        \end{center}
+    \end{table}
+    }
 
     Test automation comes at many levels of granularity regarding the system and its requirements. The four main levels for
     functional testing are \textit{unit, integration, system} and \textit{acceptance} testing~\cite{itkonen2016}.
-    Figure \ref{fig:testlevels} illustrates how different levels of design relate to levels of test automation in traditional
+    Table \ref{tab:testlevels} illustrates how different levels of design relate to levels of test automation in traditional
     \textbf{Test Last Development (TLD)}. At the bottom
-    of figure \ref{fig:testlevels} there is code, which is the result of design and foundation (in traditional automated testing)
+    of table \ref{tab:testlevels} there is code, which is the result of design and foundation (in traditional automated testing)
     for different testing levels. Different levels of design guide the automated tests at the specified level.
 
     The introduced test automation levels are a part of functional testing. There exists also different non-functional
@@ -139,10 +165,10 @@ related research on the thesis study topic is presented.
     These are not in the scope of this study, instead the functional testing levels of automated unit and integration testing are
     the main topic of interest.
 
-    \subsection{Low level testing explained}
-    Low level testing in the scope of this thesis means automated unit and integration level testing. They both have separate
+    \subsection{Low-level testing explained}
+    Low-level testing in the scope of this thesis means automated unit and integration level testing. They both have separate
     definitions and usages inside software projects, but the distinction between the two can be found confusing by many developers~\cite{artofunit2013}.
-    Figure \ref{fig:testlevels} illustrates how unit testing adheres to component design and integration testing to architecture design ~\cite{itkonen2016}.
+    Table \ref{tab:testlevels} illustrates how unit testing adheres to component design and integration testing to architecture design ~\cite{itkonen2016}.
 
     \textbf{Unit test} has many similar definitions which all agree that it tests individual unit or collection of these units working as one
     ~\cite{runeson2006survey}~\cite{whittaker2000software}. Unit test also has the property of being isolated from the rest
@@ -158,7 +184,7 @@ related research on the thesis study topic is presented.
     them to make progress without implementing dependencies (used in TDD/BDD), isolating unit under test from dependencies
     or nondeterminism. ~\cite{chelimsky2010rspec}
 
-    \textbf{Integration testing} is the second, higher level of automated testing in the low level testing scope of thesis.
+    \textbf{Integration testing} is the second, higher level of automated testing in the low-level testing scope of thesis.
     The definitions of integration testing state that it is a testing
     activity which involves multiple components~\cite{whittaker2000software}~\cite{artofunit2013}. Osherove~\cite{artofunit2013}
     defines integration testing as testing a unit of work with real dependencies in place, for instance database and  networking.
@@ -167,24 +193,27 @@ related research on the thesis study topic is presented.
 
     \subsection{Benefits and drawbacks}
 
+    {\renewcommand{\arraystretch}{1.1}
     \begin{table}[H]
         \begin{center}
-            \begin{tabular}{ | p{6.3cm} | p{6.3cm} |}
-            \hline
-            \textbf{Benefits} & \textbf{Drawbacks} \\ \hline
-            Rapid feedback~\cite{prechelt2016quality} & Can't replace manual testing~\cite{rafi2012benefits} \\ \hline
-            Improved product quality~\cite{rafi2012benefits}~\cite{williams2009effectiveness} & Maintaining difficulty~\cite{rafi2012benefits}~\cite{runeson2006survey} \\ \hline
-            Increased test coverage~\cite{rafi2012benefits} & Lack of skilled people~\cite{rafi2012benefits}~\cite{runeson2006survey} \\ \hline
-            Increased developer confidence~\cite{rafi2012benefits} & Hard to select correct testing strategies~\cite{rafi2012benefits}~\cite{berner2005observations} \\ \hline
-            Reduced testing time~\cite{rafi2012benefits} & Brittle tests~\cite{berner2005observations} \\ \hline
-            Shorter release cycle~\cite{berner2005observations} & More development time~\cite{williams2009effectiveness} \\ \hline
-            Increased testability design~\cite{berner2005observations} & Cost versus value~\cite{runeson2006survey} \\ \hline
-            Act as documentation~\cite{langr2015pragmatic}~\cite{chelimsky2010rspec}~\cite{kapelonis2016java} & Unmaintaned tests can lose all value~\cite{berner2005observations} \\ \hline
-            Continuous regression~\cite{williams2009effectiveness} &  \\ \hline
+            \begin{tabular}{ p{6.3cm} p{6.3cm} }
+            \headcol & \\[-0.8em]
+            \headcol \textbf{Benefits} & \textbf{Drawbacks} \\ \hline
+
+            \rowcol Rapid feedback~\cite{prechelt2016quality} & Can't replace manual testing~\cite{rafi2012benefits} \\
+            Improved product quality~\cite{rafi2012benefits}~\cite{williams2009effectiveness} & Maintaining difficulty~\cite{rafi2012benefits}~\cite{runeson2006survey} \\
+            \rowcol Increased test coverage~\cite{rafi2012benefits} & Lack of skilled people~\cite{rafi2012benefits}~\cite{runeson2006survey} \\
+            Increased developer confidence~\cite{rafi2012benefits} & Hard to select correct testing strategies~\cite{rafi2012benefits}~\cite{berner2005observations} \\
+            \rowcol Reduced testing time~\cite{rafi2012benefits} & Brittle tests~\cite{berner2005observations} \\
+            Shorter release cycle~\cite{berner2005observations} & More development time~\cite{williams2009effectiveness} \\
+            \rowcol Increased testability design~\cite{berner2005observations} & Cost versus value~\cite{runeson2006survey} \\
+            Act as documentation~\cite{langr2015pragmatic}~\cite{chelimsky2010rspec}~\cite{kapelonis2016java} & Unmaintaned tests can lose all value~\cite{berner2005observations} \\
+            \rowcol Continuous regression~\cite{williams2009effectiveness} &  \\ \bottomlinec
             \end{tabular}
             \caption {Automated Testing Benefits \& Drawbacks} \label{tab:automated-title}
         \end{center}
     \end{table}
+    }
     Agile methodologies do not prefer or deny separate testers inside a project, but for a modern quality centered
     development separate testers might hinder the experience~\cite{prechelt2016quality}. Teams without separate testers have one aspect in common,
     they rely heavily on test automation as the core of quality. One of the most important properties in these kind of
@@ -240,33 +269,46 @@ related research on the thesis study topic is presented.
     Run all tests to ensure refactoring didn't break anything.
     \item \textbf{Repeat}: Repeat the cycle to add more functionality.
     \end{enumerate}
-    \begin{figure}[ht]
-      \begin{center}
-        \includegraphics[width=10.0cm]{images/tdd.png}
-        \caption{TDD related to system design}
-        \label{fig:TDD}
-      \end{center}
-    \end{figure}
+
+    {\renewcommand{\arraystretch}{1.3}
+    \begin{table}[H]
+        \begin{center}
+            \begin{tabular}{ p{4.5cm}p{0.5cm}p{4.5cm} }
+            \topline
+            \headcol {\large\textbf{Design level}} & & {\large\textbf{Level of \newline automation}} \\
+
+            \rowcol Component design & $\wideLeftrightarrow$ & Unit testing \\ \hline
+            & & \\[-1.3em]
+            \multicolumn{1}{c}{} & & \multicolumn{1}{c}{{\large\textbf{$\wideDownarrow$}}} \\
+            & & \\[-1.3em]
+            \headcol & & \\[-1em]
+            \headcol \multicolumn{3}{c}{{\large\textbf{Code}}} \\ \bottomline
+            \end{tabular}
+            \caption {TDD related to system design}} \label{tab:TDD}
+        \end{center}
+    \end{table}
+    }
     The tests written in TDD cycle are unit tests, providing incremental functionality to small pieces of software at a time~\cite{bissi2016effects}.
     Beck~\cite{beck2001aim} also defines test-first principle to be much more than just testing and he states that TDD is
-    also a software design technique. Figure \ref{fig:TDD} illustrates how component design and unit testing are now in a relation
+    also a software design technique. Table \ref{tab:TDD} illustrates how component design and unit testing are now in a relation
     where both can affect each other. Code is produced only through design captured in unit tests.
 
     \subsection{Benefits and drawbacks}
-
+    {\renewcommand{\arraystretch}{1.1}
     \begin{table}[H]
         \begin{center}
-            \begin{tabular}{ | p{6.3cm} | p{6.3cm} |}
-            \hline
-            \textbf{Benefits} & \textbf{Drawbacks} \\ \hline
-            Increased external quality~\cite{kollanus2010test}~\cite{bissi2016effects} & Increased\newline development time~\cite{kollanus2010test}~\cite{bissi2016effects}~\cite{williams2009effectiveness}  \\ \hline
-            Increased test coverage~\cite{bissi2016effects} &  Requires high discipline~\cite{aniche2010most} \\ \hline
-            Tests executed more~\cite{williams2009effectiveness} & Can lead to brittle tests~\cite{chelimsky2010rspec}~\cite{astels2006new}~\cite{amodeo2015learning} \\ \hline
-            More precise test cases~\cite{williams2009effectiveness} &  \\ \hline
+            \begin{tabular}{ p{6.3cm} p{6.3cm} }
+            \headcol & \\[-0.8em]
+            \headcol \textbf{Benefits} & \textbf{Drawbacks} \\ \hline
+            \rowcol Increased external quality~\cite{kollanus2010test}~\cite{bissi2016effects} & Increased\newline development time~\cite{kollanus2010test}~\cite{bissi2016effects}~\cite{williams2009effectiveness}  \\
+            Increased test coverage~\cite{bissi2016effects} &  Requires high discipline~\cite{aniche2010most} \\
+            \rowcol Tests executed more~\cite{williams2009effectiveness} & Can lead to brittle tests~\cite{chelimsky2010rspec}~\cite{astels2006new}~\cite{amodeo2015learning} \\
+            More precise test cases~\cite{williams2009effectiveness} &  \\ \bottomlinec
             \end{tabular}
             \caption {TDD Benefits \& Drawbacks} \label{tab:tdd-title}
         \end{center}
     \end{table}
+    }
     \textbf{Benefits} of TDD are not totally clear and exact. On earlier systematic literature review by Kollanus~\cite{kollanus2010test} in 2010 there was found
     weak evidence regarding better \textbf{external software quality} with TDD and even less evidence for better \textbf{internal software quality} with TDD.
     In any case, there was still results pointing to better quality, even though evidence was not uniform.
@@ -317,23 +359,24 @@ related research on the thesis study topic is presented.
     only a starting point for more quality assurance work; the system is stable enough to be manually tested further~\cite{acceptance2010}.
 
     \subsection{Benefits and drawbacks}
-
+    {\renewcommand{\arraystretch}{1.1}
     \begin{table}[H]
         \begin{center}
-            \begin{tabular}{ | p{6.3cm} | p{6.3cm} |}
-            \hline
-            \textbf{Benefits} & \textbf{Drawbacks} \\ \hline
-            Frequent collaboration~\cite{haugset2012automated} & Demands frequent collaboration~\cite{haugset2012automated}  \\ \hline
-            Less ambiquity, noise and over-specification in requirements~\cite{haugset2012automated} & Needs active customer~\cite{haugset2012automated}  \\ \hline
-            Faster feedback~\cite{haugset2012automated} & High upfront cost~\cite{haugset2012automated}  \\ \hline
-            Increased requirement traceability~\cite{hayes2009towards} & Works bad with constantly changing requirements~\cite{haugset2012automated}  \\ \hline
-            Increased trust~\cite{haugset2012automated} & Learning curve~\cite{haugset2012automated} \\ \hline
-            Increased test coverage~\cite{haugset2012automated} & Not for all contextes~\cite{haugset2012automated}  \\ \hline
-            Faster start for new team members~\cite{haugset2012automated} & Requires high discipline~\cite{haugset2012automated}  \\ \hline
+            \begin{tabular}{  p{6.3cm}  p{6.3cm} }
+            \headcol & \\[-0.8em]
+            \headcol \textbf{Benefits} & \textbf{Drawbacks} \\ \hline
+            \rowcol Frequent collaboration~\cite{haugset2012automated} & Demands frequent collaboration~\cite{haugset2012automated}  \\
+            Less ambiquity, noise and over-specification in requirements~\cite{haugset2012automated} & Needs active customer~\cite{haugset2012automated}  \\
+            \rowcol Faster feedback~\cite{haugset2012automated} & High upfront cost~\cite{haugset2012automated}  \\
+            Increased requirement traceability~\cite{hayes2009towards} & Works bad with constantly changing requirements~\cite{haugset2012automated}  \\
+            \rowcol Increased trust~\cite{haugset2012automated} & Learning curve~\cite{haugset2012automated} \\
+            Increased test coverage~\cite{haugset2012automated} & Not for all contextes~\cite{haugset2012automated}  \\
+            \rowcol Faster start for new team members~\cite{haugset2012automated} & Requires high discipline~\cite{haugset2012automated}  \\ \bottomlinec
             \end{tabular}
             \caption {ATDD Benefits \& Drawbacks} \label{tab:atdd-title}
         \end{center}
     \end{table}
+    }
     One of the major \textbf{benefits} of ATDD is the frequent collaboration \& communication between
     the development team and other stakeholders. This improves the understanding of requirements~\cite{haugset2012automated}
     between all people involved. ATDD can potentially reduce the \textit{ambiquity, noise} and \textit{over-specification}~\cite{haugset2012automated}
@@ -355,7 +398,7 @@ related research on the thesis study topic is presented.
 
     Next section explores Behavior Driven Development
     in detail to see how it relates to TDD and ATDD and how it combines the two approaches.
-
+\clearpage
 \section{Behavior Driven Development} %2p
     This section will first examine the history behind BDD. Second BDD definition is explained.
     Third the BDD process and different levels in it are examined, together with tools to support them. Finally
@@ -403,13 +446,31 @@ related research on the thesis study topic is presented.
     The full cycle of BDD starts with \textit{outside-in} approach. First, purpose of the project is defined and after that,
     business outcomes or goals for stakeholders are identified. After this feature sets are described.
     Individual features are analyzed for feature sets.~\cite{chelimsky2010rspec}
-    \begin{figure}[ht]
-      \begin{center}
-        \includegraphics[width=10.0cm]{images/BDD.png}
-        \caption{BDD related to system development}
-        \label{fig:BDD}
-      \end{center}
-    \end{figure}
+
+    {\renewcommand{\arraystretch}{1.3}
+    \begin{table}[H]
+        \begin{center}
+            \begin{tabular}{ p{0.5cm}p{4.5cm}p{0.5cm}p{4.5cm}p{0.5cm} }
+            \cmidrule{2-4}
+            \headcol \cellcolor{white} & & & & \cellcolor{white} \\[-1em]
+            \headcol \cellcolor{white} & \multicolumn{3}{c}{{\large\textbf{Business outcomes}}} & \cellcolor{white} \\
+            \cellcolor{white} & & & & \\[-1.3em]
+            \cellcolor{white} & \multicolumn{1}{c}{{\large\textbf{$\wideDownarrow$}}} & & & \\
+            \cellcolor{white} & & & & \\[-1.3em] \cmidrule{2-4}
+            \rowcol \cellcolor{white} & Requirements & $\wideLeftrightarrow$ & User stories & \cellcolor{white} \\
+            \cellcolor{white} & Functional specification & $\wideLeftrightarrow$ & Scenarios & \\
+            \rowcol \cellcolor{white} & Architecture design & $\wideLeftrightarrow$ & Integration specs & \cellcolor{white} \\
+            \cellcolor{white} & Component design & $\wideLeftrightarrow$ & Unit specs & \\\cmidrule{2-4}
+            \cellcolor{white} & & & & \\[-1.3em]
+            \cellcolor{white} & \multicolumn{1}{c}{} & & \multicolumn{1}{c}{{\large\textbf{$\wideDownarrow$}}} & \\
+            \multirow{-8}{*}{\cellcolor{white}\begin{sideways}\textbf{Design level}\end{sideways}} & & & & \multirow{-8}{*}{\begin{sideways}\textbf{Level of automation}\end{sideways}} \\[-1.3em]
+            \headcol \cellcolor{white} & & & & \cellcolor{white} \\[-1em]
+            \headcol \cellcolor{white} & \multicolumn{3}{c}{{\large\textbf{Code}}} & \cellcolor{white} \\\cmidrule{2-4}
+            \end{tabular}
+            \caption {BDD related to system development}} \label{tab:BDD}
+        \end{center}
+    \end{table}
+    }
 
     \textbf{Value} is the \textbf{driving force} to start the progress with features.
     To be implemented, feature must have business value related to business outcomes~\cite{bdd2006north}.
@@ -418,10 +479,10 @@ related research on the thesis study topic is presented.
     process aims to provide features with value in use and high internal \& external software quality. This happens through
     \textit{collaboration, incremental delivery} and \textit{vast \& repeatable automated test suites}~\cite{chelimsky2010rspec}~\cite{smart2014bdd}.
     The outcome should be quality that delights the end user, thus performing well on the AQM~\cite{denning2016sq}.
-    Figure \ref{fig:BDD} visualizes how business outcomes and the value derived from them drive the process from outside-in through
+    Table \ref{tab:BDD} visualizes how business outcomes and the value derived from them drive the process from outside-in through
     test automation levels to code.
 
-    To fully understand the different levels of automated specification illustrated in figure \ref{fig:BDD}, the whole
+    To fully understand the different levels of automated specification illustrated in table \ref{tab:BDD}, the whole
     automation level BDD cycle~\cite{chelimsky2010rspec} needs to be explained:
     \begin{figure}[ht]
       \begin{center}
@@ -446,7 +507,7 @@ related research on the thesis study topic is presented.
     At acceptance level, features will be written down as feature files (exact naming depends on the used framework), where they are
     expressed as user stories ~\cite{chelimsky2010rspec}. Acceptance criteria is presented as executable scenarios~\cite{bdd2006north}, that usually
     follow predetermined ubiquitous language \textbf{Gherkin}~\cite{okolnychyi2016study}. Gherkin will be studied in more detail in the next
-    chapter when testing framework Spock is examined. Figure \ref{fig:BDD} shows how these stories and scenarios relate to system design.
+    chapter when testing framework Spock is examined. Table \ref{tab:BDD} shows how these stories and scenarios relate to system design.
     The stakeholder audience for acceptance level BDD include all stakeholders interested in development of the product~\cite{smart2014bdd}.
 
     Some of the BDD acceptance level tools for JVM include \textit{Cucumber-JVM, Concordion} and \textit{JBehave}~\cite{okolnychyi2016study}. Other
@@ -454,12 +515,12 @@ related research on the thesis study topic is presented.
     Main characteristic of acceptance level tools is business readable plain text input that is expressed with the earlier mentioned
     user stories and their scenarios~\cite{okolnychyi2016study}.
 
-    The second automated level in BDD is \textbf{implementation level} testing ~\cite{chelimsky2010rspec}~\cite{solis2011study}~\cite{smart2014bdd}~\cite{okolnychyi2016study}.
+    The second automated level in BDD is \textbf{implementation level} testing ~\cite{chelimsky2010rspec}~\cite{solis2011study}\newline~\cite{smart2014bdd}~\cite{okolnychyi2016study}.
     Implementation level can be seen as testing, where behavior of objects and components are described with examples~\cite{chelimsky2010rspec}.
     This means the earlier mentioned \textit{unit} and \textit{integration} testing done with a new point of view. BDD is not limited to acceptancel level
     only, as one of the core values in it is:
     \textit{"it's all behavior"}~\cite{chelimsky2010rspec}. Every level can be broken down to examples describing behavior.
-    Figure \ref{fig:BDD} illustrates how these implementation level specifications relate to system design. Figure \ref{fig:bdd-cycle}
+    Table \ref{tab:BDD} illustrates how these implementation level specifications relate to system design. Figure \ref{fig:bdd-cycle}
     shows how the two explained automation levels in BDD work together in a cycle.
 
     Implementation level BDD can be seen to follow the principles of TDD, like the earlier mentioned red-green cycle driving
@@ -469,32 +530,35 @@ related research on the thesis study topic is presented.
 
     The outcome from implementation level BDD specifications is readable, behavior oriented living documentation aimed for developers~\cite{chelimsky2010rspec}~\cite{smart2014bdd}.
     Although implementation level BDD can be done with traditional xUnit tools,
-    there exists dedicated BDD tools for writing easily \textbf{more concise} and \textbf{more expressive} low level specifications~\cite{smart2014bdd}.
+    there exists dedicated BDD tools for writing easily \textbf{more concise} and \textbf{more expressive} low-level specifications~\cite{smart2014bdd}.
     These implementation level BDD tools provide the base for research work
     in this thesis, therefore they will be examined in more detail later with reviewing testing frameworks \textit{RSpec, Spock} and
     \textit{Spectrum}.
 
     \subsection{Benefits and drawbacks}
 
+    {\renewcommand{\arraystretch}{1.1}
     \begin{table}[H]
         \begin{center}
-            \begin{tabular}{ | p{6.3cm} | p{6.3cm} |}
-            \hline
-            \textbf{Benefits} & \textbf{Drawbacks} \\ \hline
-            Frequent collaboration*~\cite{haugset2012automated} & Demands frequent collaboration*~\cite{haugset2012automated}  \\ \hline
-            Less ambiquity, noise and over-specification in requirements*~\cite{haugset2012automated} & Needs active customer*~\cite{haugset2012automated}  \\ \hline
-            Faster feedback*~\cite{haugset2012automated} & High upfront cost*~\cite{haugset2012automated}  \\ \hline
-            Increased requirement traceability*~\cite{hayes2009towards} & Works bad with constantly changing requirements*~\cite{haugset2012automated}  \\ \hline
-            Increased trust*~\cite{haugset2012automated} & Learning curve*~\cite{haugset2012automated} \\ \hline
-            Increased test coverage*~\cite{haugset2012automated} & Not for all contextes*~\cite{haugset2012automated}  \\ \hline
-            Faster start for new team members*~\cite{haugset2012automated} & Requires high discipline*~\cite{haugset2012automated}  \\ \hline
-            Ubiquitous language can help in testing right aspects ~\cite{okolnychyi2016study} &  \\ \hline
-            Can reduce futile feature development~\cite{smart2014bdd} &  \\ \hline
+            \begin{tabular}{ p{6.3cm} p{6.3cm} }
+            \headcol & \\[-0.8em]
+            \headcol \textbf{Benefits} & \textbf{Drawbacks} \\ \hline
+            \rowcol Frequent collaboration*~\cite{haugset2012automated} & Demands frequent collaboration*~\cite{haugset2012automated}  \\
+            Less ambiquity, noise and over-specification in requirements*~\cite{haugset2012automated} & Needs active customer*~\cite{haugset2012automated}  \\
+            \rowcol Faster feedback*~\cite{haugset2012automated} & High upfront cost*~\cite{haugset2012automated}  \\
+            Increased requirement traceability*~\cite{hayes2009towards} & Works bad with constantly changing requirements*~\cite{haugset2012automated}  \\
+            \rowcol Increased trust*~\cite{haugset2012automated} & Learning curve*~\cite{haugset2012automated} \\
+            Increased test coverage*~\cite{haugset2012automated} & Not for all contextes*~\cite{haugset2012automated}  \\
+            \rowcol Faster start for new team members*~\cite{haugset2012automated} & Requires high discipline*~\cite{haugset2012automated}  \\
+            Ubiquitous language can help in testing right aspects ~\cite{okolnychyi2016study} &  \\
+            \rowcol Can reduce futile feature development~\cite{smart2014bdd} &  \\ \bottomlinec
             \end{tabular}
             \caption {Acceptance Level BDD Benefits \& Drawbacks} \label{tab:bdd-acc-title}
             \caption* {* = No actual source, based on implications}
         \end{center}
     \end{table}
+    }
+
     \textbf{Benefits} (and drawbacks) of \textbf{acceptance level BDD} are almost fully the same as in ATDD. This is the result of
     acceptance level BDD being a form of ATDD~\cite{gartner2012atdd}. Compared to ATDD, Acceptance level BDD introduces the ubiquitous language
     and it can have the effect of changing all stakeholders to think about testing to describe
@@ -502,21 +566,24 @@ related research on the thesis study topic is presented.
     features can also reduce production of features that are not used~\cite{smart2014bdd}.
     \textbf{Drawbacks} of acceptance level BDD are identical to the earlier mentioned ones of ATDD.
 
+    {\renewcommand{\arraystretch}{1.1}
     \begin{table}[H]
         \begin{center}
-            \begin{tabular}{ | p{6.3cm} | p{6.3cm} |}
-            \hline
-            \textbf{Benefits} & \textbf{Drawbacks} \\ \hline
-            Increased external quality*~\cite{kollanus2010test}~\cite{bissi2016effects} & Increased\newline development time*~\cite{kollanus2010test}~\cite{bissi2016effects}~\cite{williams2009effectiveness} \\ \hline
-            Increased internal quality*~\cite{bissi2016effects} & Requires high discipline~\cite{smart2014bdd} \\ \hline
-            Helps to test right aspects of component~\cite{chelimsky2010rspec}~\cite{astels2006new}~\cite{amodeo2015learning} & \\ \hline
-            More granular test cases~\cite{chelimsky2010rspec}~\cite{astels2006new} & \\ \hline
-            Can help in maintenance~\cite{smart2014bdd} & \\ \hline
+            \begin{tabular}{  p{6.3cm}  p{6.3cm} }
+            \headcol & \\[-0.8em]
+            \headcol \textbf{Benefits} & \textbf{Drawbacks} \\ \hline
+            \rowcol Increased external quality*~\cite{kollanus2010test}~\cite{bissi2016effects} & Increased\newline development time*~\cite{kollanus2010test}~\cite{bissi2016effects}~\cite{williams2009effectiveness} \\
+            Increased internal quality*~\cite{bissi2016effects} & Requires high discipline~\cite{smart2014bdd} \\
+            \rowcol Helps to test right aspects of component~\cite{chelimsky2010rspec}~\cite{astels2006new}~\cite{amodeo2015learning} & \\
+            More granular test cases~\cite{chelimsky2010rspec}~\cite{astels2006new} & \\
+            \rowcol Can help in maintenance~\cite{smart2014bdd} & \\ \bottomlinec
             \end{tabular}
             \caption {Implementation Level BDD Benefits \& Drawbacks} \label{tab:bdd-imp-title}
             \caption*{* = No actual source, based on implications}
         \end{center}
     \end{table}
+    }
+
     \textbf{Benefits} of \textbf{implementation level BDD} share the same characteristics of TDD. Although there exists no research
     on how the external and internal quality of software changes with BDD, it should share the same traits as described
     earlier with benefits of TDD. This is a result of implementation level BDD being an evolution of TDD~\cite{astels2006new}.
@@ -536,7 +603,7 @@ related research on the thesis study topic is presented.
 
     As the research on this implementation level of BDD is very limited, this thesis focuses on tools used in it. The main topic of interest is how well
     they could replace traditional xUnit testing family even without tests first principle. Before inspecting these JVM testing
-    frameworks in detail, related research about low level testing practices are reviewed.
+    frameworks in detail, related research about low-level testing practices are reviewed.
 
 \section{Related research} % 2p
 \label{section:research}
@@ -545,9 +612,9 @@ related research on the thesis study topic is presented.
     \textit{Jasmine} in JavaScript testing~\cite{amodeo2015learning} and \textit{Spock}~\cite{spock} in Groovy testing.
     There exists no exact research on how popular practicing BDD is on the mentioned environments,
     but the reality probably is that these BDD implementation level frameworks are used largely only for testing purposes, not practicing BDD.
-    The scope of this thesis is to study the changes in low level testing from introducing BDD implementation level testing
+    The scope of this thesis is to study the changes in low-level testing from introducing BDD implementation level testing
     frameworks without the practice of BDD.
-    Therefore, the previous findings in studies done on low level testing are the most important ones regarding this thesis.
+    Therefore, the previous findings in studies done on low-level testing are the most important ones regarding this thesis.
 
     \textbf{Daka and Fraser}~\cite{daka2014survey} studied practitioners of unit testing for used practices and problems in unit testing with a survey.
     They found out that developers are mainly trying to find realistic scenarios on what to test.

@@ -16,18 +16,18 @@
 \contentsline {subsection}{\numberline {2.2.3}Activities in SQA}{5}{subsection.2.2.3}
 \contentsline {section}{\numberline {2.3}Automated testing}{6}{section.2.3}
 \contentsline {subsection}{\numberline {2.3.1}Levels of automation}{6}{subsection.2.3.1}
-\contentsline {subsection}{\numberline {2.3.2}Low level testing explained}{7}{subsection.2.3.2}
+\contentsline {subsection}{\numberline {2.3.2}Low-level testing explained}{7}{subsection.2.3.2}
 \contentsline {subsection}{\numberline {2.3.3}Benefits and drawbacks}{8}{subsection.2.3.3}
 \contentsline {section}{\numberline {2.4}Test Driven Development}{9}{section.2.4}
 \contentsline {subsection}{\numberline {2.4.1}Definition}{9}{subsection.2.4.1}
 \contentsline {subsection}{\numberline {2.4.2}Benefits and drawbacks}{10}{subsection.2.4.2}
-\contentsline {section}{\numberline {2.5}Acceptance Test Driven Development}{11}{section.2.5}
+\contentsline {section}{\numberline {2.5}Acceptance Test Driven Development}{12}{section.2.5}
 \contentsline {subsection}{\numberline {2.5.1}Benefits and drawbacks}{12}{subsection.2.5.1}
-\contentsline {section}{\numberline {2.6}Behavior Driven Development}{13}{section.2.6}
-\contentsline {subsection}{\numberline {2.6.1}History}{13}{subsection.2.6.1}
+\contentsline {section}{\numberline {2.6}Behavior Driven Development}{14}{section.2.6}
+\contentsline {subsection}{\numberline {2.6.1}History}{14}{subsection.2.6.1}
 \contentsline {subsection}{\numberline {2.6.2}Definition}{14}{subsection.2.6.2}
-\contentsline {subsection}{\numberline {2.6.3}Process}{14}{subsection.2.6.3}
-\contentsline {subsection}{\numberline {2.6.4}Levels of specification}{15}{subsection.2.6.4}
+\contentsline {subsection}{\numberline {2.6.3}Process}{15}{subsection.2.6.3}
+\contentsline {subsection}{\numberline {2.6.4}Levels of specification}{17}{subsection.2.6.4}
 \contentsline {subsection}{\numberline {2.6.5}Benefits and drawbacks}{18}{subsection.2.6.5}
 \contentsline {section}{\numberline {2.7}Related research}{20}{section.2.7}
 \contentsline {chapter}{\numberline {3}Environment}{23}{chapter.3}
@@ -65,16 +65,18 @@
 \contentsline {subsection}{\numberline {5.1.2}Project B}{54}{subsection.5.1.2}
 \contentsline {chapter}{\numberline {6}Results}{57}{chapter.6}
 \contentsline {section}{\numberline {6.1}First interview: Demographics and projects}{57}{section.6.1}
-\contentsline {section}{\numberline {6.2}Surveys and BDD framework feedback interview analyzed}{57}{section.6.2}
-\contentsline {section}{\numberline {6.3}Test code analysis}{65}{section.6.3}
-\contentsline {subsection}{\numberline {6.3.1}Automated unit testing level}{65}{subsection.6.3.1}
-\contentsline {subsection}{\numberline {6.3.2}Automated unit \& integration testing levels}{66}{subsection.6.3.2}
-\contentsline {section}{\numberline {6.4}Comparison of BDD testing frameworks}{66}{section.6.4}
-\contentsline {chapter}{\numberline {7}Discussion}{67}{chapter.7}
-\contentsline {chapter}{\numberline {8}Conclusions}{68}{chapter.8}
-\contentsline {chapter}{\numberline {A}Gradle build configurations}{76}{appendix.A}
-\contentsline {chapter}{\numberline {B}Interview questions}{80}{appendix.B}
-\contentsline {section}{\numberline {B.1}Interview for demographic purposes}{80}{section.B.1}
-\contentsline {chapter}{\numberline {C}Surveys}{82}{appendix.C}
-\contentsline {section}{\numberline {C.1}Survey regarding JUnit in automated low level testing}{82}{section.C.1}
-\contentsline {section}{\numberline {C.2}Survey regarding BDD testing framework in automated low level testing}{86}{section.C.2}
+\contentsline {section}{\numberline {6.2}Surveys and BDD framework feedback interview analyzed}{59}{section.6.2}
+\contentsline {subsection}{\numberline {6.2.1}Automated low-level testing developer practices}{59}{subsection.6.2.1}
+\contentsline {subsection}{\numberline {6.2.2}Developer perception towards automated low-level testing}{65}{subsection.6.2.2}
+\contentsline {section}{\numberline {6.3}Test code analysis}{68}{section.6.3}
+\contentsline {subsection}{\numberline {6.3.1}Automated unit testing level}{68}{subsection.6.3.1}
+\contentsline {subsection}{\numberline {6.3.2}Automated unit \& integration testing levels}{69}{subsection.6.3.2}
+\contentsline {section}{\numberline {6.4}Comparison of BDD testing frameworks}{69}{section.6.4}
+\contentsline {chapter}{\numberline {7}Discussion}{70}{chapter.7}
+\contentsline {chapter}{\numberline {8}Conclusions}{71}{chapter.8}
+\contentsline {chapter}{\numberline {A}Gradle build configurations}{79}{appendix.A}
+\contentsline {chapter}{\numberline {B}Interview questions}{83}{appendix.B}
+\contentsline {section}{\numberline {B.1}Interview for demographic purposes}{83}{section.B.1}
+\contentsline {chapter}{\numberline {C}Surveys}{85}{appendix.C}
+\contentsline {section}{\numberline {C.1}Survey regarding JUnit in automated low-level testing}{85}{section.C.1}
+\contentsline {section}{\numberline {C.2}Survey regarding BDD testing framework in automated low-level testing}{89}{section.C.2}

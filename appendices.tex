@@ -66,7 +66,7 @@
 This appendix explains in detail the two surveys used in this case study: their questions and relationship to related
 research surveys \& found problems. First the survey regarding JUnit is examined, followed by the inspection of BDD testing
 framework survey.
-\section{Survey regarding JUnit in automated low level testing}
+\section{Survey regarding JUnit in automated low-level testing}
 \label{section:junit-survey}
 Survey regarding JUnit contains base questions from multiple previous research studies~\cite{williams2009effectiveness}~\cite{daka2014survey}~\cite{li2016automatically}.
 They were used as base to see how the participants in this study are positioned related to other studied practitioners.
@@ -78,18 +78,18 @@ they will later help answering:
 \begin{table}[H]
     \resizebox{\textwidth}{!}{%
         \begin{tabular}{p{4.0cm}p{4.0cm}p{9.0cm}}
-        \hline
-        \textbf{Related research questions} & \textbf{Survey questions} & \textbf{Related research findings} \\ \hline
-        RQ1 & Q3 & Developers are mainly trying to find realistic scenarios on what to test~\cite{daka2014survey} \\
+
+        \headcol \textbf{Related research questions} & \textbf{Survey questions} & \textbf{Related research findings} \\ \hline
+        \rowcol RQ1 & Q3 & Developers are mainly trying to find realistic scenarios on what to test~\cite{daka2014survey} \\
         RQ1 & Q11, Q12 & Developers finding isolating of unit under test hard~\cite{daka2014survey} \\
-        RQ2 & Q14 & Only half of the survey respondents enjoy writing unit tests~\cite{daka2014survey}~\cite{runeson2006survey} \\
+        \rowcol RQ2 & Q14 & Only half of the survey respondents enjoy writing unit tests~\cite{daka2014survey}~\cite{runeson2006survey} \\
         RQ1, RQ2 & Q2, Q7, Q14, Q15 & Maintaining unit tests was found hard~\cite{daka2014survey}~\cite{runeson2006survey} \\
-        RQ1 & Q4, Q5, Q6 & For 60.38\% of developers, understanding unit tests is at least moderately difficult~\cite{li2016automatically} \\
+        \rowcol RQ1 & Q4, Q5, Q6 & For 60.38\% of developers, understanding unit tests is at least moderately difficult~\cite{li2016automatically} \\
         RQ1 & Q8, Q9 & Developers find updated documentation and comments in test cases useful, but writing comments to unit tests is rarely or never done~\cite{li2016automatically} \\
-        RQ2 & Q14, Q15 & Majority of developers find unit tests helpful in producing higher quality code~\cite{williams2009effectiveness} \\
+        \rowcol RQ2 & Q14, Q15 & Majority of developers find unit tests helpful in producing higher quality code~\cite{williams2009effectiveness} \\
         RQ2 & Q14 & Majority of developers find unit tests helpful in understanding other peoples code~\cite{williams2009effectiveness} \\
-        RQ1 & Q1, Q10 & \\
-        RQ2 & Q16 & \\ \hline
+        \rowcol RQ1 & Q1, Q10 & \\
+        RQ2 & Q16 & \\ \bottomlinec
         \end{tabular}}
         \caption {JUnit survey questions related to research questions and earlier studies} \label{tab:junit-survey}
 \end{table}
@@ -97,27 +97,27 @@ they will later help answering:
 \restoregeometry
 Tables \ref{tab:junit-pt1}, \ref{tab:junit-pt2} and \ref{tab:junit-pt3} display all the questions in the JUnit survey.
 They contain multiple copied questions from other
-studies. All the copied questions originally had the word \textit{'unit'} in them instead of \textit{'low level'}. This change
+studies. All the copied questions originally had the word \textit{'unit'} in them instead of \textit{'low-level'}. This change
 was made to accompany both unit and integration testing into the survey of this study.
 
 First copied questions are questions \textbf{Q1:} \textit{How do you spend your software development time?} and
-\textbf{Q3:} \textit{How important are the following aspects for you when you write new low level tests?}~\cite{daka2014survey}.
-These questions were copied to study as a base how the development time is used and what aspects are priortized in low level testing.
+\textbf{Q3:} \textit{How important are the following aspects for you when you write new low-level tests?}~\cite{daka2014survey}.
+These questions were copied to study as a base how the development time is used and what aspects are priortized in low-level testing.
 Q3 Subquestions 1 and 3-8 are originals. Q3 Subquestion 2 is added to this survey to study the initial attitude towards describing behavior
 in tests.
 
-Third copied question is \textbf{Q4:} \textit{How difficult is it for you usually to understand a low level test?}~\cite{li2016automatically}.
-This question was added to survey to get a general concensus about understandability of the low level testing within participants.
-Fourth and fifth copied questions are \textbf{Q8:} \textit{How often do you add/write documentation comments to low level test cases?} and
-\textbf{Q9:} \textit{When you make changes to low level tests, how often do you comment the changes (or update existing comments)?}~\cite{li2016automatically}.
-These questions were copied to study the low level testing documentation practices.
+Third copied question is \textbf{Q4:} \textit{How difficult is it for you usually to understand a low-level test?}~\cite{li2016automatically}.
+This question was added to survey to get a general concensus about understandability of the low-level testing within participants.
+Fourth and fifth copied questions are \textbf{Q8:} \textit{How often do you add/write documentation comments to low-level test cases?} and
+\textbf{Q9:} \textit{When you make changes to low-level tests, how often do you comment the changes (or update existing comments)?}~\cite{li2016automatically}.
+These questions were copied to study the low-level testing documentation practices.
 
 Sixth and seven copied questions are \textbf{Q14 \& Q15:} \textit{Please indicate your level of agreement with the following statements}.
 Q14 and its subquestions 1-5 are copied from \textit{"A survey on unit testing practices and problems"} by Daka and Fraser~\cite{daka2014survey}.
 Subquestions 6-8 are original questions defined in this thesis. Q15 subquestion 1 is copied from a unit test practitioner
 survey done at Microsoft~\cite{williams2009effectiveness} and subquestion 2 is copied from unit test documentation
 practices survey by Li et al.~\cite{li2016automatically}. Questions Q14 \& Q15 were copied to gather developer perception
-towards low level testing.
+towards low-level testing.
 
 
 \clearpage
@@ -125,7 +125,7 @@ towards low level testing.
     \begin{table}
         \resizebox{\textwidth}{!}{%
             \begin{tabular}{p{20.0cm}*{7}{p{2.0cm}}}
-            \hline
+            \topline
             \textbf{Question} & \textbf{Answer options} &  &  &  &   &  & \\ \hline
             \textbf{Q1: How do you spend your software development time (in percentages)} & & & & & & \\
             & 0-100\% & & & & & & \\
@@ -136,7 +136,7 @@ towards low level testing.
             5. Other &  \\
             & \\ \hline
 
-            \textbf{Q2: How do you spend your low level automated testing time} & & & & & & \\
+            \textbf{Q2: How do you spend your low-level automated testing time} & & & & & & \\
              & minutes / 0-100\% & & & & & & \\
             1. How much approximately you use time per test case (minutes)? & \\
             2. How much of your initial effort goes to thinking about test case content without implementation (percentage)? & \\
@@ -144,7 +144,7 @@ towards low level testing.
             4. How much of your overall testing effort goes to refactoring test code (percentage)? \\
             & \\ \hline
 
-            \textbf{Q3: How important are the following aspects for you when you write new low level tests?} & & & & & & \\
+            \textbf{Q3: How important are the following aspects for you when you write new low-level tests?} & & & & & & \\
             & Not at all & Low \newline importance & Slightly important & Neutral & Moderately important & Very \newline important & Extremely important \\
             1. Code coverage & \\
             2. Capturing all behavior of unit/feature with tests or assertions & \\
@@ -158,10 +158,10 @@ towards low level testing.
 
             & & & & & & \\
             & Very easy & Easy & Moderate & Hard & Very hard & & \\
-            \textbf{Q4: How difficult is it for you to understand a low level test?} & \\
+            \textbf{Q4: How difficult is it for you to understand a low-level test?} & \\
             & \\ \hline
 
-            \textbf{Q5: In low level testing, how difficult is it for you to} & & & & & & \\
+            \textbf{Q5: In low-level testing, how difficult is it for you to} & & & & & & \\
             & Very easy & Easy & Slightly easy & Moderate & Slightly hard & Hard & Very hard \\
             1. Structure and write information to context of test? & \\
             2. Structure and write information to stimulus of test? & \\
@@ -176,7 +176,7 @@ towards low level testing.
             \textbf{Q6: How informative you usually find the test case output?} & \\
             & \\ \hline
 
-            \textbf{Q7: How much are the following repetition reducing techniques used in your low level testing?} & & & & & & \\
+            \textbf{Q7: How much are the following repetition reducing techniques used in your low-level testing?} & & & & & & \\
             & Never & Very rarely & Rarely & Occasionally & Frequently & Very \newline frequently & Always \\
             1. Extract method (custom helper methods) & \\
             2. Lifecycle hooks Before/After -class & \\
@@ -187,12 +187,12 @@ towards low level testing.
 
             & & & & & & \\
             & Never & Rarely & Moderate & Hard & Very hard & & \\
-            \textbf{Q8: How often do you add/write documentation comments to low level test cases?} & \\
+            \textbf{Q8: How often do you add/write documentation comments to low-level test cases?} & \\
             & \\ \hline
 
             & & & & & & \\
             & Never & Rarely & Moderate & Hard & Very hard & & \\
-            \textbf{Q9: When you make changes to low level tests, how often do you comment the changes (or update existing comments)?} & \\
+            \textbf{Q9: When you make changes to low-level tests, how often do you comment the changes (or update existing comments)?} & \\
             & \\ \hline
 
             \textbf{Q10: In unit testing, how many} & & & & & & \\
@@ -216,35 +216,35 @@ towards low level testing.
             & & & & & & \\
             & Before implementation & During implementation & After implementation & \\
             \textbf{Q13: When do you add automated unit tests for developed code?} & \\
-            & \\ \hline
+            & \\ \topline
 
             \end{tabular}}
-            \caption {JUnit developer low level testing practice questions} \label{tab:junit-pt1}
+            \caption {JUnit developer low-level testing practice questions} \label{tab:junit-pt1}
     \end{table}
     \clearpage
     \begin{table}[H]
         \resizebox{\textwidth}{!}{%
             \begin{tabular}{p{20.0cm}*{7}{p{2.0cm}}}
-            \hline
+            \topline
             \textbf{Question} & \textbf{Answer options} &  &  &  &   &  & \\ \hline
 
             \textbf{Q14: Please indicate your level of agreement with the following statements} & & & & & & \\
             & Strongly disagree & Disagree & Somewhat disagree & Neither agree nor disagree & Somewhat agree & Agree & Strongly agree \\
-            1. Writing low level tests is difficult &  \\
-            2. I enjoy writing low level tests &  \\
-            3. I would like to have more tool support when writing low level tests &  \\
-            4. I would like to have more low level tests &  \\
-            5. Maintaining low level tests is difficult &  \\
-            6. I think my low level tests will help other developers to understand the implemented unit/feature better & \\
-            7. Low level automated testing helps me find defects in the code before other quality assurance phases & \\
+            1. Writing low-level tests is difficult &  \\
+            2. I enjoy writing low-level tests &  \\
+            3. I would like to have more tool support when writing low-level tests &  \\
+            4. I would like to have more low-level tests &  \\
+            5. Maintaining low-level tests is difficult &  \\
+            6. I think my low-level tests will help other developers to understand the implemented unit/feature better & \\
+            7. Low-level automated testing helps me find defects in the code before other quality assurance phases & \\
             8. JUnit promotes me to write high quality test code & \\
             & \\ \hline
 
             \textbf{Q15: Please indicate your level of agreement with the following statements} & & & & & & \\
             & Strongly disagree & Disagree & Neutral & Agree & Strongly agree & \\
-            1. Overall, low level tests help me produce higher quality code &  \\
-            2. Maintaining good low level test cases and their documentations is important to the quality of a system &  \\
-            & \\ \hline
+            1. Overall, low-level tests help me produce higher quality code &  \\
+            2. Maintaining good low-level test cases and their documentations is important to the quality of a system &  \\
+            & \\ \topline
 
             \end{tabular}}
             \caption {Likert scale questions of developer perception towards JUnit} \label{tab:junit-pt2}
@@ -253,18 +253,18 @@ towards low level testing.
     \begin{table}[H]
         \resizebox{\textwidth}{!}{%
             \begin{tabular}{p{17.0cm}*{11}{p{1.55cm}}}
-            \hline
+            \topline
             \textbf{Question} & \textbf{Answer options} &  &  &  &  &  &  &  &  & \\ \hline
 
             \textbf{Q16: How likely are you to} &  &  &  &  &  &  &  &  &  &  \\
             & 0 & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10 \\
-            1. Recommend low level automated testing for colleague as a software development practice? &  \\
+            1. Recommend low-level automated testing for colleague as a software development practice? &  \\
             2. Recommend testing framework JUnit for future Spring projects where you take part in existing project? &  \\
             3. Take testing framework JUnit in use for future Spring projects where you have technical lead role in a new starting project? & \\
-            & \\ \hline
+            & \\ \topline
 
             \end{tabular}}
-            \caption {NPS questions of developer loyalty towards low level automated testing with JUnit} \label{tab:junit-pt3}
+            \caption {NPS questions of developer loyalty towards low-level automated testing with JUnit} \label{tab:junit-pt3}
 
     \end{table}
     \clearpage
@@ -275,7 +275,7 @@ towards low level testing.
 
 
 
-\section{Survey regarding BDD testing framework in automated low level testing}
+\section{Survey regarding BDD testing framework in automated low-level testing}
 \label{section:bdd-survey}
 Survey regarding BDD testing framework was aimed for the projects A and B explained in chapter \ref{chapter:projects}. This means
 that for project A, the survey was aimed at to study the differences between JUnit and \textit{xSpec family} testing done with \textbf{Spectrum}.
@@ -288,18 +288,18 @@ and research questions in this thesis:
 \begin{table}[H]
     \resizebox{\textwidth}{!}{%
         \begin{tabular}{p{4.0cm}p{4.0cm}p{9.0cm}}
-        \hline
-        \textbf{Related research questions} & \textbf{Survey questions} & \textbf{Related research findings} \\ \hline
-        RQ1 & Q3' & Developers are mainly trying to find realistic scenarios on what to test~\cite{daka2014survey} \\
+
+        \headcol \textbf{Related research questions} & \textbf{Survey questions} & \textbf{Related research findings} \\ \hline
+        \rowcol RQ1 & Q3' & Developers are mainly trying to find realistic scenarios on what to test~\cite{daka2014survey} \\
         RQ1 & Q11', Q12' & Developers finding isolating of unit under test hard~\cite{daka2014survey} \\
-        RQ2 & *Q14' & Only half of the survey respondents enjoy writing unit tests~\cite{daka2014survey}~\cite{runeson2006survey} \\
+        \rowcol RQ2 & *Q14' & Only half of the survey respondents enjoy writing unit tests~\cite{daka2014survey}~\cite{runeson2006survey} \\
         RQ1, RQ2 & Q2', Q7', *Q14', Q15 & Maintaining unit tests was found hard~\cite{daka2014survey}~\cite{runeson2006survey} \\
-        RQ1 & Q4', Q5', Q6', Q15 & For 60.38\% of developers, understanding unit tests is at least moderately difficult~\cite{li2016automatically} \\
+        \rowcol RQ1 & Q4', Q5', Q6', Q15 & For 60.38\% of developers, understanding unit tests is at least moderately difficult~\cite{li2016automatically} \\
         RQ1 & Q8', Q9' & Developers find updated documentation and comments in test cases useful, but writing comments to unit tests is rarely or never done~\cite{li2016automatically} \\
-        RQ2 & *Q14' & Majority of developers find unit tests helpful in producing higher quality code~\cite{williams2009effectiveness} \\
+        \rowcol RQ2 & *Q14' & Majority of developers find unit tests helpful in producing higher quality code~\cite{williams2009effectiveness} \\
         RQ2 & *Q14', Q15 & Majority of developers find unit tests helpful in understanding other peoples code~\cite{williams2009effectiveness} \\
-        RQ1 & Q1', Q10' & \\
-        RQ2 & Q16' & \\ \hline
+        \rowcol RQ1 & Q1', Q10' & \\
+        RQ2 & Q16' & \\ \bottomlinec
         \end{tabular}}
         \caption {JUnit survey questions related to research questions and earlier studies}
         \caption* {* = Q14' contains direct comparison to JUnit survey questions Q14 and Q15}
@@ -309,8 +309,8 @@ and research questions in this thesis:
 
 Questions marked with '-character are direct comparison questions to question with same number in JUnit survey displayed
 in section \ref{section:junit-survey}. For example original question \textbf{Q2} in JUnit survey:
-\textit{"How do you spend your low level automated testing time?"} has its direct comparison question \textbf{Q2'}:
-\textit{"Compared to JUnit, How do you spend your low level automated testing time?"}. Although there were individual surveys
+\textit{"How do you spend your low-level automated testing time?"} has its direct comparison question \textbf{Q2'}:
+\textit{"Compared to JUnit, How do you spend your low-level automated testing time?"}. Although there were individual surveys
 used for each Spock and Spectrum, their questions are both displayed in same tables. The only change is in the words
 \textit{Spectrum/Spock}, which are marked in questions. Full questions used in BDD surveys are displayed in tables \ref{tab:spock-spectrum-pt1},
 \ref{tab:spock-spectrum-pt2}, \ref{tab:spock-spectrum-pt3} and \ref{tab:spock-spectrum-pt4}.
@@ -319,7 +319,7 @@ used for each Spock and Spectrum, their questions are both displayed in same tab
     \begin{table}
         \resizebox{\textwidth}{!}{%
             \begin{tabular}{p{18.0cm}*{7}{p{2.4cm}}}
-            \hline
+            \topline
             \textbf{Question} & \textbf{Answer \newline options} &  &  &  &   &  & \\ \hline
 
             \textbf{Q1': Compared to JUnit, How do you spend your software development time?} & & & & & & \\
@@ -331,7 +331,7 @@ used for each Spock and Spectrum, their questions are both displayed in same tab
             5. Other &  \\
             & \\ \hline
 
-            \textbf{Q2': Compared to JUnit, How do you spend your low level automated testing time?} & & & & & & \\
+            \textbf{Q2': Compared to JUnit, How do you spend your low-level automated testing time?} & & & & & & \\
             & A lot less & Less & Slightly less & The same amount & Slightly more & More & A lot more \\
             1. Do you use more or less time per test case? & \\
             2. Do you use more or less of initial effort thinking about test case content? (no implementation) & \\
@@ -339,7 +339,7 @@ used for each Spock and Spectrum, their questions are both displayed in same tab
             4. Do you use more or less of overall testing effort to refactoring test code? \\
             & \\ \hline
 
-            \textbf{Q3': Compared to JUnit, How important are the following aspects for you when you write new low level tests?} & & & & & & \\
+            \textbf{Q3': Compared to JUnit, How important are the following aspects for you when you write new low-level tests?} & & & & & & \\
             & A lot less important & Less important & Slightly less important & As important as before & Slightly more important & More important & A lot more important \\
             1. Code coverage & \\
             2. Capturing all behavior of unit/feature with tests or assertions & \\
@@ -353,10 +353,10 @@ used for each Spock and Spectrum, their questions are both displayed in same tab
 
             & & & & & & \\
             & A lot less difficult & Less difficult & Slightly less difficult & As difficult as before & Slightly more difficult & More difficult & A lot more difficult \\
-            \textbf{Q4': Compared to JUnit, how difficult is it for you to understand a low level test?} & \\
+            \textbf{Q4': Compared to JUnit, how difficult is it for you to understand a low-level test?} & \\
             & \\ \hline
 
-            \textbf{Q5': Compared to JUnit in low level testing, how difficult is it for you to.} & & & & & & \\
+            \textbf{Q5': Compared to JUnit in low-level testing, how difficult is it for you to.} & & & & & & \\
             & A lot less difficult & Less difficult & Slightly less difficult & As difficult as before & Slightly more difficult & More difficult & A lot more difficult \\
             1. Structure and write information to context of test? & \\
             2. Structure and write information to stimulus of test? & \\
@@ -371,7 +371,7 @@ used for each Spock and Spectrum, their questions are both displayed in same tab
             \textbf{Q6': Compared to JUnit, how informative you usually find the test case output?} & \\
             & \\ \hline
 
-            \textbf{Q7': Compared to JUnit, how much are the following repetition reducing techniques used in your low level testing?} & & & & & & \\
+            \textbf{Q7': Compared to JUnit, how much are the following repetition reducing techniques used in your low-level testing?} & & & & & & \\
             & A lot less & Less & Slightly less & The same amount & Slightly more & More & A lot more \\
             1. Extract method (custom helper methods) & \\
             2. Lifecycle hooks Before/After -class & \\
@@ -382,12 +382,12 @@ used for each Spock and Spectrum, their questions are both displayed in same tab
 
             & & & & & & \\
             & A lot less & Less & Slightly less & The same amount & Slightly more & More & A lot more \\
-            \textbf{Q8': Compared to JUnit, how often do you add/write documentation comments to low level test cases?} & \\
+            \textbf{Q8': Compared to JUnit, how often do you add/write documentation comments to low-level test cases?} & \\
             & \\ \hline
 
             & & & & & & \\
             & A lot less & Less & Slightly less & The same amount & Slightly more & More & A lot more \\
-            \textbf{Q9': Compared to JUnit when you make changes to low level tests, how often do you comment the changes (or update existing comments)?} & \\
+            \textbf{Q9': Compared to JUnit when you make changes to low-level tests, how often do you comment the changes (or update existing comments)?} & \\
             & \\ \hline
 
             \textbf{Q10': Compared to JUnit in unit testing} & & & & & & \\
@@ -411,31 +411,31 @@ used for each Spock and Spectrum, their questions are both displayed in same tab
             & & & & & & \\
             & Before implementation & During implementation & After implementation & \\
             \textbf{Q13': When do you add automated unit tests for developed code?} & \\
-            & \\ \hline
+            & \\ \topline
 
             \end{tabular}}
-            \caption {\textit{Spectrum/Spock} developer low level testing practice questions} \label{tab:spock-spectrum-pt1}
+            \caption {\textit{Spectrum/Spock} developer low-level testing practice questions} \label{tab:spock-spectrum-pt1}
     \end{table}
     \clearpage
     \begin{table}[H]
         \resizebox{\textwidth}{!}{%
             \begin{tabular}{p{20.0cm}*{7}{p{2.0cm}}}
-            \hline
+            \topline
             \textbf{Question} & \textbf{Answer options} &  &  &  &   &  & \\ \hline
 
             \textbf{Q14': Please indicate your level of agreement with the following statements} & & & & & & \\
             & Strongly disagree & Disagree & Somewhat disagree & Neither agree nor disagree & Somewhat agree & Agree & Strongly agree \\
-            1. Writing low level tests with \textit{Spectrum/Spock} is more difficult than with JUnit &  \\
-            2. I enjoy writing low level tests with \textit{Spectrum/Spock} more than I do with JUnit &  \\
-            3. I would like to have more tool support for \textit{Spectrum/Spock} when writing low level tests &  \\
-            4. I would like to have more low level tests for \textit{Spectrum/Spock} &  \\
-            5. Maintaining low level tests with \textit{Spectrum/Spock} is more difficult than with JUnit &  \\
-            6. I think my low level tests with \textit{Spectrum/Spock} will help other developers to understand the implemented unit/feature better than earlier tests with JUnit & \\
-            7. Low level automated testing with \textit{Spectrum/Spock} helps me find defects in the code before other quality assurance phases better than earlier tests with JUnit & \\
+            1. Writing low-level tests with \textit{Spectrum/Spock} is more difficult than with JUnit &  \\
+            2. I enjoy writing low-level tests with \textit{Spectrum/Spock} more than I do with JUnit &  \\
+            3. I would like to have more tool support for \textit{Spectrum/Spock} when writing low-level tests &  \\
+            4. I would like to have more low-level tests for \textit{Spectrum/Spock} &  \\
+            5. Maintaining low-level tests with \textit{Spectrum/Spock} is more difficult than with JUnit &  \\
+            6. I think my low-level tests with \textit{Spectrum/Spock} will help other developers to understand the implemented unit/feature better than earlier tests with JUnit & \\
+            7. Low-level automated testing with \textit{Spectrum/Spock} helps me find defects in the code before other quality assurance phases better than earlier tests with JUnit & \\
             8. \textit{Spectrum/Spock} promotes me to write higher quality test code than with JUnit & \\
-            9. Overall, low level tests with \textit{Spectrum/Spock} help me produce higher quality code than with JUnit & \\
-            10. Maintaining good low level test cases and their documentation with \textit{Spectrum/Spock} is more important for system quality than maintaining JUnit test cases & \\
-            & \\ \hline
+            9. Overall, low-level tests with \textit{Spectrum/Spock} help me produce higher quality code than with JUnit & \\
+            10. Maintaining good low-level test cases and their documentation with \textit{Spectrum/Spock} is more important for system quality than maintaining JUnit test cases & \\
+            & \\ \topline
 
             \end{tabular}}
             \caption {Likert scale questions of developer perception towards \textit{Spectrum/Spock}} \label{tab:spock-spectrum-pt2}
@@ -445,14 +445,14 @@ used for each Spock and Spectrum, their questions are both displayed in same tab
     \begin{table}[H]
         \resizebox{\textwidth}{!}{%
             \begin{tabular}{p{15.0cm}*{3}{p{2.0cm}}}
-            \hline
+            \topline
             \textbf{Question} & \textbf{Answer options} &  &  \\ \hline
 
             \textbf{Q15: I would say that I write more} &  &  & \\
             & Yes & Uncertain & No \\
-            1. Understandable low level tests with \textit{Spectrum/Spock} than with JUnit? &  \\
-            2. Maintainable low level tests with \textit{Spectrum/Spock} than with JUnit? &  \\
-            & \\ \hline
+            1. Understandable low-level tests with \textit{Spectrum/Spock} than with JUnit? &  \\
+            2. Maintainable low-level tests with \textit{Spectrum/Spock} than with JUnit? &  \\
+            & \\ \topline
 
             \end{tabular}}
             \caption {Questions of developer perception towards \textit{Spectrum/Spock}} \label{tab:spock-spectrum-pt3}
@@ -464,21 +464,21 @@ used for each Spock and Spectrum, their questions are both displayed in same tab
     \begin{table}[H]
         \resizebox{\textwidth}{!}{%
             \begin{tabular}{p{17.0cm}*{11}{p{1.55cm}}}
-            \hline
+            \topline
             \textbf{Question} & \textbf{Answer options} &  &  &  &  &  &  &  &  & \\ \hline
 
             \textbf{Q16': How likely are you to} &  &  &  &  &  &  &  &  &  &  \\
             & 0 & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10 \\
-            1. Recommend low level automated testing for colleague as a software development practice? &  \\
+            1. Recommend low-level automated testing for colleague as a software development practice? &  \\
             2. Recommend testing framework \textit{Spectrum/Spock} for future Spring projects where you take part in existing project? &  \\
             3. Take testing framework \textit{Spectrum/Spock} in use for future Spring projects where you have technical lead role in a new starting project? & \\
-            & \\ \hline
+            & \\ \topline
 
             \end{tabular}}
-            \caption {NPS questions of developer loyalty towards low level automated testing with \textit{Spectrum/Spock}} \label{tab:spock-spectrum-pt4}
+            \caption {NPS questions of developer loyalty towards low-level automated testing with \textit{Spectrum/Spock}} \label{tab:spock-spectrum-pt4}
     \end{table}
 
-\clearpage
+\begin{comment}
     \begin{table}
         \resizebox{\textwidth}{!}{%
             \begin{tabular}{p{20.0cm}*{7}{p{2.0cm}}}
@@ -494,7 +494,7 @@ used for each Spock and Spectrum, their questions are both displayed in same tab
             & \\ \hline
 
 
-            \textbf{Q2: How do you spend your low level automated testing time} & Participant A & Participant B & Participant C & Average & & \
+            \textbf{Q2: How do you spend your low-level automated testing time} & Participant A & Participant B & Participant C & Average & & \
             & & & & & & & \\
             1. How much approximately you use time per test case (minutes)? & 30 min & 30 min & 30 min & 30 min \\
             2. How much of your initial effort goes to thinking about test case content without implementation (percentage)? & 50\% & 20\% & 15\% & 28.33\% \\
@@ -502,7 +502,7 @@ used for each Spock and Spectrum, their questions are both displayed in same tab
             4. How much of your overall testing effort goes to refactoring test code (percentage)? & 50\% & 5\% & 30\% & 28.33\% \\
             & \\ \hline
 
-            \textbf{Q3: How important are the following aspects for you when you write new low level tests?} & & & & & & \\
+            \textbf{Q3: How important are the following aspects for you when you write new low-level tests?} & & & & & & \\
             & Not at all & Low \newline importance & Slightly important & Neutral & Moderately important & Very \newline important & Extremely important \\
             1. Code coverage & 0 & 0 & 0 & ABC & 0 & 0 & 0 \\
             2. Capturing all behavior of unit/feature with tests or assertions & 0 & 0 & B & A & 0 & C & 0 \\
@@ -516,10 +516,10 @@ used for each Spock and Spectrum, their questions are both displayed in same tab
 
             & & & & & & \\
             & Very easy & Easy & Moderate & Hard & Very hard & & \\
-            \textbf{Q4: How difficult is it for you to understand a low level test?} & 0 & 0 & BC & A & 0 \\
+            \textbf{Q4: How difficult is it for you to understand a low-level test?} & 0 & 0 & BC & A & 0 \\
             & \\ \hline
 
-            \textbf{Q5: In low level testing, how difficult is it for you to} & & & & & & \\
+            \textbf{Q5: In low-level testing, how difficult is it for you to} & & & & & & \\
             & Very easy & Easy & Slightly easy & Moderate & Slightly hard & Hard & Very hard \\
             1. Structure and write information to context of test? & 0 & A & 0 & 0 & BC & 0 & 0 \\
             2. Structure and write information to stimulus of test? & 0 & 0 & 0 & ABC & 0 & 0 & 0 \\
@@ -534,7 +534,7 @@ used for each Spock and Spectrum, their questions are both displayed in same tab
             \textbf{Q6: How informative you usually find the test case output?} & 0 & A & 0 & C & B & A & 0 \\
             & \\ \hline
 
-            \textbf{Q7: How much are the following repetition reducing techniques used in your low level testing?} & & & & & & \\
+            \textbf{Q7: How much are the following repetition reducing techniques used in your low-level testing?} & & & & & & \\
             & Never & Very rarely & Rarely & Occasionally & Frequently & Very \newline frequently & Always \\
             1. Extract method (custom helper methods) & 0 & 0 & 0 & 0 & AB & C & 0 \\
             2. Lifecycle hooks Before/After -class & 0 & 0 & 0 & C & AB & 0 & 0 \\
@@ -545,12 +545,12 @@ used for each Spock and Spectrum, their questions are both displayed in same tab
 
             & & & & & & \\
             & Never & Rarely & Sometimes & Fairly often & Always & & \\
-            \textbf{Q8: How often do you add/write documentation comments to low level test cases?} & 0 & C & 0 & AB & 0 \\
+            \textbf{Q8: How often do you add/write documentation comments to low-level test cases?} & 0 & C & 0 & AB & 0 \\
             & \\ \hline
 
             & & & & & & \\
             & Never & Rarely & Sometimes & Fairly often & Always & & \\
-            \textbf{Q9: When you make changes to low level tests, how often do you comment the changes (or update existing comments)?} & 0 & C & 0 & AB & 0 \\
+            \textbf{Q9: When you make changes to low-level tests, how often do you comment the changes (or update existing comments)?} & 0 & C & 0 & AB & 0 \\
             & \\ \hline
 
             \textbf{Q10: In unit testing, how many} & & & & & & \\
@@ -577,7 +577,7 @@ used for each Spock and Spectrum, their questions are both displayed in same tab
             & \\ \hline
 
             \end{tabular}}
-            \caption {JUnit developer low level testing practice questions with response data} \label{tab:junit-pt1-ans}
+            \caption {JUnit developer low-level testing practice questions with response data} \label{tab:junit-pt1-ans}
     \end{table}
     \clearpage
     \begin{table}[H]
@@ -588,20 +588,20 @@ used for each Spock and Spectrum, their questions are both displayed in same tab
 
             \textbf{Q14: Please indicate your level of agreement with the following statements} & & & & & & \\
             & Strongly disagree & Disagree & Somewhat disagree & Neither agree nor disagree & Somewhat agree & Agree & Strongly agree \\
-            1. Writing low level tests is difficult & 0 & 0 & C & 0 & AB & 0 & 0 \\
-            2. I enjoy writing low level tests & 0 & B & 0 & A & 0 & C & 0 \\
-            3. I would like to have more tool support when writing low level tests & 0 & 0 & B & A & C & 0 & 0 \\
-            4. I would like to have more low level tests & 0 & 0 & 0 & ABC & 0 & 0 & 0 \\
-            5. Maintaining low level tests is difficult & 0 & 0 & C & 0 & B & A & 0 \\
-            6. I think my low level tests will help other developers to understand the implemented unit/feature better & 0 & 0 & B & 0 & A & C & 0 \\
-            7. Low level automated testing helps me find defects in the code before other quality assurance phases & 0 & 0 & 0 & 0 & B & C & A \\
+            1. Writing low-level tests is difficult & 0 & 0 & C & 0 & AB & 0 & 0 \\
+            2. I enjoy writing low-level tests & 0 & B & 0 & A & 0 & C & 0 \\
+            3. I would like to have more tool support when writing low-level tests & 0 & 0 & B & A & C & 0 & 0 \\
+            4. I would like to have more low-level tests & 0 & 0 & 0 & ABC & 0 & 0 & 0 \\
+            5. Maintaining low-level tests is difficult & 0 & 0 & C & 0 & B & A & 0 \\
+            6. I think my low-level tests will help other developers to understand the implemented unit/feature better & 0 & 0 & B & 0 & A & C & 0 \\
+            7. Low-level automated testing helps me find defects in the code before other quality assurance phases & 0 & 0 & 0 & 0 & B & C & A \\
             8. JUnit promotes me to write high quality test code & 0 & 0 & AC & B & 0 & 0 & 0 \\
             & \\ \hline
 
             \textbf{Q15: Please indicate your level of agreement with the following statements} & & & & & & \\
             & Strongly disagree & Disagree & Neutral & Agree & Strongly agree & \\
-            1. Overall, low level tests help me produce higher quality code & 0 & 0 & 0 & B & AC \\
-            2. Maintaining good low level test cases and their documentations is important to the quality of a system & 0 & 0 & 0 & AB & C \\
+            1. Overall, low-level tests help me produce higher quality code & 0 & 0 & 0 & B & AC \\
+            2. Maintaining good low-level test cases and their documentations is important to the quality of a system & 0 & 0 & 0 & AB & C \\
             & \\ \hline
 
             \end{tabular}}
@@ -616,17 +616,17 @@ used for each Spock and Spectrum, their questions are both displayed in same tab
 
             \textbf{Q16: How likely are you to} &  &  &  &  &  &  &  &  &  &  \\
             & 0 & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10 \\ \hline
-            1. Recommend low level automated testing for colleague as a software development practice? & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & B & 0 & AC \\
+            1. Recommend low-level automated testing for colleague as a software development practice? & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & B & 0 & AC \\
             2. Recommend testing framework JUnit for future Spring projects where you take part in existing project? & 0 & 0 & 0 & 0 & 0 & 0 & 0 & C & 0 & B & A \\
             3. Take testing framework JUnit in use for future Spring projects where you have technical lead role in a new starting project? & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & C & B & A \\
             & \\ \hline
 
             \end{tabular}}
-            \caption {NPS questions with response data about developer loyalty towards low level automated testing with JUnit } \label{tab:junit-pt3-ans}
+            \caption {NPS questions with response data about developer loyalty towards low-level automated testing with JUnit } \label{tab:junit-pt3-ans}
 
     \end{table}
     \clearpage
-
+\end{comment}
 \restoregeometry
 
 

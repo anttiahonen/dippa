@@ -6,15 +6,15 @@ and features of studied testing frameworks explained in chapter \ref{chapter:env
 Third, the empirical study and its methodology are explained in detail. Finally, limitations to the study methods are discussed.
 
 \section{Research questions}
-This thesis studies low level testing done with xUnit family testing framework JUnit and how it changes after putting
+This thesis studies low-level testing done with xUnit family testing framework JUnit and how it changes after putting
 an implementation level BDD testing framework into operation. The scope in research is testing Java-code. The following
-research questions are aimed to highlight the change in low level testing after the testing framework change:
+research questions are aimed to highlight the change in low-level testing after the testing framework change:
 \begin{addmargin}[2em]{0em}
 \vspace{20px}
 \begin{itemize}
-\item[\textbf{RQ1:}] How does behavior driven testing frameworks change developer practices working with automated low level testing compared to JUnit framework?
-\item[\textbf{RQ2:}] How does behavior driven testing frameworks change developer perception of working with automated low level testing compared to JUnit framework?
-\item[\textbf{RQ3:}] How does behavior driven testing frameworks change written low level test cases and test code coverage compared to JUnit framework?
+\item[\textbf{RQ1:}] How does behavior driven testing frameworks change developer practices working with automated low-level testing compared to JUnit framework?
+\item[\textbf{RQ2:}] How does behavior driven testing frameworks change developer perception of working with automated low-level testing compared to JUnit framework?
+\item[\textbf{RQ3:}] How does behavior driven testing frameworks change written low-level test cases and test code coverage compared to JUnit framework?
 \end{itemize}
 \end{addmargin}
 
@@ -69,12 +69,12 @@ research questions are aimed to highlight the change in low level testing after 
 
     \begin{addmargin}[0em]{0em}
     \vspace{10px}
-    \textbf{Statement 4:} Developers will perceive working with low level automated testing more enjoyable.
+    \textbf{Statement 4:} Developers will perceive working with low-level automated testing more enjoyable.
     \vspace{5px}
     \newline
-    This statement is a combination of the three earlier statements. By changing the used practices and language in low level testing,
-    the overall result should appear as more enjoyable low level testing for developers. Especially the statements 2 and 3, easier understanding
-    and maintaining of test cases should affect how automated low level testing is perceived.
+    This statement is a combination of the three earlier statements. By changing the used practices and language in low-level testing,
+    the overall result should appear as more enjoyable low-level testing for developers. Especially the statements 2 and 3, easier understanding
+    and maintaining of test cases should affect how automated low-level testing is perceived.
     Statement is measured with a survey and interview.
     \end{addmargin}
 
@@ -94,13 +94,13 @@ explained. Finally, threats to validity and limitations in this study are review
     Case study methodology was build with suggested best practices for empirical research in software engineering~\cite{kitchenham2002preliminary} and case
     study research~\cite{runeson2012case}.
 
-    \textbf{Rationale} of this case study was to improve existing traditional low level automated testing practices research with studying
+    \textbf{Rationale} of this case study was to improve existing traditional low-level automated testing practices research with studying
     relevant technologies used in the industry. At the same time, this case study could act as a starting point for future
     research on the differences of traditional xUnit testing frameworks and implementation level BDD testing frameworks for larger
     scale studies.
 
     \textbf{Objective} of the study was to compare traditional xUnit testing frameworks and implementation level BDD testing frameworks
-    and how they change the developer practices and perception towards low level automated testing. The change was also measured
+    and how they change the developer practices and perception towards low-level automated testing. The change was also measured
     with changes in written test code.
     As this thesis is done at industry context, the purpose was also to determine how well these
     new testing frameworks in JVM context could work for future use in Java projects in the studied company.
@@ -108,8 +108,8 @@ explained. Finally, threats to validity and limitations in this study are review
 
 \subsection{Process for selecting teams and developers}
     The study was conducted in industry context at IT-consulting software firm \textbf{Vincit Plc}, Helsinki Mikonkatu 15 office.
-    Related to objective of studying the automated low level testing differences, context for the development environment was chosen as JVM.
-    JVM provides interesting possibilities through various programming languages in use for low level automated testing.
+    Related to objective of studying the automated low-level testing differences, context for the development environment was chosen as JVM.
+    JVM provides interesting possibilities through various programming languages in use for low-level automated testing.
     For the selection of teams, there was limitations; team should be implementing a Java-based Spring Framework project with prior JUnit
     unit and integration testing in place. Limiting factor in team selection was also the amount of effort available,
     as my intention was to graduate in the current spring semester of 2017.  This filtered out projects that could not start
@@ -118,16 +118,16 @@ explained. Finally, threats to validity and limitations in this study are review
     With these constraints, two projects and their teams were chosen to be studied. The teams were first introduced to
     implementation level BDD testing frameworks. Both teams were presented with \textit{RSpec, Spock} and \textit{Spectrum}, from
     which they chose one technology to take into use in the projects for new created unit and integration test cases. This
-    process is explained in more detail in chapter \ref{chapter:tech}. Two months after the initial introduction and time in use for
+    process is explained in more detail in chapter \ref{chapter:projects}. Two months after the initial introduction and time in use for
     the selected BDD testing framework the data collecting was ended. The two months time was chosen to see, how the early
     adoption of new technologies had gone.
     The limited time available was also a practical constraint that resulted to study only for two months time. All the participants
     in this study were restricted to developers, as the purpose was to study developer testing practices. The projects
-    A and B, and how developers chose which BDD testing framework to take into use, are explained in more detail in the next chapter.
+    A and B are explained in more detail in chapter \ref{chapter:results}.
 
 \subsection{Data collection}
     Selection of data included filtering of participants in the project. Participants were filtered to backend developers
-    whom were developing with the Java Spring Framework and thus using JUnit for low level testing purposes.
+    whom were developing with the Java Spring Framework and thus using JUnit for low-level testing purposes.
 
     Data collection from projects is done with methodological triangulation using first degree study participant interviews, second degree
     participant surveys and third degree quantative test code analysis. The main tool is the second degree surveys.
@@ -145,31 +145,32 @@ explained. Finally, threats to validity and limitations in this study are review
 
     \subsubsection{JUnit survey}
     An online survey about JUnit was built to gather base information for RQ1 and RQ2, that was
-    later on used as a reference to answer about changes in automated low level testing practices and perception.
+    later on used as a reference to answer about changes in automated low-level testing practices and perception. Although
+    the participants of the survey where currently working with JUnit in particular projects, they were asked to answer
+    in more broader context of using JUnit through the years in different projects.
     The survey was designed and built using \textit{LimeSurvey}~\cite{limesurvey}. The reason to use survey as the main tool for data collection
     was the related unit testing research surveys~\cite{williams2009effectiveness}~\cite{daka2014survey}~\cite{li2016automatically}.
     Some of the survey questions were interesting starting points
     for the built survey in this study. As there were many survey questions, it was logical to conduct the identifying
-    of the baseline for low level testing practices and perception with a survey. Additional motivation to use
+    of the baseline for low-level testing practices and perception with a survey. Additional motivation to use
     survey was to quantify results and to provide a more specific survey question set to study problematic
     areas risen from related research problems.
-    % TODO: here some text how results were extracted and further analyzed
 
     Copied survey questions were used as close to their original form as possible.
     The question scales were unchanged, ranging from 1 to 5 and 1 to 7 point \textbf{Likert scale} questions
     to one summing percentage question. The changed part was some of the words in few questions.
-    Changed words were from \textit{"unit"} to \textit{"low level"},
+    Changed words were from \textit{"unit"} to \textit{"low-level"},
     resulting in questions that take into consideration both unit and integration level testing.
 
     Questions created for this research were mainly 1 to 7 point Likert scale questions.
     The reason to use 7 point Likert scale was to increase the discriminating power of the questions~\cite{cummins2000we}.
     At the end of the survey \textbf{Network Promoter Score (NPS)}~\cite{reichheld2003one} was used to see how enthuastic and "loyal" the participants
-    were at the beginning of the study to low level automated testing in general and in more specific to JUnit.
+    were at the beginning of the study to low-level automated testing in general and in more specific to JUnit.
     The survey questions and how they are related to research survey questions and related research can be found
     in Appendix \ref{chapter:surveys} section \ref{section:junit-survey}.
 
     \subsubsection{BDD testing frameworks survey}
-    Second survey was built to directly get insight on RQ1 and RQ2 about automated low level testing
+    Second survey was built to directly get insight on RQ1 and RQ2 about automated low-level testing
     and it was conducted two months after new implementation level BDD testing framework was taken into use.
     The second survey used all the questions (with modifications) from the first survey regarding JUnit testing practices and
     also added couple additional questions related to selected BDD testing framework. The survey was built using \textit{LimeSurvey}.
@@ -199,7 +200,7 @@ explained. Finally, threats to validity and limitations in this study are review
     despite the slight change in practice or perception in testing.
 
     The used question types were mostly 1 to 7 point Likert scale questions for the direct comparisons, combined with a few NPS questions for
-    determining developer loyalty towards low level automated testing in general and also towards the new BDD testing framework.
+    determining developer loyalty towards low-level automated testing in general and also towards the new BDD testing framework.
     A few other type of questions were also added.
     The survey questions and how they are related to research survey questions and related research can be found
     in Appendix \ref{chapter:surveys} section \ref{section:bdd-survey}.
@@ -208,9 +209,9 @@ explained. Finally, threats to validity and limitations in this study are review
     At the end of the two month data collecting period, a loosely structured semi-structured interview was conducted with the participants
     to get more input on the change period. The interview holds only three basic questions to start with:
     \begin{enumerate}
-    \item What were the main benefits of the new testing framework X over JUnit?
-    \item What were the main drawbacks of the new testing framework X over JUnit?
-    \item How long was the learning curve to feel effective with framework X?
+    \item \textit{What were the main benefits of the new testing framework X over JUnit?}
+    \item \textit{What were the main drawbacks of the new testing framework X over JUnit?}
+    \item \textit{How long was the learning curve to feel effective with framework X?}
     \end{enumerate}
     The idea to practice these questions with a interview, instead of survey questions, was to lead the discussion
     to possible new topics on the subject if they rose upon interviewing. Also some clarifications were asked to interesting
@@ -220,7 +221,7 @@ explained. Finally, threats to validity and limitations in this study are review
     \subsubsection{Test code analysis}
     \label{subsub:test}
     Research question 3 is answered with test code analysis done with observation metrics from actual test data of the projects.
-    First the baseline is calculated from existing automated low level tests with JUnit. Second, the same values are calculated
+    First the baseline is calculated from existing automated low-level tests with JUnit. Second, the same values are calculated
     after the two months period of using an implementation level BDD testing framework. These metric values are then compared
     against each other, to see how the following aspects of test code have changed:
     \clearpage
@@ -253,19 +254,19 @@ explained. Finally, threats to validity and limitations in this study are review
     \begin{enumerate}
     \setcounter{enumi}{2}
     \item \textit{Code coverage \textbf{(CC)}}:
-    Measured code coverage for low level tests is done with \textit{JaCoCo} in the same manner as described earlier in
+    Measured code coverage for low-level tests is done with \textit{JaCoCo} in the same manner as described earlier in
     unit level code coverage definition.
 
     \item \textit{Count of Assertions \textbf{(COA)}}:
-    Average count of assertions per test method (COA) is defined for low level test methods. This is calculated with
-    the sum of assertions (A) in low level test methods divided by the total sum of low level test methods (LLTM).
+    Average count of assertions per test method (COA) is defined for low-level test methods. This is calculated with
+    the sum of assertions (A) in low-level test methods divided by the total sum of low-level test methods (LLTM).
     \begin{align*}
         \sum_{i=1}^{n}\frac{A_{i}}{LLTM_{i}} && \text {where } A_{i} \geq 0 \text{ and } LLTM_{i} = 1
     \end{align*}
 
     \item \textit{Count of Comments \textbf{(COC)}}:
-    Average count of comments per test method (COC) is defined for low level test methods. This is calculated with the
-    sum of comments (C) in low level test methods divided by the total sum of low level test methods (LLTM). Comments include both
+    Average count of comments per test method (COC) is defined for low-level test methods. This is calculated with the
+    sum of comments (C) in low-level test methods divided by the total sum of low-level test methods (LLTM). Comments include both
     \textit{inner} and \textit{outer} comments. Inner comments are inside the test method and outer comments preceding the test method.
     \begin{align*}
         \sum_{i=1}^{n}\frac{C_{i}}{LLTM_{i}} && \text {where } C_{i} \geq 0 \text{ and } LLTM_{i} = 1
@@ -274,7 +275,7 @@ explained. Finally, threats to validity and limitations in this study are review
     \item \textit{Test method name word count \textbf{(TMNWC)}}:
     Average test method name word count (TMNWC) is counted differently for different testing frameworks.
 
-    For \textbf{JUnit} low level test method name words are gathered through splitting the \textit{CamelCase}~\cite{wiki:camelcase}
+    For \textbf{JUnit} low-level test method name words are gathered through splitting the \textit{CamelCase}~\cite{wiki:camelcase}
     method name into separate words. For instance, example test method definition at line 36 in figure \ref{fig:junit-examples}:
 
 
@@ -290,7 +291,7 @@ explained. Finally, threats to validity and limitations in this study are review
     \newline
     \end{addmargin}
 
-    For \textbf{xSpec family} low level test method name is counted starting from the first code example group description string,
+    For \textbf{xSpec family} low-level test method name is counted starting from the first code example group description string,
     concatenating nested example group string descriptions and ending in the code example description string.
     For example figure \ref{fig:rspec-example} first concatenated code example name (with word count of 11) is:
 
@@ -298,20 +299,20 @@ explained. Finally, threats to validity and limitations in this study are review
     \textit{Java::FiAaltoEkanbanServices::GameService startGame() with normal difficulty should create game with given name}
     \end{center}
 
-    For \textbf{Spock} low level test method name is counted from feature method string name. For example DDT feature method name at
+    For \textbf{Spock} low-level test method name is counted from feature method string name. For example DDT feature method name at
     line 27 in figure \ref{fig:spock-example}:
     \begin{center}
     \textit{GameService startGame() with playerName \#playerName and difficulty \#gameDifficulty}
     \end{center}
     contains 8 words.
 
-    For each testing frameworks, TMNWC is calculated through the sum of test method name words (TMNW) divided by total sum of low level test methods (LLTM).
+    For each testing frameworks, TMNWC is calculated through the sum of test method name words (TMNW) divided by total sum of low-level test methods (LLTM).
     \begin{align*}
         \sum_{i=1}^{n}\frac{TMNW_{i}}{LLTM_{i}} && \text {where } TMNW_{i} \geq 1 \text{ and } LLTM_{i} = 1
     \end{align*}
 
     \item \textit{Data driven test methods \textbf{(DDTM)}}:
-    DDTM, Ratio of data driven low level test methods (DDLLTM) to low level test methods (LLTM) is calculated by dividing the sum
+    DDTM, Ratio of data driven low-level test methods (DDLLTM) to low-level test methods (LLTM) is calculated by dividing the sum
     of DDLLTM by LLTM.
     \[\frac{\sum_{i=0}^{n}DDLLTM_{i}}{\sum_{j=1}^{m}LLTM_{j}}\]
     \end{enumerate}
@@ -339,12 +340,13 @@ BDD testing frameworks and their features. This can cause some unwanted \textbf{
 driving the change and initial impressions.
 \subsubsection{External validity}
 External validity threats are related to threats that hinder the possibility to generalize the findings from this study~\cite{runeson2012case}.
-The demographics which the study was applied can be found in section XXXXX. Major threat to generalizing the findings
-is the \textbf{limited number of participants} involved through the projects A and B. Projects are demonstrated in detail in section YYYY,
+The demographics which the study was applied can be found in section \ref{section:demographics}. Major threat to generalizing the findings
+is the \textbf{limited number of participants} involved through the projects A and B. Projects are demonstrated in detail in section \ref{section:demographics},
 but in brief, the participant number in total in them was only 3. As the sample size is small, the results can't be generalized
 with certainty to all industrial developers. For example the survey regarding practices and perception towards JUnit can
-only offer insight to developer working, but can't be used to state a generalizations of unit and integration testing practices.
-The survey regarding changes in low level testing after introduction of the implementation level BDD framework in project acts
+only offer insight to participant working practices, but can't be used to state a generalizations of unit and integration
+testing practices amongst majority of developers.
+The survey regarding changes in low-level testing after introduction of the implementation level BDD framework in project acts
 as a valuable developer experience report with its direct comparison questions, but isn't statistically relevant.
 
 Another problem in generalization is the fact that the study was conducted within Java-projects and JVM-environment, thus this
