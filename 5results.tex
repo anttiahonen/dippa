@@ -322,7 +322,7 @@ find the understandability to be moderately diffucult and participant {\colorbox
 
 The changes in low-level test understandability were studied with \textbf{Q4':} \textit{Compared to JUnit, how difficult is it
 for you to understand a low-level test?} Participant {\colorbox{lightgray}A} found it less difficult to understand a low-level
-test after the introduction of \textbf{\textit{Spectrum}}.
+test after the introduction of \textbf{\textit{Spectrum}}. Statement 2 talk here!!!
 
 Table \ref{tab:changes-pt4} displays questions \textbf{Q5 \& Q5'} and their results. Q5 was chosen to see first
 how easily the JUnit test methods can be \textbf{structured} and \textbf{understood} to hold different parts of the test. JUnit testing literature states that
@@ -370,6 +370,8 @@ too easy to understand.
 Q5' displays the changes in structuring and reading of tests for information. Participant {\colorbox{lightgray}A} found \textbf{\textit{Spectrum}}
 on all occasions easier to structure information to tests and also to read it from tests. Structuring information to
 tests could be categorized as quite much easier. Reading the tests for information was found somewhat easier than with JUnit.
+
+Statement 2 talk here!!!
 \clearpage
 
 Table \ref{tab:changes-pt5} displays questions \textbf{Q6 \& Q6'} with results. First Q6 studies how \textbf{informative} participants
@@ -398,7 +400,7 @@ hold naturally too much information in total.
     \end{table}
 
 Q6' studies the change of test output informativeness after the introduction of new BDD testing framework. Participant {\colorbox{lightgray}A}
-found a slight increase in informativeness of output.
+found a slight increase in informativeness of output. Statement 2 talk here!!!
 
 \clearpage
 \subsubsection{Test refactoring techniques}
@@ -538,7 +540,7 @@ for project B was slightly lower than the answered four to five assertions per t
 
 Changes in unit testing granularity after introduction of BDD testing framework were studied with Q10'. Participant {\colorbox{lightgray}A}
 answered that with \textbf{\textit{Spectrum}} he wrote more test methods per class method with less assertion inside individual
-test methods.
+test methods. Statement 1 talk here!!
 
 \clearpage
 
@@ -611,7 +613,7 @@ after the implementation with both JUnit and \textbf{\textit{Spectrum}}}.
             & \\ \topline
 
             \end{tabular}}
-            \caption {Unit testing practices and changes in them} \label{tab:junit-pt1}
+            \caption {Unit testing practices and changes in them} \label{tab:changes-pt10}
     \end{table}
 
 \subsubsection{Change summary}
@@ -624,16 +626,31 @@ This section answer the
 \textbf{RQ2: }\textit{How does behavior driven testing frameworks change developer perception of working with automated low-level
 testing compared to JUnit framework?} First, developer perception of automated low-level testing and changes in it are
 analyzed with survey and interviews. Second, developer loyalty towards low-level automated testing and specific testing
-frameworks are studied with \textbf{NPS} survey questions and further studied with interviews.
+frameworks are studied with \textbf{NPS} survey questions and interviews.
 
 \subsubsection{Developer perception of low-level testing}
     \begin{figure}[ht]
       \begin{center}
         \includegraphics[width=14.7cm]{images/perception-org.png}
         \caption{Original study~\cite{daka2014survey} developer perception of unit testing}
-        \label{fig:TDD}
+        \label{fig:org-perception}
       \end{center}
     \end{figure}
+
+Daka and Fraser~\cite{daka2014survey} have studied developer perception towards traditional unit testing. Interesting
+points that are further studied for low-level testing in this study are shown in figure \ref{fig:org-perception}. Some
+aspects to highlight are the facts that only about 50\% of survey responders \textit{enjoy writing} unit tests to some degree.
+One of the hypothesis statements in this study was that implementation level BDD testing frameworks should increase low-level testing enjoyment.
+Another interesting aspect is the \textit{difficulty in maintaining} unit tests, where around 55\% of study participants
+feel maintaining at least somewhat difficult. One of the study hypothesis was that BDD testing frameworks should
+make it less difficult to maintain code and especially the test code. Table \ref{tab:changes-pt11} displays the \textbf{Q14}, which studies
+the developer perception towards low-level testing using Daka and Fraser's survey question as a base.
+
+\textbf{Q15a} in table \ref{tab:changes-pt11} studies the developer perception aspect further. Its questions have originally
+been used individually in two different studies~\cite{williams2009effectiveness}~\cite{li2016automatically}. The original
+questions and their answers are displayed in figure \ref{fig:org-perception-two}. Interesting fact was that over 90\% of
+original survey respondents feel that unit tests help in producing higher quality code than without~\cite{williams2009effectiveness} them.
+Around same 90\% of different study participants feel that maintaining unit tests is important for system quality~\cite{li2016automatically}.
 
     \begin{figure}[ht]%
         \centering
@@ -641,8 +658,25 @@ frameworks are studied with \textbf{NPS} survey questions and further studied wi
         \qquad
         \subfloat[Maintaining unit tests is important for the quality of the system~\cite{li2016automatically}]{{\includegraphics[width=6.75cm]{images/org-maintaining.png} }}%
         \caption{Developer perception of unit testing in original studies}%
-        \label{fig:example}%
+        \label{fig:org-perception-two}%
     \end{figure}
+
+Participants in this study based on their perception towards low-level automated testing with JUnit can be divided into
+to category. Participants {\colorbox{lightgray}A} and {\colorbox{lime}B} are close to each other, they feel that
+\textit{writing} low-level tests is somewhat difficult, \textit{enjoyment} in writing is neutral or negative and \textit{maintaining}
+of low-level tests is seen at least somewhat difficult. They both still have trust that low-level testing is \textit{helpful in
+finding defects}, but \textbf{don't} feel that JUnit \textit{promotes to write high quality test code}.
+
+Participant {\colorbox{orange}C} could be categorized into a testing oriented developer when inspecting perception towards
+low-level testing. He enjoys \textit{writing} low-level tests and doesn't find it that difficult. He also doesn't find
+\textit{maintaining} low-level tests too difficult. He thinks that low-level tests that he has written with JUnit will \textit{help} others \textit{understanding}
+the implemented production code. Like other participants, participant {\colorbox{orange}C} also trusts that low-level
+tests will \textit{help in finding defects}, but he \textbf{doesn't} feel that JUnit \textit{promotes him to write high quality} test code.
+
+Although all study participants feel that JUnit doesn't promote in writing higher quality test code, all of them still
+believe that low-level tests \textit{help in producing higher quality code}. They all feel that \textit{maintaining}
+low-level tests and their documentation is important for the system quality. Table \ref{tab:changes-pt11} displays
+the detailed answers of participants.
 
     \begin{table}[H]
         \resizebox{\textwidth}{!}{%
@@ -669,8 +703,12 @@ frameworks are studied with \textbf{NPS} survey questions and further studied wi
             & \\ \topline
 
             \end{tabular}}
-            \caption {Developer perception of low-level testing with JUnit} \label{tab:junit-pt2}
+            \caption {Developer perception of low-level testing with JUnit} \label{tab:changes-pt11}
     \end{table}
+
+Table \ref{tab:changes-pt12} display questions \textbf{Q14'} and \textbf{Q15a'} together with their results. With \textbf{\textit{Spectrum}}
+there exists some controversial and interesting results. Participant {\colorbox{lightgray}A} somewhat agrees that \textit{writing}
+and \textit{maintaining} of low-level tests with Spectrum is more difficult than with JUnit.
 
     \begin{table}[H]
         \resizebox{\textwidth}{!}{%
@@ -693,10 +731,24 @@ frameworks are studied with \textbf{NPS} survey questions and further studied wi
             & \\ \topline
 
             \end{tabular}}
-            \caption {Developer perception changes in low-level testing with \textit{Spectrum/Spock}} \label{tab:junit-pt2}
+            \caption {Developer perception changes in low-level testing with \textit{Spectrum/Spock}} \label{tab:changes-pt12}
     \end{table}
-    \vspace{20px}
 
+Writing difficulty was further analyzed in
+the interview, where he states that the learning curve how to structure code example groups and code examples was still ongoing.
+Also what to write in \textit{describe}-blocks was somewhat difficult. Slight increase in difficulty in maintaining low-level
+tests with Spectrum comes from the use of example groups properly, as participant {\colorbox{lightgray}A} feels that it
+isn't always straightforward. In spite of slightly harder maintenance in total, he feels that it is easier to reduce repetition
+with Spectrum's \textit{lifecycle hooks}.
+
+\textbf{Continue later}
+
+Table \ref{tab:changes-pt13} displays question \textbf{Q15b} and its answers. Q15b holds two sub-question statements that the participant can answer
+if they feel the same way or not. Sub-question 1 relates directly to hypothesis statement 2 and sub-question 2 to
+statement 3. Participant {\colorbox{lightgray}A} feels that he writes both more \textit{understandable} and more \textit{maintainable} low-level
+tests with \textbf{\textit{Spectrum}} than with JUnit.
+
+\textbf{Continue later}
 
     \begin{table}[H]
         \resizebox{\textwidth}{!}{%
@@ -711,12 +763,17 @@ frameworks are studied with \textbf{NPS} survey questions and further studied wi
             & \\ \topline
 
             \end{tabular}}
-            \caption {Developer perception towards \textit{Spectrum/Spock}} \label{tab:spock-spectrum-pt3}
+            \caption {Developer perception towards \textit{Spectrum/Spock}} \label{tab:changes-pt13}
 
     \end{table}
 
 
 \subsubsection{Developer loyalty towards low-level testing}
+Developer loyalty towards low-level testing is measured with \textbf{NPS} survey questions. As the participant count is so low, it is not
+sensible to calculate the NPS directly. The information what can be used, is that for every sub-question in questions
+\textbf{Q16} and \textbf{Q16'} values from zero to six are called \textit{detractors}, seven to eight \textit{passives} and
+nine to ten \textit{promoters}~\cite{reichheld2003one}. The interesting part here is to see, whether the participant has gained loyalty enough
+towards testing framework to be called a promoter.
 
     \begin{table}[H]
         \resizebox{\textwidth}{!}{%
@@ -740,9 +797,21 @@ frameworks are studied with \textbf{NPS} survey questions and further studied wi
             & \\ \topline
 
             \end{tabular}}
-            \caption {NPS questions related to JUnit and \textit{Spectrum/Spock}} \label{tab:junit-pt3}
+            \caption {NPS questions related to JUnit and \textit{Spectrum/Spock}} \label{tab:changes-pt14}
 
     \end{table}
+
+Table \ref{tab:changes-pt14} displays all the NPS survey questions with answers.
+Participants {\colorbox{lightgray}A} and {\colorbox{orange}C} can be categorized as promoters of low-level testing
+in general before and after the introduction of new BDD testing framework. Participant {\colorbox{lime}B} remains as a
+passive before and after the change.
+
+Before the introduction of \textbf{\textit{Spectrum}}, participant {\colorbox{lightgray}A}
+is also a steady promoter of JUnit both as a technical lead in new project or taking part in existing project. After
+using Spectrum for two months, participant can be categorized as a detractror in loyalty towards Spectrum. This was further
+analyzed in interview where participant states that the found bugs in 1.1.0 version of Spectrum in IDE test output and build test output
+lower the score. He also states that \textit{Spring Framework} support is not optimal yet and for these reasons he hesitates
+to fully get on board with Spectrum.
 
     \clearpage
 

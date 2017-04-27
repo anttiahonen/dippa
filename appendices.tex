@@ -1,38 +1,3 @@
-\chapter{Gradle build configurations}
-\label{chapter:gradle-build}
-
-\begin{figure}[ht]
-  \begin{center}
-    \includegraphics[width=13.7cm]{images/junit-build.png}
-    \caption{Relevant parts of JUnit Gradle build configuration}
-    \label{fig:junit-build}
-  \end{center}
-\end{figure}
-
-\begin{figure}[ht]
-  \begin{center}
-    \includegraphics[width=13.7cm]{images/spectrum-build.png}
-    \caption{Relevant parts of Spectrum Gradle build configuration}
-    \label{fig:spectrum-build}
-  \end{center}
-\end{figure}
-
-\begin{figure}[ht]
-  \begin{center}
-    \includegraphics[width=13.7cm]{images/spock-gradle.png}
-    \caption{Relevant parts of Spock Gradle build configuration}
-    \label{fig:spock-build}
-  \end{center}
-\end{figure}
-
-\begin{figure}[ht]
-  \begin{center}
-    \includegraphics[width=13.7cm]{images/rspec-build.png}
-    \caption{Relevant parts of RSpec Gradle build configuration}
-    \label{fig:rspec-build}
-  \end{center}
-\end{figure}
-
 \chapter{Interview questions}
 \label{chapter:interview}
 \section{Interview for demographic purposes}
@@ -103,7 +68,7 @@ was made to accompany both unit and integration testing into the survey of this 
 First copied questions are questions \textbf{Q1:} \textit{How do you spend your software development time?} and
 \textbf{Q3:} \textit{How important are the following aspects for you when you write new low-level tests?}~\cite{daka2014survey}.
 These questions were copied to study as a base how the development time is used and what aspects are priortized in low-level testing.
-Q3 Subquestions 1 and 3-8 are originals. Q3 Subquestion 2 is added to this survey to study the initial attitude towards describing behavior
+Q3 Sub-questions 1 and 3-8 are originals. Q3 Sub-question 2 is added to this survey to study the initial attitude towards describing behavior
 in tests.
 
 Third copied question is \textbf{Q4:} \textit{How difficult is it for you usually to understand a low-level test?}~\cite{li2016automatically}.
@@ -113,15 +78,15 @@ Fourth and fifth copied questions are \textbf{Q8:} \textit{How often do you add/
 These questions were copied to study the low-level testing documentation practices.
 
 Sixth and seven copied questions are \textbf{Q14 \& Q15:} \textit{Please indicate your level of agreement with the following statements}.
-Q14 and its subquestions 1-5 are copied from \textit{"A survey on unit testing practices and problems"} by Daka and Fraser~\cite{daka2014survey}.
-Subquestions 6-8 are original questions defined in this thesis. Q15 subquestion 1 is copied from a unit test practitioner
-survey done at Microsoft~\cite{williams2009effectiveness} and subquestion 2 is copied from unit test documentation
+Q14 and its sub-questions 1-5 are copied from \textit{"A survey on unit testing practices and problems"} by Daka and Fraser~\cite{daka2014survey}.
+Sub-questions 6-8 are original questions defined in this thesis. Q15 sub-question 1 is copied from a unit test practitioner
+survey done at Microsoft~\cite{williams2009effectiveness} and sub-question 2 is copied from unit test documentation
 practices survey by Li et al.~\cite{li2016automatically}. Questions Q14 \& Q15 were copied to gather developer perception
 towards low-level testing.
 
 
 \clearpage
-\newgeometry{left=1cm, right=1cm}
+\newgeometry{left=1.75cm, right=1.75cm}
     \begin{table}
         \resizebox{\textwidth}{!}{%
             \begin{tabular}{p{20.0cm}*{7}{p{2.0cm}}}
@@ -315,7 +280,7 @@ used for each Spock and Spectrum, their questions are both displayed in same tab
 \textit{Spectrum/Spock}, which are marked in questions. Full questions used in BDD surveys are displayed in tables \ref{tab:spock-spectrum-pt1},
 \ref{tab:spock-spectrum-pt2}, \ref{tab:spock-spectrum-pt3} and \ref{tab:spock-spectrum-pt4}.
 
-\newgeometry{left=1cm, right=1cm}
+\newgeometry{left=1.75cm, right=1.75cm}
     \begin{table}
         \resizebox{\textwidth}{!}{%
             \begin{tabular}{p{18.0cm}*{7}{p{2.4cm}}}
@@ -629,5 +594,216 @@ used for each Spock and Spectrum, their questions are both displayed in same tab
 \end{comment}
 \restoregeometry
 
+\newgeometry{top=1.5cm, bottom=1.5cm}
+\chapter{Gradle build configurations}
+\label{chapter:gradle-build}
+
+\begin{figure}[H]
+    \begin{lstlisting}[style=java]
+    //integration test compile task
+    configurations {
+        integrationTestCompile.extendsFrom testCompile
+        integrationTestRuntime.extendsFrom testRuntime
+    }
+
+    dependencies {
+        testCompile 'junit:junit:' + junitVersion
+        testCompile 'org.hamcrest:hamcrest-all:' + hamcrestVersion //hamcrest-matchers
+        testCompile 'org.mockito:mockito-core:' + mockitoVersion //mockito for test isolation
+        testCompile 'io.rest-assured:rest-assured:' + restAVersion //integration-testing REST
+        //spring domain extension
+        integrationTestCompile 'org.springframework.boot:spring-boot-starter-test'
+    }
+
+    //add integration test sources
+    sourceSets {
+        integrationTest {
+            java {
+                compileClasspath += main.output + test.output
+                runtimeClasspath += main.output + test.output
+                srcDir file('src/integration-test/java')
+            }
+            resources.srcDir file('src/integration-test/resources')
+        }
+    }
+
+    //add integration test task
+    task integrationTest(type: Test) {
+        testClassesDir = sourceSets.integrationTest.output.classesDir
+        classpath = sourceSets.integrationTest.runtimeClasspath
+        outputs.upToDateWhen { false }
+    }
+
+    check.dependsOn test // gradle build runs unit tests
+    check.dependsOn integrationTest // gradle build runs integration tests
+    integrationTest.mustRunAfter test // integration tests are run after unit tests
+    \end{lstlisting}
+    \caption{Relevant parts of JUnit Gradle build configuration}
+    \label{fig:junit-build}
+\end{figure}
+
+\restoregeometry
+
+\begin{figure}[H]
+    \begin{lstlisting}[style=java]
+    //integration test compile task
+    configurations {
+        integrationTestCompile.extendsFrom testCompile
+        integrationTestRuntime.extendsFrom testRuntime
+    }
+
+    dependencies {
+        testCompile 'junit:junit:' + junitVersion
+        testCompile 'org.hamcrest:hamcrest-all:' + hamcrestVersion //hamcrest-matchers
+        testCompile 'org.mockito:mockito-core:' + mockitoVersion //mockito for test isolation
+        testCompile 'io.rest-assured:rest-assured:' + restAVersion //integration-testing REST
+        testCompile 'com.greghaskins:spectrum:' + spectrumVersion //spectrum junit-runner
+        //spring domain extension
+        integrationTestCompile 'org.springframework.boot:spring-boot-starter-test'
+    }
+
+    //add integration test sources
+    sourceSets {
+        integrationTest {
+            java {
+                compileClasspath += main.output + test.output
+                runtimeClasspath += main.output + test.output
+                srcDir file('src/integration-test/java')
+            }
+            resources.srcDir file('src/integration-test/resources')
+        }
+    }
+
+    //add integration test task
+    task integrationTest(type: Test) {
+        testClassesDir = sourceSets.integrationTest.output.classesDir
+        classpath = sourceSets.integrationTest.runtimeClasspath
+        include '**/*Spec.java'
+        outputs.upToDateWhen { false }
+    }
+
+    check.dependsOn test // gradle build runs unit tests
+    check.dependsOn integrationTest // gradle build runs integration tests
+    integrationTest.mustRunAfter test // integration tests are run after unit tests
+    \end{lstlisting}
+    \caption{Relevant parts of Spectrum Gradle build configuration}
+    \label{fig:spectrum-build}
+\end{figure}
+
+\begin{figure}[H]
+    \begin{lstlisting}[style=java]
+    //integration test compile task
+    configurations {
+        integrationTestCompile.extendsFrom testCompile
+        integrationTestRuntime.extendsFrom testRuntime
+    }
+
+    dependencies {
+        //groovy rest-client
+        testCompile 'org.codehaus.groovy.modules.http-builder:http-builder:0.6'
+        testCompile 'org.codehaus.groovy:groovy-all:2.4.4' //groovy
+        testCompile 'org.spockframework:spock-core:1.1-groovy-2.4-rc-3' //spock
+        testCompile 'cglib:cglib-nodep:3.2.4' // stubbing java classes
+        //bdd html reports
+        testCompile ('com.athaydes:spock-reports:1.2.13') {
+            transitive = false // this avoids affecting your version of Groovy/Spock
+        }
+        //mockito InjectMocks type mocking (not recommended)
+        testCompile 'com.blogspot.toomuchcoding:spock-subjects-collaborators-extension:1.2.1'
+        //spring extension for spock
+        integrationTestCompile 'org.spockframework:spock-spring:1.1-groovy-2.4-rc-3'
+    }
+
+    //add integration test sources for Spock
+    sourceSets {
+        integrationTest {
+            groovy {
+                compileClasspath += main.output + test.output
+                runtimeClasspath += main.output + test.output
+                srcDir file('src/integration-test/groovy')
+            }
+            resources.srcDir file('src/integration-test/resources')
+        }
+    }
+
+    //add integration test task
+    task integrationTest(type: Test) {
+        testClassesDir = sourceSets.integrationTest.output.classesDir
+        classpath = sourceSets.integrationTest.runtimeClasspath
+        include '**/*Spec.*'
+        outputs.upToDateWhen { false }
+    }
+
+    check.dependsOn test // gradle build runs unit tests
+    check.dependsOn integrationTest // gradle build runs integration tests
+    integrationTest.mustRunAfter test // integration tests are run after unit tests
+    \end{lstlisting}
+    \caption{Relevant parts of Spock Gradle build configuration}
+    \label{fig:spock-build}
+\end{figure}
+
+\begin{figure}[H]
+    \begin{lstlisting}[style=java]
+    configurations { rspec }
+    dependencies {
+        //ruby
+        rspec 'org.jruby:jruby-complete:' + jRubyVersion
+    }
+
+    //install bundler for handling ruby gems
+    task(bundler, type: JavaExec) {
+        main = 'org.jruby.Main'
+        classpath = configurations.rspec
+        args = ['-S', 'gem', 'install', 'bundler']
+        environment['GEM_PATH'] = file('build/gems').path
+        environment['GEM_HOME'] = file('build/gems').path
+    }
+
+    //install gems from gemfile with bundler
+    task(gems, dependsOn: ["bundler"], type: JavaExec) {
+        main = 'org.jruby.Main'
+        classpath = configurations.rspec
+        args = ['-S', 'bundle', 'install']
+        environment['GEM_PATH'] = file('build/gems').path
+        environment['GEM_HOME'] = file('build/gems').path
+    }
+
+    //run all or single unit spec(s)
+    task(spec, dependsOn: ["classes"], type: JavaExec) {
+        main = 'org.jruby.Main'
+        classpath = sourceSets.test.runtimeClasspath + configurations.rspec
+        if ( project.hasProperty("file") ) {
+            args = ['-S', 'build/gems/bin/rspec', 'src/spec/unit/'+file]
+        } else {
+            args = ['-S', 'build/gems/bin/rspec', 'src/spec/unit']
+        }
+        environment['GEM_HOME'] = file('build/gems').path
+        environment['GEM_PATH'] = file('build/gems').path
+        environment['ENV'] = "test"
+    }
+
+    //run all or single integration spec(s)
+    task(integrationSpec, dependsOn: ["classes"], type: JavaExec) {
+        main = 'org.jruby.Main'
+        classpath = sourceSets.test.runtimeClasspath + configurations.rspec
+        if ( project.hasProperty("file") ) {
+            args = ['-S', 'build/gems/bin/rspec', 'src/spec/api/'+file]
+        } else {
+            args = ['-S', 'build/gems/bin/rspec', 'src/spec/api']
+        }
+        environment['GEM_HOME'] = file('build/gems').path
+        environment['GEM_PATH'] = file('build/gems').path
+        environment['ENV'] = "integration-test"
+    }
+
+    check.dependsOn spec // gradle build runs unit specs
+    check.dependsOn integrationSpec // gradle build runs integration specs
+    integrationSpec.mustRunAfter spec // integration specs are run after unit specs
+    \end{lstlisting}
+    \caption{Relevant parts of RSpec Gradle build configuration}
+    \label{fig:rspec-build}
+
+\end{figure}
+\restoregeometry
 
 

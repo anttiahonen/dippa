@@ -162,7 +162,7 @@
 % The listing package provides automatic code formatting utilities
 % so that you can copy-paste code examples and have them rendered
 % nicely. See the package documentation for details.
-% \usepackage{listings}
+
 
 % The fancuvrb package provides fancier verbatim environments 
 % (you can, for example, put borders around the verbatim text area
@@ -191,6 +191,75 @@
 \usepackage{booktabs,etoolbox}% http://ctan.org/pkg/booktabs
 \usepackage{colortbl}% http://ctan.org/pkg/colortbl
 \usepackage{xcolor}% http://ctan.org/pkg/xcolor
+
+\usepackage{moresize}
+
+\usepackage{mdframed}
+\mdfdefinestyle{mdstyle}{leftmargin=0cm,rightmargin=0cm,%
+innerleftmargin=0cm,innerrightmargin=0cm,roundcorner=0pt, innertopmargin=0pt, innerbottommargin=5pt}
+\newmdenv[leftline=false,rightline=false]{topbot}
+
+\usepackage{listings}
+
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+\definecolor{pgrey}{rgb}{0.40,0.40,0.40}
+\definecolor{fcolor}{rgb}{0.4,0.4,0.0}
+\colorlet{lgray}{gray!10}
+
+\lstset{frame=tb,
+  aboveskip=3mm,
+  belowskip=3mm,
+  showstringspaces=false,
+  columns=flexible,
+  backgroundcolor=\color{lgray},
+  basicstyle={\scriptsize\ttfamily},
+  numberstyle=\color{gray},
+  numbers=left,
+  stepnumber=1,
+  breaklines=true,
+  breakatwhitespace=true
+}
+\lstdefinestyle{java}{
+  language=Java,
+  numberstyle=\color{gray},
+  keywordstyle=\color{blue},
+  commentstyle=\color{dkgreen},
+  stringstyle=\color{mauve},
+  moredelim=[il][\textcolor{pgrey}]{$$},
+  moredelim=[is][\textcolor{black}]{&&}{&&},
+  moredelim=[is][\textcolor{pgrey}]{\%\%}{\%\%},
+  moredelim=[is][\textcolor{fcolor}]{!!}{!!},
+  moredelim=[is][\textcolor{blue}]{<<}{>>},
+  tabsize=4
+}
+
+\lstdefinestyle{javatiny}{
+  basicstyle={\ssmall\ttfamily},
+  language=Java,
+  numberstyle=\color{gray},
+  keywordstyle=\color{blue},
+  commentstyle=\color{dkgreen},
+  stringstyle=\color{mauve},
+  moredelim=[il][\textcolor{pgrey}]{$$},
+  moredelim=[is][\textcolor{black}]{&&}{&&},
+  moredelim=[is][\textcolor{pgrey}]{\%\%}{\%\%},
+  moredelim=[is][\textcolor{fcolor}]{!!}{!!},
+  moredelim=[is][\textcolor{blue}]{<<}{>>},
+  tabsize=4
+}
+
+\lstdefinestyle{ruby}{
+  language=Ruby,
+  keywordstyle=\color{red},
+  commentstyle=\color{yellow},
+  stringstyle=\color{fcolor},
+  moredelim=[is][\textcolor{blue}]{\%\%}{\%\%},
+  moredelim=[is][\textcolor{dkgreen}]{!!}{!!},
+  moredelim=[is][\textcolor{black}]{&&}{&&},
+  tabsize=2
+}
 
 \usepackage{relsize}
 \newcommand\wideDownarrow{\mathrel{\scalebox{2}[1.2]{$\Downarrow$}}}

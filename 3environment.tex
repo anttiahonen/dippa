@@ -59,46 +59,80 @@ running on top of JVM programming languages are demonstrated as an alternative f
     for integration tests with features such as dependency injection and transactional test method execution. ~\cite{springintegration}
 
     \begin{figure}[ht]
-      \begin{center}
-        \includegraphics[width=12.5cm]{images/junit-init.png}
+        \begin{lstlisting}[style=java]
+    %%@RunWith%%(SpringJUnit4ClassRunner.class)
+    $$@SpringBootTest
+    public class GameServiceIntegrationTest {
+        $$@Autowired
+        private GameService gameService;
+
+        $$@Autowired
+        private GameRepository gameRepository;
+        \end{lstlisting}
         \caption{JUnit extended for Spring integration testing}
         \label{fig:springrunner}
-      \end{center}
     \end{figure}
 
     Figure \ref{fig:springrunner} shows example of a Spring Boot JUnit integration test, where the \textbf{context and its configuration} are
-    loaded with lines 16 and 17. Line 16. is an example of extending JUnit with custom runner. Lines 20-21 and 23-24 show
+    loaded with lines 1 and 2. Line \#2 is an example of extending JUnit with custom runner. Lines 4-5 and 7-8 show
     examples of \textbf{injected dependency} via Spring Framework.
 
-    \begin{figure}[ht]
-      \begin{center}
-        \includegraphics[width=13.7cm]{images/junit-integration.png}
-        \caption{JUnit Spring integration tests}
-        \label{fig:junit-examples}
-      \end{center}
-    \end{figure}
-
-    Figure \ref{fig:junit-examples} displays the usage of \textbf{fixture} and two \textbf{test methods}. At lines 29-33 the fixture method
-    inits separately before each test method run two common variables used in both tests. Lines 35-36 and 44-45 display two test method definitions with the
+    Figure \ref{fig:junit-examples} displays the usage of \textbf{fixture} and two \textbf{test methods}. At lines 4-8 the fixture method
+    inits separately before each test method run two common variables used in both tests. Lines 10-11 and 19-20 display two test method definitions with the
     \textit{@Test}-annotation from JUnit4. When used, it marks the following method as a runnable test method. Both test methods
-    contain \textbf{assertions}. Assertions in use at lines 39-41 and 51 are \textit{Hamcrest matchers}~\cite{hamcrest}, that
+    contain \textbf{assertions}. Assertions in use at lines 14-16 and 26 are \textit{Hamcrest matchers}~\cite{hamcrest}, that
     allows more readable descriptions for used assertions than traditional JUnit assertions.
 
-    \begin{figure}[ht]
-      \begin{center}
-        \includegraphics[width=12.5cm]{images/junit-result.png}
-        \caption{JUnit test run results}
-        \label{fig:junit-result}
-      \end{center}
+    \begin{figure}[H]
+        \begin{lstlisting}[style=java]
+    private GameDifficulty gameDifficulty;
+    private String playerName;
+
+    $$@Before
+    public void !!initGameValues!!() {
+        gameDifficulty = GameDifficulty.NORMAL;
+        playerName = "Player";
+    }
+
+    $$@Test
+    public void !!testStartGameWithNormalDifficulty!!() {
+        Game createdGame = gameService.startGame(playerName, gameDifficulty);
+
+        assertThat(createdGame, is(notNullValue()));
+        assertThat(createdGame.getPlayerName(), equalTo(playerName));
+        assertThat(createdGame.getDifficultyLevel(), equalTo(gameDifficulty));
+    }
+
+    $$@Test
+    public void !!testStartGamePersistsToDB!!() {
+        Integer gameCountBeforeStartGame = gameRepository.findAll().size();
+
+        gameService.startGame(playerName, gameDifficulty);
+
+        Integer gameCountAfterStartGame = gameRepository.findAll().size();
+        assertThat(gameCountAfterStartGame, is(greaterThan(gameCountBeforeStartGame)));
+    }
+        \end{lstlisting}
+        \caption{JUnit Spring Framework integration tests}
+        \label{fig:junit-examples}
     \end{figure}
 
     Figure \ref{fig:junit-result} shows the result of the test case run. Even though the example test methods start with the word test,
     JUnit4 allows free format naming of the test methods that don't need to start with test. This also allows to use JUnit as a tool for practicing
     implementation level BDD with some added verbosity in test method naming~\cite{smart2014bdd}.
 
+    \begin{figure}[H]
+      \begin{center}
+        \begin{topbot}[style=mdstyle]
+        \includegraphics[width=\textwidth]{images/junit-result.png}
+        \end{topbot}
+        \caption{JUnit test run results}
+        \label{fig:junit-result}
+      \end{center}
+    \end{figure}
+
     Build configuration of JUnit4 used in examples can be found in Appendix \ref{chapter:gradle-build} figure \ref{fig:junit-build}.
     Used build tool is Groovy-based \textit{Gradle}~\cite{gradle}.
-
     JUnit and its extensions provide a base for automated low-level testing of Java-code.
     In the next section alternatives for Java-code testing are presented with implementation level BDD testing frameworks from
     various JVM programming languages.
@@ -132,7 +166,6 @@ running on top of JVM programming languages are demonstrated as an alternative f
     Example groups can be initialized with keywords \textit{describe}
     and \textit{context}, which both are aliases for each other~\cite{rspec-core}. Example groups can inherit each other nested in a single
     file, creating nested context groups~\cite{rspec-core}. This can help immensively on removing
-    \newgeometry{bottom=2cm}
     repetition from the test code
     and achieving easily readable test outputs~\cite{chelimsky2010rspec}. This is enabled by easily usable \textbf{lifecycle hooks},
     such as \textit{before, after} and \textit{around}~\cite{chelimsky2010rspec}.
@@ -159,38 +192,83 @@ running on top of JVM programming languages are demonstrated as an alternative f
     Lifecycle Hook & $\Longrightarrow$  \textrm{Test Fixture} \\
     \end{longtable}
 
+    \begin{figure}[H]
+        \begin{lstlisting}[style=ruby]
+    describe !!GameService!! do
+
+      before(%%:all%%) do
+        %%@gameInitService%% = !!Mockito!!.mock(!!GameInitService!!.java_class)
+        %%@playerService%% = !!Mockito!!.mock(!!PlayerService!!.java_class)
+        %%@gameOptionService%% = !!Mockito!!.mock(!!GameOptionService!!.java_class)
+        %%@gameRepository%% = !!Mockito!!.mock(!!GameRepository!!.java_class)
+        %%@game_service%% = !!GameService!!.new(%%@gameInitService%%, %%@playerService%%,
+                                           %%@gameOptionService%%, %%@gameRepository%%)
+      end
+        \end{lstlisting}
+        \caption{RSpec unit test spec file initializing}
+        \label{fig:rspec-init}
+    \end{figure}
+
     Figure \ref{fig:rspec-init} displays the creation of a spec file. The spec file example is created for unit testing
-    of \textit{GameService} Java-class. Line 16. shows the creation of example group with the keyword \textit{describe}. Lines from
-    18 to 25 show the lifecycle hook \textit{before}, that is used once before all code examples in the example group.
+    of \textit{GameService} Java-class. Line \#1 shows the creation of example group with the keyword \textit{describe}. Lines from
+    3 to 10 show the lifecycle hook \textit{before}, that is used once before all code examples in the example group.
     In the before hook, BDD Gherkin inspired Java mocking library \textbf{Mockito}~\cite{mockito} is used for
     creating test double objects that replace the dependencies of GameService.
 
-    \begin{figure}[H]
-      \begin{center}
-        \includegraphics[width=13.7cm]{images/rspec-init.png}
-        \caption{RSpec spec file initializing}
-        \label{fig:rspec-init}
-      \end{center}
-    \end{figure}
-    \restoregeometry
-    \newgeometry{bottom=3cm}
     Figure \ref{fig:rspec-example} illustrates use of nested example groups that contains two examples in the second
-    level nested example group. Line 27. is the first example group, that is created with keyword \textit{describe}. The second
-    level nested example group starts at line 36. and it is initialized with the keyword \textit{context}. The \textbf{context} of
+    level nested example group. Line \#1 is the first example group, that is created with keyword \textit{describe}. The second
+    level nested example group starts at line \#9 and it is initialized with the keyword \textit{context}. The \textbf{context} of
     example method is a combined from the lifecycle hooks and variable declarations of the nested example group structure.
 
-    \begin{figure}[ht]
-      \begin{center}
-        \includegraphics[width=13.7cm]{images/rspec-example.png}
+    \begin{figure}[H]
+        \begin{lstlisting}[style=ruby]
+    describe 'startGame()' do
+      let(%%:player_name%%) {"Player"}
+      let(%%:game_difficulty%%) {!!GameDifficulty::NORMAL!!}
+      let(%%:new_game%%) {!!GameBuilder!!.aGame().
+                          with_player_name(player_name).
+                          with_difficulty_level(game_difficulty).
+                          build()}
+
+      context 'with normal difficulty' do
+
+        before(%%:each%%) do
+          !!Mockito!!.&&when&&(%%@gameInitService%%.getInitializedGame(
+              !!Mockito!!.any(GameDifficulty.java_class), !!Mockito!!.anyString)).thenReturn(new_game)
+          !!Mockito!!.&&when&&(%%@gameRepository%%.save(new_game)).thenReturn(new_game)
+        end
+
+        subject(%%:created_game%%) { %%@game_service%%.start_game(player_name, game_difficulty) }
+
+        it 'should create game with the given name' do
+          expect(created_game.player_name).to eq player_name
+        end
+
+        it 'should create game with the given game difficulty' do
+          expect(created_game.difficulty_level).to eq game_difficulty
+        end
+
+      end
+    end
+        \end{lstlisting}
         \caption{RSpec nested example groups with code examples}
         \label{fig:rspec-example}
-      \end{center}
     \end{figure}
 
     RSpec lets to define the \textbf{action} of the example group with the keyword \textit{subject}~\cite{rspec-subject}. Example of used subject is at
-    line 44. The two code examples are at lines 46-48 and 50-52.  Both examples show \textbf{expectations} given with keyword \textit{expect}
-    at lines 47 and 51. The two expectations are separated from each other following the \textit{one assert per test method}
+    line 17. The two code examples are at lines 19-21 and 23-25.  Both examples show \textbf{expectations} given with keyword \textit{expect}
+    at lines 20 and 24. The two expectations are separated from each other following the \textit{one assert per test method}
     to create more granular documentation of behavior. As mentioned earlier, this separation also allows independently failing code examples.
+    \newgeometry{bottom=1cm}
+    \begin{figure}[H]
+      \begin{center}
+        \begin{topbot}[style=mdstyle]
+        \includegraphics[width=\textwidth]{images/rspec-result.png}
+        \end{topbot}
+        \caption{RSpec code example run output}
+        \label{fig:rspec-result}
+      \end{center}
+    \end{figure}
 
     Figure \ref{fig:rspec-result} shows the output of code examples run in Integrated Development Environment (IDE) \textit{Intellij Idea}~\cite{intellij}.
     The nested structure of example groups
@@ -199,45 +277,60 @@ running on top of JVM programming languages are demonstrated as an alternative f
     \begin{center}
     \textit{Java::FiAaltoEkanbanServices::GameService startGame() with normal difficulty should create game with given name}
     \end{center}
-    \restoregeometry
-
-    \begin{figure}[ht]
-      \begin{center}
-        \includegraphics[width=12.0cm]{images/rspec-result.png}
-        \caption{RSpec code example run output}
-        \label{fig:rspec-result}
-      \end{center}
-    \end{figure}
 
     Extending RSpec for Spring Framework domain integration testing needs to be done different route than with JUnit. RSpec
     runner can't use custom JUnit Spring runner or JUnit Spring context rules. Example group also can't be annotated with
     spring configuration. Configuration annotation can be used with other demonstrated testing frameworks in this chapter. Figure \ref{fig:rspec-config}
-    displays the configuration that enables Spring Framework context for RSpec testing. At line 14, it scans the given
-    package for dependencies. At lines 15-17 test specific configuration is registered for the test context. Lines 25-27
+    displays the configuration that enables Spring Framework context for RSpec testing. At line \#6, it scans the given
+    package for dependencies. At lines 7-9 test specific configuration is registered for the test context. Lines 17-19
     display how to retrieve web server port for integration testing.
 
-    \begin{figure}[ht]
-      \begin{center}
-        \includegraphics[width=12.0cm]{images/rspec-config.png}
+    \begin{figure}[H]
+        \begin{lstlisting}[style=ruby]
+    class !!SpringContext!!
+      include !!Singleton!!
+
+      def initialize
+        %%@ctx%% = !!AnnotationConfigEmbeddedWebApplicationContext!!.new
+        %%@ctx%%.scan("fi.aalto.ekanban")
+        %%@ctx%%.getEnvironment.setActiveProfiles("test")
+        %%@ctx%%.register(!!MongoConfiguration!!.java_class)
+        %%@ctx%%.register(!!PortConfiguration!!.java_class)
+        %%@ctx%%.refresh
+      end
+
+      def spring_ctx
+        %%@ctx%%
+      end
+
+      def spring_port
+        %%@ctx%%.getEmbeddedServletContainer.getPort
+      end
+    end
+        \end{lstlisting}
         \caption{RSpec extension for Spring Framework integration testing}
         \label{fig:rspec-config}
-      \end{center}
     \end{figure}
 
+    \restoregeometry
 
     Figure \ref{fig:rspec-autowire}
     illustrates how-to inject dependencies for RSpec integration testing through Spring Framework dependency injection container.
     At line 13 the Spring Framework test context is created and at line 14 additional dependency is retrieved
     through the initialized singleton integration test context object.
 
-    \newgeometry{bottom=3cm}
-
     \begin{figure}[ht]
-      \begin{center}
-        \includegraphics[width=12.0cm]{images/rspec-autowire.png}
+        \begin{lstlisting}[style=ruby]
+    describe !!GameService!! do
+
+      before(%%:all%%) do
+        %%@ctx%% = !!SpringContext!!.instance.spring_ctx
+        %%@gameRepository%% = %%@ctx%%.getBean "gameRepository"
+      end
+        \end{lstlisting}
         \caption{Spring Framework dependency injection example for RSpec}
         \label{fig:rspec-autowire}
-      \end{center}
+
     \end{figure}
 
     To be included in the build process, getting JRuby-based RSpec in use for testing Java-code needs more setup than
@@ -247,20 +340,10 @@ running on top of JVM programming languages are demonstrated as an alternative f
     JRuby environment with the needed \textit{ruby gems}~\cite{rubygems} (dependencies) installed is required.
 
     \subsubsection{Spectrum}
-    Spectrum is a Java 8 -based BDD-style \textbf{test runner for JUnit 4}. It is influenced by BDD implementation
+    Spectrum is a Java 8 -based BDD-style \textbf{test runner for JUnit4}. It is influenced by BDD implementation
     level testing frameworks \textit{Jasmine} and \textit{RSpec}. It is used via custom runner for JUnit, and thus has good support for
     IDEs and reporting tools that are used with JUnit. Version 1.1.0 of Spectrum supports both xSpec family specification style and Gherkin
     family structure. This thesis inspects Spectrum more closely as a RSpec alternative for xSpec family style testing of Java-code.~\cite{spectrum}
-
-    \begin{figure}[ht]
-      \begin{center}
-        \includegraphics[width=13.7cm]{images/spectrum-example.png}
-        \caption{Spectrum nested example groups with code examples}
-        \label{fig:spectrum-example}
-      \end{center}
-    \end{figure}
-
-    \restoregeometry
 
     Spectrum used in examples and later on in projects is version 1.0.2. It supports nested \textbf{example groups} initialized
     with the keyword \textit{describe} and \textbf{code examples} with keyword \textit{it}. Both the example groups and their code
@@ -273,10 +356,50 @@ running on top of JVM programming languages are demonstrated as an alternative f
     Figure \ref{fig:spectrum-result}
     displays the output of code example runs in IDE Intellij Idea.
 
+    \begin{figure}[H]
+    \begin{lstlisting}[style=java]
+    describe("startGame", () -> {
 
-    \begin{figure}[ht]
+        final Supplier<GameDifficulty> gameDifficulty = let(() -> GameDifficulty.NORMAL);
+        final Supplier<String> playerName = let(() -> "Player");
+        final Supplier<Game> newGame = let(() -> GameBuilder.aGame()
+                                                    .withPlayerName(playerName.get())
+                                                    .withDifficultyLevel(gameDifficulty.get())
+                                                    .build());
+
+        describe("with normal difficulty", () -> {
+
+            beforeEach(() -> {
+                Mockito.when(gameInitService.getInitializedGame(
+                        Mockito.any(GameDifficulty.class),
+                        Mockito.any(String.class))).thenReturn(newGame.get());
+                Mockito.when(gameRepository.save(Mockito.any(Game.class))).thenReturn(newGame.get());
+            });
+
+            final Supplier<Game> createdGame = let(() ->
+                    gameService.startGame(playerName.get(), gameDifficulty.get()));
+
+            it("should create game with the given name", () -> {
+                assertThat(createdGame.get().getPlayerName(), equalTo(playerName.get()));
+            });
+
+            it("should create game with the given game difficulty", () -> {
+                assertThat(createdGame.get().getDifficultyLevel(), equalTo(gameDifficulty.get()));
+            });
+
+        });
+    });
+    \end{lstlisting}
+        \caption{Spectrum nested example groups with code examples}
+        \label{fig:spectrum-example}
+
+    \end{figure}
+
+    \begin{figure}[H]
       \begin{center}
-        \includegraphics[width=13.7cm]{images/spectrum-result.png}
+        \begin{topbot}[style=mdstyle]
+        \includegraphics[width=\textwidth]{images/spectrum-result.png}
+        \end{topbot}
         \caption{Spectrum code example run output}
         \label{fig:spectrum-result}
       \end{center}
@@ -284,23 +407,36 @@ running on top of JVM programming languages are demonstrated as an alternative f
 
     Extending Spectrum 1.0.2 for Spring Framework domain integration testing happens with context configuration and imperative
     creation of test context. At line 21 in Figure \ref{fig:spectrum-init}, JUnit is extended with custom \textit{Spectrum-runner}.
-    This enables the usage of example groups and code examples. Line 22 shows the annotation based configuration of the Spring Boot
+    This enables the usage of example groups and code examples. Line \#2 shows the annotation based configuration of the Spring Boot
     test context. As mentioned in section \ref{section:junit-extend} about extending JUnit for Spring Framework,
     the normal extending for Spring Framework would
     happen with custom \textit{JUnit Spring runner} or \textit{JUnit rules}. Neither of these options work with the Spectrum version in use,
-    but line 33 displays alternative imperative way of loading test context. Lines 25-26 and 28-29 display the dependency
+    but line \#13 displays alternative imperative way of loading test context. Lines 5-6 and 8-9 display the dependency
     injection feature of Spring Framework.
+
+    \begin{figure}[H]
+    \begin{lstlisting}[style=java]
+    %%@RunWith%%(Spectrum.class)
+    $$@SpringBootTest
+    public class GameServiceIntegrationSpec {
+
+        $$@Autowired
+        private GameService gameService;
+
+        $$@Autowired
+        private GameRepository  gameRepository;
+
+        {
+            beforeAll(() -> {
+                new TestContextManager(getClass()).prepareTestInstance(this);
+            });
+    \end{lstlisting}
+        \caption{Spectrum extension for Spring Framework integration testing}
+        \label{fig:spectrum-init}
+    \end{figure}
 
     Build configuration for shown examples can be found in Appendix \ref{chapter:gradle-build} figure \ref{fig:spectrum-build}.
     The used build tool is \textit{Gradle}.
-
-    \begin{figure}[ht]
-      \begin{center}
-        \includegraphics[width=13.7cm]{images/spectrum-init.png}
-        \caption{Spectrum extension for Spring Framework integration testing}
-        \label{fig:spectrum-init}
-      \end{center}
-    \end{figure}
 
     Essentially Spectrum is a Java-based implementation of a \textbf{subset of features present in RSpec}. It is at early version,
     and is not yet mature or widely used framework. Still, it can be considered as a fully working instance of a xSpec family
@@ -336,7 +472,9 @@ running on top of JVM programming languages are demonstrated as an alternative f
     can reduce the need for explicit debugging~\cite{kapelonis2016java}.
     \begin{figure}[ht]
       \begin{center}
-        \includegraphics[width=9.5cm]{images/spock-debug.png}
+        \begin{topbot}[style=mdstyle]
+        \includegraphics[width=10cm]{images/spock-debug.png}
+        \end{topbot}
         \caption{Spock console debugger}
         \label{fig:spock-debug}
       \end{center}
@@ -351,18 +489,31 @@ running on top of JVM programming languages are demonstrated as an alternative f
     level with test code and Gherkin descriptions mixed in together~\cite{okolnychyi2016study}.
 
     \begin{figure}[ht]
-      \begin{center}
-        \includegraphics[width=13.7cm]{images/spock-init.png}
+        \begin{lstlisting}[style=java]
+    class GameServiceSpockSpec extends Specification {
+
+        %%@Shared%% GameService gameService
+        %%@Shared%% GameInitService gameInitService
+        %%@Shared%% GameRepository gameRepository
+
+        <<def>> setup() {
+            gameInitService = Mock(GameInitService)
+            gameRepository = Mock(GameRepository)
+            <<def>> playerService = Mock(PlayerService)
+            <<def>> gameOptionService = Mock(GameOptionService)
+            gameService = new GameService(gameInitService, playerService,
+                                          gameOptionService, gameRepository)
+        }
+        \end{lstlisting}
         \caption{Spock specification file initialization}
         \label{fig:spock-init}
-      \end{center}
     \end{figure}
 
     Spock terminology consists of \textbf{specification} files containing \textbf{feature methods} and Given-When-Then
     \textbf{blocks} inside them~\cite{spock}. Figure \ref{fig:spock-init} displays initialization of a Spock specification
-    file. At line 12. the specification class is created by extending the class \textit{Spock.lang.Specification}. Lines
-    14-16 show use of \textit{@Shared}-variables, which are used for long lived objects shared between feature methods~\cite{spock}.
-    Lines 18 to 24 show the use of \textit{setup}-fixture for creating a shared, isolated context for each feature method~\cite{spock}.
+    file. At line \#1 the specification class is created by extending the class \textit{Spock.lang.Specification}. Lines
+    3-5 show use of \textit{@Shared}-variables, which are used for long lived objects shared between feature methods~\cite{spock}.
+    Lines 7 to 14 show the use of \textit{setup}-fixture for creating a shared, isolated context for each feature method~\cite{spock}.
     The fixture setup is used for initializing unit testing context, where the use of \textit{Mock}-objects~\cite{spock} can be seen.
     Class under test \textit{GameService} has its dependencies replaced with test doubles.
 
@@ -376,23 +527,52 @@ running on top of JVM programming languages are demonstrated as an alternative f
     JUnit testing literature also states to use this kind of structure with \textbf{Arrange-Act-Assert (AAA)},
     where different parts are separated from each other with space between them~\cite{langr2015pragmatic}.
     As this structure is not enforced in JUnit, there is the considerable possibility that it will not be used~\cite{kapelonis2016java}.
-    \begin{figure}[ht]
-      \begin{center}
-        \includegraphics[width=13.7cm]{images/spock-example.png}
-        \caption{Spock feature method}
-        \label{fig:spock-example}
-      \end{center}
-    \end{figure}
 
     Figure \ref{fig:spock-example} illustrates the contents of a feature method and the use of Given-When-Then blocks.
-    Block definitions are at lines 29, 35, 38, 42, 45 and 48 together
+    Block definitions are at lines 4, 10, 13, 17, 20 and 23 together
     with optional~\cite{spock} textual descriptions.
-    Lines 29-33 form a \textit{Setup}-block, which is an alias for Given-block~\cite{spock}.
-    Lines 42 and 45 display the creating of \textit{And}-block, which can be used as
+    Lines 4-8 form a \textit{Setup}-block, which is an alias for Given-block~\cite{spock}.
+    Lines 17 and 20 display the creating of \textit{And}-block, which can be used as
     an alias for the previously occurred main block (Given-When-Then) for more readable structure~\cite{kapelonis2016java}.
 
-    Lines 39-40 display the verifying of mock object actions and stubbing capabilities.
-    For example, at line 39
+    \clearpage
+    \begin{figure}[H]
+        \begin{lstlisting}[style=java]
+    $$@Unroll
+    <<def>> "GameService startGame() with playerName #playerName and difficulty #gameDifficulty"() {
+
+        !!setup:!!
+            <<def>> newGame = GameBuilder.aGame()
+                            .withPlayerName(playerName)
+                            .withDifficultyLevel(gameDifficulty)
+                            .build()
+
+        !!when:!! "startGame() is called with playerName and gameDifficulty"
+            <<def>> createdGame = gameService.startGame(playerName, gameDifficulty)
+
+        !!then:!! "game should be initialized and persisted"
+            1 * gameInitService.getInitializedGame(gameDifficulty, playerName) >> newGame
+            1 * gameRepository.save(newGame) >> newGame
+
+        !!and:!! "game has been created with given name"
+            createdGame.playerName == playerName
+
+        !!and:!! "game has been created with given gameDifficulty"
+            createdGame.difficultyLevel != gameDifficulty
+
+        !!where:!!
+            playerName | gameDifficulty
+            "Player"    | GameDifficulty.NORMAL
+            "Pelaaja"   | GameDifficulty.NORMAL
+
+    }
+          \end{lstlisting}
+        \caption{Spock feature method}
+        \label{fig:spock-example}
+
+    \end{figure}
+    Lines 14-15 display the verifying of mock object actions and stubbing capabilities.
+    For example, at line 14
     \begin{center}
     \textit{1 * gameInitService.getInitializedGame(gameDifficulty, playerName)}
     \end{center}
@@ -400,24 +580,27 @@ running on top of JVM programming languages are demonstrated as an alternative f
     The latter part after the verifying, \textit{"\textgreater\textgreater} \textit{newGame"}, is used to stub the return value for the
     called mock object action.
 
-    DDT can be seen with lines 26 and 48-51.
-    Line 26 \textit{@Unroll} creates a separate test run for each parameter
-    variation defined in the \textit{Where}-block (lines 48-51). Line 49. defines the parameter names and lines 50-51 are
+    DDT can be seen with lines 1 and 23-26.
+    Line 1 \textit{@Unroll} creates a separate test run for each parameter
+    variation defined in the \textit{Where}-block (lines 23-26). Line 24. defines the parameter names and lines 25-26 are
     separate situations that creates an individual feature method run. Finally the line 27. holds the definition of
     the feature method. The name of feature method can be inserted as a string description, allowing more easily to write
     information in it~\cite{kapelonis2016java}. In the example, name holds test run output information with the embedded parameters inside it.
     The result of feature method run on the IDE Intellij Idea can be seen in the figure \ref{fig:spock-result} as two separate test runs through the DDT.
-    \begin{figure}[ht]
-      \begin{center}
-        \includegraphics[width=12.5cm]{images/spock-result.png}
-        \caption{Spock feature method output}
-        \label{fig:spock-result}
-      \end{center}
-    \end{figure}
 
     To get Spock integrated into \textit{Gradle} build cycle with full mocking capabilities, Spring Framework support and BDD styled HTML-reporting, it needs
     quite a few dependencies. The build configuration can be found in Appendix \ref{chapter:gradle-build} figure \ref{fig:spock-build}.
 
+    \clearpage
+    \begin{figure}[H]
+      \begin{center}
+        \begin{topbot}[style=mdstyle]
+        \includegraphics[width=\textwidth]{images/spock-result.png}
+        \end{topbot}
+        \caption{Spock feature method output}
+        \label{fig:spock-result}
+      \end{center}
+    \end{figure}
     All the examples displayed in the figures are of Spock used for testing Java-code. Although at first glance the test code might
     look like Java, the programming language used is Groovy. Groovy is aimed to resemble Java with dynamic programming language
     capabilities and less verbose syntax~\cite{kapelonis2016java}. In the given test code examples, Java production code classes are used directly
