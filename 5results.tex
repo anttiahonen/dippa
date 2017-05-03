@@ -1,8 +1,9 @@
 \newgeometry{top=3cm, bottom=2cm}
-\chapter{Results}
+\chapter{Results and discussion}
 \label{chapter:results}
 
-This chapter covers the results and analysis of the case study. First the results of interview for demographic purposes are
+This chapter covers the results and analysis of the case study with discussion to related research.
+First the results of interview for demographic purposes are
 presented. Second, survey and interview results regarding JUnit compared to Spock and Spectrum are analyzed.  Third, the test
 code analysis is presented and finally
 with all the above mentioned results, Spock and Spectrum are compared against each other.
@@ -10,10 +11,10 @@ with all the above mentioned results, Spock and Spectrum are compared against ea
 
 %-Define the population to which inferential statistics and predictive models apply.\newline
 %-RQ1 and RQ2 answered by comparing initial and post surveys\newline
-%-Comparing Spock and Spectrum vs each other\newline
+%-Comparing Spock and Spectrum vs. each other\newline
 %-RQ3 answered by comparing observed actual test implementation changes\newline
 
-\section{First interview: Demographics and projects}
+\section{First interview: demographics and projects}
 \label{section:demographics}
     First interview was conducted to study about the demographics of participants and projects under research.
     The demographics of participants are displayed in table \ref{tab:demographics}. To summarize the
@@ -102,7 +103,7 @@ visible throughout the result tables for easier highlighting of answers.
 
 \subsection{Automated low-level testing developer practices}
 This section answer the
-\textbf{RQ1: }\textit{How does behavior driven testing frameworks change developer practices working with automated
+\textbf{RQ1: }\textit{How does behavior-driven testing frameworks change developer practices working with automated
 low-level testing compared to JUnit framework?} This is studied through multiple aspects, which all display results and analysis
 individually. First, the developer software development \& testing time and effort usage is analyzed. Second, low-level
 test optimizing targets are inspected. Third, test understandability and informativiness is under study. After that, test
@@ -125,13 +126,13 @@ new code is the dominating activity in time usage with 33.04\% share. At the beg
 participants used most of their software development
 time in \textit{debugging or fixing} activities with 26.67\% time usage share. \textit{Writing new code} (25.00\%) and \textit{refactoring} (23.33\%) were close
 by in time usage. The participants in this study had quite much variance in their answers for time usage, but \textit{writing
-new tests} was uniformly higher in time usage than in the original study results. Participants {\colorbox{lightgray}A} and {\colorbox{orange}C}
-were closely together in their answers for time usage, whereas participant {\colorbox{lime}B} had more emphasis on initial \textit{writing of new code} and
+new tests} was uniformly higher in time usage than in the original study results. Participants A and C
+were closely together in their answers for time usage, whereas participant B had more emphasis on initial \textit{writing of new code} and
 less time spent on \textit{refactoring}.
 
     \begin{table}[H]
         \resizebox{\textwidth}{!}{%
-            \begin{tabular}{p{13.0cm}*{7}{p{2cm}}}
+            \begin{tttabular}{p{8.0cm}*{7}{p{1.7cm}}}
             \topline
             \textbf{Question} & \textbf{Answer options} &  &  &  &   &  & \\ \hline
             \textbf{Q1: How do you spend your software development time (in percentages)} & Participant {\colorbox{lightgray}A} & Participant {\colorbox{lime}B} & Participant {\colorbox{orange}C} & Average & & \\
@@ -144,26 +145,24 @@ less time spent on \textit{refactoring}.
             & \\ \hline
             \textbf{Q1': Compared to JUnit, How do you spend your software development time?} & A lot less time & Less time & Slightly less time & The Same amount of time & Slightly more time & More time & A lot more time \\
             & \\
-            1. Writing new code & 0 & 0 & 0 & {\colorbox{lightgray}A} & 0 & 0 & 0 \\
-            2. Writing new tests & 0 & 0 & 0 & {\colorbox{lightgray}A} & 0 & 0 & 0 \\
-            3. Debugging/fixing & 0 & 0 & 0 & {\colorbox{lightgray}A} & 0 & 0 & 0 \\
-            4. Refactoring & 0 & 0 & 0 & {\colorbox{lightgray}A} & 0 & 0 & 0 \\
-            5. Other & 0 & 0 & 0 & {\colorbox{lightgray}A} & 0 & 0 & 0 \\
+            1. Writing new code & & & & {\colorbox{lightgray}A}{\colorbox{lime}B}{\colorbox{orange}C} & & & \\
+            2. Writing new tests & & {\colorbox{orange}C} & & {\colorbox{lightgray}A} & {\colorbox{lime}B} & & \\
+            3. Debugging/fixing & & & & {\colorbox{lightgray}A}{\colorbox{lime}B}{\colorbox{orange}C} & & & \\
+            4. Refactoring & & & {\colorbox{orange}C} & {\colorbox{lightgray}A}{\colorbox{lime}B} & & & \\
+            5. Other & & & & {\colorbox{lightgray}A}{\colorbox{lime}B}{\colorbox{orange}C} & & & \\
             & \\ \topline
 
 
-            \end{tabular}}
+            \end{tttabular}}
             \caption {Development time usage and changes in it} \label{tab:changes-pt1a}
     \end{table}
 
 Changes in software development time were studied with the \textbf{Q1':} \textit{Compared to JUnit, How do you spend your
-software development time?} Results are displayed in table \ref{tab:changes-pt1a}. Participant {\colorbox{lightgray}A}
+software development time?} Results are displayed in table \ref{tab:changes-pt1a}. Participant A
 didn't see any changes in the overall software development time usages after introduction of \textbf{\textit{Spectrum}}. This has to be taken
 with a grain of salt, as the  next questions shows increase in testing efforts when comparing JUnit and Spectrum.
 
 \textbf{TO BE CONTINUED}
-
-\clearpage
 
 Questions \textbf{Q2} and \textbf{Q2'} further analyze the time usage, now focusing in automated testing. Their results are
 shown in table \ref{tab:changes-pt1b}. All participants answered to use approximately 30 minutes of time in single test case. The
@@ -172,44 +171,44 @@ About two thirds (71.67\%) of initial effort goes to \textit{implementation} of 
 of the overall testing effort.
 
 Participants had highly varying answers in initial \textit{thinking} and \textit{implementation} effort and also
-in overall testing \textit{refactoring} effort. Participants {\colorbox{lime}B} and {\colorbox{orange}C} had same kind of profile
+in overall testing \textit{refactoring} effort. Participants B and C had same kind of profile
 in initial efforts, where about one fifth of it goes to initial \textit{thinking} of test case and four fifths to \textit{implementation}.
-Participant {\colorbox{lightgray}A} had the initial effort going in half between the two aspects. In overall effort,
-\textit{refactoring} of test code took 50\% of effort for participant {\colorbox{lightgray}A}. Participant {\colorbox{lime}B}
-hardly at all \textit{refactored} test code (5\%) and participant {\colorbox{orange}C} used around one third of overall testing effort
+Participant A had the initial effort going in half between the two aspects. In overall effort,
+\textit{refactoring} of test code took 50\% of effort for participant A. Participant B
+hardly at all \textit{refactored} test code (5\%) and participant C used around one third of overall testing effort
 to \textit{refactoring} (30\%).
 
 
     \begin{table}[H]
         \resizebox{\textwidth}{!}{%
-            \begin{tabular}{p{13.0cm}*{7}{p{2cm}}}
+            \begin{tttabular}{p{8.0cm}*{7}{p{1.7cm}}}
             \topline
             \textbf{Question} & \textbf{Answer options} &  &  &  &   &  & \\ \hline
             \textbf{Q2: How do you spend your low-level automated testing time} & Participant {\colorbox{lightgray}A} & Participant {\colorbox{lime}B} & Participant {\colorbox{orange}C} & Average & & \
             & & & & & & & \\
             1. How much approximately you use time per test case (minutes)? & 30 min & 30 min & 30 min & 30 min \\
-            2. How much of your initial effort goes to thinking about test case content without implementation (percentage)? & 50\% & 20\% & 15\% & 28.33\% \\
-            3. How much of your initial effort goes to initial test case structuring and implementation (percentage)? & 50\% & 80\% & 85\% & 71.67\% \\
+            2. How much of your initial effort goes to thinking about test case content without implementation? & 50\% & 20\% & 15\% & 28.33\% \\
+            3. How much of your initial effort goes to initial test case structuring and implementation? & 50\% & 80\% & 85\% & 71.67\% \\
             4. How much of your overall testing effort goes to refactoring test code (percentage)? & 50\% & 5\% & 30\% & 28.33\% \\
             & \\ \hline
             \textbf{Q2': Compared to JUnit, How do you spend your low-level automated testing time?} & A lot less & Less & Slightly less & The Same amount & Slightly more & More & A lot more \\
             & \\
-            1. Do you use more or less time per test case? & 0 & 0 & 0 & {\colorbox{lightgray}A} & 0 & 0 & 0 \\
-            2. Do you use more or less of initial effort thinking about test case content? (no implementation) & 0 & 0 & 0 & 0 & {\colorbox{lightgray}A} & 0 & 0 \\
-            3. Do you use more or less of initial effort to test case structuring and implementation? & 0 & 0 & 0 & 0 & 0 & {\colorbox{lightgray}A} & 0 \\
-            4. Do you use more or less of overall testing effort to refactoring test code? & 0 & 0 & 0 & {\colorbox{lightgray}A} & 0 & 0 & 0 \\
+            1. Do you use more or less time per test case? & & {\colorbox{orange}C} & & {\colorbox{lightgray}A} & {\colorbox{lime}B} & & \\
+            2. Do you use more or less of initial effort thinking about test case content? & & & & {\colorbox{orange}C} & {\colorbox{lightgray}A}{\colorbox{lime}B} & & \\
+            3. Do you use more or less of initial effort to test case structuring and implementation? & & & & {\colorbox{orange}C} & {\colorbox{lime}B} & {\colorbox{lightgray}A} & \\
+            4. Do you use more or less of overall testing effort to refactoring test code? & & & {\colorbox{orange}C} & {\colorbox{lightgray}A} & {\colorbox{lime}B} & & \\
             & \\ \topline
 
-            \end{tabular}}
+            \end{tttabular}}
             \caption {Development \& testing time and effort usage and changes in them} \label{tab:changes-pt1b}
     \end{table}
 
 Changes in automated testing time and effort were studied with \textbf{Q2':} \textit{Compared to JUnit, How do you spend your low-level automated testing time?}
-Participant {\colorbox{lightgray}A} answered
+Participant A answered
 to use around the same time per test case with Spectrum, but also answered to use slightly more time in initial \textit{thinking} of test
 case and more time in test case \textit{implementation}. As the overall testing effort \textit{refactoring} was the same amount, therefore it might
 be feasible to think that the time per test case might have increased. In the feedback interview of \textbf{\textit{Spectrum}} with participant
-{\colorbox{lightgray}A}, he said that the implementation and how to effectively structure the usage of Java8 lambdas and Spectrum variables
+A, he said that the implementation and how to effectively structure the usage of Java8 lambdas and Spectrum variables
 in them took extra time compared to JUnit.
 
 \textbf{TO BE CONTINUED}
@@ -231,53 +230,53 @@ amongst original study survey participants.
 
 Regarding JUnit low-level testing, participants in this study had varying importance in studied aspects. Full answers are
 displayed in table \ref{tab:changes-pt2} with \textbf{Q3:} \textit{How important are the following aspects for you when you write new low-level tests?}
-Participants {\colorbox{lightgray}A} and {\colorbox{lime}B} answered
-the most alike, whereas participant {\colorbox{orange}C} had slightly different optimizing profile. \textit{Code coverage}
+Participants A and B answered
+the most alike, whereas participant C had slightly different optimizing profile. \textit{Code coverage}
 was a neutral optimizing target for all participants. Additional question original to this study was the \textit{capturing of behavior}
-as optimizing target. Participants {\colorbox{lightgray}A} and {\colorbox{lime}B} found it neutral and slightly important,
-but participant {\colorbox{orange}C} had it as a very important optimizing target. Another interesting target was \textit{execution speed},
-where participants {\colorbox{lightgray}A} and {\colorbox{lime}B} had it at least moderately important, but participant {\colorbox{orange}C}
+as optimizing target. Participants A and B found it neutral and slightly important,
+but participant C had it as a very important optimizing target. Another interesting target was \textit{execution speed},
+where participants A and B had it at least moderately important, but participant C
 answered it as low importance optimizing target. \textit{How realistic the test scenario is} was very important to optimize for
-participant {\colorbox{orange}C}. This was also the most important target amonst original study survey participants.
-For participants {\colorbox{lightgray}A} and {\colorbox{lime}B}, \textit{realistic test scenario} was only slightly important.
+participant C. This was also the most important target amonst original study survey participants.
+For participants A and B, \textit{realistic test scenario} was only slightly important.
 These kind of variations in optimizing targets are quite natural when studying this low participant count. The original study
 figure \ref{fig:org-optimize} displays how all the targets are quite close to each other with larger sampling.
 
     \begin{table}[H]
         \resizebox{\textwidth}{!}{%
-            \begin{tabular}{p{13.0cm}*{7}{p{2cm}}}
+            \begin{tttabular}{p{8.0cm}*{7}{p{1.7cm}}}
             \topline
             \textbf{Question} & \textbf{Answer options} &  &  &  &   &  & \\ \hline
             \textbf{Q3: How important are the following aspects for you when you write new low-level tests?} & Not at all & Low \newline importance & Slightly important & Neutral & Moderately important & Very \newline important & Extremely important \\
             & \\
-            1. Code coverage & 0 & 0 & 0 & {\colorbox{lightgray}A}{\colorbox{lime}B}{\colorbox{orange}C} & 0 & 0 & 0 \\
-            2. Capturing all behavior of unit/feature with tests or assertions & 0 & 0 & {\colorbox{lime}B} & {\colorbox{lightgray}A} & 0 & {\colorbox{orange}C} & 0 \\
-            3. Execution speed & 0 & {\colorbox{orange}C} & 0 & 0 & {\colorbox{lime}B} & {\colorbox{lightgray}A} & 0 \\
-            4. Robustness against code changes (i.e., test does not break easily) & 0 & 0 & 0 & 0 & {\colorbox{lightgray}A}{\colorbox{lime}B}{\colorbox{orange}C} & 0 & 0 \\
-            5. How realistic the test scenario is & 0 & 0 & {\colorbox{lightgray}A}{\colorbox{lime}B} & 0 & 0 & {\colorbox{orange}C} & 0 \\
-            6. How easily faults can be localised/debugged if the test fails & 0 & 0 & {\colorbox{lime}B} & 0 & {\colorbox{lightgray}A}{\colorbox{orange}C} & 0 & 0 \\
-            7. How easily the test can be updated when the underlying code changes & 0 & {\colorbox{orange}C} & {\colorbox{lightgray}A} & 0 & {\colorbox{lime}B} & 0 & 0 \\
-            8. Sensitivity against code changes (i.e., test should detect even small code changes) & 0 & {\colorbox{lightgray}A}{\colorbox{lime}B} & 0 & {\colorbox{orange}C} & 0 & 0 & 0 \\
+            1. Code coverage & & & & {\colorbox{lightgray}A}{\colorbox{lime}B}{\colorbox{orange}C} & & & \\
+            2. Capturing all behavior of unit/feature with tests or assertions & & & {\colorbox{lime}B} & {\colorbox{lightgray}A} & & {\colorbox{orange}C} & \\
+            3. Execution speed & & {\colorbox{orange}C} & & & {\colorbox{lime}B} & {\colorbox{lightgray}A} & \\
+            4. Robustness against code changes (i.e., test does not break easily) & & & & & {\colorbox{lightgray}A}{\colorbox{lime}B}{\colorbox{orange}C} & & \\
+            5. How realistic the test scenario is & & & {\colorbox{lightgray}A}{\colorbox{lime}B} & & & {\colorbox{orange}C} & \\
+            6. How easily faults can be localised/debugged if the test fails & & & {\colorbox{lime}B} & & {\colorbox{lightgray}A}{\colorbox{orange}C} & & \\
+            7. How easily the test can be updated when the underlying code changes & & {\colorbox{orange}C} & {\colorbox{lightgray}A} & & {\colorbox{lime}B} & & \\
+            8. Sensitivity against code changes (i.e., test should detect even small code changes) & & {\colorbox{lightgray}A}{\colorbox{lime}B} & & {\colorbox{orange}C} & & & \\
             & \\ \hline
             \textbf{Q3': Compared to JUnit, How important are the following aspects for you when you write new low-level tests?} & A lot less important & Less important & Slightly less important & As important as before & Slightly more important & More important & A lot more important \\
             & \\
-            1. Code coverage & 0 & 0 & 0 & {\colorbox{lightgray}A} & 0 & 0 & 0 \\
-            2. Capturing all behavior of unit/feature with tests or assertions & 0 & 0 & 0 & 0 & {\colorbox{lightgray}A} & 0 & 0 \\
-            3. Execution speed & 0 & 0 & 0 & {\colorbox{lightgray}A} & 0 & 0 & 0 \\
-            4. Robustness against code changes (i.e., test does not break easily) & 0 & 0 & 0 & {\colorbox{lightgray}A} & 0 & 0 & 0 \\
-            5. How realistic the test scenario is	& 0 & 0 & 0 & {\colorbox{lightgray}A} & 0 & 0 & 0 \\
-            6. How easily faults can be localised/debugged if the test fails & 0 & 0 & 0 & 0 & {\colorbox{lightgray}A} & 0 & 0 \\
-            7. How easily the test can be updated when the underlying code changes & 0 & 0 & 0 & {\colorbox{lightgray}A} & 0 & 0 & 0 \\
-            8. Sensitivity against code changes (i.e., test should detect even small code changes) & 0 & 0 & 0 & {\colorbox{lightgray}A} & 0 & 0 & 0 \\
+            1. Code coverage & & & & {\colorbox{lightgray}A}{\colorbox{lime}B}{\colorbox{orange}C} & & & \\
+            2. Capturing all behavior of unit/feature with tests or assertions & & & & {\colorbox{lime}B}{\colorbox{orange}C} & {\colorbox{lightgray}A} & & \\
+            3. Execution speed & & & & {\colorbox{lightgray}A}{\colorbox{lime}B}{\colorbox{orange}C} & & & \\
+            4. Robustness against code changes (i.e., test does not break easily) & & & & {\colorbox{lightgray}A}{\colorbox{lime}B}{\colorbox{orange}C} & & & \\
+            5. How realistic the test scenario is	& & & & {\colorbox{lightgray}A}{\colorbox{lime}B} & & {\colorbox{orange}C} & \\
+            6. How easily faults can be localised/debugged if the test fails & & & & {\colorbox{lime}B} & {\colorbox{lightgray}A}{\colorbox{orange}C} & & \\
+            7. How easily the test can be updated when the underlying code changes & & & & {\colorbox{lightgray}A}{\colorbox{lime}B}{\colorbox{orange}C} & & & \\
+            8. Sensitivity against code changes (i.e., test should detect even small code changes) & & & & {\colorbox{lightgray}A}{\colorbox{lime}B}{\colorbox{orange}C} & & & \\
             & \\ \topline
 
-            \end{tabular}}
+            \end{tttabular}}
             \caption {Optimizing targets in low-level tests and changes in them} \label{tab:changes-pt2}
     \end{table}
 
 The changes in low-level testing optimizing targets were studied with \textbf{Q3':}
 \textit{Compared to JUnit, how important are the following aspects for you when you write new low-level tests?}
-Participant {\colorbox{lightgray}A} compared the changes from JUnit to \textbf{\textit{Spectrum}} and find most of the targets as important as before.
+Participant A compared the changes from JUnit to \textbf{\textit{Spectrum}} and find most of the targets as important as before.
 \textit{Capturing behavior} of tested subject in tests was slightly more important than before. Also \textit{fault localization} was
 slightly more important target than before. These two targets and their higher importance seem natural for a \textbf{xSpec family}
 testing framework, as it aims to promote more granular and more natural language description information holding test cases than JUnit.
@@ -299,30 +298,30 @@ hypothesis of developers finding it easier to understand test cases with BDD tes
     \end{figure}
 
 Table \ref{tab:changes-pt3} summarizes this study participant answers. First \textbf{Q4} studied how difficult understanding
-of low-level tests with JUnit was. The results mirrored quite well the original study findings, as participants {\colorbox{lime}B} and {\colorbox{orange}C}
-find the understandability to be moderately diffucult and participant {\colorbox{lightgray}A} found it hard to understand a low-level test.
+of low-level tests with JUnit was. The results mirrored quite well the original study findings, as participants B and C
+find the understandability to be moderately diffucult and participant A found it hard to understand a low-level test.
 
 
     \begin{table}[H]
         \resizebox{\textwidth}{!}{%
-            \begin{tabular}{p{13.0cm}*{7}{p{2cm}}}
+            \begin{tttabular}{p{8.0cm}*{7}{p{1.7cm}}}
             \topline
             \textbf{Question} & \textbf{Answer options} &  &  &  &   &  & \\ \hline
             & Very easy & Easy & Moderate & Hard & Very hard & & \\
             & \\
-            \textbf{Q4: How difficult is it for you to understand a low-level test?} & 0 & 0 & {\colorbox{lime}B}{\colorbox{orange}C} & {\colorbox{lightgray}A} & 0 \\
+            \textbf{Q4: How difficult is it for you to understand a low-level test?} & & & {\colorbox{lime}B}{\colorbox{orange}C} & {\colorbox{lightgray}A} & \\
             & \\ \hline
             & A lot less difficult & Less difficult & Slightly less difficult & As difficult as before & Slightly more difficult & More difficult & A lot more difficult \\
             & \\
-            \textbf{Q4': Compared to JUnit, how difficult is it for you to understand a low-level test?} & 0 & {\colorbox{lightgray}A} & 0 & 0 & 0 & 0 & 0 \\
+            \textbf{Q4': Compared to JUnit, how difficult is it for you to understand a low-level test?} & {\colorbox{orange}C} & {\colorbox{lightgray}A} & & & {\colorbox{lime}B} & & \\
             & \\ \topline
-            \end{tabular}}
+            \end{tttabular}}
             \caption {Understandability of low-level tests and changes in it} \label{tab:changes-pt3}
     \end{table}
 
 The changes in low-level test understandability were studied with \textbf{Q4':} \textit{Compared to JUnit, how difficult is it
-for you to understand a low-level test?} Participant {\colorbox{lightgray}A} found it less difficult to understand a low-level
-test after the introduction of \textbf{\textit{Spectrum}}. Statement 2 talk here!!!
+for you to understand a low-level test?} Participant A found it less difficult to understand a low-level
+test after the introduction of \textbf{\textit{Spectrum}}. Hypothesis 2 talk here!!!
 
 Table \ref{tab:changes-pt4} displays questions \textbf{Q5 \& Q5'} and their results. Q5 was chosen to see first
 how easily the JUnit test methods can be \textbf{structured} and \textbf{understood} to hold different parts of the test. JUnit testing literature states that
@@ -330,77 +329,77 @@ the structure should be done with \textit{Arrange-Act-Assert}~\cite{langr2015pra
 tests which are hard to understand~\cite{kapelonis2016java}. Q5 studies if this does hold true.
 
 All the participants had different parts of test
-structure with ranging difficulties in structuring and understanding. Participant {\colorbox{lightgray}A} could be categorized to hold almost all
+structure with ranging difficulties in structuring and understanding. Participant A could be categorized to hold almost all
 parts of structuring the test somewhat difficult, with the exception of finding it easy to structure information to context of tests.
 Reading tests and understanding their structure was found at least from slightly hard to hard.
-Participant {\colorbox{lime}B} find writing information to assertions of test easy, but otherwise structuring the test
+Participant B find writing information to assertions of test easy, but otherwise structuring the test
 was found from moderately difficult to slightly hard. Reading the test structure parts for information was equivalent
-to writing and structuring of tests. Participant {\colorbox{orange}C} found it somewhat difficult to produce information
+to writing and structuring of tests. Participant C found it somewhat difficult to produce information
 to tests, but reading the test structure was found to be slightly easy. These ranging results are not too surprising,
 as JUnit does not promote a certain structure for tests. It seems to result in hard to produce stucture that is not
 too easy to understand.
 
     \begin{table}[H]
         \resizebox{\textwidth}{!}{%
-            \begin{tabular}{p{13.0cm}*{7}{p{2cm}}}
+            \begin{tttabular}{p{8.0cm}*{7}{p{1.7cm}}}
             \topline
             \textbf{Question} & \textbf{Answer options} &  &  &  &   &  & \\ \hline
             \textbf{Q5: In low-level testing, how difficult is it for you to} & Very easy & Easy & Slightly easy & Moderate & Slightly hard & Hard & Very hard \\
             & & & & & & \\
-            1. Structure and write information to context of test? & 0 & {\colorbox{lightgray}A} & 0 & 0 & {\colorbox{lime}B}{\colorbox{orange}C} & 0 & 0 \\
-            2. Structure and write information to stimulus of test? & 0 & 0 & 0 & {\colorbox{lightgray}A}{\colorbox{lime}B}{\colorbox{orange}C} & 0 & 0 & 0 \\
-            3. Structure and write information to assertions of test? & 0 & {\colorbox{lime}B} & {\colorbox{orange}C} & 0 & {\colorbox{lightgray}A} & 0 & 0 \\
-            4. Read test case structure for information about context of test? & 0 & 0 & {\colorbox{orange}C} & 0 & {\colorbox{lime}B} & {\colorbox{lightgray}A} & 0 \\
-            5. Read test case structure for information about stimulus of test? & 0 & 0 & {\colorbox{orange}C} & {\colorbox{lime}B} & {\colorbox{lightgray}A} & 0 & 0 \\
-            6. Read test case structure for information about assertions of test? & 0 & {\colorbox{lime}B} & {\colorbox{orange}C} & 0 & 0 & {\colorbox{lightgray}A} & 0 \\
+            1. Structure and write information to context of test? & & {\colorbox{lightgray}A} & & & {\colorbox{lime}B}{\colorbox{orange}C} & & \\
+            2. Structure and write information to stimulus of test? & & & & {\colorbox{lightgray}A}{\colorbox{lime}B}{\colorbox{orange}C} & & & \\
+            3. Structure and write information to assertions of test? & & {\colorbox{lime}B} & {\colorbox{orange}C} & & {\colorbox{lightgray}A} & & \\
+            4. Read test case structure for information about context of test? & & & {\colorbox{orange}C} & & {\colorbox{lime}B} & {\colorbox{lightgray}A} & \\
+            5. Read test case structure for information about stimulus of test? & & & {\colorbox{orange}C} & {\colorbox{lime}B} & {\colorbox{lightgray}A} & & \\
+            6. Read test case structure for information about assertions of test? & & {\colorbox{lime}B} & {\colorbox{orange}C} & & & {\colorbox{lightgray}A} & \\
             & \\ \hline
             \textbf{Q5': Compared to JUnit in low-level testing, how difficult is it for you to} & A lot less difficult & Less difficult & Slightly less difficult & As difficult as before & Slightly more difficult & More difficult & A lot more difficult \\
             & & & & & & \\
-            1. Structure and write information to context of test? & {\colorbox{lightgray}A} & 0 & 0 & 0 & 0 & 0 & 0 \\
-            2. Structure and write information to stimulus of test? & 0 & {\colorbox{lightgray}A} & 0 & 0 & 0 & 0 & 0 \\
-            3. Structure and write information to assertions of test? & 0 & 0 & {\colorbox{lightgray}A} & 0 & 0 & 0 & 0 \\
-            4. Read test case structure for information about context of test? & 0 & 0 & {\colorbox{lightgray}A} & 0 & 0 & 0 & 0 \\
-            5. Read test case structure for information about stimulus of test? & 0 & {\colorbox{lightgray}A} & 0 & 0 & 0 & 0 & 0 \\
-            6. Read test case structure for information about assertions of test? & 0 & 0 & {\colorbox{lightgray}A} & 0 & 0 & 0 & 0 \\
+            1. Structure and write information to context of test? & {\colorbox{lightgray}A}{\colorbox{orange}C} & & {\colorbox{lime}B} & & & & \\
+            2. Structure and write information to stimulus of test? & & {\colorbox{lightgray}A}{\colorbox{orange}C} & & & {\colorbox{lime}B} & & \\
+            3. Structure and write information to assertions of test? & & {\colorbox{orange}C} & {\colorbox{lightgray}A} & {\colorbox{lime}B} & & & \\
+            4. Read test case structure for information about context of test? & {\colorbox{orange}C} & & {\colorbox{lightgray}A}{\colorbox{lime}B} & & & & \\
+            5. Read test case structure for information about stimulus of test? & & {\colorbox{lightgray}A}{\colorbox{orange}C} & & {\colorbox{lime}B} & & & \\
+            6. Read test case structure for information about assertions of test? & & {\colorbox{orange}C} & {\colorbox{lightgray}A}{\colorbox{lime}B} & & & & \\
             & \\ \topline
-            \end{tabular}}
+            \end{tttabular}}
             \caption {Low-level test structure informativiness and changes in it} \label{tab:changes-pt4}
     \end{table}
 
-Q5' displays the changes in structuring and reading of tests for information. Participant {\colorbox{lightgray}A} found \textbf{\textit{Spectrum}}
+Q5' displays the changes in structuring and reading of tests for information. Participant A found \textbf{\textit{Spectrum}}
 on all occasions easier to structure information to tests and also to read it from tests. Structuring information to
 tests could be categorized as quite much easier. Reading the tests for information was found somewhat easier than with JUnit.
 
-Statement 2 talk here!!!
+Hypothesis 2 talk here!!!
 \clearpage
 
 Table \ref{tab:changes-pt5} displays questions \textbf{Q6 \& Q6'} with results. First Q6 studies how \textbf{informative} participants
-found JUnit test output. Participant {\colorbox{lightgray}A} find the output hardly informative, whereas participants {\colorbox{lime}B}
-and {\colorbox{orange}C} found the output ranging from somewhat informative to moderately informative. These results are
+found JUnit test output. Participant A find the output hardly informative, whereas participants B
+and C found the output ranging from somewhat informative to moderately informative. These results are
 not too suprising, as normal JUnit test method naming do not tend hold that much words. Section \ref{subsub:low-level-metrics} displays
 that the average word count in test methods in projects were ranging from approximately 5 to 6. This amount of words can't
 hold naturally too much information in total.
 
     \begin{table}[H]
         \resizebox{\textwidth}{!}{%
-            \begin{tabular}{p{13.0cm}*{7}{p{2cm}}}
+            \begin{tttabular}{p{8.0cm}*{7}{p{1.7cm}}}
             \topline
             \textbf{Question} & \textbf{Answer options} &  &  &  &   &  & \\ \hline
             & Not at all & Hardly informative & Slightly informative & Somewhat informative & Moderately informative & Very informative & Extremely informative \\
             & \\
-            \textbf{Q6: How informative you usually find the test output?} & 0 & {\colorbox{lightgray}A} & 0 & {\colorbox{orange}C} & {\colorbox{lime}B} & 0 & 0 \\
+            \textbf{Q6: How informative you usually find the test output?} & & {\colorbox{lightgray}A} & & {\colorbox{orange}C} & {\colorbox{lime}B} & & \\
             & \\ \hline
             & A lot less informative & Less informative & Slightly less informative & As informative as before & Slightly more informative & More informative & A lot more informative \\
             & \\
-            \textbf{Q6': Compared to JUnit, how informative you usually find the test output?} & 0 & 0 & 0 & 0 & {\colorbox{lightgray}A} & 0 & 0 \\
+            \textbf{Q6': Compared to JUnit, how informative you usually find the test output?} & & & & {\colorbox{lime}B} & {\colorbox{lightgray}A} & {\colorbox{orange}C} & \\
             & \\ \topline
 
-            \end{tabular}}
+            \end{tttabular}}
             \caption {Low-level test output informativeness and changes in it} \label{tab:changes-pt5}
     \end{table}
 
-Q6' studies the change of test output informativeness after the introduction of new BDD testing framework. Participant {\colorbox{lightgray}A}
-found a slight increase in informativeness of output. Statement 2 talk here!!!
+Q6' studies the change of test output informativeness after the introduction of new BDD testing framework. Participant A
+found a slight increase in informativeness of output. Hypothesis 2 talk here!!!
 
 \clearpage
 \subsubsection{Test refactoring techniques}
@@ -411,48 +410,48 @@ set of common refactoring techniques stated in unit testing literature ~\cite{ar
 
 Most common used refactoring techniques amongst survey participants were \textit{extract method} and lifecycle hook \textit{before -each}.
 These two techniques were in use frequently or very frequently within participant testing. Lifecycle hook \textit{before -class} was also
-in use at least occasionally. Automatic test generation through DDT was found very rarely or rarely used with participants {\colorbox{lightgray}A}
-and {\colorbox{lime}B}. Section \ref{subsub:low-level-metrics} shows that in project A it was not used at all, where data-driven test method ratio to standard
-low level test methods was 0. Participant {\colorbox{orange}C} answered to use occasionally DDT and the test code analysis
+in use at least occasionally. Automatic test generation through DDT was found very rarely or rarely used with participants A
+and B. Section \ref{subsub:low-level-metrics} shows that in project A it was not used at all, where data-driven test method ratio to standard
+low level test methods was 0. Participant C answered to use occasionally DDT and the test code analysis
 data in section \ref{subsub:low-level-metrics} supported this. Common test initializer class inheritance was a practice
-very rarely or rarely used amongst all participants. During interview, participant {\colorbox{lightgray}A} even stated test class inheritance
+very rarely or rarely used amongst all participants. During interview, participant A even stated test class inheritance
 to be \textit{"a practice to avoid, it's devil's work"}.
 
     \begin{table}[H]
         \resizebox{\textwidth}{!}{%
-            \begin{tabular}{p{13.0cm}*{7}{p{2cm}}}
+            \begin{tttabular}{p{8.0cm}*{7}{p{1.7cm}}}
             \topline
             \textbf{Question} & \textbf{Answer options} &  &  &  &   &  & \\ \hline
             \textbf{Q7: How much are the following repetition reducing techniques used in your low-level testing?} & Never & Very rarely & Rarely & Occasionally & Frequently & Very \newline frequently & Always \\
             & & & & & & \\
-            1. Extract method (custom helper methods) & 0 & 0 & 0 & 0 & {\colorbox{lightgray}A}{\colorbox{lime}B} & {\colorbox{orange}C} & 0 \\
-            2. Lifecycle hooks Before/After (class) & 0 & 0 & 0 & {\colorbox{orange}C} & {\colorbox{lightgray}A}{\colorbox{lime}B} & 0 & 0 \\
-            3. Lifecycle hooks Before/After (each) & 0 & 0 & 0 & 0 & {\colorbox{lightgray}A}{\colorbox{lime}B} & {\colorbox{orange}C} & 0 \\
-            4. Automatic test generation via test method parametrization & 0 & {\colorbox{lightgray}A} & {\colorbox{lime}B} & {\colorbox{orange}C} & 0 & 0 & 0 \\
-            5. Common test initializer class inheritance & 0 & {\colorbox{lightgray}A}{\colorbox{orange}C} & {\colorbox{lime}B} & 0 & 0 & 0 & 0 \\
+            1. Extract method (custom helper methods) & & & & & {\colorbox{lightgray}A}{\colorbox{lime}B} & {\colorbox{orange}C} & \\
+            2. Lifecycle hooks Before/After (class) & & & & {\colorbox{orange}C} & {\colorbox{lightgray}A}{\colorbox{lime}B} & & \\
+            3. Lifecycle hooks Before/After (each) & & & & & {\colorbox{lightgray}A}{\colorbox{lime}B} & {\colorbox{orange}C} & \\
+            4. Automatic test generation via test method parametrization & & {\colorbox{lightgray}A} & {\colorbox{lime}B} & {\colorbox{orange}C} & & & \\
+            5. Common test initializer class inheritance & & {\colorbox{lightgray}A}{\colorbox{orange}C} & {\colorbox{lime}B} & & & & \\
             & \\ \hline
 
             \textbf{Q7': Compared to JUnit, how much are the following repetition reducing techniques used in your low-level testing?} & A lot less & Less & Slightly less & The same amount & Slightly more & More & A lot more \\
             & & & & & & \\
-            1. Extract method (custom helper methods) & 0 & 0 & 0 & {\colorbox{lightgray}A} & 0 & 0 & 0 \\
-            2. Lifecycle hooks Before/After (class/all) & 0 & 0 & 0 & {\colorbox{lightgray}A} & 0 & 0 & 0 \\
-            3. Lifecycle hooks Before/After (each) & 0 & 0 & 0 & 0 & 0 & {\colorbox{lightgray}A} & 0 \\
-            4. Automatic test generation via test method parametrization & 0 & 0 & 0 & {\colorbox{lightgray}A} & 0 & 0 & 0 \\
-            5. Common test initializer class inheritance & 0 & 0 & 0 & {\colorbox{lightgray}A} & 0 & 0 & 0 \\
+            1. Extract method (custom helper methods) & & & {\colorbox{lime}B} & {\colorbox{lightgray}A}{\colorbox{orange}C} & & & \\
+            2. Lifecycle hooks Before/After (class/all) & & & & {\colorbox{lightgray}A}{\colorbox{lime}B}{\colorbox{orange}C} & & & \\
+            3. Lifecycle hooks Before/After (each) & & & & {\colorbox{lime}B}{\colorbox{orange}C} & & {\colorbox{lightgray}A} & \\
+            4. Automatic test generation via test method parametrization & & & & {\colorbox{lightgray}A}{\colorbox{lime}B} & & & {\colorbox{orange}C} \\
+            5. Common test initializer class inheritance & & & & {\colorbox{lightgray}A}{\colorbox{lime}B}{\colorbox{orange}C} & & & \\
             & \\ \topline
 
-            \end{tabular}}
+            \end{tttabular}}
             \caption {Used repetition reducing techniques for low-level testing and changes in their use} \label{tab:changes-pt6}
     \end{table}
 
 \textbf{Q7':} \textit{Compared to JUnit, how much are the following repetition reducing techniques used in your low-level testing?}
-studies how techniques are used differently with the new BDD testing framework to reduce repetition. Participant {\colorbox{lightgray}A}
+studies how techniques are used differently with the new BDD testing framework to reduce repetition. Participant A
 said to use techniques the same amount as before, with the exception of lifecycle hook \textit{before -each} being used more.
-In the feedback interview, participant {\colorbox{lightgray}A} stated that there was some confusion when to use \textit{before -all}
+In the feedback interview, participant A stated that there was some confusion when to use \textit{before -all}
 lifecycle hook and therefore hook \textit{before -each} was mainly used.
 
 \textbf{TO BE CONTINUED}
-\clearpage
+
 \subsubsection{Test commenting practices}
     \begin{figure}[ht]%
         \centering
@@ -466,40 +465,40 @@ lifecycle hook and therefore hook \textit{before -each} was mainly used.
 Test commenting and comment updating was found to be a practice rarely done by most of the developers~\cite{li2016automatically}.
 Figure \ref{fig:org-commenting} shows the original study results regarding test commenting practices. Participants in this
 study seem to divide with commenting practices. Table \ref{tab:changes-pt7} displays the participant JUnit commenting practice results with
-\textbf{Q8} and \textbf{Q9}. Project A and its participants {\colorbox{lightgray}A} and {\colorbox{lime}B}
-answer fairly often to add and update comments in low-level test cases. Participant {\colorbox{orange}C} rarely practices
+\textbf{Q8} and \textbf{Q9}. Project A and its participants A and B
+answer fairly often to add and update comments in low-level test cases. Participant C rarely practices
 test commenting or updating. Test data analysis in \ref{subsub:low-level-metrics} correlates with participant answers, as
 project A had quite much commenting in test methods and project B very little.
 
     \begin{table}[H]
         \resizebox{\textwidth}{!}{%
-            \begin{tabular}{p{13.0cm}*{7}{p{2cm}}}
+            \begin{tttabular}{p{8.0cm}*{7}{p{1.7cm}}}
             \topline
             \textbf{Question} & \textbf{Answer options} &  &  &  &   &  & \\ \hline
             & Never & Rarely & Sometimes & Fairly often & Always & & \\
             & \\
-            \textbf{Q8: How often do you add/write documentation comments to low-level test cases?} & 0 & {\colorbox{orange}C} & 0 & {\colorbox{lightgray}A}{\colorbox{lime}B} & 0 \\
+            \textbf{Q8: How often do you add/write documentation comments to low-level test cases?} & & {\colorbox{orange}C} & & {\colorbox{lightgray}A}{\colorbox{lime}B} & \\
             & \\ \hline
             & A lot less & Less & Slightly less & The same amount & Slightly more & More & A lot more \\
             & \\
-            \textbf{Q8': Compared to JUnit, how often do you add/write documentation comments to low-level test cases?} & 0 & 0 & 0 & 0 & 0 & {\colorbox{lightgray}A} & 0 \\
+            \textbf{Q8': Compared to JUnit, how often do you add/write documentation comments to low-level test cases?} & & & & {\colorbox{lime}B}{\colorbox{orange}C} & & {\colorbox{lightgray}A} & \\
             & \\ \hline
 
             & Never & Rarely & Sometimes & Fairly often & Always & & \\
             & \\
-            \textbf{Q9: When you make changes to low-level tests, how often do you comment the changes (or update existing comments)?} & 0 & {\colorbox{orange}C} & 0 & {\colorbox{lightgray}A}{\colorbox{lime}B} & 0 \\
+            \textbf{Q9: When you make changes to low-level tests, how often do you comment the changes (or update existing comments)?} & & {\colorbox{orange}C} & & {\colorbox{lightgray}A}{\colorbox{lime}B} & \\
             & \\ \hline
             & A lot less & Less & Slightly less & The same amount & Slightly more & More & A lot more \\
             & \\
-            \textbf{Q9': Compared to JUnit when you make changes to low-level tests, how often do you comment the changes (or update existing comments)?} & 0 & 0 & 0 & 0 & {\colorbox{lightgray}A} & 0 & 0 \\
+            \textbf{Q9': Compared to JUnit when you make changes to low-level tests, how often do you comment the changes (or update existing comments)?} & & & & {\colorbox{lime}B}{\colorbox{orange}C} & {\colorbox{lightgray}A} & & \\
             & \\ \topline
 
-            \end{tabular}}
+            \end{tttabular}}
             \caption {Documentation practices in low-level testing and changes in them} \label{tab:changes-pt7}
     \end{table}
 
 Questions \textbf{Q8'} and \textbf{Q9'} in table \ref{tab:changes-pt7} study the changes in commenting with new BDD testing framework.
-Participant {\colorbox{lightgray}A} answers to add more comments with \textbf{\textit{Spectrum}} to low-level test cases
+Participant A answers to add more comments with \textbf{\textit{Spectrum}} to low-level test cases
 than before and also to update the comments slightly more.
 %TODO kato taaaaa kaymaan toteen
 Here the test code analysis data in section \ref{subsub:low-level-metrics} doesn't support this directly, as pure comments
@@ -511,36 +510,36 @@ as increased test method name word count.
 \clearpage
 \subsubsection{Unit testing practices}
 Pure unit testing practices were also studied with the participant surveys. First the \textbf{granularity} of unit tests were
-studied with questions \textbf{Q10} and \textbf{Q10'} displayed in table \ref{tab:changes-pt8}. Participants {\colorbox{lightgray}A} and {\colorbox{lime}B} answered
+studied with questions \textbf{Q10} and \textbf{Q10'} displayed in table \ref{tab:changes-pt8}. Participants A and B answered
 to write approximately two to three tests methods per class method that contain few assertions inside them each. Participant
-{\colorbox{orange}C} answered to produce more granular test cases, where there exists four to five test methods per class method.
+C answered to produce more granular test cases, where there exists four to five test methods per class method.
 Also the assertion count was stated to be higher, 4-5 assertions per test method. Test data analysis in section \ref{subsub:unit-level-metrics}
 seems to support quite well all these participant answers, although the assertion count per test method calculated in section \ref{subsub:low-level-metrics}
 for project B was slightly lower than the answered four to five assertions per test method.
 
     \begin{table}[H]
         \resizebox{\textwidth}{!}{%
-            \begin{tabular}{p{13.0cm}*{7}{p{2cm}}}
+            \begin{tttabular}{p{8.0cm}*{7}{p{1.7cm}}}
             \topline
             \textbf{Question} & \textbf{Answer options} &  &  &  &   &  & \\ \hline
-            \textbf{Q10: In unit testing, how many} & 0 & 1 & 2-3 & 4-5 & 6-7 &  8-9 & 10 or more \\
+            \textbf{Q10: In unit testing, how many} & & 1 & 2-3 & 4-5 & 6-7 &  8-9 & 10 or more \\
             & \\
-            1. Test methods do you usually write per class method? & 0 & 0 & {\colorbox{lightgray}A}{\colorbox{lime}B} & {\colorbox{orange}C} & 0 & 0 & 0 \\
-            2. Assertions do you usually write per test method? & 0 & 0 & {\colorbox{lightgray}A}{\colorbox{lime}B} & {\colorbox{orange}C} & 0 & 0 & 0 \\
+            1. Test methods do you usually write per class method? & & & {\colorbox{lightgray}A}{\colorbox{lime}B} & {\colorbox{orange}C} & & & \\
+            2. Assertions do you usually write per test method? & & & {\colorbox{lightgray}A}{\colorbox{lime}B} & {\colorbox{orange}C} & & & \\
             & \\ \hline
             \textbf{Q10': Compared to JUnit in unit testing} & A lot less & Less & Slightly less & The same amount & Slightly more & More & A lot more \\
             & \\
-            1. Do you write more or less test methods per class method? & 0 & 0 & 0 & 0 & 0 & {\colorbox{lightgray}A} & 0 \\
-            2. Do you write more or less assertions per test method? & 0 & {\colorbox{lightgray}A} & 0 & 0 & 0 & 0 & 0 \\
+            1. Do you write more or less test methods per class method? & & & & & {\colorbox{lime}B} & {\colorbox{lightgray}A}{\colorbox{orange}C} & \\
+            2. Do you write more or less assertions per test method? & & {\colorbox{lightgray}A} & {\colorbox{lime}B} & {\colorbox{orange}C} & & & \\
             & \\ \topline
 
-             \end{tabular}}
+             \end{tttabular}}
              \caption {Unit testing practices and changes in them} \label{tab:changes-pt8}
      \end{table}
 
-Changes in unit testing granularity after introduction of BDD testing framework were studied with Q10'. Participant {\colorbox{lightgray}A}
+Changes in unit testing granularity after introduction of BDD testing framework were studied with Q10'. Participant A
 answered that with \textbf{\textit{Spectrum}} he wrote more test methods per class method with less assertion inside individual
-test methods. Statement 1 talk here!!
+test methods. Hypothesis 1 talk here!!
 
 \clearpage
 
@@ -549,45 +548,45 @@ Therefore questions \textbf{Q11, Q11', Q12} and \textbf{Q12'} displayed in table
 First survey question Q11 asks what mocking library is normally used in JUnit unit test isolation. After that,
 \textbf{Q12} studies wich aspects of isolating are find hard.
 
-Usually unit test isolation is done with \textit{Mockito} by all participants. Participant {\colorbox{orange}C} is the only
-one that found all aspects of unit test isolation to be easy or slightly easy. Participant {\colorbox{lightgray}A} found isolation
-usually slightly easy with \textit{verifying} of mock object actions being moderate in difficulty. Participant {\colorbox{lime}B}
+Usually unit test isolation is done with \textit{Mockito} by all participants. Participant C is the only
+one that found all aspects of unit test isolation to be easy or slightly easy. Participant A found isolation
+usually slightly easy with \textit{verifying} of mock object actions being moderate in difficulty. Participant B
 found most of isolation easy, but \textit{stubbing} was considered slightly hard. Altogether, isolation activities in JUnit unit testing
 wasn't found too demanding by any of the participants.
 
     \begin{table}[H]
         \resizebox{\textwidth}{!}{%
-            \begin{tabular}{p{13.0cm}*{7}{p{2cm}}}
+            \begin{tttabular}{p{8.0cm}*{7}{p{1.7cm}}}
             \topline
             \textbf{Question} & \textbf{Answer options} &  &  &  &   &  & \\ \hline
             & Mockito & jMock & Powermock & Easymock & Other & & \\
              \\
-            \textbf{Q11: In unit testing, what mocking library do you normally use?} & {\colorbox{lightgray}A}{\colorbox{lime}B}{\colorbox{orange}C} & 0 & 0 & 0 & 0 \\
+            \textbf{Q11: In unit testing, what mocking library do you normally use?} & {\colorbox{lightgray}A}{\colorbox{lime}B}{\colorbox{orange}C} & & & & \\
             & \\ \hline
             & \textit Mockito & jMock & Powermock & Easymock & Spock's internal mocking & Other & \\
             & \\
-            \textbf{Q11': In unit testing with \textit{Spectrum/Spock}, what mocking library do you normally use?} & {\colorbox{lightgray}A} & 0 & 0 & 0 & 0 & 0 \\
+            \textbf{Q11': In unit testing with \textit{Spectrum/Spock}, what mocking library do you normally use?} & {\colorbox{lightgray}A}{\colorbox{lime}B}{\colorbox{orange}C} & & & & & \\
             & \\ \hline
 
             \textbf{Q12: In unit testing, how difficult you find it to} & Very easy & Easy & Slightly easy & Moderate & Slightly hard & Hard & Very hard \\
             & \\
-            1. Mock objects? & 0 & {\colorbox{lime}B}{\colorbox{orange}C} & {\colorbox{lightgray}A} & 0 & 0 & 0 & 0 \\
-            2. Stub method calls? & 0 & 0 & {\colorbox{lightgray}A}{\colorbox{orange}C} & 0 & {\colorbox{lime}B} & 0 & 0 \\
-            3. Verify mock object actions? & 0 & {\colorbox{lime}B}{\colorbox{orange}C} & 0 & {\colorbox{lightgray}A} & 0 & 0 & 0 \\
+            1. Mock objects? & & {\colorbox{lime}B}{\colorbox{orange}C} & {\colorbox{lightgray}A} &  & & & \\
+            2. Stub method calls? & & & {\colorbox{lightgray}A}{\colorbox{orange}C} & & {\colorbox{lime}B} & & \\
+            3. Verify mock object actions? & & {\colorbox{lime}B}{\colorbox{orange}C} & & {\colorbox{lightgray}A} & & & \\
             & \\ \hline
             \textbf{Q12': Compared to JUnit in unit testing, how difficult you find it to} & A lot easier & Easier & Slightly easier & As difficult as before & Slightly harder & Harder & A lot harder \\
             & \\
-            1. Mock objects? & 0 & 0 & 0 & 0 & {\colorbox{lightgray}A} & 0 & 0 \\
-            2. Stub method calls? & 0 & 0 & 0 & 0 & {\colorbox{lightgray}A} & 0 & 0 \\
-            3. Verify mock object actions? & 0 & 0 & 0 & 0 & {\colorbox{lightgray}A} & 0 & 0 \\
+            1. Mock objects? & & & & {\colorbox{lime}B}{\colorbox{orange}C} & {\colorbox{lightgray}A} & & \\
+            2. Stub method calls? & & & & {\colorbox{lime}B}{\colorbox{orange}C} & {\colorbox{lightgray}A} & & \\
+            3. Verify mock object actions? & & & & {\colorbox{lime}B}{\colorbox{orange}C} & {\colorbox{lightgray}A} & & \\
             & \\ \topline
 
-            \end{tabular}}
+            \end{tttabular}}
             \caption {Unit testing practices and changes in them} \label{tab:changes-pt9}
     \end{table}
 
 After the introduction of \textbf{\textit{Spectrum}} in project A, the mocking library stayed intact as Spectrum
-is a Java-based custom runner for JUnit. Although the mocking library was the same, participant {\colorbox{lightgray}A}
+is a Java-based custom runner for JUnit. Although the mocking library was the same, participant A
 found all aspects on unit test isolation slightly harder than before. This was further analyzed in interview with participant,
 where he states that the usage of \textit{Mockito}-functions inside \textbf{lifecycle hooks} and \textbf{block lambdas} was not
 as straightforward as with JUnit tests.
@@ -595,24 +594,22 @@ as straightforward as with JUnit tests.
 
 Questions \textbf{Q13} and \textbf{Q13'} were aimed to study when are unit tests add for code with JUnit and the new
 BDD testing framework. The main idea was to see, does the introduction of BDD testing framework by itself promote test firsts -principle without
-additional changes in testing. For participant {\colorbox{lightgray}A} there was no change, as the unit tests were added
+additional changes in testing. For participant A there was no change, as the unit tests were added
 after the implementation with both JUnit and \textbf{\textit{Spectrum}}}.
 
     \begin{table}[H]
         \resizebox{\textwidth}{!}{%
-            \begin{tabular}{p{13.0cm}*{7}{p{2cm}}}
+            \begin{tttabular}{p{13.0cm}*{3}{p{2cm}}}
             \topline
             \textbf{Question} & \textbf{Answer options} &  &  &  &   &  & \\ \hline
             & Before implementation & During implementation & After implementation & \\
-            & \\
-            \textbf{Q13: When do you add automated unit tests for developed code with \textit{JUnit}?} & 0 & {\colorbox{lime}B}{\colorbox{orange}C} & {\colorbox{lightgray}A} \\
+            \textbf{Q13: When do you add automated unit tests for developed code with \textit{JUnit}?} & & {\colorbox{lime}B}{\colorbox{orange}C} & {\colorbox{lightgray}A} \\
             & \\ \hline
             & Before implementation & During implementation & After implementation & \\
-            & \\
-            \textbf{Q13': When do you add automated unit tests for developed code with \textit{Spectrum/Spock}?} & 0 & 0 & {\colorbox{lightgray}A} \\
+            \textbf{Q13': When do you add automated unit tests for developed code with \textit{Spectrum/Spock}?} & & {\colorbox{lime}B}{\colorbox{orange}C} & {\colorbox{lightgray}A} \\
             & \\ \topline
 
-            \end{tabular}}
+            \end{tttabular}}
             \caption {Unit testing practices and changes in them} \label{tab:changes-pt10}
     \end{table}
 
@@ -623,7 +620,7 @@ after the implementation with both JUnit and \textbf{\textit{Spectrum}}}.
 
 \subsection{Developer perception towards automated low-level testing}
 This section answer the
-\textbf{RQ2: }\textit{How does behavior driven testing frameworks change developer perception of working with automated low-level
+\textbf{RQ2: }\textit{How does behavior-driven testing frameworks change developer perception of working with automated low-level
 testing compared to JUnit framework?} First, developer perception of automated low-level testing and changes in it are
 analyzed with survey and interviews. Second, developer loyalty towards low-level automated testing and specific testing
 frameworks are studied with \textbf{NPS} survey questions and interviews.
@@ -640,7 +637,7 @@ frameworks are studied with \textbf{NPS} survey questions and interviews.
 Daka and Fraser~\cite{daka2014survey} have studied developer perception towards traditional unit testing. Interesting
 points that are further studied for low-level testing in this study are shown in figure \ref{fig:org-perception}. Some
 aspects to highlight are the facts that only about 50\% of survey responders \textit{enjoy writing} unit tests to some degree.
-One of the hypothesis statements in this study was that implementation level BDD testing frameworks should increase low-level testing enjoyment.
+One of the hypothesis in this study was that implementation level BDD testing frameworks should increase low-level testing enjoyment.
 Another interesting aspect is the \textit{difficulty in maintaining} unit tests, where around 55\% of study participants
 feel maintaining at least somewhat difficult. One of the study hypothesis was that BDD testing frameworks should
 make it less difficult to maintain code and especially the test code. Table \ref{tab:changes-pt11} displays the \textbf{Q14}, which studies
@@ -662,15 +659,15 @@ Around same 90\% of different study participants feel that maintaining unit test
     \end{figure}
 
 Participants in this study based on their perception towards low-level automated testing with JUnit can be divided into
-to category. Participants {\colorbox{lightgray}A} and {\colorbox{lime}B} are close to each other, they feel that
+to category. Participants A and B are close to each other, they feel that
 \textit{writing} low-level tests is somewhat difficult, \textit{enjoyment} in writing is neutral or negative and \textit{maintaining}
 of low-level tests is seen at least somewhat difficult. They both still have trust that low-level testing is \textit{helpful in
 finding defects}, but \textbf{don't} feel that JUnit \textit{promotes to write high quality test code}.
 
-Participant {\colorbox{orange}C} could be categorized into a testing oriented developer when inspecting perception towards
+Participant C could be categorized into a testing oriented developer when inspecting perception towards
 low-level testing. He enjoys \textit{writing} low-level tests and doesn't find it that difficult. He also doesn't find
 \textit{maintaining} low-level tests too difficult. He thinks that low-level tests that he has written with JUnit will \textit{help} others \textit{understanding}
-the implemented production code. Like other participants, participant {\colorbox{orange}C} also trusts that low-level
+the implemented production code. Like other participants, participant C also trusts that low-level
 tests will \textit{help in finding defects}, but he \textbf{doesn't} feel that JUnit \textit{promotes him to write high quality} test code.
 
 Although all study participants feel that JUnit doesn't promote in writing higher quality test code, all of them still
@@ -680,89 +677,90 @@ the detailed answers of participants.
 
     \begin{table}[H]
         \resizebox{\textwidth}{!}{%
-            \begin{tabular}{p{13.0cm}*{7}{p{2cm}}}
+            \begin{tttabular}{p{8.0cm}*{7}{p{1.7cm}}}
             \topline
             \textbf{Question} & \textbf{Answer options} &  &  &  &   &  & \\ \hline
 
             \textbf{Q14: Please indicate your level of agreement with the following statements} & Strongly disagree & Disagree & Somewhat disagree & Neither agree nor disagree & Somewhat agree & Agree & Strongly agree \\
             & \\
-            1. Writing low-level tests is difficult & 0 & 0 & {\colorbox{orange}C} & 0 & {\colorbox{lightgray}A}{\colorbox{lime}B} & 0 & 0 \\
-            2. I enjoy writing low-level tests & 0 & {\colorbox{lime}B} & 0 & {\colorbox{lightgray}A} & 0 & {\colorbox{orange}C} & 0 \\
-            3. I would like to have more tool support when writing low-level tests & 0 & 0 & {\colorbox{lime}B} & {\colorbox{lightgray}A} & {\colorbox{orange}C} & 0 & 0 \\
-            4. I would like to have more low-level tests & 0 & 0 & 0 & {\colorbox{lightgray}A}{\colorbox{lime}B}{\colorbox{orange}C} & 0 & 0 & 0 \\
-            5. Maintaining low-level tests is difficult & 0 & 0 & {\colorbox{orange}C} & 0 & {\colorbox{lime}B} & {\colorbox{lightgray}A} & 0 \\
-            6. I think my low-level tests will help other developers to understand the implemented unit/feature better & 0 & 0 & {\colorbox{lime}B} & 0 & {\colorbox{lightgray}A} & {\colorbox{orange}C} & 0 \\
-            7. Low-level automated testing helps me find defects in the code before other quality assurance phases & 0 & 0 & 0 & 0 & {\colorbox{lime}B} & {\colorbox{orange}C} & {\colorbox{lightgray}A} \\
-            8. JUnit promotes me to write high quality test code & 0 & 0 & {\colorbox{lightgray}A}{\colorbox{orange}C} & {\colorbox{lime}B} & 0 & 0 & 0 \\
+            1. Writing low-level tests is difficult & & & {\colorbox{orange}C} & & {\colorbox{lightgray}A}{\colorbox{lime}B} & & \\
+            2. I enjoy writing low-level tests & & {\colorbox{lime}B} & & {\colorbox{lightgray}A} & & {\colorbox{orange}C} & \\
+            3. I would like to have more tool support when writing low-level tests & & & {\colorbox{lime}B} & {\colorbox{lightgray}A} & {\colorbox{orange}C} & & \\
+            4. I would like to have more low-level tests & & & & {\colorbox{lightgray}A}{\colorbox{lime}B}{\colorbox{orange}C} & & & \\
+            5. Maintaining low-level tests is difficult & & & {\colorbox{orange}C} & & {\colorbox{lime}B} & {\colorbox{lightgray}A} & \\
+            6. I think my low-level tests will help other developers to understand the implemented unit/feature better & & & {\colorbox{lime}B} & & {\colorbox{lightgray}A} & {\colorbox{orange}C} & \\
+            7. Low-level automated testing helps me find defects in the code before other quality assurance phases & & & & & {\colorbox{lime}B} & {\colorbox{orange}C} & {\colorbox{lightgray}A} \\
+            8. JUnit promotes me to write high quality test code & & & {\colorbox{lightgray}A}{\colorbox{orange}C} & {\colorbox{lime}B} & & & \\
             & \\ \hline
 
             \textbf{Q15a: Please indicate your level of agreement with the following statements} & Strongly disagree & Disagree & Neutral & Agree & Strongly agree & \\
             & \\
-            1. Overall, low-level tests help me produce higher quality code & 0 & 0 & 0 & {\colorbox{lime}B} & {\colorbox{lightgray}A}{\colorbox{orange}C} \\
-            2. Maintaining good low-level test cases and their documentations is important to the quality of a system & 0 & 0 & 0 & {\colorbox{lightgray}A}{\colorbox{lime}B} & {\colorbox{orange}C} \\
+            1. Overall, low-level tests help me produce higher quality code & & & & {\colorbox{lime}B} & {\colorbox{lightgray}A}{\colorbox{orange}C} \\
+            2. Maintaining good low-level test cases and their documentations is important to the quality of a system & & & & {\colorbox{lightgray}A}{\colorbox{lime}B} & {\colorbox{orange}C} \\
             & \\ \topline
 
-            \end{tabular}}
+            \end{tttabular}}
             \caption {Developer perception of low-level testing with JUnit} \label{tab:changes-pt11}
     \end{table}
 
 Table \ref{tab:changes-pt12} display questions \textbf{Q14'} and \textbf{Q15a'} together with their results. With \textbf{\textit{Spectrum}}
-there exists some controversial and interesting results. Participant {\colorbox{lightgray}A} somewhat agrees that \textit{writing}
+there exists some controversial and interesting results. Participant A somewhat agrees that \textit{writing}
 and \textit{maintaining} of low-level tests with Spectrum is more difficult than with JUnit.
 
     \begin{table}[H]
         \resizebox{\textwidth}{!}{%
-            \begin{tabular}{p{13.0cm}*{7}{p{2cm}}}
+            \begin{tttabular}{p{8.0cm}*{7}{p{1.7cm}}}
             \topline
             \textbf{Question} & \textbf{Answer options} &  &  &  &   &  & \\ \hline
             \textbf{Q14'\&Q15a': Please indicate your level of agreement with the following statements} & Strongly disagree & Disagree & Somewhat disagree & Neither agree nor disagree & Somewhat agree & Agree & Strongly agree \\
             & \\
-            1. Writing low-level tests with \textit{Spectrum/Spock} is more difficult than with JUnit & 0 & 0 & 0 & 0 & {\colorbox{lightgray}A} & 0 & 0 \\
-            2. I enjoy writing low-level tests with \textit{Spectrum/Spock} more than I do with JUnit & 0 & 0 & 0 & 0 & {\colorbox{lightgray}A} & 0 & 0 \\
-            3. I would like to have more tool support for \textit{Spectrum/Spock} when writing low-level tests & 0 & 0 & 0 & 0 & 0 & 0 & {\colorbox{lightgray}A} \\
-            4. I would like to have more low-level tests for \textit{Spectrum/Spock} & 0 & 0 & 0 & 0 & {\colorbox{lightgray}A} & 0 & 0 \\
-            5. Maintaining low-level tests with \textit{Spectrum/Spock} is more difficult than with JUnit & 0 & 0 & 0 & 0 & {\colorbox{lightgray}A} & 0 & 0 \\
-            6. I think my low-level tests with \textit{Spectrum/Spock} will help other developers to understand the implemented unit/feature better than earlier tests with JUnit & 0 & 0 & 0 & 0 & 0 & {\colorbox{lightgray}A} & 0 \\
-            7. Low-level automated testing with \textit{Spectrum/Spock} helps me find defects in the code before other quality assurance phases better than earlier tests with JUnit & 0 & 0 &  {\colorbox{lightgray}A} & 0 & 0 & 0 & 0 \\
-            8. \textit{Spectrum/Spock} promotes me to write higher quality test code than with JUnit & 0 & 0 & 0 & 0 & 0 &  {\colorbox{lightgray}A} & 0 \\ \hline
+            1. Writing low-level tests with \textit{Spectrum/Spock} is more difficult than with JUnit & & {\colorbox{orange}C} & & & {\colorbox{lightgray}A} & {\colorbox{lime}B} & \\
+            2. I enjoy writing low-level tests with \textit{Spectrum/Spock} more than I do with JUnit & & & & {\colorbox{lime}B} & {\colorbox{lightgray}A} & {\colorbox{orange}C} & \\
+            3. I would like to have more tool support for \textit{Spectrum/Spock} when writing low-level tests & & & & {\colorbox{orange}C} & & {\colorbox{lime}B} & {\colorbox{lightgray}A} \\
+            4. I would like to have more low-level tests with \textit{Spectrum/Spock} & & & & {\colorbox{lime}B} & {\colorbox{lightgray}A}{\colorbox{orange}C} & & \\
+            5. Maintaining low-level tests with \textit{Spectrum/Spock} is more difficult than with JUnit & & {\colorbox{orange}C} & & {\colorbox{lime}B} & {\colorbox{lightgray}A} & & \\
+            6. I think my low-level tests with \textit{Spectrum/Spock} will help other developers to understand the implemented unit/feature better than earlier tests with JUnit & & & & {\colorbox{lime}B} & & {\colorbox{lightgray}A}{\colorbox{orange}C} & \\
+            7. Low-level automated testing with \textit{Spectrum/Spock} helps me find defects in the code before other quality assurance phases better than earlier tests with JUnit & & &  {\colorbox{lightgray}A}{\colorbox{lime}B} & {\colorbox{orange}C} & & & \\
+            8. \textit{Spectrum/Spock} promotes me to write higher quality test code than with JUnit & & {\colorbox{lime}B} & & & &  {\colorbox{lightgray}A}{\colorbox{orange}C} & \\ \hline
             & \\
-            9. Overall, low-level tests with \textit{Spectrum/Spock} help me produce higher quality code than with JUnit & 0 & 0 &  {\colorbox{lightgray}A} & 0 & 0 & 0 & 0 \\
-            10. Maintaining good low-level test cases and their documentation with \textit{Spectrum/Spock} is more important for system quality than maintaining JUnit test cases & 0 & 0 & 0 & 0 & {\colorbox{lightgray}A} & 0 & 0 \\
+            9. Overall, low-level tests with \textit{Spectrum/Spock} help me produce higher quality code than with JUnit & & {\colorbox{lime}B} &  {\colorbox{lightgray}A} & & {\colorbox{orange}C} & & \\
+            10. Maintaining good low-level test cases and their documentation with \textit{Spectrum/Spock} is more important for system quality than maintaining JUnit test cases & & {\colorbox{lime}B} & & & {\colorbox{lightgray}A}{\colorbox{orange}C} & & \\
             & \\ \topline
 
-            \end{tabular}}
+            \end{tttabular}}
             \caption {Developer perception changes in low-level testing with \textit{Spectrum/Spock}} \label{tab:changes-pt12}
     \end{table}
 
 Writing difficulty was further analyzed in
 the interview, where he states that the learning curve how to structure code example groups and code examples was still ongoing.
 Also what to write in \textit{describe}-blocks was somewhat difficult. Slight increase in difficulty in maintaining low-level
-tests with Spectrum comes from the use of example groups properly, as participant {\colorbox{lightgray}A} feels that it
+tests with Spectrum comes from the use of example groups properly, as participant A feels that it
 isn't always straightforward. In spite of slightly harder maintenance in total, he feels that it is easier to reduce repetition
 with Spectrum's \textit{lifecycle hooks}.
 
 \textbf{Continue later}
 
 Table \ref{tab:changes-pt13} displays question \textbf{Q15b} and its answers. Q15b holds two sub-question statements that the participant can answer
-if they feel the same way or not. Sub-question 1 relates directly to hypothesis statement 2 and sub-question 2 to
-statement 3. Participant {\colorbox{lightgray}A} feels that he writes both more \textit{understandable} and more \textit{maintainable} low-level
+if they feel the same way or not. Sub-question 1 relates directly to hypothesis 2 and sub-question 2 to
+
+hypothesis 3. Participant A feels that he writes both more \textit{understandable} and more \textit{maintainable} low-level
 tests with \textbf{\textit{Spectrum}} than with JUnit.
 
 \textbf{Continue later}
 
     \begin{table}[H]
         \resizebox{\textwidth}{!}{%
-            \begin{tabular}{p{15.0cm}*{3}{p{2.0cm}}}
+            \begin{tttabular}{p{15.0cm}*{3}{p{2.0cm}}}
             \topline
             \textbf{Question} & \textbf{Answer options} &  &  \\ \hline
 
             \textbf{Q15b: I would say that I write more} & Yes & Uncertain & No \\
             & \\
-            1. Understandable low-level tests with \textit{Spectrum/Spock} than with JUnit? & {\colorbox{lightgray}A} & 0 & 0 \\
-            2. Maintainable low-level tests with \textit{Spectrum/Spock} than with JUnit? & {\colorbox{lightgray}A} & 0 & 0  \\
+            1. Understandable low-level tests with \textit{Spectrum/Spock} than with JUnit? & {\colorbox{lightgray}A}{\colorbox{orange}C} & & {\colorbox{lime}B} \\
+            2. Maintainable low-level tests with \textit{Spectrum/Spock} than with JUnit? & {\colorbox{lightgray}A}{\colorbox{orange}C} & & {\colorbox{lime}B} \\
             & \\ \topline
 
-            \end{tabular}}
+            \end{tttabular}}
             \caption {Developer perception towards \textit{Spectrum/Spock}} \label{tab:changes-pt13}
 
     \end{table}
@@ -777,36 +775,36 @@ towards testing framework to be called a promoter.
 
     \begin{table}[H]
         \resizebox{\textwidth}{!}{%
-            \begin{tabular}{p{17.0cm}*{11}{p{1cm}}}
+            \begin{tttabular}{p{10.0cm}*{11}{p{0.75cm}}}
             \topline
             \textbf{Question} & \multicolumn{3}{l}{\textbf{Answer options}} & \\
             & \\ \hline
             & \multicolumn{4}{l}{\textit{Not at all likely}} & & & & \multicolumn{4}{r}{\textit{Extremely likely}} \\
             \textbf{Q16: How likely are you to} & 0 & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10 \\
             & \\
-            1. Recommend low-level automated testing for colleague as a software development practice? & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & {\colorbox{lime}B} & 0 & {\colorbox{lightgray}A}{\colorbox{orange}C} \\
-            2. Recommend testing framework JUnit for future Spring projects where you take part in existing project? & 0 & 0 & 0 & 0 & 0 & 0 & 0 & {\colorbox{orange}C} & 0 & {\colorbox{lime}B} & {\colorbox{lightgray}A} \\
-            3. Take testing framework JUnit in use for future Spring projects where you have technical lead role in a new starting project? & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & {\colorbox{orange}C} & {\colorbox{lime}B} & {\colorbox{lightgray}A} \\
+            1. Recommend low-level automated testing for colleague as a software development practice? & & & & & & & & & {\colorbox{lime}B} & & {\colorbox{lightgray}A}{\colorbox{orange}C} \\
+            2. Recommend testing framework JUnit for future Spring projects where you take part in existing project? & & & & & & & & {\colorbox{orange}C} & & {\colorbox{lime}B} & {\colorbox{lightgray}A} \\
+            3. Take testing framework JUnit in use for future Spring projects where you have technical lead role in a new starting project? & & & & & & & & & {\colorbox{orange}C} & {\colorbox{lime}B} & {\colorbox{lightgray}A} \\
             & \\ \hline
             & \multicolumn{4}{l}{\textit{Not at all likely}} & & & & \multicolumn{4}{r}{\textit{Extremely likely}} \\
             \textbf{Q16': How likely are you to} & 0 & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10 \\
             & \\
-            1. Recommend low-level automated testing for colleague as a software development practice? & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & {\colorbox{lightgray}A} \\
-            2. Recommend testing framework \textit{Spectrum/Spock} for future Spring projects where you take part in existing project? & 0 & 0 & 0 & 0 & 0 & 0 & {\colorbox{lightgray}A} & 0 & 0 & 0 & 0 \\
-            3. Take testing framework \textit{Spectrum/Spock} in use for future Spring projects where you have technical lead role in a new starting project? & 0 & 0 & 0 & 0 & 0 & 0 & {\colorbox{lightgray}A} & 0 & 0 & 0 & 0 \\
+            1. Recommend low-level automated testing for colleague as a software development practice? & & & & & & & & & {\colorbox{lime}B} & & {\colorbox{lightgray}A}{\colorbox{orange}C} \\
+            2. Recommend testing framework \textit{Spectrum/Spock} for future Spring projects where you take part in existing project? & & & & {\colorbox{lime}B} & & & {\colorbox{lightgray}A} & & {\colorbox{orange}C} & & \\
+            3. Take testing framework \textit{Spectrum/Spock} in use for future Spring projects where you have technical lead role in a new starting project? & & & & {\colorbox{lime}B} & & & {\colorbox{lightgray}A} & & {\colorbox{orange}C} & & \\
             & \\ \topline
 
-            \end{tabular}}
+            \end{tttabular}}
             \caption {NPS questions related to JUnit and \textit{Spectrum/Spock}} \label{tab:changes-pt14}
 
     \end{table}
 
 Table \ref{tab:changes-pt14} displays all the NPS survey questions with answers.
-Participants {\colorbox{lightgray}A} and {\colorbox{orange}C} can be categorized as promoters of low-level testing
-in general before and after the introduction of new BDD testing framework. Participant {\colorbox{lime}B} remains as a
+Participants A and C can be categorized as promoters of low-level testing
+in general before and after the introduction of new BDD testing framework. Participant B remains as a
 passive before and after the change.
 
-Before the introduction of \textbf{\textit{Spectrum}}, participant {\colorbox{lightgray}A}
+Before the introduction of \textbf{\textit{Spectrum}}, participant A
 is also a steady promoter of JUnit both as a technical lead in new project or taking part in existing project. After
 using Spectrum for two months, participant can be categorized as a detractror in loyalty towards Spectrum. This was further
 analyzed in interview where participant states that the found bugs in 1.1.0 version of Spectrum in IDE test output and build test output
@@ -839,21 +837,21 @@ combined.
 
         \headcol \textbf{Metric} & \textbf{Project A} \newline JUnit & \textbf{Project A} \newline Spectrum & \textbf{Project B} \newline JUnit & \textbf{Project B} \newline Spock  \\ \hline
 
-        \rowcol \textit{\textbf{COTM}} & \textbf{1.44} & & \textbf{3.49} & \\
-        \rowcol \textit{Sum of tested class methods} & 61 &  & 93 & \\
-        \rowcol \textit{Sum of unit test methods} & 88 & & 325 & \\ \hline
+        \rowcol \textit{\textbf{COTM}} & \textbf{1.44} & \textbf{5.63} & \textbf{3.49} & \textbf{25.5}  \\
+        \rowcol \textit{Sum of tested class methods} & 61 & 8 & 93 & 4 \\
+        \rowcol \textit{Sum of unit test methods} & 88 & 45 & 325 (294) & 102 (7) \\ \hline
 
-        \textit{\textbf{Instruction CC}} & \textbf{25\%} & & \textbf{20\%} & \\
-        \textit{Total number of instructions} & 31,425 & & 49,895 & \\
-        \textit{\textbf{Branch CC}} & \textbf{24\%} & & \textbf{20\%} & \\
-        \textit{Total number of branches} & 724 & & 2,195 & \\ \bottomlinec
+        \textit{\textbf{Instruction CC}} & \textbf{25\%} & \textbf{24\%} & \textbf{20\%} & \textbf{19\%} \\
+        \textit{Total number of instructions} & 31,425 & 44,427 & 49,895 &  53,211 \\
+        \textit{\textbf{Branch CC}} & \textbf{24\%} & \textbf{26\%} & \textbf{20\%} & \textbf{21\%} \\
+        \textit{Total number of branches} & 724 & 1,107 & 2,195 & 2,316 \\ \bottomlinec
         \end{tabular}}
         \caption {Unit level testing metrics in projects and their change} \label{tab:unit-metrics}
 
 \end{table}
 }
 
-\textbf{RQ3: }\textit{How does behavior driven testing frameworks change written low-level test cases and test code coverage compared to JUnit framework?}
+\textbf{RQ3: }\textit{How does behavior-driven testing frameworks change written low-level test cases and test code coverage compared to JUnit framework?}
 is first studied with data from unit testing metrics displayed in table \ref{tab:unit-metrics}.
 
 \clearpage
@@ -873,26 +871,26 @@ Table \ref{tab:low-metrics} dislays the values of these metrics in projects A an
 
         \headcol \textbf{Metric} & \textbf{Project A} \newline JUnit & \textbf{Project A} \newline Spectrum & \textbf{Project B} \newline JUnit & \textbf{Project B} \newline Spock  \\ \hline
 
-        \rowcol \textit{\textbf{Instruction CC}} & \textbf{59\%} & & \textbf{47\%} & \\
-        \rowcol \textit{Total number of instructions} & 31,425 & & 49,895 & \\
-        \rowcol \textit{\textbf{Branch CC}} & \textbf{54\%} & & \textbf{39\%} & \\
-        \rowcol \textit{Total number of branches} & 724 & & 2,195 & \\ \hline
+        \rowcol \textit{\textbf{Instruction CC}} & \textbf{59\%} & \textbf{58\%} & \textbf{47\%} & \textbf{46\%} \\
+        \rowcol \textit{Total number of instructions} & 31,425 & 44,427 & 49,895 & 53,211 \\
+        \rowcol \textit{\textbf{Branch CC}} & \textbf{54\%} & \textbf{54\%} & \textbf{39\%} & \textbf{40\%} \\
+        \rowcol \textit{Total number of branches} & 724 & 1,107 & 2,195 & 2,316 \\ \hline
 
-        \textit{\textbf{COA}} & \textbf{2.64} & & \textbf{2.82} & \\
-        \textit{Sum of assertions} & 493 & & 1,311 & \\
-        \textit{Sum of test methods} & 187 & & 465 & \\ \hline
+        \textit{\textbf{COA}} & \textbf{2.64} & \textbf{2.07} & \textbf{2.82} & \textbf{2.46} \\
+        \textit{Sum of assertions} & 493 & 174 & 1,311 & 32 \\
+        \textit{Sum of test methods} & 187 & 84 & 465 & 13 \\ \hline
 
-        \rowcol \textit{\textbf{COC}} & \textbf{1.17} & & \textbf{0.04} & \\
-        \rowcol \textit{Sum of comments} & 218 & & 20 & \\
-        \rowcol \textit{Sum of test methods} & 187 & & 465 & \\ \hline
+        \rowcol \textit{\textbf{COC}} & \textbf{1.17} & \textbf{0.08} & \textbf{0.04} & \textbf{0.07} \\
+        \rowcol \textit{Sum of comments} & 218 & 7 & 20 & 1 \\
+        \rowcol \textit{Sum of test methods} & 187 & 84 & 465 & 13 \\ \hline
 
-        \textit{\textbf{TMNWC}} & \textbf{4.66} & & \textbf{5.61} & \\
-        \textit{Total words in test method names} & 872 & & 2,607 & \\
-        \textit{Sum of test methods} & 187 & & 465 & \\ \hline
+        \textit{\textbf{TMNWC}} & \textbf{4.66} & \textbf{11.29} & \textbf{5.61} & \textbf{8.08} \\
+        \textit{Total words in test method names} & 872 & 948 & 2,607 & 105 \\
+        \textit{Sum of test methods} & 187 & 84 & 465 & 13 \\ \hline
 
-        \rowcol \textit{\textbf{DDTM}} & \textbf{0} & & \textbf{0.02} & \\
-        \rowcol \textit{Sum of data driven test methods} & 0 & & 8 & \\
-        \rowcol \textit{Sum of test methods} & 187 & & 465 & \\ \bottomlinec
+        \rowcol \textit{\textbf{DDTM}} & \textbf{0} & \textbf{0}  & \textbf{0.02} & \textbf{0.54} \\
+        \rowcol \textit{Sum of data driven test methods} & 0 & 0 & 8 & 7 \\
+        \rowcol \textit{Sum of test methods} & 187 & 84 & 465 & 13  \\ \bottomlinec
 
         \end{tabular}}
         \caption {Low-level testing metrics in projects and their change} \label{tab:low-metrics}

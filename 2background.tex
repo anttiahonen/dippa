@@ -4,8 +4,8 @@
 First in this section brief details of JVM are examined.
 Second, general concepts of software quality and SQA are explained.
 Third, SQA practice automated testing is inspected in more detail.
-After this, agile methodologies Test Driven Development \textbf{(TDD)}, Acceptance Test Driven Development
-\textbf{(ATDD)} and Behavior Driven Development \textbf{(BDD)} are reviewed. For the last section in this chapter,
+After this, agile methodologies Test-Driven Development \textbf{(TDD)}, Acceptance Test-Driven Development
+\textbf{(ATDD)} and Behavior-Driven Development \textbf{(BDD)} are reviewed. For the last section in this chapter,
 related research on the thesis study topic is presented.
 
 \section{Java Virtual Machine} %1p
@@ -95,7 +95,7 @@ related research on the thesis study topic is presented.
 
     \subsection{Activities in SQA}
     Quality assurance practices and activities differ greatly in rhythm and also to a lesser degree in practices used in
-    traditional waterfall-model software projects vs agile projects~\cite{huo2004software}. Waterfall-projects have a rule set
+    traditional waterfall-model software projects vs. agile projects~\cite{huo2004software}. Waterfall-projects have a rule set
     of their own for quality assurance, but for the topic of thesis agile methodologies and their SQA-practices are more relevant.
     SQA-practices can be generally categorized to \textit{defect detection, code enhancement, verification \& validation (V\&V)} of artifacts,
     and \textit{collaboration \& communication} between stakeholders.
@@ -255,10 +255,10 @@ related research on the thesis study topic is presented.
     The next sections agile methodologies TDD, ATDD and BDD are all build on top of automated testing practices, operating on different levels
     of automation.
 
-\section{Test Driven Development} %2p
+\section{Test-Driven Development} %2p
     \subsection{Definition}
     Kent Beck~\cite{beck2003test} defines TDD as techniques aimed to produce clean code that works.
-    This is done by driving development with automated tests - Test Driven Development. TDD consists of two basic rules:
+    This is done by driving development with automated tests - Test-Driven Development. TDD consists of two basic rules:
     \textit{write new production code only when automated test fails} and
     \textit{eliminate duplicated code}. These two rules are the base for \textbf{Red-Green cycle} of TDD:
 
@@ -344,9 +344,9 @@ related research on the thesis study topic is presented.
     The two systematic reviews mentioned provide somewhat conflicting results. Nevertheless, it could be argued that in the right
     context benefits of TDD outweigh the drawbacks of it.
 
-\section{Acceptance Test Driven Development}
+\section{Acceptance Test-Driven Development}
     ATDD is an agile practice that has many forms and names: \textit{Specification by Example, Agile Acceptance Testing, Story Testing} and
-    obviously \textit{Acceptance Test Driven Development}~\cite{gartner2012atdd}. BDD inholds also
+    obviously \textit{Acceptance Test-Driven Development}~\cite{gartner2012atdd}. BDD inholds also
     ATDD~\cite{gartner2012atdd}, but as later is discovered, it is actually a superset of it.
 
     ATDD is an collaboration tool for stakeholders of the project~\cite{gartner2012atdd}~\cite{haugset2012automated}. It means driving the
@@ -396,10 +396,10 @@ related research on the thesis study topic is presented.
     ATDD as its counterpart TDD are both demanding practices that require
     disclipline to use properly.~\cite{haugset2012automated}
 
-    Next section explores Behavior Driven Development
+    Next section explores Behavior-Driven Development
     in detail to see how it relates to TDD and ATDD and how it combines the two approaches.
 \clearpage
-\section{Behavior Driven Development} %2p
+\section{Behavior-Driven Development} %2p
     This section will first examine the history behind BDD. Second BDD definition is explained.
     Third the BDD process and different levels in it are examined, together with tools to support them. Finally
     the benefits and drawbacks of BDD are discussed.
@@ -437,7 +437,7 @@ related research on the thesis study topic is presented.
     quality.
 
     \subsection{Process}
-    The driving factor of BDD is the analysis process through user stories and their format:\newline\
+    The driving factor of BDD is the analysis process through user stories and their format~\cite{wiki:story}:\newline\
     \begin{addmargin}[2em]{2em}
     \textbf{As a} \{user\}\newline
     \textbf{I want} \{feature\}\newline
@@ -494,7 +494,7 @@ related research on the thesis study topic is presented.
     Figure \ref{fig:bdd-cycle} shows the BDD-cycle that can be automated with BDD tools.
     Steps 1 through 4 relate to acceptance level and steps from 5 to 9 are for implementation level. Step #11 is the refactoring
     of acceptance level code. Implementation level steps can be seen as the earlier introduced \textbf{red-green cycle of TDD}, preferably done
-    with behavior driven implementation level testing frameworks~\cite{smart2014bdd}. There exists also the outer red-green cycle, which
+    with behavior-driven implementation level testing frameworks~\cite{smart2014bdd}. There exists also the outer red-green cycle, which
     is the outside-in aspect of BDD. The development is started with failing acceptance level, which passes later when the
     BDD cycle has progresses through all levels of behavior definition and its implementing code~\cite{chelimsky2010rspec}. By repeating the steps,
     the end result will be a working feature providing value related to business outcomes~\cite{chelimsky2010rspec}.

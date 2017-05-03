@@ -124,7 +124,7 @@
 % </rant>
 
 % \usepackage{palatino}
-% \usepackage{tgpagella}
+% \usepackage{txfonts}
 
 
 
@@ -403,7 +403,7 @@ innerleftmargin=0cm,innerrightmargin=0cm,roundcorner=0pt, innertopmargin=0pt, in
 \newcommand{\TITLE}{Unit and Integration Testing of Java:}
 \newcommand{\FTITLE}{Ohjelmistoprosessit mänteille:}
 \newcommand{\STITLE}{Den stora stygga vargen:}
-\newcommand{\SUBTITLE}{JVM Behavior Driven Development testing frameworks vs JUnit}
+\newcommand{\SUBTITLE}{JVM Behavior-Driven Development testing frameworks vs. JUnit}
 \newcommand{\FSUBTITLE}{Uusi organisaatio, uudet pyörät}
 \newcommand{\SSUBTITLE}{Lilla Vargens universum}
 \newcommand{\DATE}{June 18, 2011}
@@ -422,17 +422,14 @@ innerleftmargin=0cm,innerrightmargin=0cm,roundcorner=0pt, innertopmargin=0pt, in
 %\newcommand{\FSUPERVISOR}{Professori Antti Ylä-Jääski}
 %\newcommand{\SSUPERVISOR}{Professor Antti Ylä-Jääski}
 % Example of twosupervisors:
-\newcommand{\SUPERVISOR}{Professor Antti Ylä-Jääski\\
-  Professor Pekka Perustieteilijä}
-\newcommand{\FSUPERVISOR}{Professori Antti Ylä-Jääski\\
-  Professori Pekka Perustieteilijä}
-\newcommand{\SSUPERVISOR}{Professor Antti Ylä-Jääski\\
-  Professor Pekka Perustieteilijä}
+\newcommand{\SUPERVISOR}{Professor Casper Lassenius}
+\newcommand{\FSUPERVISOR}{Professori Casper Lassenius}
+\newcommand{\SSUPERVISOR}{Professor Casper Lassenius}
 
 % If you have only one instructor, just write one name here
-\newcommand{\INSTRUCTOR}{Olli Ohjaaja M.Sc. (Tech.)}
-\newcommand{\FINSTRUCTOR}{Diplomi-insinööri Olli Ohjaaja}
-\newcommand{\SINSTRUCTOR}{Diplomingenjör Olli Ohjaaja}
+\newcommand{\INSTRUCTOR}{Mikko Pohja D.Sc. (Tech.)}
+\newcommand{\FINSTRUCTOR}{Tekniikan tohtori Mikko Pohja}
+\newcommand{\SINSTRUCTOR}{Teknologie doktor Mikko Pohja}
 % If you have two instructors, separate them with \\ to create linefeeds
 % \newcommand{\INSTRUCTOR}{Olli Ohjaaja M.Sc. (Tech.)\\
 %  Elli Opas M.Sc. (Tech)}
@@ -445,8 +442,7 @@ innerleftmargin=0cm,innerrightmargin=0cm,roundcorner=0pt, innertopmargin=0pt, in
 % of the supervisors in the cover page. If the following command is defined,
 % then the supervisor names shown here are printed in the cover page. Otherwise,
 % the supervisor names defined above are used.
-\newcommand{\COVERSUPERVISOR}{Professor Antti Ylä-Jääski, Aalto University\\
-  Professor Pekka Perustieteilijä, University of Helsinki}
+\newcommand{\COVERSUPERVISOR}{Professor Casper Lassenius, Aalto University}
 
 % The same option is for the instructors, if you have multiple instructors.
 % \newcommand{\COVERINSTRUCTOR}{Olli Ohjaaja M.Sc. (Tech.), Aalto University\\
@@ -455,11 +451,11 @@ innerleftmargin=0cm,innerrightmargin=0cm,roundcorner=0pt, innertopmargin=0pt, in
 
 % Other stuff
 % ------------------------------------------------------------------
-\newcommand{\PROFESSORSHIP}{Data Communication Software}
-\newcommand{\FPROFESSORSHIP}{Tietoliikenneohjelmistot}
-\newcommand{\SPROFESSORSHIP}{Datakommunikationsprogram}
+\newcommand{\PROFESSORSHIP}{Computer Science}
+\newcommand{\FPROFESSORSHIP}{Tietotekniikka}
+\newcommand{\SPROFESSORSHIP}{Datateknik}
 % Professorship code is the same in all languages
-\newcommand{\PROFCODE}{T-110}
+\newcommand{\PROFCODE}{SCI3042}
 \newcommand{\KEYWORDS}{ocean, sea, marine, ocean mammal, marine mammal, whales,
 cetaceans, dolphins, porpoises}
 \newcommand{\FKEYWORDS}{AEL, aineistot, aitta, akustiikka, Alankomaat,
@@ -515,6 +511,10 @@ yrkesutövare, intresseföretag, verifieringskedja}
 % Ordered references
 \bibliographystyle{ieeetr}
 
+\newenvironment{tttabular}[1]%
+{\sffamily \begin{tabular}{#1}}%
+{\end{tabular}}
+
 
 % Extra hyphenation settings
 % ------------------------------------------------------------------
@@ -530,6 +530,7 @@ yrkesutövare, intresseföretag, verifieringskedja}
 \hyphenation{se-cond}
 \hyphenation{ -based}
 
+\setcounter{secnumdepth}{2}
 
 % The preamble ends here, and the document begins. 
 % Place all formatting commands and such before this line.
@@ -668,6 +669,7 @@ Thank you, and keep up the good work!
 % entry to the table of contents, which is kind of redundant.
 % The text ``Contents'' is shown in the PDF bookmark. 
 \pdfbookmark[0]{Contents}{bookmark.0.contents}
+\setcounter{tocdepth}{2}
 \tableofcontents
 
 % List of tables
@@ -711,8 +713,6 @@ Thank you, and keep up the good work!
 \input{5aconfiguration.tex}
 
 \input{5results.tex}
-
-\input{6discussion.tex}
 
 \input{7conclusions.tex}
 

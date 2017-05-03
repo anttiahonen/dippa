@@ -3,7 +3,7 @@
 This chapter discusses the design of the study. First, research questions are introduced.
 Second, research hypothesis is made based on the reviewed practices \& related research findings introduced in the chapter \ref{chapter:background}
 and features of studied testing frameworks explained in chapter \ref{chapter:environment}.
-Third, the empirical study and its methodology are explained in detail. Finally, limitations to the study methods are discussed.
+Third, the empirical study and its methodology are explained in detail.
 
 \section{Research questions}
 This thesis studies low-level testing done with xUnit family testing framework JUnit and how it changes after putting
@@ -12,34 +12,34 @@ research questions are aimed to highlight the change in low-level testing after 
 \begin{addmargin}[2em]{0em}
 \vspace{20px}
 \begin{itemize}
-\item[\textbf{RQ1:}] How does behavior driven testing frameworks change developer practices working with automated low-level testing compared to JUnit framework?
-\item[\textbf{RQ2:}] How does behavior driven testing frameworks change developer perception of working with automated low-level testing compared to JUnit framework?
-\item[\textbf{RQ3:}] How does behavior driven testing frameworks change written low-level test cases and test code coverage compared to JUnit framework?
+\item[\textbf{RQ1:}] How does behavior-driven testing frameworks change developer practices working with automated low-level testing compared to JUnit framework?
+\item[\textbf{RQ2:}] How does behavior-driven testing frameworks change developer perception of working with automated low-level testing compared to JUnit framework?
+\item[\textbf{RQ3:}] How does behavior-driven testing frameworks change written low-level test cases and test code coverage compared to JUnit framework?
 \end{itemize}
 \end{addmargin}
 
-\section{Research hypothesis} %1p
-    The following hypothesis statements are derived from the mentioned benefits of BDD literature in chapter \ref{chapter:background} and features of BDD
-    testing frameworks illustrated in previous chapter. These statements adhere directly to most common problems found in unit
+\section{Research hypotheses}
+    The following hypotheses are derived from the mentioned benefits of BDD literature in chapter \ref{chapter:background} and features of BDD
+    testing frameworks illustrated in previous chapter. These hypotheses adhere directly to most common problems found in unit
     testing practitioner research mentioned in section \ref{section:research} in chapter \ref{chapter:background}:
     \textit{readibility} of unit tests is not optimal, \textit{maintainability} of unit tests is problematic and \textit{enjoyment}
     in practicing unit testing is low.
     \begin{addmargin}[0em]{0em}
     \vspace{10px}
-    \textbf{Statement 1:} Developers will write more granular test cases
+    \textbf{Hypothesis 1:} Developers will write more granular test cases
     \vspace{5px}
     \newline
-    As has been noted before in benefits of implementation level behavior driven development, BDD testing frameworks operating on this
+    As has been noted before in benefits of implementation level behavior-driven development, BDD testing frameworks operating on this
     level aim to produce granular test cases with descriptive named test methods~\cite{chelimsky2010rspec}~\cite{astels2006new}.
     For example RSpec was originally intended to help the shifting of viewpoint from 1-1 relationship between test-code
     and only one test method per function to more granular test cases~\cite{astels2006new}.
-    Compared to earlier average in the project, statement should be visible in test cases through more measured test methods
+    Compared to earlier average in the project, hypothesis should be visible in test cases through more measured test methods
     per method of component under test. In addition, the phenomena is also studied with a participant survey.
     \end{addmargin}
 
     \begin{addmargin}[0em]{0em}
     \vspace{10px}
-    \textbf{Statement 2:} Developers will find it easier to understand test cases
+    \textbf{Hypothesis 2:} Developers will find it easier to understand test cases
     \vspace{5px}
     \newline
     As stated earlier, implementation level BDD testing frameworks should produce test cases of the component under test,
@@ -50,12 +50,12 @@ research questions are aimed to highlight the change in low-level testing after 
     The context, stimulus and assertions of the tests should be more visible with these mentioned structures and the test output
     should be more understandable~\cite{smart2014bdd}. Master's thesis by Laplante had also studied that BDD specifications
     was perceived by developers to produce more readable tests than the ones written with xUnit testing family tools~\cite{laplante2009behavior}.
-    Statement is measured with a survey and interview.
+    Hypothesis is measured with a survey and interview.
     \end{addmargin}
 
     \begin{addmargin}[0em]{0em}
     \vspace{10px}
-    \textbf{Statement 3:} Developers will find it easier to maintain code
+    \textbf{Hypothesis 3:} Developers will find it easier to maintain code
     \vspace{5px}
     \newline
     Implementation level BDD specifications should produce up-to-date living documentation, which can help in overall
@@ -64,18 +64,18 @@ research questions are aimed to highlight the change in low-level testing after 
     xSpec family nested group examples and lifecycle hooks should allow efficient repetition removal compared to traditional xUnit family testing frameworks.
     Data Driven Testing DSL of Spock testing framework should allow to more easily test parameter variations and remove
     the need for separate test methods, therefore making it easier to maintain the test case.
-    Statement is measured with a survey and interview.
+    Hypothesis is measured with a survey and interview.
     \end{addmargin}
 
     \begin{addmargin}[0em]{0em}
     \vspace{10px}
-    \textbf{Statement 4:} Developers will perceive working with low-level automated testing more enjoyable.
+    \textbf{Hypothesis 4:} Developers will perceive working with low-level automated testing more enjoyable.
     \vspace{5px}
     \newline
-    This statement is a combination of the three earlier statements. By changing the used practices and language in low-level testing,
-    the overall result should appear as more enjoyable low-level testing for developers. Especially the statements 2 and 3, easier understanding
+    This hypothesis is a combination of the three earlier hypotheses. By changing the used practices and language in low-level testing,
+    the overall result should appear as more enjoyable low-level testing for developers. Especially the hypotheses 2 and 3, easier understanding
     and maintaining of test cases should affect how automated low-level testing is perceived.
-    Statement is measured with a survey and interview.
+    Hypothesis is measured with a survey and interview.
     \end{addmargin}
 
 \section{Empirical study}
@@ -318,27 +318,54 @@ explained. Finally, threats to validity and limitations in this study are review
     \end{enumerate}
     \end{addmargin}
 
-\section{Validity}
-In this section, first the threats to validity of the study are analyzed. After that, the improving factors of validity
-are discussed.
-
-\subsection{Threats to validity}
-Threats to validity are categorized by aspects recommended by Runeson et al.~\cite{runeson2012case}. Relevant threat categories in
+\section{Validity and reliability}
+In this section, the different categories of validity together with reliability are analyzed with mitigated risks and remaining
+threats.
+Validity is categorized by aspects recommended by Runeson et al.~\cite{runeson2012case}. Relevant threat categories in
 this research include \textit{construct, internal \& external validity} and \textit{reliability} of the study.
-\subsubsection{Construct validity}
-The construct validity threat includes the threats to validity of the surveys and interviews. Although there was support available
-for the participants during the answering of the survey to avoid misunderstood questions, there is a probability
+First, construct validity is analyzed. Second, internal validity is examined. Third, external validity is studied and
+finally reliability is discussed.
+
+\subsection{Construct validity}
+The construct validity reflects how well the studied aspects represent the original intention of the researcher~\cite{runeson2012case}.
+Threats to construct validity include the threats to validity of the used study methods. Mitigations used for this risk
+in study were:
+\begin{itemize}
+\item Data collection used \textbf{methodological triangulation} with surveys, interviews and test code analysis. Quantative and qualitative data was used.
+\item Large parts of survey regarding the developer practices and perception towards JUnit were well-founded
+by using previous research survey questions as the starting base directly.
+
+\item Code analysis metrics such as \textit{COTM} or \textit{COA} were defined clearly.
+
+\item Risk in understanding of surveys was mitigated by providing support available for the participants during the answering
+of the survey to avoid misunderstood questions.
+
+\end{itemize}
+
+\noindent However, there is still a probability
 that the survey question was not interpreted the same way as it was intended to study the aspects of testing. Interview questions
 were understood seemingly correct, as the interview situations and discussions gave better insight to developer answers.
-\subsubsection{Internal validity}
-Internal validity threat includes the unexpected sources of bias~\cite{kitchenham2002preliminary}. As I as the researcher
-in this study have a reasonable long history with BDD testing frameworks, it can result in too much enthusiasm in the introduction
-of new testing framework for the developer participants. As one of the key characteristics of company's developers is the
-high autonomy in projects, I first had the task of convincing participants to take a new BDD testing framework into use in the middle of the
-project. This process is explained in detail in section \ref{section:teams}, but it can be summerized as an enthusiastic selling of the
-BDD testing frameworks and their features. This can cause some unwanted \textbf{response bias} influenced by a presence of a \textbf{"champion"}
-driving the change and initial impressions.
-\subsubsection{External validity}
+\subsection{Internal validity}
+Internal validity examines the causal relations of the study, the presence of \textit{bias} in the study.
+To mitigate respondent bias, \textbf{prolonged involvement} was used in studying participants of the study. During the conducting of the study, I
+was employed in the studied company. This enabled the access to project source code for test code analysis and also providing
+a trustful relationship with the study participants. ~\cite{runeson2012case}
+
+Internal validity threat includes the unexpected sources of bias~\cite{kitchenham2002preliminary}. The before mentioned
+prolonged involvement could lead to \textbf{researcher bias}.
+Another source of unwanted bias comes from the process of finding relevant projects and teams for the study.
+I first had the task of convincing participants to take a new BDD testing framework into use in the middle of the
+project. This process is explained in detail in chapter \ref{chapter:projects}, but it can be summerized as an enthusiastic selling of the
+BDD testing frameworks and their features. This can cause some unwanted \textbf{response bias} influenced by a presence
+of a \textbf{"champion"}~\cite{kitchenham2002preliminary} driving the change and initial impressions.
+
+\subsection{External validity}
+External validity reflects how well the findings in the study can be generalized and how they could interest other people
+outside the study~\cite{runeson2012case}. To mitigate the risks to external validity, there was kept attention in
+studying the BDD testing tools in relevant industrial context in actual project settings. Study participants were also selected from senior
+developers with same degree experience level. \textbf{Data triangulation} was also used to study the applicability of BDD
+tools in different projects with multiple participant data sources.
+
 External validity threats are related to threats that hinder the possibility to generalize the findings from this study~\cite{runeson2012case}.
 The demographics which the study was applied can be found in section \ref{section:demographics}. Major threat to generalizing the findings
 is the \textbf{limited number of participants} involved through the projects A and B. Projects are demonstrated in detail in section \ref{section:demographics},
@@ -350,35 +377,24 @@ The survey regarding changes in low-level testing after introduction of the impl
 as a valuable developer experience report with its direct comparison questions, but isn't statistically relevant.
 
 Another problem in generalization is the fact that the study was conducted within Java-projects and JVM-environment, thus this
-study is \textbf{specific} to the studied \textbf{environment} and generalizations to other environments can't be made properly.
+study is \textbf{specific} to the studied \textbf{environment} and generalizations to other environments can't be made directly.
 Additional threats to external validity were the short
 \textbf{limited} two months period of \textbf{time} were the study was conducted and the \textbf{limited amount of new test cases} studied
 in the test code analysis part of the research.
 
-\subsubsection{Reliability}
+\subsection{Reliability}
 Reliability of this study is the aspect of the study being dependent on the researcher~\cite{runeson2012case}. The study
-data collection methods are explained in detail and thus they should be able to be replicated by other researchers. One
-aspect that hinders the reliability is the provided refactoring of JUnit tests to BDD testing framework examples explained
-in section \ref{section:teams}. This step is hard to reproduce by other research on a larger scale, as it involves time and effort not
+research methods and especially data collection methods are explained in detail and thus they should be able to be replicated by other researchers.
+Also the source code for enabling needed build configurations and test framework extensions are provided.
+
+One aspect that hinders the reliability is the provided refactoring of JUnit tests to BDD testing framework examples explained
+in chapter \ref{chapter:projects}. This step is hard to reproduce by other research on a larger scale, as it involves time and effort not
 possibly available. This example providing can also cause bias in the studying by
 shifting the written new tests to a certain structure that supports the research hypothesis. Although providing examples
 of good practices should only help to produce test code closer to as originally intended by the authors of these BDD testing framework creators.
 
-\subsection{Improving factors of validity}
-Improving factors for the validity of this case study can by categorized under \textit{prolonged involvement} and \textit{triangulation}~\cite{runeson2012case}.
-Prolonged involvement was achieved by the employment of the thesis worker, researcher, in the studied company. This enabled the access
-to project source code for test code analysis and also providing a trustful relationship with the study participants. The
-risks of this involvement were analyzed as the possible bias by presence of a "champion".
-
-Triangulation was used to increase the validity of the study. It was visible through \textbf{data triangulation} by using
-multiple projects and their developers as the data source. \textbf{Methodological triangulation} was used in combining
-interviews, surveys and code analysis in data collection of the study. Large part of survey regarding the developer practices and perception
-towards JUnit were well-founded by using previous research survey questions as the starting base directly.
-
 This chapter discussed the case study details; what was studied and how it was done. Before chapter \ref{chapter:results} and case study results,
 the next chapter illustrates how selected project teams chose their new implementation level BDD testing framework to take in use.
-
-
 
 
 

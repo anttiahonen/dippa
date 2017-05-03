@@ -5,23 +5,24 @@ This chapter illustrates how studied projects teams chose their implementation l
 framework to take in use for the project. The process is explained in detail with examples of JUnit tests
 refactored into different BDD testing frameworks.
 
-\section{How project teams chose their new testing framework}
+Projects are denoted as \textbf{A} and \textbf{B}. Full description of projects can be found in section \ref{section:demographics} in the interview
+results. In brief, they both can be categorized as \textit{Spring Framework} projects. Project A is a \textit{Spring Boot} project, where
+most of the needed dependencies are bundled under Spring Boot configuration. Project B is a conventional Spring Framework project,
+where needed dependencies are added individually into build configuration.
+
+Both projects and their teams were first introduced to built proof of concept examples of \textbf{\textit{RSpec, Spock}} and \textbf{\textit{Spectrum}}
+in use for an example Java Spring Framework project. Some of these used examples can be found in chapter \ref{chapter:environment}.
+All my subjective pros and cons of these BDD testing frameworks versus JUnit were demonstrated. RSpec was stripped from the
+potential candidates from both project first, as it included a more complicated development and build environment configuration. Also
+the support in IDE's for debugging JRuby and Java code at the same time was not present. Project A developers had
+seemingly negative attitude towards changes in testing at first. Therefore I promised refactored examples of old JUnit
+tests to Spectrum and Spock and tried to convince the team to switch testing framework for new tests.
+Project B developer had heard of Spock before and thus it was chosen as the framework to provide refactored examples in the project.
+First in this chapter, project A and its examples are reviewed. Second, project B and its refactored test examples are examined.
+
 \label{section:teams}
-    Projects are denoted as \textbf{A} and \textbf{B}. Full description of projects can be found in section \ref{section:demographics} in the interview
-    results. In brief, they both can be categorized as \textit{Spring Framework} projects. Project A is a \textit{Spring Boot} project, where
-    most of the needed dependencies are bundled under Spring Boot configuration. Project B is a conventional Spring Framework project,
-    where needed dependencies are added individually into build configuration.
 
-    Both projects and their teams were first introduced to built proof of concept examples of \textbf{\textit{RSpec, Spock}} and \textbf{\textit{Spectrum}}
-    in use for an example Java Spring Framework project. Some of these used examples can be found in chapter \ref{chapter:environment}.
-    All my subjective pros and cons of these BDD testing frameworks versus JUnit were demonstrated. RSpec was stripped from the
-    potential candidates from both project first, as it included a more complicated development and build environment configuration. Also
-    the support in IDE's for debugging JRuby and Java code at the same time was not present. Project A developers had
-    seemingly negative attitude towards changes in testing at first. Therefore I promised refactored examples of old JUnit
-    tests to Spectrum and Spock and tried to convince the team to switch testing framework for new tests.
-    Project B developer had heard of Spock before and thus it was chosen as the framework to provide refactored examples in the project.
-
-    \subsection{Project A}
+    \section{Project A}
     Prior the starting of study, project A had 49 test cases/files with 187 test methods of combined automated unit and integration level tests done with JUnit.
     I chose a few example test cases, which would benefit from repetition reducing techniques and better readability of the test methods.
     There were many more test methods and even test cases refactored, but here is provided an example of originally two JUnit
@@ -74,9 +75,10 @@ refactored into different BDD testing frameworks.
 
     \end{figure}
 
-    Figure \ref{fig:junit-allu-refactor} displays the example JUnit test methods. Their test run output is display in the
+    \newgeometry{bottom=1cm}
+    Figure \ref{fig:junit-allu-refactor} displays the example JUnit test methods. Their test run output is displayed in the
     figure \ref{fig:junit-allu-refactor-output}. When closely inspected, it was evident
-    that the two test \newgeometry{bottom=1cm}methods both actually included two tests inside one method which were separated by space between
+    that the two test methods both actually included two tests inside one method which were separated by space between
     them. For example test method \textit{testDogTrainingEvent()} contains the first test within lines 3-13 and lines 15-18 are using
     the same \textit{context} of the test with modifications for a new test.
     Both of these test methods share mostly the same test method code and thus figures \ref{fig:spock-allu-refactor} and
@@ -229,7 +231,7 @@ refactored into different BDD testing frameworks.
     \clearpage
 
     \newgeometry{bottom=1cm}
-    \subsection{Project B}
+    \section{Project B}
     Prior the starting of study, project B had 80 test cases/files with 465 test methods of combined automated unit and integration level tests done with JUnit.
     Current backend developer of project B had a particular DDT JUnit test case in mind that he wanted to see as a refactored example
     for Spock.
