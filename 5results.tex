@@ -811,9 +811,10 @@ analyzed in interview where participant states that the found bugs in 1.1.0 vers
 lower the score. He also states that \textit{Spring Framework} support is not optimal yet and for these reasons he hesitates
 to fully get on board with Spectrum.
 
-    \clearpage
 
 \subsubsection{Change summary}
+
+\clearpage
 
 \section{Test code analysis}
 Test code analysis was done to answer \textbf{RQ3} with metrics defined in chapter \ref{chapter:methods} section \ref{subsub:test}.
@@ -839,7 +840,7 @@ combined.
 
         \rowcol \textit{\textbf{COTM}} & \textbf{1.44} & \textbf{5.63} & \textbf{3.49} & \textbf{25.5}  \\
         \rowcol \textit{Sum of tested class methods} & 61 & 8 & 93 & 4 \\
-        \rowcol \textit{Sum of unit test methods} & 88 & 45 & 325 (294) & 102 (7) \\ \hline
+        \rowcol \textit{Sum of unit test methods} & 88 & 45 & 325 (294)* & 102 (7)* \\ \hline
 
         \textit{\textbf{Instruction CC}} & \textbf{25\%} & \textbf{24\%} & \textbf{20\%} & \textbf{19\%} \\
         \textit{Total number of instructions} & 31,425 & 44,427 & 49,895 &  53,211 \\
@@ -847,14 +848,43 @@ combined.
         \textit{Total number of branches} & 724 & 1,107 & 2,195 & 2,316 \\ \bottomlinec
         \end{tabular}}
         \caption {Unit level testing metrics in projects and their change} \label{tab:unit-metrics}
-
+        \caption*{* = Value in parenthesis is without calculating data-driven tests sum}
 \end{table}
 }
 
-\textbf{RQ3: }\textit{How does behavior-driven testing frameworks change written low-level test cases and test code coverage compared to JUnit framework?}
-is first studied with data from unit testing metrics displayed in table \ref{tab:unit-metrics}.
+\begin{figure}[ht]
+  \begin{center}
+    \includegraphics[width=12.7cm]{images/COTM.png}
+    \caption{Average count of unit test methods per tested class method in projects}
+    \label{fig:cotm}
+  \end{center}
+\end{figure}
 
-\clearpage
+\textbf{RQ3: }\textit{How does behavior-driven testing frameworks change written low-level test cases and test code coverage compared to JUnit framework?}
+is first studied with data from unit testing metrics displayed in table \ref{tab:unit-metrics}. Figure \ref{fig:cotm} visualizes
+the change in \textbf{COTM}. Both projects display a \textbf{drastic change} in number of unit test methods per tested class method. With JUnit, project A
+had around one to two unit test methods per class method, but with Spectrum the average is from 5 to 6 test methods per class method. The
+change is around 4 times more granular use of test methods than before. The change in COTM in project A seems to correlate well with the original
+claims of Astels~\cite{astels2006new}: \textit{xSpec family} testing helps in producing more granular tests without the tight one-to-one mapping of test methods
+to class methods.
+
+At the starting point with JUnit, project B had first a fair amount of around 3 to 4
+test methods per tested class method. With Spock, the average count of unit test methods per tested
+class method is at staggering 25 to 26 methods. In total there were 7 unit level specifications with Spock, but all of them were
+data-driven tests. This resulted in 102 automatically generated separate test runs. As the number of study participants with Spock is low, this COTM-value might
+be an anomaly. Still, together with the later studied \textit{DDTM}-metric, the analysis displays
+a significant growth in use DDT. The advertisement of Spock's easy automatic test generation with DSL for data-driven testing~\cite{kapelonis2016java}
+seems to have merit.
+
+Both of studied BDD testing frameworks showed an increase in test case granularity with test code analysis and participant practice
+survey. With the given sample, \textbf{H1:} \textit{Developers will write more granular test cases} holds true.
+
+\textbf{Code coverage} didn't show almost any changes at unit level in either project. As participants earlier answered in the survey, none
+of them had code coverage as an optimizing target for low-level tests. This could explain the low coverage percentage seen in
+table \ref{tab:unit-metrics}. Although the test case granularity has risen a lot in both projects, it doesn't
+show up in test coverage one way or another. As such, it seems that CC is a poor metric to analyze changes in actual test
+code. This is further confirmed in next section with low-level test coverage examination.
+
 \subsection{Automated unit \& integration testing levels}
 \label{subsub:low-level-metrics}
 At automated low-level testing level there were 5 inspected metrics: \textbf{code coverage}, average \textbf{count of assertions} per test method,
@@ -899,6 +929,32 @@ Table \ref{tab:low-metrics} dislays the values of these metrics in projects A an
 }
 
 \textbf{RQ3} can be further analyzed for low-level testing with metrics displayed in table \ref{tab:low-metrics}.
+First studied metric is \textbf{CC}. With combined JUnit unit and integration tests, the instruction and branch coverage rises in both projects
+to around 50\%. After the introduction of BDD testing frameworks in projects, the combined CC for JUnit and new BDD tests remain
+virtually identical. Although other metrics show...........
+
+\newgeometry{left=1.5cm, right=1.5cm}
+    \begin{figure}[H]%
+        \centering
+        \subfloat[Average count of assertions per test method]{{\includegraphics[width=7cm]{images/COA.png} }}%
+        \qquad
+        \subfloat[Average count of comments per test method]{{\includegraphics[width=7cm]{images/COC.png} }}%
+        \caption{Test assertions and comments in projects}%
+        \label{fig:org-perception-two}%
+    \end{figure}
+
+    \begin{figure}[H]%
+        \centering
+        \subfloat[Average test method name word count]{{\includegraphics[width=7cm]{images/TMNWC.png} }}%
+        \qquad
+        \subfloat[Ratio of data-driven tests to standard low-level test methods]{{\includegraphics[width=7cm]{images/DDTM.png} }}%
+        \caption{Test method naming and DDT in projects}%
+        \label{fig:org-perception-two}%
+    \end{figure}
+
+\restoregeometry
+
+\subsection{Change summary}
 
 \section{Comparison of BDD testing frameworks}
 

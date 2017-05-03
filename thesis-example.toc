@@ -74,17 +74,18 @@
 \contentsline {subsection}{\numberline {6.2.2}Developer perception towards automated low-level testing}{77}{subsection.6.2.2}
 \contentsline {subsubsection}{Developer perception of low-level testing}{77}{subsubsection*.75}
 \contentsline {subsubsection}{Developer loyalty towards low-level testing}{81}{subsubsection*.81}
-\contentsline {subsubsection}{Change summary}{83}{subsubsection*.83}
+\contentsline {subsubsection}{Change summary}{82}{subsubsection*.83}
 \contentsline {section}{\numberline {6.3}Test code analysis}{83}{section.6.3}
 \contentsline {subsection}{\numberline {6.3.1}Automated unit testing level}{83}{subsection.6.3.1}
-\contentsline {subsection}{\numberline {6.3.2}Automated unit \& integration testing levels}{84}{subsection.6.3.2}
-\contentsline {section}{\numberline {6.4}Comparison of BDD testing frameworks}{84}{section.6.4}
-\contentsline {chapter}{\numberline {7}Conclusions}{85}{chapter.7}
-\contentsline {section}{\numberline {7.1}Summary}{85}{section.7.1}
-\contentsline {section}{\numberline {7.2}Future work}{85}{section.7.2}
-\contentsline {chapter}{\numberline {A}Interview questions}{93}{appendix.A}
-\contentsline {section}{\numberline {A.1}Interview for demographic purposes}{93}{section.A.1}
-\contentsline {chapter}{\numberline {B}Surveys}{95}{appendix.B}
-\contentsline {section}{\numberline {B.1}Survey regarding JUnit in automated low-level testing}{95}{section.B.1}
-\contentsline {section}{\numberline {B.2}Survey regarding BDD testing framework in automated low-level testing}{99}{section.B.2}
-\contentsline {chapter}{\numberline {C}Gradle build configurations}{103}{appendix.C}
+\contentsline {subsection}{\numberline {6.3.2}Automated unit \& integration testing levels}{85}{subsection.6.3.2}
+\contentsline {subsection}{\numberline {6.3.3}Change summary}{87}{subsection.6.3.3}
+\contentsline {section}{\numberline {6.4}Comparison of BDD testing frameworks}{87}{section.6.4}
+\contentsline {chapter}{\numberline {7}Conclusions}{88}{chapter.7}
+\contentsline {section}{\numberline {7.1}Summary}{88}{section.7.1}
+\contentsline {section}{\numberline {7.2}Future work}{88}{section.7.2}
+\contentsline {chapter}{\numberline {A}Interview questions}{96}{appendix.A}
+\contentsline {section}{\numberline {A.1}Interview for demographic purposes}{96}{section.A.1}
+\contentsline {chapter}{\numberline {B}Surveys}{98}{appendix.B}
+\contentsline {section}{\numberline {B.1}Survey regarding JUnit in automated low-level testing}{98}{section.B.1}
+\contentsline {section}{\numberline {B.2}Survey regarding BDD testing framework in automated low-level testing}{102}{section.B.2}
+\contentsline {chapter}{\numberline {C}Gradle build configurations}{106}{appendix.C}
