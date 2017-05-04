@@ -1,44 +1,394 @@
-\begin{thebibliography}{1}
+\begin{thebibliography}{10}
+
+\bibitem{wiki:jvm}
+Wikipedia, ``Java virtual machine --- wikipedia{,} the free encyclopedia.''
+  \url{https://en.wikipedia.org/w/index.php?title=Java_virtual_machine&oldid=767900023},
+  2017.
+\newblock [Online; accessed 21-March-2017].
+
+\bibitem{lindholm2015java}
+T.~Lindholm, F.~Yellin, G.~Bracha, and A.~Buckley, {\em The Java virtual
+  machine specification: Java SE 8 Edition}.
+\newblock Oracle America, 2015.
+
+\bibitem{sarimbekov2013characteristics}
+A.~Sarimbekov, A.~Podzimek, L.~Bulej, Y.~Zheng, N.~Ricci, and W.~Binder,
+  ``Characteristics of dynamic jvm languages,'' in {\em Proceedings of the 7th
+  ACM workshop on Virtual machines and intermediate languages}, pp.~11--20,
+  ACM, 2013.
+
+\bibitem{buckley1978standard}
+F.~Buckley, ``A standard for software quality assurance plans,'' {\em
+  Computer}, vol.~12, no.~8, 1978.
+
+\bibitem{kitchenham1996elusive}
+B.~Kitchenham and S.~L. Pfleeger, ``Software quality: the elusive target
+  [special issues section],'' {\em IEEE Software}, vol.~13, pp.~12--21, Jan
+  1996.
+
+\bibitem{denning2016sq}
+P.~J. Denning, ``Software quality,'' {\em Commun. ACM}, vol.~59, pp.~23--25,
+  Aug 2016.
+
+\bibitem{chelimsky2010rspec}
+D.~Chelimsky, D.~Astels, Z.~Dennis, A.~Helles{\o}y, B.~Helmkamp, and D.~North,
+  {\em The RSpec Book: Behaviour-driven Development with RSpec, Cucumber, and
+  Friends}.
+\newblock Pragmatic Bookshelf Series, Pragmatic Bookshelf, 2010.
+
+\bibitem{mcleod2011factors}
+L.~McLeod and S.~G. MacDonell, ``Factors that affect software systems
+  development project outcomes: A survey of research,'' {\em ACM Computing
+  Surveys (CSUR)}, vol.~43, no.~4, p.~24, 2011.
 
 \bibitem{cerpa2009did}
-{\sc Cerpa, N., and Verner, J.~M.}
-\newblock Why did your project fail?
-\newblock {\em Communications of the ACM 52}, 12 (2009), 130--134.
+N.~Cerpa and J.~M. Verner, ``Why did your project fail?,'' {\em Communications
+  of the ACM}, vol.~52, no.~12, pp.~130--134, 2009.
 
 \bibitem{lessons}
-{\sc Charette, R., and Romero, J.}
-\newblock Lessons from a decade of it failures.
-\newblock
+R.~Charette and J.~Romero, ``Lessons from a decade of it failures.''
   \url{http://spectrum.ieee.org/static/lessons-from-a-decade-of-it-failures},
   2015.
 \newblock [Online; accessed 15-March-2017].
 
-\bibitem{denning2016sq}
-{\sc Denning, P.~J.}
-\newblock Software quality.
-\newblock {\em Commun. ACM 59}, 9 (Aug 2016), 23--25.
-
 \bibitem{huo2004software}
-{\sc Huo, M., Verner, J., Zhu, L., and Babar, M.~A.}
-\newblock Software quality and agile methods.
-\newblock In {\em Computer Software and Applications Conference, 2004. COMPSAC
-  2004. Proceedings of the 28th Annual International\/} (2004), IEEE,
-  pp.~520--525.
+M.~Huo, J.~Verner, L.~Zhu, and M.~A. Babar, ``Software quality and agile
+  methods,'' in {\em Computer Software and Applications Conference, 2004.
+  COMPSAC 2004. Proceedings of the 28th Annual International}, pp.~520--525,
+  IEEE, 2004.
 
-\bibitem{kitchenham1996elusive}
-{\sc Kitchenham, B., and Pfleeger, S.~L.}
-\newblock Software quality: the elusive target [special issues section].
-\newblock {\em IEEE Software 13}, 1 (Jan 1996), 12--21.
+\bibitem{mantyla2014software}
+M.~V. M{\"a}ntyl{\"a} and J.~Itkonen, ``How are software defects found? the
+  role of implicit defect detection, individual responsibility, documents, and
+  knowledge,'' {\em Information and Software Technology}, vol.~56, no.~12,
+  pp.~1597--1612, 2014.
 
-\bibitem{mcleod2011factors}
-{\sc McLeod, L., and MacDonell, S.~G.}
-\newblock Factors that affect software systems development project outcomes: A
-  survey of research.
-\newblock {\em ACM Computing Surveys (CSUR) 43}, 4 (2011), 24.
+\bibitem{rigby2013convergent}
+P.~C. Rigby and C.~Bird, ``Convergent contemporary software peer review
+  practices,'' in {\em Proceedings of the 2013 9th Joint Meeting on Foundations
+  of Software Engineering}, pp.~202--212, ACM, 2013.
 
-\bibitem{woodruff1997customer}
-{\sc Woodruff, R.~B.}
-\newblock Customer value: the next source for competitive advantage.
-\newblock {\em Journal of the academy of marketing science 25}, 2 (1997), 139.
+\bibitem{itkonen2016}
+J.~Itkonen, ``Lecture: Building quality in modern software development,''
+  October 2016.
+
+\bibitem{crispin2009agile}
+L.~Crispin and J.~Gregory, {\em Agile testing: A practical guide for testers
+  and agile teams}.
+\newblock Pearson Education, 2009.
+
+\bibitem{artofunit2013}
+R.~Osherove, {\em The Art of Unit Testing, Second Edition}.
+\newblock Manning Publications Company, 2013.
+
+\bibitem{runeson2006survey}
+P.~Runeson, ``A survey of unit testing practices,'' {\em IEEE software},
+  vol.~23, no.~4, pp.~22--29, 2006.
+
+\bibitem{whittaker2000software}
+J.~A. Whittaker, ``What is software testing? and why is it so hard?,'' {\em
+  IEEE software}, vol.~17, no.~1, pp.~70--79, 2000.
+
+\bibitem{langr2015pragmatic}
+J.~Langr, A.~Hunt, and D.~Thomas, {\em Pragmatic Unit Testing in Java 8 with
+  JUnit}.
+\newblock Pragmatic Bookshelf, 2015.
+
+\bibitem{kapelonis2016java}
+K.~Kapelonis, {\em Java Testing with Spock}.
+\newblock Manning Publications Company, 2016.
+
+\bibitem{prechelt2016quality}
+L.~Prechelt, H.~Schmeisky, and F.~Zieris, ``Quality experience: a grounded
+  theory of successful agile projects without dedicated testers,'' in {\em
+  Proceedings of the 38th International Conference on Software Engineering},
+  pp.~1017--1027, ACM, 2016.
+
+\bibitem{rafi2012benefits}
+D.~M. Rafi, K.~R.~K. Moses, K.~Petersen, and M.~V. M{\"a}ntyl{\"a}, ``Benefits
+  and limitations of automated software testing: Systematic literature review
+  and practitioner survey,'' in {\em Proceedings of the 7th International
+  Workshop on Automation of Software Test}, pp.~36--42, IEEE Press, 2012.
+
+\bibitem{williams2009effectiveness}
+L.~Williams, G.~Kudrjavets, and N.~Nagappan, ``On the effectiveness of unit
+  test automation at microsoft.,'' in {\em ISSRE}, pp.~81--89, 2009.
+
+\bibitem{berner2005observations}
+S.~Berner, R.~Weber, and R.~K. Keller, ``Observations and lessons learned from
+  automated testing,'' in {\em Software Engineering, 2005. ICSE 2005.
+  Proceedings. 27th International Conference on}, pp.~571--579, IEEE, 2005.
+
+\bibitem{beck2003test}
+K.~Beck, {\em Test-driven development: by example}.
+\newblock Addison-Wesley Professional, 2003.
+
+\bibitem{bissi2016effects}
+W.~Bissi, A.~G. S.~S. Neto, and M.~C. F.~P. Emer, ``The effects of test driven
+  development on internal quality, external quality and productivity: A
+  systematic review,'' {\em Information and Software Technology}, vol.~74,
+  pp.~45--54, 2016.
+
+\bibitem{beck2001aim}
+K.~Beck, ``Aim, fire [test-first coding],'' {\em IEEE Software}, vol.~18,
+  no.~5, pp.~87--89, 2001.
+
+\bibitem{kollanus2010test}
+S.~Kollanus, ``Test-driven development-still a promising approach?,'' in {\em
+  Quality of Information and Communications Technology (QUATIC), 2010 Seventh
+  International Conference on the}, pp.~403--408, IEEE, 2010.
+
+\bibitem{aniche2010most}
+M.~F. Aniche and M.~A. Gerosa, ``Most common mistakes in test-driven
+  development practice: Results from an online survey with developers,'' in
+  {\em Software Testing, Verification, and Validation Workshops (ICSTW), 2010
+  Third International Conference on}, pp.~469--478, IEEE, 2010.
+
+\bibitem{astels2006new}
+D.~Astels, ``A new look at test-driven development,'' {\em http://blog.
+  daveastels. com/files/BDD\_Intro. pdf> Acessado em}, vol.~12, p.~2013, 2006.
+
+\bibitem{amodeo2015learning}
+E.~Amodeo, {\em Learning Behavior-driven Development with JavaScript}.
+\newblock Community Experience Distilled, Packt Publishing, 2015.
+
+\bibitem{hammond2012test}
+S.~Hammond and D.~Umphress, ``Test driven development: the state of the
+  practice,'' in {\em Proceedings of the 50th Annual Southeast Regional
+  Conference}, pp.~158--163, ACM, 2012.
+
+\bibitem{gartner2012atdd}
+M.~G{\"a}rtner, {\em ATDD by example: a practical guide to acceptance
+  test-driven development}.
+\newblock Addison-Wesley, 2012.
+
+\bibitem{haugset2012automated}
+B.~Haugset and T.~Stalhane, ``Automated acceptance testing as an agile
+  requirements engineering practice,'' in {\em System Science (HICSS), 2012
+  45th Hawaii International Conference on}, pp.~5289--5298, IEEE, 2012.
+
+\bibitem{acceptance2010}
+DevelopSense, ``Blog: Acceptance tests: Let’s change the title, too.''
+  \url{http://www.developsense.com/blog/2010/08/acceptance-tests-lets-change-the-title-too/},
+  2010.
+\newblock [Online; accessed 24-March-2017].
+
+\bibitem{hayes2009towards}
+J.~H. Hayes, A.~Dekhtyar, and D.~S. Janzen, ``Towards traceable test-driven
+  development,'' in {\em Traceability in Emerging Forms of Software
+  Engineering, 2009. TEFSE'09. ICSE Workshop on}, pp.~26--30, IEEE, 2009.
+
+\bibitem{bdd2006north}
+D.~North, ``Introducing bdd.'' \url{https://dannorth.net/introducing-bdd/},
+  2006.
+\newblock [Online; accessed 24-March-2017].
+
+\bibitem{solis2011study}
+C.~Solis and X.~Wang, ``A study of the characteristics of behaviour driven
+  development,'' in {\em Software Engineering and Advanced Applications (SEAA),
+  2011 37th EUROMICRO Conference on}, pp.~383--387, IEEE, 2011.
+
+\bibitem{smart2014bdd}
+J.~Smart, {\em BDD in Action: Behavior-Driven Development for the Whole
+  Software Lifecycle}.
+\newblock Manning Publications Company, 2014.
+
+\bibitem{okolnychyi2016study}
+A.~Okolnychyi and K.~F{\"o}gen, ``A study of tools for behavior-driven
+  development,'' {\em Full-scale Software Engineering/Current Trends in Release
+  Engineering}, p.~7, 2016.
+
+\bibitem{wiki:story}
+Wikipedia, ``User story --- wikipedia{,} the free encyclopedia.''
+  \url{https://en.wikipedia.org/w/index.php?title=User_story&oldid=775339969},
+  2017.
+\newblock [Online; accessed 2-May-2017].
+
+\bibitem{lerner2009forge}
+R.~M. Lerner, ``At the forge: Rspec,'' {\em Linux Journal}, vol.~2009, no.~186,
+  2009.
+
+\bibitem{spock}
+P.~Niederwieser, ``Spock framework reference documentation.''
+  \url{http://spockframework.org/spock/docs/1.1-rc-3/all_in_one.html}, 2017.
+\newblock [Online; accessed 28-March-2017].
+
+\bibitem{daka2014survey}
+E.~Daka and G.~Fraser, ``A survey on unit testing practices and problems,'' in
+  {\em Software Reliability Engineering (ISSRE), 2014 IEEE 25th International
+  Symposium on}, pp.~201--211, IEEE, 2014.
+
+\bibitem{li2016automatically}
+B.~Li, C.~Vendome, M.~Linares-V{\'a}squez, D.~Poshyvanyk, and N.~A. Kraft,
+  ``Automatically documenting unit test cases,'' in {\em Software Testing,
+  Verification and Validation (ICST), 2016 IEEE International Conference on},
+  pp.~341--352, IEEE, 2016.
+
+\bibitem{laplante2009behavior}
+L.~Chantal and S.~Regina, ``Towards and empirical evaluation of behavior-driven
+  development,'' 2009.
+
+\bibitem{hamill2004unit}
+P.~Hamill, {\em Unit Test Frameworks: Tools for High-Quality Software
+  Development}.
+\newblock " O'Reilly Media, Inc.", 2004.
+
+\bibitem{junit4}
+JUnit, ``Junit - about.'' \url{http://junit.org/junit4/}, 2017.
+\newblock [Online; accessed 22-March-2017].
+
+\bibitem{junit5schedule}
+Github, ``Roadmap - junit-team/junit5 wiki - github.''
+  \url{https://github.com/junit-team/junit5/wiki/Roadmap}, 2017.
+\newblock [Online; accessed 22-March-2017].
+
+\bibitem{spring}
+P.~Software, ``Spring framework.''
+  \url{https://projects.spring.io/spring-framework/}, 2017.
+\newblock [Online; accessed 22-March-2017].
+
+\bibitem{wiki:spring}
+Wikipedia, ``Spring framework --- wikipedia{,} the free encyclopedia.''
+  \url{https://en.wikipedia.org/w/index.php?title=Spring_Framework&oldid=770621263},
+  2017.
+\newblock [Online; accessed 22-March-2017].
+
+\bibitem{springintegration}
+P.~Software, ``Spring integration testing.''
+  \url{https://docs.spring.io/spring/docs/current/spring-framework-reference/html/integration-testing.html},
+  2017.
+\newblock [Online; accessed 22-March-2017].
+
+\bibitem{hamcrest}
+G.~C. Archive, ``The hamcrest tutorial.''
+  \url{https://code.google.com/archive/p/hamcrest/wikis/Tutorial.wiki}, 2017.
+\newblock [Online; accessed 04-April-2017].
+
+\bibitem{gradle}
+G.~Inc, ``Gradle build tool.'' \url{https://gradle.org/}, 2017.
+\newblock [Online; accessed 30-March-2017].
+
+\bibitem{funspec}
+Artima, ``Scalatest - getting started with funspec.''
+  \url{http://www.scalatest.org/getting_started_with_fun_spec}, 2017.
+\newblock [Online; accessed 27-March-2017].
+
+\bibitem{rspecdoc}
+RSpec, ``Rspec documentation.'' \url{http://rspec.info/documentation/}, 2017.
+\newblock [Online; accessed 28-March-2017].
+
+\bibitem{rspec-core}
+RSpec, ``rspec-core.'' \url{http://rspec.info/documentation/3.5/rspec-core/},
+  2017.
+\newblock [Online; accessed 28-March-2017].
+
+\bibitem{mockito}
+Mockito, ``Mockito framework site.'' \url{http://site.mockito.org/}, 2017.
+\newblock [Online; accessed 30-March-2017].
+
+\bibitem{rspec-subject}
+RSpec, ``Explicit subject - subject - rspec core - rspec - relish.''
+  \url{https://www.relishapp.com/rspec/rspec-core/v/3-5/docs/subject/explicit-subject},
+  2017.
+\newblock [Online; accessed 28-March-2017].
+
+\bibitem{intellij}
+JetBrains, ``Intellij idea the java ide.''
+  \url{https://www.jetbrains.com/idea/}, 2017.
+\newblock [Online; accessed 30-March-2017].
+
+\bibitem{rubygems}
+RubyGems, ``What is a gem? - rubygems guides.''
+  \url{http://guides.rubygems.org/what-is-a-gem/}, 2017.
+\newblock [Online; accessed 30-March-2017].
+
+\bibitem{spectrum}
+Github, ``greghaskins/spectrum: A bdd-style test runner for java 8. inspired by
+  jasmine, rspec, and cucumber.''
+  \url{https://github.com/greghaskins/spectrum/}, 2017.
+\newblock [Online; accessed 27-March-2017].
+
+\bibitem{spectrum-102}
+Github, ``greghaskins/spectrum: A bdd-style test runner for java 8. inspired by
+  jasmine, rspec, and cucumber.''
+  \url{https://github.com/greghaskins/spectrum/tree/1.0.2}, 2017.
+\newblock [Online; accessed 27-March-2017].
+
+\bibitem{gherkin}
+Github, ``Gherkin.'' \url{https://github.com/cucumber/cucumber/wiki/Gherkin},
+  2017.
+\newblock [Online; accessed 28-March-2017].
+
+\bibitem{rspec-given}
+Github, ``jimweirich/rspec-given: Given/when/then keywords for rspec
+  specifications.'' \url{https://github.com/jimweirich/rspec-given}, 2017.
+\newblock [Online; accessed 28-March-2017].
+
+\bibitem{featurespec}
+Artima, ``Scalatest - getting started with featurespec.''
+  \url{http://www.scalatest.org/getting_started_with_feature_spec}, 2017.
+\newblock [Online; accessed 28-March-2017].
+
+\bibitem{spock-pease}
+Github, ``Pease.'' \url{http://pease.github.io/}, 2017.
+\newblock [Online; accessed 28-March-2017].
+
+\bibitem{kitchenham2002preliminary}
+B.~A. Kitchenham, S.~L. Pfleeger, L.~M. Pickard, P.~W. Jones, D.~C. Hoaglin,
+  K.~El~Emam, and J.~Rosenberg, ``Preliminary guidelines for empirical research
+  in software engineering,'' {\em IEEE Transactions on software engineering},
+  vol.~28, no.~8, pp.~721--734, 2002.
+
+\bibitem{runeson2012case}
+P.~Runeson, M.~Host, A.~Rainer, and B.~Regnell, {\em Case study research in
+  software engineering: Guidelines and examples}.
+\newblock John Wiley \& Sons, 2012.
+
+\bibitem{cohen2006qualitative}
+D.~Cohen and B.~Crabtree, ``Qualitative research guidelines project.''
+  \url{http://www.sswm.info/sites/default/files/reference_attachments/COHEN%202006%20Semistructured%20Interview.pdf},
+  2006.
+\newblock [Online; accessed 06-April-2017].
+
+\bibitem{limesurvey}
+LimeSurvey, ``Limesurvey: the online survey tool - open source suryeys.''
+  \url{https://www.limesurvey.org/}, 2017.
+\newblock [Online; accessed 06-April-2017].
+
+\bibitem{cummins2000we}
+R.~A. Cummins and E.~Gullone, ``Why we should not use 5-point likert scales:
+  The case for subjective quality of life measurement,'' in {\em Proceedings,
+  second international conference on quality of life in cities}, pp.~74--93,
+  2000.
+
+\bibitem{reichheld2003one}
+F.~F. Reichheld, ``The one number you need to grow,'' {\em Harvard business
+  review}, vol.~81, no.~12, pp.~46--55, 2003.
+
+\bibitem{jacoco}
+EclEmma, ``Eclemma \- jacoco java code coverage library.''
+  \url{http://www.eclemma.org/jacoco}/, 2017.
+\newblock [Online; accessed 07-April-2017].
+
+\bibitem{jacoco-coverage}
+M.~G. .~C. KG and Contributors, ``Jacoco \- coverage counter.''
+  \url{http://www.jacoco.org/jacoco/trunk/doc/counters.html}, 2017.
+\newblock [Online; accessed 07-April-2017].
+
+\bibitem{wiki:camelcase}
+Wikipedia, ``Camel case --- wikipedia{,} the free encyclopedia.''
+  \url{https://en.wikipedia.org/w/index.php?title=Camel_case&oldid=773178217},
+  2017.
+\newblock [Online; accessed 07-April-2017].
+
+\bibitem{maven}
+T.~A.~S. Foundatation, ``Maven 2013; introduction.''
+  \url{https://maven.apache.org/what-is-maven.html}, 2017.
+\newblock [Online; accessed 18-April-2017].
+
+\bibitem{junit-parameterized}
+Github, ``Parameterized tests - junit-team/junit4 wiki.''
+  \url{https://github.com/junit-team/junit4/wiki/parameterized-tests}, 2017.
+\newblock [Online; accessed 12-April-2017].
 
 \end{thebibliography}
