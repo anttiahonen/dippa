@@ -820,7 +820,7 @@ to fully get on board with Spectrum.
 Test code analysis was done to answer \textbf{RQ3} with metrics defined in chapter \ref{chapter:methods} section \ref{subsub:test}.
 Test code analysis was done with master branches of projects A and B, \textbf{before} and \textbf{after} the introduction of new BDD testing framework, to related
 low-level tests and their affected components. First the unit testing level changes are inspected with projects A and B.
-After this, the low-level testing metrics and changes in them are demonstrated with both projects.
+After this, the low-level testing metrics and changes in them are demonstrated with both projects. Finally, the findings are summarized.
 
 \subsection{Automated unit testing level}
 \label{subsub:unit-level-metrics}
@@ -870,14 +870,14 @@ to class methods.
 
 At the starting point with JUnit, project B had first a fair amount of around 3 to 4
 test methods per tested class method. With Spock, the average count of unit test methods per tested
-class method is at staggering 25 to 26 methods. In total there were 7 unit level specifications with Spock, but all of them were
+class method is at staggering 25 to 26 methods. In total there were 7 unit level feature methods with Spock, but all of them were
 data-driven tests. This resulted in 102 automatically generated separate test runs. As the number of study participants with Spock is low, this COTM-value might
 be an anomaly. Still, together with the later studied \textit{DDTM}-metric, the analysis displays
 a significant growth in use DDT. The advertisement of Spock's easy automatic test generation with DSL for data-driven testing~\cite{kapelonis2016java}
 seems to have merit.
 
 Both of studied BDD testing frameworks showed an increase in test case granularity with test code analysis and participant practice
-survey. With the given sample, \textbf{H1:} \textit{Developers will write more granular test cases} holds true.
+survey. With the given study sample, \textbf{H1:} \textit{Developers will write more granular test cases} holds true.
 
 \textbf{Code coverage} didn't show almost any changes at unit level in either project. As participants earlier answered in the survey, none
 of them had code coverage as an optimizing target for low-level tests. This could explain the low coverage percentage seen in
@@ -931,17 +931,50 @@ Table \ref{tab:low-metrics} dislays the values of these metrics in projects A an
 \textbf{RQ3} can be further analyzed for low-level testing with metrics displayed in table \ref{tab:low-metrics}.
 First studied metric is \textbf{CC}. With combined JUnit unit and integration tests, the instruction and branch coverage rises in both projects
 to around 50\%. After the introduction of BDD testing frameworks in projects, the combined CC for JUnit and new BDD tests remain
-virtually identical. Although other metrics show...........
+virtually identical. It can be concluded, that although other studied metrics show quite significant changes, CC remains
+unchanged.
 
-\newgeometry{left=1.5cm, right=1.5cm}
+Figure \ref{fig:coa-coc} part a. displays the change in \textbf{COA} after the introduction of BDD testing frameworks. Both of projects had closer to three
+than two assertions per test method with JUnit. With Spectrum, project A displayed a drop to approximately
+two assertions
+per test method. This is natural reaction to the more  \newgeometry{left=2.9cm, right=2.9cm} \noindent granular test cases - now there are more test methods that contain
+less assertions per method than before. The total count of assertions show an upward trend to earlier, as the total of 84 low-level
+test methods are a sum from far less test files (14 pcs.) than before (53 pcs. with JUnit).
+
+Project B displayed smaller change in COA after the introduction of Spock. It is hard to say whether there would be a significant
+change in this with larger sample of test files to analyze. The structure of Spock, having assertions in \textit{Then}-blocks,
+do not separate assertions to individual feature methods, instead one method can hold multiple blocks~\cite{spock}. How
+this would affect COA in the long run, remains uncertain from these results.
+
     \begin{figure}[H]%
         \centering
         \subfloat[Average count of assertions per test method]{{\includegraphics[width=7cm]{images/COA.png} }}%
         \qquad
         \subfloat[Average count of comments per test method]{{\includegraphics[width=7cm]{images/COC.png} }}%
         \caption{Test assertions and comments in projects}%
-        \label{fig:org-perception-two}%
+        \label{fig:coa-coc}%
     \end{figure}
+
+Figure \ref{fig:coa-coc} part b. shows the change in \textbf{COC} in projects. Commenting test cases and updating those
+comments was a practice that was found rarely done in earlier research~\cite{li2016automatically}. Compared to this,
+project A showed to be an exception earlier with JUnit, as there was approximately atleast one comment per test method.
+After the introduction of Spectrum, there was interesting change in test method commenting. The count of actual comments
+in tests dropped drastically to almost average zero comments per test method. When inspecting the change in \textbf{TMNWC}
+displayd in figure \ref{fig:tmnwc-ddtm} part a, there seems to be a correlation with the drastic change in test commenting
+practices and the test naming practices. Info that was earlier inserted as pure comments, seem to be now a part of test
+naming with \textit{describe} and \textit{it} blocks. This also allows that info to be a part of test output, so for instance
+the failing test output could help the developer to grasp the test situation faster.
+
+Project B with Spock showed virtually no change in commenting practices. There wasn't lot of commenting before and there still isn't
+commenting in place in tests with Spock. Interesting to see, is that also the possible textual descriptions of \textit{Given-When-Then} blocks
+were missing. The change in TMNWC in project B was about 50\% increase in test method name words, but as the block descriptions
+are optional, it is interesting to ponder how much more Spock actually promotes to write textual info into tests than
+JUnit. Unfortunately now, only one participant Spock testing habbits were studied.
+
+Earlier study~\cite{li2016automatically} had identified developers preferring the tests to be self-document- ing without commenting.
+Together with COC and TMNWC from both projects, there seems to be evidence to say that both BDD testing frameworks
+promote this aspect better than JUnit. The text descriptions as part of test method naming seems to promote this self-documenting
+aspect of low-level tests.
 
     \begin{figure}[H]%
         \centering
@@ -949,12 +982,80 @@ virtually identical. Although other metrics show...........
         \qquad
         \subfloat[Ratio of data-driven tests to standard low-level test methods]{{\includegraphics[width=7cm]{images/DDTM.png} }}%
         \caption{Test method naming and DDT in projects}%
-        \label{fig:org-perception-two}%
+        \label{fig:tmnwc-ddtm}%
     \end{figure}
 
-\restoregeometry
+\textbf{TMNWC} changes are displayed in figure \ref{fig:tmnwc-ddtm} part a. The relation between commenting practices
+and TMNWC was already discussed, but it's still good to highlight that in project A with Spectrum, there is on average
+almost 2.5 times words in test method names. The nested example groups and their code examples features in \textit{xSpec family} testing
+seem to promote much better information on test method names than JUnit. In project B, Spock displayed only 50\% increase in TMNWC.
+Tester habbits might be one of the reasons, but also the single line text description for test method naming could be a
+reason for this more mild increase.
+
+\textbf{DDTM} metrics can be seen in figure \ref{fig:tmnwc-ddtm} part b. Project A didn't have any DDT with JUnit at the start,
+nor did it have after the introduction of Spectrum. Spectrum and Java 8-lambdas allow automatic test method generation with
+usage through the language features, but the framework doesn't support this with DSL. Earlier with JUnit, Project B had about 2\% of
+all low-level test methods as data-driven. After the introduction of Spock, there were a drastic change:
+ 54\% of all
+feature methods\restoregeometry \noindent were data-driven. This metric supports the \textbf{H3:} \textit{developers will find it easier to maintain code}.
+Spock seems to promote DDT really well with it's DSL and thus, at least maintaining of low-level tests with different
+test conditions should be easier.
 
 \subsection{Change summary}
+
+{\renewcommand{\arraystretch}{1.3}
+\begin{table}[H]
+    \resizebox{\textwidth}{!}{%
+        \begin{tabular}{p{6.0cm}*{2}{p{4cm}}}
+
+        \headcol \textbf{Metric} & \textbf{Project A} & \textbf{Project B} \\ \hline
+
+        \rowcol \textit{\textbf{COTM}} & ++ & +++ \\
+        \textit{\textbf{CC}} & stagnant & stagnant \\
+        \rowcol \textit{\textbf{COA}} & - & - \\
+        \textit{\textbf{COC}} & - - - & stagnant \\
+        \rowcol\textit{\textbf{TMNWC}} & +++ & + \\
+        \textit{\textbf{DDTM}} & stagnant & +++ \\ \hline
+
+        \end{tabular}}
+        \caption {Test code analysis metrics change in projects} \label{tab:test-change}
+        \caption*{+ = Increase amount, - = Decrease amount}
+\end{table}
+}
+
+BDD testing frameworks introduced changes to almost all of the studied testing metrics. \textit{COTM} displayed a drastic change
+in both projects and especially with Spock and its data-driven testing. Both frameworks promote a lot more granular
+test cases than JUnit.
+
+\textit{Code coverage} remained virtually unchanged after the introduction of BDD testing frameworks. In
+hindsight, it was fairly uninteresting metric to study this kind of testing transformation. It might have had different
+kind of results if actual BDD was practiced during the study.
+
+\textit{COA} had decrease in both projects. With project B, the amount of test files to study was fairly low and thus it is
+hard to draw real conclucions. Project A on the other hand displayed slightly more decrease in \textit{COA}. This seems natural
+to the more granular use of test methods.
+
+\textit{COC} showed a significant change in project A test commenting practices. Earlier with JUnit, test commenting was an often
+used practice. After the introduction of Spectrum, this practice appeared to be substantially less used. Project B didn't
+have regular test commenting practices with JUnit. Spock didn't change the fact and test commenting remained a practice
+that was seldom used.
+
+\textit{TMNWC} changed in both projects. Project A had almost 2.5 times increase test method name word count with Spectrum. In
+project B, there was around 50\% increase in \textit{TMNWC}. Both BDD testing families seem to promote more information on test
+names than JUnit. Spectrum and its internal structure seems to promote this even more than Spock.
+
+Data-driven testing was only in place in project B. Before with JUnit, DDT was used only a few times in total
+of low-level testing. With Spock, \textit{DDTM}-metric increased tenfolds. Around half of the new tests with Spock were data-driven.
+It can be concluded that Spock promotes the use of data-driven testing much more than JUnit.
+
+Table \ref{tab:test-change} summarises the results for \textbf{RQ3} - the changes in written low-level test and code coverage.
+The main finding is:
+
+\begin{center}
+\begin{topbot}
+\textbf{RQ3}: \textit{In low-level testing, BDD testing frameworks produce more granular and self-documenting test cases than JUnit.}
+\end{topbot}
+\end{center}
 
 \section{Comparison of BDD testing frameworks}
 

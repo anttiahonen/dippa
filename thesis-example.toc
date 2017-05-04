@@ -78,14 +78,14 @@
 \contentsline {section}{\numberline {6.3}Test code analysis}{83}{section.6.3}
 \contentsline {subsection}{\numberline {6.3.1}Automated unit testing level}{83}{subsection.6.3.1}
 \contentsline {subsection}{\numberline {6.3.2}Automated unit \& integration testing levels}{85}{subsection.6.3.2}
-\contentsline {subsection}{\numberline {6.3.3}Change summary}{87}{subsection.6.3.3}
-\contentsline {section}{\numberline {6.4}Comparison of BDD testing frameworks}{87}{section.6.4}
-\contentsline {chapter}{\numberline {7}Conclusions}{88}{chapter.7}
-\contentsline {section}{\numberline {7.1}Summary}{88}{section.7.1}
-\contentsline {section}{\numberline {7.2}Future work}{88}{section.7.2}
-\contentsline {chapter}{\numberline {A}Interview questions}{96}{appendix.A}
-\contentsline {section}{\numberline {A.1}Interview for demographic purposes}{96}{section.A.1}
-\contentsline {chapter}{\numberline {B}Surveys}{98}{appendix.B}
-\contentsline {section}{\numberline {B.1}Survey regarding JUnit in automated low-level testing}{98}{section.B.1}
-\contentsline {section}{\numberline {B.2}Survey regarding BDD testing framework in automated low-level testing}{102}{section.B.2}
-\contentsline {chapter}{\numberline {C}Gradle build configurations}{106}{appendix.C}
+\contentsline {subsection}{\numberline {6.3.3}Change summary}{88}{subsection.6.3.3}
+\contentsline {section}{\numberline {6.4}Comparison of BDD testing frameworks}{89}{section.6.4}
+\contentsline {chapter}{\numberline {7}Conclusions}{90}{chapter.7}
+\contentsline {section}{\numberline {7.1}Summary}{90}{section.7.1}
+\contentsline {section}{\numberline {7.2}Future work}{90}{section.7.2}
+\contentsline {chapter}{\numberline {A}Interview questions}{98}{appendix.A}
+\contentsline {section}{\numberline {A.1}Interview for demographic purposes}{98}{section.A.1}
+\contentsline {chapter}{\numberline {B}Surveys}{100}{appendix.B}
+\contentsline {section}{\numberline {B.1}Survey regarding JUnit in automated low-level testing}{100}{section.B.1}
+\contentsline {section}{\numberline {B.2}Survey regarding BDD testing framework in automated low-level testing}{104}{section.B.2}
+\contentsline {chapter}{\numberline {C}Gradle build configurations}{108}{appendix.C}
