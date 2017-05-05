@@ -36,10 +36,10 @@
 \contentsline {subsection}{\numberline {3.1.2}Extending JUnit for Spring Framework domain}{25}{subsection.3.1.2}
 \contentsline {section}{\numberline {3.2}Implementation level BDD testing frameworks for JVM}{27}{section.3.2}
 \contentsline {subsection}{\numberline {3.2.1}xSpec family}{27}{subsection.3.2.1}
-\contentsline {subsubsection}{RSpec}{27}{subsubsection*.19}
-\contentsline {subsubsection}{Spectrum}{31}{subsubsection*.25}
+\contentsline {subsubsection}{\numberline {3.2.1.1}RSpec}{27}{subsubsection.3.2.1.1}
+\contentsline {subsubsection}{\numberline {3.2.1.2}Spectrum}{31}{subsubsection.3.2.1.2}
 \contentsline {subsection}{\numberline {3.2.2}Gherkin family}{33}{subsection.3.2.2}
-\contentsline {subsubsection}{Spock}{34}{subsubsection*.29}
+\contentsline {subsubsection}{\numberline {3.2.2.1}Spock}{34}{subsubsection.3.2.2.1}
 \contentsline {chapter}{\numberline {4}Methods}{38}{chapter.4}
 \contentsline {section}{\numberline {4.1}Research questions}{38}{section.4.1}
 \contentsline {section}{\numberline {4.2}Research hypotheses}{39}{section.4.2}
@@ -47,11 +47,11 @@
 \contentsline {subsection}{\numberline {4.3.1}Type of study and purpose}{40}{subsection.4.3.1}
 \contentsline {subsection}{\numberline {4.3.2}Process for selecting teams and developers}{41}{subsection.4.3.2}
 \contentsline {subsection}{\numberline {4.3.3}Data collection}{41}{subsection.4.3.3}
-\contentsline {subsubsection}{Interview for demographic purposes}{42}{subsubsection*.34}
-\contentsline {subsubsection}{JUnit survey}{42}{subsubsection*.35}
-\contentsline {subsubsection}{BDD testing frameworks survey}{43}{subsubsection*.36}
-\contentsline {subsubsection}{Interview about benefits and drawbacks of new BDD testing framework}{44}{subsubsection*.39}
-\contentsline {subsubsection}{Test code analysis}{44}{subsubsection*.40}
+\contentsline {subsubsection}{\numberline {4.3.3.1}Interview for demographic purposes}{42}{subsubsection.4.3.3.1}
+\contentsline {subsubsection}{\numberline {4.3.3.2}JUnit survey}{42}{subsubsection.4.3.3.2}
+\contentsline {subsubsection}{\numberline {4.3.3.3}BDD testing frameworks survey}{43}{subsubsection.4.3.3.3}
+\contentsline {subsubsection}{\numberline {4.3.3.4}Interview about benefits and drawbacks of new BDD testing framework}{44}{subsubsection.4.3.3.4}
+\contentsline {subsubsection}{\numberline {4.3.3.5}Test code analysis}{44}{subsubsection.4.3.3.5}
 \contentsline {section}{\numberline {4.4}Validity and reliability}{47}{section.4.4}
 \contentsline {subsection}{\numberline {4.4.1}Construct validity}{47}{subsection.4.4.1}
 \contentsline {subsection}{\numberline {4.4.2}Internal validity}{48}{subsection.4.4.2}
@@ -64,28 +64,28 @@
 \contentsline {section}{\numberline {6.1}First interview: demographics and projects}{59}{section.6.1}
 \contentsline {section}{\numberline {6.2}Surveys and BDD framework feedback interview analyzed}{61}{section.6.2}
 \contentsline {subsection}{\numberline {6.2.1}Automated low-level testing developer practices}{61}{subsection.6.2.1}
-\contentsline {subsubsection}{Software development \& testing time and effort usage}{61}{subsubsection*.53}
-\contentsline {subsubsection}{Test optimizing targets}{65}{subsubsection*.57}
-\contentsline {subsubsection}{Test understandability and informativeness }{67}{subsubsection*.60}
-\contentsline {subsubsection}{Test refactoring techniques}{71}{subsubsection*.65}
-\contentsline {subsubsection}{Test commenting practices}{72}{subsubsection*.67}
-\contentsline {subsubsection}{Unit testing practices}{74}{subsubsection*.70}
-\contentsline {subsubsection}{Change summary}{76}{subsubsection*.74}
-\contentsline {subsection}{\numberline {6.2.2}Developer perception towards automated low-level testing}{77}{subsection.6.2.2}
-\contentsline {subsubsection}{Developer perception of low-level testing}{77}{subsubsection*.75}
-\contentsline {subsubsection}{Developer loyalty towards low-level testing}{81}{subsubsection*.81}
-\contentsline {subsubsection}{Change summary}{82}{subsubsection*.83}
-\contentsline {section}{\numberline {6.3}Test code analysis}{83}{section.6.3}
-\contentsline {subsection}{\numberline {6.3.1}Automated unit testing level}{83}{subsection.6.3.1}
-\contentsline {subsection}{\numberline {6.3.2}Automated unit \& integration testing levels}{85}{subsection.6.3.2}
-\contentsline {subsection}{\numberline {6.3.3}Change summary}{88}{subsection.6.3.3}
-\contentsline {section}{\numberline {6.4}Comparison of BDD testing frameworks}{89}{section.6.4}
-\contentsline {chapter}{\numberline {7}Conclusions}{90}{chapter.7}
-\contentsline {section}{\numberline {7.1}Summary}{90}{section.7.1}
-\contentsline {section}{\numberline {7.2}Future work}{90}{section.7.2}
-\contentsline {chapter}{\numberline {A}Interview questions}{98}{appendix.A}
-\contentsline {section}{\numberline {A.1}Interview for demographic purposes}{98}{section.A.1}
-\contentsline {chapter}{\numberline {B}Surveys}{100}{appendix.B}
-\contentsline {section}{\numberline {B.1}Survey regarding JUnit in automated low-level testing}{100}{section.B.1}
-\contentsline {section}{\numberline {B.2}Survey regarding BDD testing framework in automated low-level testing}{104}{section.B.2}
-\contentsline {chapter}{\numberline {C}Gradle build configurations}{108}{appendix.C}
+\contentsline {subsubsection}{\numberline {6.2.1.1}Software development \& testing time and effort usage}{61}{subsubsection.6.2.1.1}
+\contentsline {subsubsection}{\numberline {6.2.1.2}Test optimizing targets}{65}{subsubsection.6.2.1.2}
+\contentsline {subsubsection}{\numberline {6.2.1.3}Test understandability and informativeness }{67}{subsubsection.6.2.1.3}
+\contentsline {subsubsection}{\numberline {6.2.1.4}Test code repetition reducing techniques}{71}{subsubsection.6.2.1.4}
+\contentsline {subsubsection}{\numberline {6.2.1.5}Test commenting practices}{72}{subsubsection.6.2.1.5}
+\contentsline {subsubsection}{\numberline {6.2.1.6}Unit testing practices}{74}{subsubsection.6.2.1.6}
+\contentsline {subsubsection}{\numberline {6.2.1.7}Change summary}{77}{subsubsection.6.2.1.7}
+\contentsline {subsection}{\numberline {6.2.2}Developer perception towards automated low-level testing}{78}{subsection.6.2.2}
+\contentsline {subsubsection}{\numberline {6.2.2.1}Developer perception of low-level testing}{78}{subsubsection.6.2.2.1}
+\contentsline {subsubsection}{\numberline {6.2.2.2}Developer loyalty towards low-level testing}{83}{subsubsection.6.2.2.2}
+\contentsline {subsubsection}{\numberline {6.2.2.3}Change summary}{84}{subsubsection.6.2.2.3}
+\contentsline {section}{\numberline {6.3}Test code analysis}{85}{section.6.3}
+\contentsline {subsection}{\numberline {6.3.1}Automated unit testing level}{85}{subsection.6.3.1}
+\contentsline {subsection}{\numberline {6.3.2}Automated unit \& integration testing levels}{87}{subsection.6.3.2}
+\contentsline {subsection}{\numberline {6.3.3}Change summary}{90}{subsection.6.3.3}
+\contentsline {section}{\numberline {6.4}Comparison summary of BDD testing frameworks}{91}{section.6.4}
+\contentsline {chapter}{\numberline {7}Conclusions}{92}{chapter.7}
+\contentsline {section}{\numberline {7.1}Summary}{92}{section.7.1}
+\contentsline {section}{\numberline {7.2}Future work}{92}{section.7.2}
+\contentsline {chapter}{\numberline {A}Interview questions}{100}{appendix.A}
+\contentsline {section}{\numberline {A.1}Interview for demographic purposes}{100}{section.A.1}
+\contentsline {chapter}{\numberline {B}Surveys}{102}{appendix.B}
+\contentsline {section}{\numberline {B.1}Survey regarding JUnit in automated low-level testing}{102}{section.B.1}
+\contentsline {section}{\numberline {B.2}Survey regarding BDD testing framework in automated low-level testing}{106}{section.B.2}
+\contentsline {chapter}{\numberline {C}Gradle build configurations}{110}{appendix.C}

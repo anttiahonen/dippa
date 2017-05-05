@@ -8,12 +8,6 @@ presented. Second, survey and interview results regarding JUnit compared to Spoc
 code analysis is presented and finally
 with all the above mentioned results, Spock and Spectrum are compared against each other.
 
-
-%-Define the population to which inferential statistics and predictive models apply.\newline
-%-RQ1 and RQ2 answered by comparing initial and post surveys\newline
-%-Comparing Spock and Spectrum vs. each other\newline
-%-RQ3 answered by comparing observed actual test implementation changes\newline
-
 \section{First interview: demographics and projects}
 \label{section:demographics}
     First interview was conducted to study about the demographics of participants and projects under research.
@@ -207,7 +201,7 @@ to \textit{refactoring} (30\%).
 Changes in automated testing time and effort were studied with \textbf{Q2':} \textit{Compared to JUnit, How do you spend your low-level automated testing time?}
 Participant A answered
 to use around the same time per test case with Spectrum, but also answered to use slightly more effort in initial \textit{thinking} of test
-case and more time in test case \textit{implementation}. As the overall testing effort \textit{refactoring} was the same amount, therefore it might
+case and more effort in test case \textit{implementation}. The overall test \textit{refactoring} effort was the same amount. All effort changes combined, it might
 be feasible to think that the time per test case might have increased. In the feedback interview of \textbf{\textit{Spectrum}} with participant
 A, he said that the implementation and how to effectively structure the usage of Java 8 lambdas and Spectrum variables
 in them took extra time compared to JUnit. Participant B asnwered to use slightly more time with Spectrum on all aspects of low-level testing.
@@ -355,7 +349,7 @@ Summing up, participant surveys and interviews seem to support partially the \te
 Although, participant B find it slightly harder to understand low-level tests at times, there is still more evidence for
 easier undestanding. H2 is further studied with following questions in this section.
 
-Table \ref{tab:changes-pt4} displays questions \textbf{Q5 \& Q5'} and their results. Q5 was chosen to see first
+Table \ref{tab:changes-pt4} displays questions \textbf{Q5 \& Q5'} and their results. Q5 was chosen to see
 how easily the JUnit test methods can be \textbf{structured} and \textbf{understood} to hold different parts of the test. JUnit testing literature states that
 the structure should be done with \textit{Arrange-Act-Assert}~\cite{langr2015pragmatic}, but it is not enforced and thus can lead to poorly structured
 tests which are hard to understand~\cite{kapelonis2016java}. Q5 studies if this does hold true.
@@ -406,8 +400,8 @@ more difficult, but the reading of test case structure could be summed up to be 
 In the interview he said that the main benefits of Spectrum was the easier spotting of different parts of test. Participant
 C found it ranging from less to a lot less difficult structuring and reading the tests.
 
-In conclusion, the results show that \textit{structuring} and \textit{reading} of the different parts of tests are \textbf{more easier}
-with BDD-testing frameworks than with JUnit. This finding supports the \textbf{H2}, but for full conclusion, the next
+In conclusion, the results show that \textit{structuring} and \textit{reading} of the different parts of tests was found almost unanimously \textbf{more easier}
+with BDD-testing frameworks than with JUnit. This finding supports the \textbf{H2}, but for more evidence, the next
 questions Q6 and Q6' need to be analyzed.
 
 Table \ref{tab:changes-pt5} displays questions \textbf{Q6 \& Q6'} with results. First Q6 studies how \textbf{informative} participants
@@ -436,10 +430,19 @@ hold naturally too much information in total.
     \end{table}
 
 Q6' studies the change of test output informativeness after the introduction of new BDD testing framework. Participant A
-found a slight increase in informativeness of output. Hypothesis 2 talk here!!!
+found a slight increase in informativeness of output. Participant B found the output as informative as before, whereas participant
+C found it more informative. As the \textbf{xSpec family} testing frameworks allow free text description to their
+code example groups and code examples, the answer of participant B was further studied in interview. He stated that
+he usually only checks from the output whether test passes or fails and as such doesn't see\newgeometry{bottom=1cm}\noindent any improvement when
+comparing Spectrum and JUnit.
 
-\clearpage
-\subsubsection{Test refactoring techniques}
+On the whole, it seems that \textbf{H2:} \textit{"Developers will find it easier to understand test cases"} has strong
+evidence to support it. However, the results of questions Q4'-Q6' are not clear-cut unanimous and especially the nested structure of \textbf{xSpec family}
+code example groups might not be so clear at the beginning. In any case, it can be concluded that BDD testing
+frameworks allow to structure the tests for separate parts, which helps in identifying \textit{context, action}
+and \textit{assertions} more explicitly from tests.
+
+\subsubsection{Test code repetition reducing techniques}
 
 Table \ref{tab:changes-pt6} displays the usage of different \textbf{repetition reducing} techniques. First \textbf{Q7:}
 \textit{How much are the following repetition reducing techniques used in your low-level testing?} studies how much a
@@ -480,14 +483,21 @@ to be \textit{"a practice to avoid, it's devil's work"}.
             \end{tttabular}}
             \caption {Used repetition reducing techniques for low-level testing and changes in their use} \label{tab:changes-pt6}
     \end{table}
+\restoregeometry
 
 \textbf{Q7':} \textit{Compared to JUnit, how much are the following repetition reducing techniques used in your low-level testing?}
 studies how techniques are used differently with the new BDD testing framework to reduce repetition. Participant A
 said to use techniques the same amount as before, with the exception of lifecycle hook \textit{before -each} being used more.
 In the feedback interview, participant A stated that there was some confusion when to use \textit{before -all}
-lifecycle hook and therefore hook \textit{before -each} was mainly used.
+lifecycle hook and therefore hook \textit{before -each} was mainly used. The increased use of \textit{before -each} is
+explained by the nested code example groups, which each support their own separate lifecycle hooks. Participant B used
+the repetition reducing techniques the same amount, except for slightly less used \textit{extract method}. Participant
+C answered to use \textit{automatic test generation via test method parametrization} (DDT) a lot more than before. Test
+code analysis in section \ref{subsub:low-level-metrics} supports this claim.
 
-\textbf{TO BE CONTINUED}
+In conclusion, both BDD testing frameworks allow new ways to reduce repetition in test code. How much they are used
+seems to be independent on the developer. Later is studied how much more maintainable these techniques
+make the test code in eyes of the participants.
 
 \subsubsection{Test commenting practices}
     \begin{figure}[ht]%
@@ -537,14 +547,17 @@ project A had quite much commenting in test methods and project B very little.
 Questions \textbf{Q8'} and \textbf{Q9'} in table \ref{tab:changes-pt7} study the changes in commenting with new BDD testing framework.
 Participant A answers to add more comments with \textbf{\textit{Spectrum}} to low-level test cases
 than before and also to update the comments slightly more.
-%TODO kato taaaaa kaymaan toteen
 Here the test code analysis data in section \ref{subsub:low-level-metrics} doesn't support this directly, as pure comments
-in test methods have decreased. But overall
+in test methods have decreased drastically. But overall
 the test contains more textual description in use with code example group and code example descriptions, which can be seen
-as increased test method name word count.
+as increased test method name word count. Participant B answered that he adds and updates the comments with Spectrum the same amount as before.
+This is also in contradiction with the test code analysis change in \textit{COC}-metric of project A. Participant C said to add and
+update the comments with Spock the same amount as before. Test code analysis seems to also supports this.
 
-\textbf{TO BE CONTINUED}
-\clearpage
+In conclusion, there seems to be a high possibility
+that Q8' and Q9' were not understood by all participants in the manner that their original intent was. The actual changes
+in commenting practices are examined in more detail in test code analysis section \ref{subsub:low-level-metrics}.
+
 \subsubsection{Unit testing practices}
 Pure unit testing practices were also studied with the participant surveys. First the \textbf{granularity} of unit tests were
 studied with questions \textbf{Q10} and \textbf{Q10'} displayed in table \ref{tab:changes-pt8}. Participants A and B answered
@@ -576,16 +589,24 @@ for project B was slightly lower than the answered four to five assertions per t
 
 Changes in unit testing granularity after introduction of BDD testing framework were studied with Q10'. Participant A
 answered that with \textbf{\textit{Spectrum}} he wrote more test methods per class method with less assertion inside individual
-test methods. Hypothesis 1 talk here!!
+test methods. Participant B used also Spectrum and he felt that he wrote slightly more test methods per class method and
+these test methods contained slightly less assertions in them.
+Participant C answered the question for Spock. He felt that he wrote more test methods per class method with same amount of assertions in them.
+In the interviews, both participants A and B said that
+Spectrum promotes to write more granular tests. Participant A also felt that this is one of the main benefits of Spectrum over
+JUnit.
 
-\clearpage
+Summing up, it can be said that developers feel that they write more granular unit test cases with more test methods in them.
+Test code analysis in sections \ref{subsub:unit-level-metrics} and \ref{subsub:low-level-metrics}
+are quite good in sync with the participant answers.
+Results from Q10 \& Q10' and interviews support the \textbf{H1:} \textit{Developer will write more granular test cases}.
 
-In related research, survey participant developers found unit test \textbf{isolation} to be a demanding practice~\cite{daka2014survey}.
+Next studied unit testing practice is \textit{isolation}. In related research, survey participant developers found unit test isolation to be a demanding practice~\cite{daka2014survey}.
 Therefore questions \textbf{Q11, Q11', Q12} and \textbf{Q12'} displayed in table \ref{tab:changes-pt9} are aimed to learn more about isolation in unit testing.
 First survey question Q11 asks what mocking library is normally used in JUnit unit test isolation. After that,
-\textbf{Q12} studies wich aspects of isolating are find hard.
+Q12 studies wich aspects of isolating are find hard.
 
-Usually unit test isolation is done with \textit{Mockito} by all participants. Participant C is the only
+Usually unit test isolation was done with \textit{Mockito} by all participants. Participant C is the only
 one that found all aspects of unit test isolation to be easy or slightly easy. Participant A found isolation
 usually slightly easy with \textit{verifying} of mock object actions being moderate in difficulty. Participant B
 found most of isolation easy, but \textit{stubbing} was considered slightly hard. Altogether, isolation activities in JUnit unit testing
@@ -626,13 +647,13 @@ After the introduction of \textbf{\textit{Spectrum}} in project A, the mocking l
 is a Java-based custom runner for JUnit. Although the mocking library was the same, participant A
 found all aspects on unit test isolation slightly harder than before. This was further analyzed in interview with participant,
 where he states that the usage of \textit{Mockito}-functions inside \textbf{lifecycle hooks} and \textbf{block lambdas} was not
-as straightforward as with JUnit tests.
-\clearpage
+as straightforward as with JUnit tests. Participant B didn't feel any change in difficulty of usage of \textit{Mockito}
+when using it with Spectrum instead of JUnit. Participant C answered to still use \textit{Mockito} with Spock and this
+was interesting. Later when analyzing the test code, I found out that due to low number of new unit tests, no mocking
+was needed in them. As seen in earlier chapters, Spock provides its internal mocking. Unfortunately within this time
+period of study, no comparison could be made between \textit{Mockito} and Spock's internal mocking. In brief, it could
+be said that for unit test \textit{isolation}, there might exist a learning curve with Spectrum and usage of \textit{Mockito} with it.
 
-Questions \textbf{Q13} and \textbf{Q13'} were aimed to study when are unit tests add for code with JUnit and the new
-BDD testing framework. The main idea was to see, does the introduction of BDD testing framework by itself promote test firsts -principle without
-additional changes in testing. For participant A there was no change, as the unit tests were added
-after the implementation with both JUnit and \textbf{\textit{Spectrum}}}.
 
     \begin{table}[H]
         \resizebox{\textwidth}{!}{%
@@ -650,7 +671,59 @@ after the implementation with both JUnit and \textbf{\textit{Spectrum}}}.
             \caption {Unit testing practices and changes in them} \label{tab:changes-pt10}
     \end{table}
 
+Questions \textbf{Q13} and \textbf{Q13'} were aimed to study when are unit tests add for code with JUnit and the new
+BDD testing framework. The main idea was to see, does the introduction of BDD testing framework by itself promote test first -principle without
+additional changes in testing. For participant A there was no change, as the unit tests were added
+after the implementation with both JUnit and \textbf{\textit{Spectrum}}}. Participants B and C experienced also no change
+in when the tests are added for code. Both said to add unit tests during implementation.
+
+It seems that although implementation
+level BDD-testing frameworks were originally designed to help with test first -principle, they don't seem to promote this
+in study context. Still, these frameworks do seem to work quite well within the studied aspects of low-level testing
+without the use of BDD.
+
 \subsubsection{Change summary}
+
+{\renewcommand{\arraystretch}{1.3}
+\begin{table}[H]
+    \resizebox{\textwidth}{!}{%
+        \begin{tabular}{p{10.0cm}p{5cm}}
+
+        \headcol \textbf{Benefit} & \textbf{Participants agreeing} \\ \hline
+
+        \rowcol Writing more granular test cases  & A, B, C \\
+        Less time used in testing & C \\
+        \rowcol Easier to understand test & A, C \\
+        Easier to structure test for different parts & A, C \\
+        \rowcol Easier to read test for different parts & A, B, C \\
+        More informative test output & A, C \\
+        \rowcol Less repetition through lifecycle hooks & A \\
+        Easier data-driven testing & C \\
+        & \\
+        \headcol \textbf{Drawback} & \\ \hline
+        \rowcol More time and effort used in testing  & A, B \\
+        Slightly harder to understand test & B \\
+        \rowcol Slightly harder to isolate unit tests & A \\
+        \end{tabular}}
+        \caption {Developer changes in low-level testing practices} \label{tab:practice-change}
+\end{table}
+}
+
+To answer \textbf{RQ1}, table \ref{tab:practice-change} displays the summary of changes in low-level testing practices with new BDD test
+frameworks. There were lot of practices where at least two out of third participants felt improvement over JUnit.
+Some parts of studied aspects of low-level testing remained unchanged after the introduction of BDD testing framework.
+There were only few parts where practice changes with BDD testing frameworks resulted in drawbacks compared to JUnit. More
+specific, only Spectrum was found problematic at times. Main findings to RQ1 are:
+
+\vskip 1mm
+\begin{topbot}
+\textit{In low level testing, BDD testing frameworks change developers to write more granular test cases. Test
+context, action and assertions are easier to identify from the test than before. There is also evidence supporting
+overall easier understanding of tests with more informative test output. Repetition can also potentially be reduced more easily through
+different framework features.
+\newline\newline Changing to xSpec family test framework Spectrum introduces a steeper learning curve than Gherkin family Spock.
+At the beginning, unit test isolation and understanding of tests can potentially be harder with Spectrum than with JUnit.}
+\end{topbot}
 
 \clearpage
 
@@ -660,7 +733,7 @@ This section answer the
 \textbf{RQ2: }\textit{How does behavior-driven testing frameworks change developer perception of working with automated low-level
 testing compared to JUnit framework?} First, developer perception of automated low-level testing and changes in it are
 analyzed with survey and interviews. Second, developer loyalty towards low-level automated testing and specific testing
-frameworks are studied with \textbf{NPS} survey questions and interviews.
+frameworks are studied with \textbf{NPS} survey questions and separate interviews.
 
 \subsubsection{Developer perception of low-level testing}
     \begin{figure}[ht]
@@ -683,7 +756,7 @@ the developer perception towards low-level testing using Daka and Fraser's surve
 \textbf{Q15a} in table \ref{tab:changes-pt11} studies the developer perception aspect further. Its questions have originally
 been used individually in two different studies~\cite{williams2009effectiveness}~\cite{li2016automatically}. The original
 questions and their answers are displayed in figure \ref{fig:org-perception-two}. Interesting fact was that over 90\% of
-original survey respondents feel that unit tests help in producing higher quality code than without~\cite{williams2009effectiveness} them.
+original survey respondents feel that unit tests help in producing higher quality code than without them~\cite{williams2009effectiveness}.
 Around same 90\% of different study participants feel that maintaining unit tests is important for system quality~\cite{li2016automatically}.
 
     \begin{figure}[ht]%
@@ -699,7 +772,8 @@ Participants in this study based on their perception towards low-level automated
 to category. Participants A and B are close to each other, they feel that
 \textit{writing} low-level tests is somewhat difficult, \textit{enjoyment} in writing is neutral or negative and \textit{maintaining}
 of low-level tests is seen at least somewhat difficult. They both still have trust that low-level testing is \textit{helpful in
-finding defects}, but \textbf{don't} feel that JUnit \textit{promotes to write high quality test code}.
+finding defects}, but \textbf{don't} feel that JUnit \textit{promotes to write high quality test code}. Participants
+A and B seem to fall into same category as majority of respondents in the original research.
 
 Participant C could be categorized into a testing oriented developer when inspecting perception towards
 low-level testing. He enjoys \textit{writing} low-level tests and doesn't find it that difficult. He also doesn't find
@@ -709,8 +783,9 @@ tests will \textit{help in finding defects}, but he \textbf{doesn't} feel that J
 
 Although all study participants feel that JUnit doesn't promote in writing higher quality test code, all of them still
 believe that low-level tests \textit{help in producing higher quality code}. They all feel that \textit{maintaining}
-low-level tests and their documentation is important for the system quality. Table \ref{tab:changes-pt11} displays
-the detailed answers of participants.
+low-level tests and their documentation is important for the system quality. All of the participants seem to follow the
+majority of developers in previous researches regarding test helping in quality and test maintaining importance.
+Table \ref{tab:changes-pt11} displays the detailed answers of participants.
 
     \begin{table}[H]
         \resizebox{\textwidth}{!}{%
@@ -743,6 +818,18 @@ the detailed answers of participants.
 Table \ref{tab:changes-pt12} display questions \textbf{Q14'} and \textbf{Q15a'} together with their results. With \textbf{\textit{Spectrum}}
 there exists some controversial and interesting results. Participant A somewhat agrees that \textit{writing}
 and \textit{maintaining} of low-level tests with Spectrum is more difficult than with JUnit.
+Writing difficulty was further analyzed in
+the interview, where he states that the learning curve how to structure code example groups and code examples was still ongoing.
+Also what to write in \textit{describe}-blocks was somewhat difficult. Slight increase in difficulty in maintaining low-level
+tests with Spectrum comes from the use of example groups properly, as participant A feels that it
+isn't always straightforward. In spite of slightly harder maintenance in total, he feels that it is easier to reduce repetition
+with Spectrum's \textit{lifecycle hooks}.
+
+Although writing and maintenance were found slightly harder, participant A somewhat agrees that he \textit{enjoys} writing low-level
+tests with Spectrum more than with JUnit. He also thinks that Spectrum allows other developers to \textit{understand} the production
+code better than earlier with JUnit. Participant A feels that Spectrum \textit{promotes him to write higher quality test code} than
+JUnit. In addition, he felt that \textit{maintaining} of Spectrum tests was somewhat more important for system quality, but
+didn't see Spectrum helping in producing hiqher quality production code.
 
     \begin{table}[H]
         \resizebox{\textwidth}{!}{%
@@ -768,22 +855,31 @@ and \textit{maintaining} of low-level tests with Spectrum is more difficult than
             \caption {Developer perception changes in low-level testing with \textit{Spectrum/Spock}} \label{tab:changes-pt12}
     \end{table}
 
-Writing difficulty was further analyzed in
-the interview, where he states that the learning curve how to structure code example groups and code examples was still ongoing.
-Also what to write in \textit{describe}-blocks was somewhat difficult. Slight increase in difficulty in maintaining low-level
-tests with Spectrum comes from the use of example groups properly, as participant A feels that it
-isn't always straightforward. In spite of slightly harder maintenance in total, he feels that it is easier to reduce repetition
-with Spectrum's \textit{lifecycle hooks}.
+Participant B finds \textit{writing} of low-level tests with Spectrum more difficult than with JUnit. This was further studied in the interview,
+where he said that quite much of the trouble in writing came from Java features used to write Spectrum tests, but also one cause was the more difficult
+structuring of tests. Both participants A
+and B agree or strongly agree that they would like to have \textit{more tool support} for Spectrum. This was studied in following interviews,
+where both would like to see more IDE support. For most of the statements, participant B neither agrees nor disagrees. He
+disagrees with the statement that \textit{Spectrum promotes to write higher quality test code than JUnit}. This was further
+discussed in the interview, where he says that he feels that the test case structure with Spectrum is more complex than
+with JUnit. Participant B disagreed with statements that Spectrum \textit{helps producing higher quality production code} than JUnit
+or that \textit{maintaining} Spectrum tests would be \textit{more important} for system quality.
 
-\textbf{Continue later}
+Participant C disagreed that \textit{writing} and \textit{maintaining} of low-level tests with Spock is more difficult than with JUnit.
+In the following interview, he stated that writing tests was quick to learn and they could be more easily divided
+into logical parts with \textit{Given-When-Then} blocks. It is interesting to see that participant C initially already
+\textit{enjoyed} writing low-level tests with Junit and agreed to \textit{enjoy} even more low-level testing with Spock.
+With Spock, he also feels that other developers will \textit{understand} the implemented unit or feature better than with JUnit.
+Participant C agrees that all in all Spock \textit{promotes} him to write higher quality test code}. In total, participant C
+seemed to perceive Spock well, as he also somewhat agrees that Spock \textit{helps to produce overall higher quality code} and that
+\textit{maintaining} of Spock tests is more important for system quality.
 
 Table \ref{tab:changes-pt13} displays question \textbf{Q15b} and its answers. Q15b holds two sub-question statements that the participant can answer
 if they feel the same way or not. Sub-question 1 relates directly to hypothesis 2 and sub-question 2 to
-
-hypothesis 3. Participant A feels that he writes both more \textit{understandable} and more \textit{maintainable} low-level
-tests with \textbf{\textit{Spectrum}} than with JUnit.
-
-\textbf{Continue later}
+hypothesis 3. Participant A and C feel that they write both more \textit{understandable} and more \textit{maintainable} low-level
+tests with Spectrum and Spock than with JUnit. Participant B on the other hand feels neither sub-question statements
+to be true. In the feedback interview, these questions were further studied. Participant B feels that Spectrum has just a
+different way of doing things than JUnit and both have their areas where they perform better than the other.
 
     \begin{table}[H]
         \resizebox{\textwidth}{!}{%
@@ -801,6 +897,26 @@ tests with \textbf{\textit{Spectrum}} than with JUnit.
             \caption {Developer perception towards \textit{Spectrum/Spock}} \label{tab:changes-pt13}
 
     \end{table}
+
+Many of the made hypotheses get support from these results.
+\textbf{H2:} \textit{"Developers will find it easier to understand test cases"} seems to have more evidence as two out of
+three participants find test cases more understandable. \textbf{H3:} \textit{"Developers will find it easier to maintain code"}
+has some results supporting it. Only Spock tests were perceived as easier to maintain than JUnit ones, but both Spectrum
+and Spock had developers that felt new tests with BDD testing frameworks would act as easier to understand documentation for the
+production code. This living documentation is one the claims of BDD literature~\cite{smart2014bdd} and it seems to have
+merit. In total, H3 seems to hold true to an extent.
+\textbf{H4:} \textit{"Developers will perceive working with low-level automated testing more enjoyable"} has two out
+of three developers agreeing with the statement. This could be interesting to study in a larger scale, as low enjoyment~\cite{daka2014survey}
+and motivation~\cite{runeson2006survey} in unit testing was found problematic in earlier researches. With the results from
+this study, it can't be said with certainty that BDD testing frameworks are the answer for enjoyment problem. Although
+there is more evidence to support H4 than not.
+
+
+Summing up, participants A and C could be grouped closer together regarding developer perception changes with BDD testing
+frameworks. This is somewhat interesting, as they use different frameworks. In total, the changes in their perception could be categorized
+to be on the positive side. Participant B could be categorized to perceive the change as indifferent or negative. Its interesting
+to see that participants A and B have same kind of experience as developers and they perceive low-level testing with JUnit the same,
+but the difference in perceiving the Spectrum changes is quite different.
 
 
 \subsubsection{Developer loyalty towards low-level testing}
@@ -843,13 +959,42 @@ passive before and after the change.
 
 Before the introduction of \textbf{\textit{Spectrum}}, participant A
 is also a steady promoter of JUnit both as a technical lead in new project or taking part in existing project. After
-using Spectrum for two months, participant can be categorized as a detractror in loyalty towards Spectrum. This was further
+using Spectrum for two months, participant can be categorized as a detractor in loyalty towards Spectrum in \textit{Spring Framework} context.
+This was further
 analyzed in interview where participant states that the found bugs in 1.1.0 version of Spectrum in IDE test output and build test output
 lower the score. He also states that \textit{Spring Framework} support is not optimal yet and for these reasons he hesitates
 to fully get on board with Spectrum.
-
+The same effect is visible with participant B, as he was first a promoter of JUnit, but can later be categorized as a detractor for Spectrum NPS.
+In the interview he says that the lacking \textit{Spring Framework} support is the main reason for not recommending Spectrum.
+Participant C remains as a passive both with JUnit and Spock, although he states in following interview that he would more
+probably use Spock in a new \textit{Spring Framework} project than JUnit.
 
 \subsubsection{Change summary}
+
+{\renewcommand{\arraystretch}{1.3}
+\begin{table}[H]
+    \resizebox{\textwidth}{!}{%
+        \begin{tabular}{p{10.0cm}p{5cm}}
+
+        \headcol \textbf{Benefit} & \textbf{Participants agreeing} \\ \hline
+
+        \rowcol Easier to write tests & C \\
+        Enjoy writing tests & A, C \\
+        \rowcol Maintaining is easier & C \\
+        Tests help to understand production code better & A, C \\
+        \rowcol Promotes to write higher quality test code & A, C \\
+        More understandable tests & A, C \\
+        \rowcol More maintainable tests & A, C \\
+        & \\
+        \headcol \textbf{Drawback} & \\ \hline
+        \rowcol More difficult to write tests  & A, B \\
+        Slightly more diffucult to maintain tests & A \\
+        \rowcol Would like to have more tool support & A, B \\
+        Early version & A, B \\
+        \end{tabular}}
+        \caption {Developer perception changes of low-level testing} \label{tab:practice-change}
+\end{table}
+}
 
 \clearpage
 
@@ -1014,8 +1159,9 @@ JUnit. Unfortunately now, only one participant Spock testing habbits were studie
 Earlier study~\cite{li2016automatically} had identified developers preferring the tests to be self-document- ing without commenting.
 Together with COC and TMNWC from both projects, there seems to be evidence to say that both BDD testing frameworks
 promote this aspect better than JUnit. The text descriptions as part of test method naming seems to promote this self-documenting
-aspect of low-level tests. This is potentially more evidence to \textbf{H2:} \textit{"Developers will find it easier to understand test cases"}, at least
+aspect of low-level tests. This is potentially more evidence for \textbf{H2:} \textit{"Developers will find it easier to understand test cases"}, at least
 there exists less need for commenting of test methods and the test names hold more information through more words in them.
+Together with earlier survey and interview results, it can be concluded that H2 seems to hold true to an extent.
 
     \begin{figure}[H]%
         \centering
@@ -1038,7 +1184,7 @@ nor did it have after the introduction of Spectrum. Spectrum and Java 8-lambdas 
 usage through the language features, but the framework doesn't support this with DSL. Earlier with JUnit, Project B had about 2\% of
 all low-level test methods as data-driven. After the introduction of Spock, there were a drastic change:
  54\% of all
-feature methods were data-driven. This metric supports the \textbf{H3:} \textit{developers will find it easier to maintain code}.
+feature methods were data-driven.
 Spock seems to promote DDT really well with it's DSL and thus, at least maintaining of low-level tests with different
 test conditions should be easier.
 
@@ -1091,13 +1237,14 @@ of low-level testing. With Spock, \textit{DDTM}-metric increased tenfolds. Aroun
 It can be concluded that Spock promotes the use of data-driven testing much more than JUnit.
 
 Table \ref{tab:test-change} summarises the results for \textbf{RQ3} - the changes in written low-level test and code coverage.
-The main finding is:
+The main findings are:
 
 \begin{center}
 \begin{topbot}
-\textbf{RQ3}: \textit{In low-level testing, BDD testing frameworks produce more granular and self-documenting test cases than JUnit.}
+\textit{In low-level testing, BDD testing frameworks produce more granular and self-documenting test cases than JUnit.
+Spock promotes the use of DDT more than JUnit.}
 \end{topbot}
 \end{center}
 
-\section{Comparison of BDD testing frameworks}
+\section{Comparison summary of BDD testing frameworks}
 
