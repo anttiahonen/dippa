@@ -1,7 +1,7 @@
 \chapter{Environment}
 \label{chapter:environment}
 This chapter demonstrates few of the different options available for low-level automated testing in Java-projects. First,
-\textbf{xUnit testing frameworks} are explained with JUnit as an example of them. Second, \textbf{implementation level BDD testing frameworks}
+\textbf{xUnit testing frameworks} are explained with \textit{Junit} as an example of them. Second, \textbf{implementation level BDD testing frameworks}
 running on top of JVM programming languages are demonstrated as an alternative for automated low-level Java-code testing.
 
 \section{xUnit testing frameworks} %2p
@@ -12,40 +12,40 @@ running on top of JVM programming languages are demonstrated as an alternative f
     These unit testing frameworks are extensible with different types of extensions. Extensions can add for example integration testing capabilities
     for different domains. ~\cite{hamill2004unit}
 
-    This thesis is interested in developer practices with JUnit and their perception towards it, therefore next the xUnit family architecture
-    is examined with JUnit.
+    This thesis is interested in developer practices with \textit{Junit} and their perception towards it, therefore next the xUnit family architecture
+    is examined with \textit{Junit}.
 
     \subsection{JUnit}
-    JUnit acts as the reference implementation of the xUnit family and it is also the most popular instance of them~\cite{hamill2004unit}.
+    \textit{Junit} acts as the reference implementation of the xUnit family and it is also the most popular instance of them~\cite{hamill2004unit}.
     It is used for Java-code testing and it can be extended for many domains in Java testing~\cite{hamill2004unit}.
-    Current stable version of JUnit is \textit{JUnit4}~\cite{junit4}, but \textit{JUnit5} is scheduled to release in Q5 of 2017~\cite{junit5schedule}
-    providing many new features for Java testing. The examples of JUnit and empirical research in this thesis are all based on JUnit4.
+    Current stable version of \textit{Junit} is \textit{JUnit4}~\cite{junit4}, but \textit{JUnit5} is scheduled to release in Q5 of 2017~\cite{junit5schedule}
+    providing many new features for Java testing. The examples of \textit{Junit} and empirical research in this thesis are all based on \textit{Junit}4.
 
     \begin{figure}[ht]
       \begin{center}
         \includegraphics[width=13cm]{images/junit.png}
-        \caption{JUnit architecture}
+        \caption{\textit{Junit} architecture}
         \label{fig:junit}
       \end{center}
     \end{figure}
 
     The basic architecture close to reference implementation of xUnit testing family~\cite{hamill2004unit} is explained with
-    \textit{JUnit3}. The architecture of JUnit3 consists of classes \textit{TestCase, TestRunner, TestFixture, TestSuite} and \textit{TestResult}.
+    \textit{JUnit3}. The architecture of \textit{Junit}3 consists of classes \textit{TestCase, TestRunner, TestFixture, TestSuite} and \textit{TestResult}.
     \textbf{TestCase} is the unit test base class, that holds runnable \textbf{test methods}.
     It implements the interface \textbf{Test} and its \textit{run()}-method. Test methods use \textbf{assertions} inside them to evaluate test conditions.
-    \textbf{TestRunner} class is for extending JUnit and running multiple test cases at once and reporting
+    \textbf{TestRunner} class is for extending \textit{Junit} and running multiple test cases at once and reporting
     them. \textbf{TestFixture} class is used to ensure test isolation and creating a separate test environment for each test method.
     TestFixtures provide a common shared context for test methods, but the environment is created from scratch for each test.
     This is enabled by providing the test case with common setup and teardown functionality for class and method level.
     \textbf{TestSuite} is a class made for grouping TestCases and it also implements Test. TestSuite makes it possible to run multiple TestCases and can
     be used with TestRunner. \textbf{TestResult} class is used to collect test method outcomes from TestSuites and TestCases.
-    Figure \ref{fig:junit} visualizes the relationships between the core classes, interfaces and methods of JUnit architecture. ~\cite{hamill2004unit}
+    Figure \ref{fig:junit} visualizes the relationships between the core classes, interfaces and methods of	extit{Junit}architecture. ~\cite{hamill2004unit}
 
-    JUnit is a \textit{"Spartan"} test framework, it contains only the mandatory features and has to use additional libraries
+    \textit{Junit} is a \textit{"Spartan"} test framework, it contains only the mandatory features and has to use additional libraries
     to provide additional testing features such as as mocking or \textbf{Data Driven Testing (DDT)}~\cite{kapelonis2016java}.
-    In the next section, example is provided of a JUnit4 test case extended for integration testing of Spring Framework domain.
+    In the next section, example is provided of a \textit{Junit}4 test case extended for integration testing of Spring Framework domain.
 
-    \subsection{Extending JUnit for Spring Framework domain}
+    \subsection{Extending Junit for Spring Framework domain}
     \label{section:junit-extend}
     \textbf{Spring} is a framework for Java, described as:
     \textit{"core support for dependency injection, transaction management, web applications, data access, messaging, testing and more."}~\cite{spring}
@@ -449,25 +449,25 @@ running on top of JVM programming languages are demonstrated as an alternative f
     Gherkin family frameworks exists for both acceptance and implementation testing level~\cite{okolnychyi2016study}. For Java-code testing at
     implementation level with Gherkin, JVM offers for example \textbf{\textit{Spock}}~\cite{spock} via Groovy, Java 8 -based \textbf{\textit{Spectrum}}~\cite{spectrum},
     JRuby-based \textbf{RSpec-given}~\cite{rspec-given} for Rspec and Scala-based \textbf{FeatureSpec}~\cite{featurespec} for ScalaTest.
-    Spock will be used as an example for inspecting implementation level testing with a Gherkin family framework.
+    \textit{Spock} will be used as an example for inspecting implementation level testing with a Gherkin family framework.
 
     \subsubsection{Spock}
-    Spock is a BDD testing framework for JVM programming language Groovy~\cite{kapelonis2016java}. It supports
+    \textit{Spock} is a BDD testing framework for JVM programming language Groovy~\cite{kapelonis2016java}. It supports
     testing both Java and Groovy code and it can be considered a superset of JUnit, as it extends the JUnit runner~\cite{spock}.
     As a result of this, it is considered "enterprise ready" with \textit{support for IDEs, JUnit rules, external tools} that use
     JUnit runner and easy \textit{build tool integrations}~\cite{kapelonis2016java}.
 
-    Spock is capable of testing the whole automated BDD cycle from acceptance level to unit level~\cite{kapelonis2016java}.
+    \textit{Spock} is capable of testing the whole automated BDD cycle from acceptance level to unit level~\cite{kapelonis2016java}.
     It holds unit test support with integrated mocking and stubbing capabilities~\cite{spock}.
-    Spock can also be extended for integration testing of different domains~\cite{kapelonis2016java}.
+    \textit{Spock} can also be extended for integration testing of different domains~\cite{kapelonis2016java}.
     Spring Framework domain extension is done with \textit{spock-spring} dependency, that can be configured with
     the \textit{@ContextConfiguration}-annotation of Spring~\cite{springintegration}.
 
-    Spock also supports \textbf{DDT} with tabular format readable
+    \textit{Spock} also supports \textbf{DDT} with tabular format readable
     domain specific language (DSL)~\cite{spock}.
     DDT can drastically remove repetition from test code and makes it easier to test different parameter
     variations~\cite{kapelonis2016java}.
-    Figure \ref{fig:spock-debug} displays console debugger of Spock related to
+    Figure \ref{fig:spock-debug} displays console debugger of \textit{Spock} related to
     condition checking. This display of objects and their values and the assertion checks straight in the console
     can reduce the need for explicit debugging~\cite{kapelonis2016java}.
     \begin{figure}[ht]
@@ -475,17 +475,17 @@ running on top of JVM programming languages are demonstrated as an alternative f
         \begin{topbot}[style=mdstyle]
         \includegraphics[width=10cm]{images/spock-debug.png}
         \end{topbot}
-        \caption{Spock console debugger}
+        \caption{\textit{Spock} console debugger}
         \label{fig:spock-debug}
       \end{center}
     \end{figure}
 
-    As stated earlier, Spock is a BDD testing framework with Gherkin support.
+    As stated earlier, \textit{Spock} is a BDD testing framework with Gherkin support.
     Full functionality of Gherkin includes feature and scenario information described
     with \textbf{Given-When-Then} steps for plain text test input~\cite{gherkin}. This makes it easier for stakeholder collaboration
     and is aimed at acceptance testing level.
-    Spock supports full Gherkin through additional library \textit{Pease}, but the support for it is deprecated~\cite{spock-pease}.
-    Although Spock can be configured to use plain text Gherkin, its normal usage is aimed for developer audience at implementation
+    \textit{Spock} supports full Gherkin through additional library \textit{Pease}, but the support for it is deprecated~\cite{spock-pease}.
+    Although \textit{Spock} can be configured to use plain text Gherkin, its normal usage is aimed for developer audience at implementation
     level with test code and Gherkin descriptions mixed in together~\cite{okolnychyi2016study}.
 
     \begin{figure}[ht]
@@ -505,19 +505,19 @@ running on top of JVM programming languages are demonstrated as an alternative f
                                           gameOptionService, gameRepository)
         }
         \end{lstlisting}
-        \caption{Spock specification file initialization}
+        \caption{\textit{Spock} specification file initialization}
         \label{fig:spock-init}
     \end{figure}
 
-    Spock terminology consists of \textbf{specification} files containing \textbf{feature methods} and Given-When-Then
-    \textbf{blocks} inside them~\cite{spock}. Figure \ref{fig:spock-init} displays initialization of a Spock specification
+    \textit{Spock} terminology consists of \textbf{specification} files containing \textbf{feature methods} and Given-When-Then
+    \textbf{blocks} inside them~\cite{spock}. Figure \ref{fig:spock-init} displays initialization of a \textit{Spock} specification
     file. At line \#1 the specification class is created by extending the class \textit{Spock.lang.Specification}. Lines
     3-5 show use of \textit{@Shared}-variables, which are used for long lived objects shared between feature methods~\cite{spock}.
     Lines 7 to 14 show the use of \textit{setup}-fixture for creating a shared, isolated context for each feature method~\cite{spock}.
     The fixture setup is used for initializing unit testing context, where the use of \textit{Mock}-objects~\cite{spock} can be seen.
     Class under test \textit{GameService} has its dependencies replaced with test doubles.
 
-    Spock makes heavy use of Gherkin's Given-When-Then with runnable code blocks for each steps, that can contain textual
+    \textit{Spock} makes heavy use of Gherkin's Given-When-Then with runnable code blocks for each steps, that can contain textual
     description~\cite{kapelonis2016java}:
     \begin{itemize}
     \item \textbf{Given} is a code block used to initialize the \textbf{context} of test
@@ -567,7 +567,7 @@ running on top of JVM programming languages are demonstrated as an alternative f
 
     }
           \end{lstlisting}
-        \caption{Spock feature method}
+        \caption{\textit{Spock} feature method}
         \label{fig:spock-example}
 
     \end{figure}
@@ -588,7 +588,7 @@ running on top of JVM programming languages are demonstrated as an alternative f
     information in it~\cite{kapelonis2016java}. In the example, name holds test run output information with the embedded parameters inside it.
     The result of feature method run on the IDE Intellij Idea can be seen in the figure \ref{fig:spock-result} as two separate test runs through the DDT.
 
-    To get Spock integrated into \textit{Gradle} build cycle with full mocking capabilities, Spring Framework support and BDD styled HTML-reporting, it needs
+    To get \textit{Spock} integrated into \textit{Gradle} build cycle with full mocking capabilities, Spring Framework support and BDD styled HTML-reporting, it needs
     quite a few dependencies. The build configuration can be found in Appendix \ref{chapter:gradle-build} figure \ref{fig:spock-build}.
 
     \clearpage
@@ -597,11 +597,11 @@ running on top of JVM programming languages are demonstrated as an alternative f
         \begin{topbot}[style=mdstyle]
         \includegraphics[width=\textwidth]{images/spock-result.png}
         \end{topbot}
-        \caption{Spock feature method output}
+        \caption{\textit{Spock} feature method output}
         \label{fig:spock-result}
       \end{center}
     \end{figure}
-    All the examples displayed in the figures are of Spock used for testing Java-code. Although at first glance the test code might
+    All the examples displayed in the figures are of \textit{Spock} used for testing Java-code. Although at first glance the test code might
     look like Java, the programming language used is Groovy. Groovy is aimed to resemble Java with dynamic programming language
     capabilities and less verbose syntax~\cite{kapelonis2016java}. In the given test code examples, Java production code classes are used directly
     from Groovy.
