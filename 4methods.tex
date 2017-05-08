@@ -6,15 +6,15 @@ and features of studied testing frameworks explained in chapter \ref{chapter:env
 Third, the empirical study and its methodology are explained in detail.
 
 \section{Research questions}
-This thesis studies low-level testing done with xUnit family testing framework	extit{Junit}and how it changes after putting
+This thesis studies low-level testing done with xUnit family testing framework	\textit{JUnit}  and how it changes after putting
 an implementation level BDD testing framework into operation. The scope in research is testing Java-code. The following
 research questions are aimed to highlight the change in low-level testing after the testing framework change:
 \begin{addmargin}[2em]{0em}
 \vspace{20px}
 \begin{itemize}
-\item[\textbf{RQ1:}] How does behavior-driven testing frameworks change developer practices working with automated low-level testing compared to	extit{Junit}framework?
-\item[\textbf{RQ2:}] How does behavior-driven testing frameworks change developer perception of working with automated low-level testing compared to JUnit framework?
-\item[\textbf{RQ3:}] How does behavior-driven testing frameworks change written low-level test cases and test code coverage compared to JUnit framework?
+\item[\textbf{RQ1:}] How does behavior-driven testing frameworks change developer practices working with automated low-level testing compared to	\textit{JUnit}  framework?
+\item[\textbf{RQ2:}] How does behavior-driven testing frameworks change developer perception of working with automated low-level testing compared to \textit{JUnit}  framework?
+\item[\textbf{RQ3:}] How does behavior-driven testing frameworks change written low-level test cases and test code coverage compared to \textit{JUnit}  framework?
 \end{itemize}
 \end{addmargin}
 
@@ -110,7 +110,7 @@ explained. Finally, threats to validity and limitations in this study are review
     The study was conducted in industry context at IT-consulting software firm \textbf{Vincit Plc}, Helsinki Mikonkatu 15 office.
     Related to objective of studying the automated low-level testing differences, context for the development environment was chosen as JVM.
     JVM provides interesting possibilities through various programming languages in use for low-level automated testing.
-    For the selection of teams, there was limitations; team should be implementing a Java-based Spring Framework project with prior JUnit
+    For the selection of teams, there was limitations; team should be implementing a Java-based \textit{Spring Framework} project with prior JUnit
     unit and integration testing in place. Limiting factor in team selection was also the amount of effort available,
     as my intention was to graduate in the current spring semester of 2017.  This filtered out projects that could not start
     the study before April.
@@ -127,7 +127,7 @@ explained. Finally, threats to validity and limitations in this study are review
 
 \subsection{Data collection}
     Selection of data included filtering of participants in the project. Participants were filtered to backend developers
-    whom were developing with the Java Spring Framework and thus using JUnit for low-level testing purposes.
+    whom were developing with the Java \textit{Spring Framework} and thus using \textit{JUnit}  for low-level testing purposes.
 
     Data collection from projects is done with methodological triangulation using first degree study participant interviews, second degree
     participant surveys and third degree quantative test code analysis. The main tool is the second degree surveys.
@@ -144,10 +144,10 @@ explained. Finally, threats to validity and limitations in this study are review
     \ref{section:demographic}.
 
     \subsubsection{JUnit survey}
-    An online survey about JUnit was built to gather base information for RQ1 and RQ2, that was
+    An online survey about \textit{JUnit} was built to gather base information for RQ1 and RQ2, that was
     later on used as a reference to answer about changes in automated low-level testing practices and perception. Although
-    the participants of the survey where currently working with JUnit in particular projects, they were asked to answer
-    in more broader context of using JUnit through the years in different projects.
+    the participants of the survey where currently working with \textit{JUnit} in particular projects, they were asked to answer
+    in more broader context of using \textit{JUnit} through the years in different projects.
     The survey was designed and built using \textit{LimeSurvey}~\cite{limesurvey}. The reason to use survey as the main tool for data collection
     was the related unit testing research surveys~\cite{williams2009effectiveness}~\cite{daka2014survey}~\cite{li2016automatically}.
     Some of the survey questions were interesting starting points
@@ -172,11 +172,11 @@ explained. Finally, threats to validity and limitations in this study are review
     \subsubsection{BDD testing frameworks survey}
     Second survey was built to directly get insight on RQ1 and RQ2 about automated low-level testing
     and it was conducted two months after new implementation level BDD testing framework was taken into use.
-    The second survey used all the questions (with modifications) from the first survey regarding JUnit testing practices and
+    The second survey used all the questions (with modifications) from the first survey regarding \textit{JUnit} testing practices and
     also added couple additional questions related to selected BDD testing framework. The survey was built using \textit{LimeSurvey}.
     Modifications to questions include changing the question setup to a direct comparison of JUnit.
-    For example, figure \ref{fig:survey-junit-comments} displays the original 5 point scale Likert question used in JUnit survey and
-    figure \ref{fig:survey-bdd-comments} shows the comparison question used in Spectrum survey.
+    For example, figure \ref{fig:survey-junit-comments} displays the original 5 point scale Likert question used in \textit{JUnit} survey and
+    figure \ref{fig:survey-bdd-comments} shows the comparison question used in \textit{Spectrum} survey.
     \begin{figure}[H]
       \begin{center}
         \includegraphics[width=13.7cm]{images/survey-org-comments.png}
@@ -332,7 +332,7 @@ Threats to construct validity include the threats to validity of the used study 
 in study were:
 \begin{itemize}
 \item Data collection used \textbf{methodological triangulation} with surveys, interviews and test code analysis. Quantative and qualitative data was used.
-\item Large parts of survey regarding the developer practices and perception towards JUnit were well-founded
+\item Large parts of survey regarding the developer practices and perception towards \textit{JUnit} were well-founded
 by using previous research survey questions as the starting base directly.
 
 \item Code analysis metrics such as \textit{COTM} or \textit{COA} were defined clearly.
@@ -370,7 +370,7 @@ External validity threats are related to threats that hinder the possibility to 
 The demographics which the study was applied can be found in section \ref{section:demographics}. Major threat to generalizing the findings
 is the \textbf{limited number of participants} involved through the projects A and B. Projects are demonstrated in detail in section \ref{section:demographics},
 but in brief, the participant number in total in them was only 3. As the sample size is small, the results can't be generalized
-with certainty to all industrial developers. For example the survey regarding practices and perception towards JUnit can
+with certainty to all industrial developers. For example the survey regarding practices and perception towards \textit{JUnit} can
 only offer insight to participant working practices, but can't be used to state a generalizations of unit and integration
 testing practices amongst majority of developers.
 The survey regarding changes in low-level testing after introduction of the implementation level BDD framework in project acts
@@ -387,7 +387,7 @@ Reliability of this study is the aspect of the study being dependent on the rese
 research methods and especially data collection methods are explained in detail and thus they should be able to be replicated by other researchers.
 Also the source code for enabling needed build configurations and test framework extensions are provided.
 
-One aspect that hinders the reliability is the provided refactoring of JUnit tests to BDD testing framework examples explained
+One aspect that hinders the reliability is the provided refactoring of \textit{JUnit} tests to BDD testing framework examples explained
 in chapter \ref{chapter:projects}. This step is hard to reproduce by other research on a larger scale, as it involves time and effort not
 possibly available. This example providing can also cause bias in the studying by
 shifting the written new tests to a certain structure that supports the research hypothesis. Although providing examples

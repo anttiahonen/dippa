@@ -2,21 +2,21 @@
 \label{chapter:projects}
 
 This chapter illustrates how studied projects teams chose their implementation level BDD testing
-framework to take in use for the project. The process is explained in detail with examples of JUnit tests
+framework to take in use for the project. The process is explained in detail with examples of \textit{JUnit} tests
 refactored into different BDD testing frameworks.
 
 Projects are denoted as \textbf{A} and \textbf{B}. Full description of projects can be found in section \ref{section:demographics} in the interview
 results. In brief, they both can be categorized as \textit{Spring Framework} projects. Project A is a \textit{Spring Boot} project, where
-most of the needed dependencies are bundled under Spring Boot configuration. Project B is a conventional Spring Framework project,
+most of the needed dependencies are bundled under Spring Boot configuration. Project B is a conventional \textit{Spring Framework} project,
 where needed dependencies are added individually into build configuration.
 
 Both projects and their teams were first introduced to built proof of concept examples of \textbf{\textit{RSpec, Spock}} and \textbf{\textit{Spectrum}}
-in use for an example Java Spring Framework project. Some of these used examples can be found in chapter \ref{chapter:environment}.
-All my subjective pros and cons of these BDD testing frameworks versus JUnit were demonstrated. RSpec was stripped from the
+in use for an example Java \textit{Spring Framework} project. Some of these used examples can be found in chapter \ref{chapter:environment}.
+All my subjective pros and cons of these BDD testing frameworks versus \textit{JUnit} were demonstrated. \textit{RSpec} was stripped from the
 potential candidates from both project first, as it included a more complicated development and build environment configuration. Also
 the support in IDE's for debugging JRuby and Java code at the same time was not present. Project A developers had
 seemingly negative attitude towards changes in testing at first. Therefore I promised refactored examples of old JUnit
-tests to Spectrum and \textit{Spock} and tried to convince the team to switch testing framework for new tests.
+tests to \textit{Spectrum} and \textit{Spock} and tried to convince the team to switch testing framework for new tests.
 Project B developer had heard of \textit{Spock} before and thus it was chosen as the framework to provide refactored examples in the project.
 First in this chapter, project A and its examples are reviewed. Second, project B and its refactored test examples are examined.
 
@@ -26,7 +26,7 @@ First in this chapter, project A and its examples are reviewed. Second, project 
     Prior the starting of study, project A had 49 test cases/files with 187 test methods of combined automated unit and integration level tests done with JUnit.
     I chose a few example test cases, which would benefit from repetition reducing techniques and better readability of the test methods.
     There were many more test methods and even test cases refactored, but here is provided an example of originally two JUnit
-    test methods refactored into DDT feature method in \textit{Spock} and four code examples in Spectrum with custom DDT technique.
+    test methods refactored into DDT feature method in \textit{Spock} and four code examples in \textit{Spectrum} with custom DDT technique.
 
     \begin{figure}[H]
       \begin{lstlisting}[style=java]
@@ -70,27 +70,27 @@ First in this chapter, project A and its examples are reviewed. Second, project 
       checkPrice(application, 60000);
     }
         \end{lstlisting}
-        \caption{JUnit test methods to be refactored}
+        \caption{\textit{JUnit} test methods to be refactored}
         \label{fig:junit-allu-refactor}
 
     \end{figure}
 
     \newgeometry{bottom=1cm}
-    Figure \ref{fig:junit-allu-refactor} displays the example JUnit test methods. Their test run output is displayed in the
+    Figure \ref{fig:junit-allu-refactor} displays the example \textit{JUnit} test methods. Their test run output is displayed in the
     figure \ref{fig:junit-allu-refactor-output}. When closely inspected, it was evident
     that the two test methods both actually included two tests inside one method which were separated by space between
     them. For example test method \textit{testDogTrainingEvent()} contains the first test within lines 3-13 and lines 15-18 are using
     the same \textit{context} of the test with modifications for a new test.
     Both of these test methods share mostly the same test method code and thus figures \ref{fig:spock-allu-refactor} and
     \ref{fig:spectrum-allu-refactor} display them refactored
-    into tests with \textit{Spock} and Spectrum that produce separate test runs with minimized repeated code.
+    into tests with \textit{Spock} and \textit{Spectrum} that produce separate test runs with minimized repeated code.
 
     \begin{figure}[H]
       \begin{center}
         \begin{topbot}[style=mdstyle]
         \includegraphics[width=\textwidth]{images/junit-pricing-results.png}
         \end{topbot}
-        \caption{JUnit test method run outputs}
+        \caption{\textit{JUnit} test method run outputs}
         \label{fig:junit-allu-refactor-output}
       \end{center}
     \end{figure}
@@ -193,12 +193,12 @@ First in this chapter, project A and its examples are reviewed. Second, project 
       });
   });
         \end{lstlisting}
-        \caption{Figure \ref{fig:junit-allu-refactor} tests refactored into Spectrum code examples}
+        \caption{Figure \ref{fig:junit-allu-refactor} tests refactored into \textit{Spectrum} code examples}
         \label{fig:spectrum-allu-refactor}
     \end{figure}
     \restoregeometry
 
-    Figure \ref{fig:spectrum-allu-refactor} illustrates how the JUnit test methods can be refactored into Spectrum
+    Figure \ref{fig:spectrum-allu-refactor} illustrates how the \textit{JUnit} test methods can be refactored into Spectrum
     nested code \textbf{example groups} and \textbf{code examples}. The structure displayed in the figure produces 4 separate
     code examples. At lines 13-20 and 27-34 a custom data driven setup is made for code examples with Java 8 lambda expressions.
     All the description info from \textit{describe} and \textit{it} -blocks are concanated into test output
@@ -209,23 +209,23 @@ First in this chapter, project A and its examples are reviewed. Second, project 
         \begin{topbot}[style=mdstyle]
         \includegraphics[width=\textwidth]{images/spectrum-pricing-results.png}
         \end{topbot}
-        \caption{Spectrum refactored examples test run output}
+        \caption{\textit{Spectrum} refactored examples test run output}
         \label{fig:spectrum-allu-refactor-output}
       \end{center}
     \end{figure}
 
-    Altogether, the given refactored examples fit flawlessly into DDT of \textit{Spock}. Spectrum test code isn't as concise in the shown example,
-    but there were some other examples were Spectrum produced much less repetition than \textit{Spock} for the refactored JUnit test methods.
+    Altogether, the given refactored examples fit flawlessly into DDT of \textit{Spock}. \textit{Spectrum} test code isn't as concise in the shown example,
+    but there were some other examples were \textit{Spectrum} produced much less repetition than \textit{Spock} for the refactored \textit{JUnit} test methods.
     Both BDD testing frameworks produced \textit{separate tests} for all situations, \textit{more info on run output} and \textit{less repetition} in test code.
-    After the reviewing of all refactored examples and possible positive changes against JUnit testing, project A developers chose to take
-    Spectrum in use for new unit and integration test classes. Spectrum being a Java library was one the main reasons
+    After the reviewing of all refactored examples and possible positive changes against \textit{JUnit} testing, project A developers chose to take
+    \textit{Spectrum} in use for new unit and integration test classes. \textit{Spectrum} being a Java library was one the main reasons
     why developers chose it over \textit{Spock}.
 
-    During the observed two months time of use, Spectrum had couple problems that later on was found to affect parts of the research
+    During the observed two months time of use, \textit{Spectrum} had couple problems that later on was found to affect parts of the research
     results. First, the test run output with \textit{Maven}-build tool~\cite{maven} didn't show the \textit{code example group} and \textit{code example}
     descriptions if the test failed. Only the \textit{assertions} were showing, therefore it hindered pinpointing the problematic test at failure.
     Second problem was the 1.1.0 version of Spectrum, which added support for a lot of new features, but resulted in test
-    run output structure breaking in IDE in certain situations. Therefore during the study, the version used of Spectrum was 1.0.2,
+    run output structure breaking in IDE in certain situations. Therefore during the study, the version used of \textit{Spectrum} was 1.0.2,
     which didn't have this problem.
 
     \clearpage
@@ -233,7 +233,7 @@ First in this chapter, project A and its examples are reviewed. Second, project 
     \newgeometry{bottom=1cm}
     \section{Project B}
     Prior the starting of study, project B had 80 test cases/files with 465 test methods of combined automated unit and integration level tests done with JUnit.
-    Current backend developer of project B had a particular DDT JUnit test case in mind that he wanted to see as a refactored example
+    Current backend developer of project B had a particular DDT \textit{JUnit} test case in mind that he wanted to see as a refactored example
     for \textit{Spock}.
 
     \begin{figure}[H]
@@ -300,16 +300,16 @@ First in this chapter, project A and its examples are reviewed. Second, project 
 
     }
         \end{lstlisting}
-        \caption{JUnit DDT example}
+        \caption{\textit{JUnit} DDT example}
         \label{fig:junit-bit-example}
     \end{figure}
 
     \restoregeometry
 
-    Figure \ref{fig:junit-bit-example} displays the chosen JUnit test case for refactoring. At line 1, JUnit is extended with
+    Figure \ref{fig:junit-bit-example} displays the chosen \textit{JUnit} test case for refactoring. At line 1, \textit{JUnit} is extended with
     \textit{Parameterized} custom runner~\cite{junit-parameterized}, which adds the DDT support for JUnit.
     Lines 14-18 and 20-51 display the creation
-    of DDT test case setup in this JUnit example. At lines 53-59 is test method which uses this DDT setup. The result of running
+    of DDT test case setup in this \textit{JUnit} example. At lines 53-59 is test method which uses this DDT setup. The result of running
     the test case can be seen in figure \ref{fig:junit-bit-results}.
 
     \begin{figure}[H]
@@ -317,12 +317,12 @@ First in this chapter, project A and its examples are reviewed. Second, project 
         \begin{topbot}[style=mdstyle]
         \includegraphics[width=\textwidth]{images/junit-validator-results.png}
         \end{topbot}
-        \caption{JUnit DDT example test run output}
+        \caption{\textit{JUnit} DDT example test run output}
         \label{fig:junit-bit-results}
       \end{center}
     \end{figure}
 
-    Figure \ref{fig:spock-bit-example} displays the example JUnit test case refactored into \textit{Spock} DDT feature method. \textit{Spock}'s
+    Figure \ref{fig:spock-bit-example} displays the example \textit{JUnit} test case refactored into \textit{Spock} DDT feature method. \textit{Spock}'s
     data driven DSL allows to pack the same functionality into readable concise form.  At lines 31-54 the DDT table format
     is defined with \textit{where}-block and at line 18 the output of individual DDT run is defined with \textit{@Unroll}-annotation.
     The data driven parameters are used partly
@@ -388,7 +388,7 @@ class NameValidatorSpec extends Specification {
     }
 }
         \end{lstlisting}
-        \caption{Figure \ref{fig:junit-bit-example} JUnit example refactored into \textit{Spock} DDT feature method}
+        \caption{Figure \ref{fig:junit-bit-example} \textit{JUnit} example refactored into \textit{Spock} DDT feature method}
         \label{fig:spock-bit-example}
     \end{figure}
 
@@ -405,9 +405,9 @@ class NameValidatorSpec extends Specification {
     \end{figure}
 
     Compared to JUnit, \textit{Spock} and its DDT feature enabled more readable and concise test structure together with more information
-    containing run output. At the time of research, project B had only one developer working with JUnit testing and
+    containing run output. At the time of research, project B had only one developer working with \textit{JUnit} testing and
     he was convinced to take \textit{Spock} into use after the illustrated refactored DDT example. \textit{Spock} was used in new unit and
-    integration level test classes while keeping the old JUnit tests intact. This happened without any major
+    integration level test classes while keeping the old \textit{JUnit} tests intact. This happened without any major
     problems with the used build tool \textit{Maven}.
 
 
