@@ -1,9 +1,9 @@
 \chapter{BDD frameworks in selected projects}
 \label{chapter:projects}
 
-This chapter illustrates how studied projects teams chose their implementation level BDD testing
+This chapter illustrates how studied projects teams chose their implementation level BDD-testing
 framework to take in use for the project. The process is explained in detail with examples of \textit{JUnit} tests
-refactored into different BDD testing frameworks.
+refactored into different BDD-testing frameworks.
 
 Projects are denoted as \textbf{A} and \textbf{B}. Full description of projects can be found in section \ref{section:demographics} in the interview
 results. In brief, they both can be categorized as \textit{Spring Framework} projects. Project A is a \textit{Spring Boot} project, where
@@ -12,7 +12,7 @@ where needed dependencies are added individually into build configuration.
 
 Both projects and their teams were first introduced to built proof of concept examples of \textbf{\textit{RSpec, Spock}} and \textbf{\textit{Spectrum}}
 in use for an example Java \textit{Spring Framework} project. Some of these used examples can be found in chapter \ref{chapter:environment}.
-All my subjective pros and cons of these BDD testing frameworks versus \textit{JUnit} were demonstrated. \textit{RSpec} was stripped from the
+All my subjective pros and cons of these BDD-testing frameworks versus \textit{JUnit} were demonstrated. \textit{RSpec} was stripped from the
 potential candidates from both project first, as it included a more complicated development and build environment configuration. Also
 the support in IDE's for debugging JRuby and Java code at the same time was not present. Project A developers had
 seemingly negative attitude towards changes in testing at first. Therefore I promised refactored examples of old JUnit
@@ -216,7 +216,7 @@ First in this chapter, project A and its examples are reviewed. Second, project 
 
     Altogether, the given refactored examples fit flawlessly into DDT of \textit{Spock}. \textit{Spectrum} test code isn't as concise in the shown example,
     but there were some other examples were \textit{Spectrum} produced much less repetition than \textit{Spock} for the refactored \textit{JUnit} test methods.
-    Both BDD testing frameworks produced \textit{separate tests} for all situations, \textit{more info on run output} and \textit{less repetition} in test code.
+    Both BDD-testing frameworks produced \textit{separate tests} for all situations, \textit{more info on run output} and \textit{less repetition} in test code.
     After the reviewing of all refactored examples and possible positive changes against \textit{JUnit} testing, project A developers chose to take
     \textit{Spectrum} in use for new unit and integration test classes. \textit{Spectrum} being a Java library was one the main reasons
     why developers chose it over \textit{Spock}.

@@ -6,45 +6,48 @@ Many agile methodologies aim to produce quality software that is potentially rea
 is done. There rarely exists time inside the iteration for dedicated long periods of quality assurance and manual testing.
 Instead, the quality is build within each increment. Defect free software is one the important parts that define
 quality in software industry. To achieve this quality in agile context, test automation is
-an important tool for the developer to handle.
+an important tool for the developer to handle. ~\cite{prechelt2016quality}
 
 Unit and integration testing are the testing activities that majority of agile developers work on a daily or weekly basis.
 Although there exists previous research studying aspects of unit testing amongst developers, they are directed
 towards traditional unit testing with \textbf{xUnit family} testing frameworks. These frameworks are the standard way of testing
-in many programming languages and they include ones such as \textit{JUnit, NUnit} and \textit{CppUnit}.
+in many programming languages and they include ones such as \textit{JUnit, NUnit} and \textit{CppUnit}~\cite{hamill2004unit}.
 
 \textbf{Behavior-Driven Development (BDD)} was originally intended as a solution to problems Test-Driven Development (TDD) practitioners
-faced. From there, BDD propagated to acceptance-level testing. BDD in general can be described as a test firsts agile methodology
-aiming to provide valuable and defect free software.
+faced~\cite{bdd2006north}. From there, BDD propagated to acceptance-level testing~\cite{bdd2006north}. BDD in general can be described as a test firsts agile methodology
+aiming to provide valuable and defect free software~\cite{chelimsky2010rspec}.
 Majority of the research regarding BDD is targeted at studying
-it being used as an requirements engineering (RE) tool. BDD testing tools are also used at the implementation level in various
+it being used as an requirements engineering (RE) tool. BDD-testing tools are also used at the implementation level in various
 programming languages and frameworks. There exists no hard statistics, but in many programming languages implementation level BDD
-testing tools like \textit{RSpec} and \textit{Jasmine} are close to being the standard way of practicing unit and integration testing.
+testing tools like \textit{RSpec} in Ruby and \textit{Jasmine} in JavaScript are very popular in practicing unit and integration testing.
 It is reasonable to suspect that these frameworks are not always used in conjunction with the practice of BDD but are actually used for testing
 purposes only.
 
-This thesis studies these implementation level BDD testing frameworks more closely to see, how they compare to
-standard xUnit testing family frameworks. Main point of interest is that if they can help with the problems that earlier research
+This thesis studies these implementation level BDD-testing frameworks more closely to see, how they compare to
+standard \textit{xUnit family} testing frameworks in automated unit and integration testing.
+Main point of interest is that if they can help with the problems that earlier research
 had identified in traditional unit testing frameworks. This thesis provides empirical research done in actual projects in industry context.
-In these projects, automated testing with JUnit was changed into implementation level BDD testing framework during the project.
+In these projects, automated testing with \textit{JUnit} was changed into implementation level BDD-testing framework during the project.
 
 \section{Problem statement}
 There exists research, where study participant developers declare spending approximately 40\% of software development time
 writing new tests and debugging or fixing the code~\cite{daka2014survey}. During unit testing activities, multiple previous
-studies have found problematic areas amongst developers. To highlight some of these problems, one of the most important is
-that only around 50\% of developers enjoy working with unit tests~\cite{daka2014survey}. This was also
-identified in another study as lacking motivation in unit testing~\cite{runeson2006survey}. Other important ones
-were ones such as difficulties in writing and maintaining the tests~\cite{daka2014survey}. These findings are inspected
+studies have found problematic areas amongst developers. As testing, debugging and fixing form so prominent part of the
+developer activities, its crucial to study if these problematic areas could be alleviated.
+To highlight some of these problems, one of the most important one is
+that only around 50\% of developers enjoy working with unit tests~\cite{daka2014survey}.
+Lacking motivation in unit testing is a real problem amongst practitioners~\cite{runeson2006survey}. Other important findings
+were ones such as difficulties in writing and maintaining the tests~\cite{daka2014survey}. These problematic areas are inspected
 in more detail later in thesis.
 
 The context of thesis is based in Java-projects and testing Java-code. \textbf{Java Virtual Machine (JVM)} and its
-implementation in Java Runtime Environment (JRE) produces the environment for Java-projects~\cite{wiki:jvm}.
-Main motivation for choosing JVM as the platform to study testing changes was my personal interest of wanting to enhance
+implementation in Java Runtime Environment produces the environment for Java-projects~\cite{wiki:jvm}.
+Main motivation for choosing JVM as the platform to study testing changes was my personal interest of wanting to learn ways to enhance
 Java testing.
 Other reasons to choose JVM as the platform for studying testing changes were \textit{JUnit} and other programming
-languages available through it in addition to Java. \textit{JUnit} is a popular \textit{xUnit testing family} framework and as such,
+languages available through it in addition to Java~\cite{wiki:jvm}. \textit{JUnit} is a popular \textit{xUnit family} testing framework~\cite{hamill2004unit} and as such,
 many of the problematic areas highlighted by earlier research surely affect it. The multiple programming languages through JVM
-allowed more options in choosing alternative implementation level BDD testing frameworks to possibly study and compare
+allowed more options in choosing alternative implementation level BDD-testing frameworks to possibly study and compare
 against \textit{JUnit} in different unit and integration testing aspects.
 
 
@@ -52,10 +55,10 @@ against \textit{JUnit} in different unit and integration testing aspects.
 \section{Structure of the thesis}
 First, chapter \ref{chapter:background} introduces in more detail the background of JVM, the concept of software quality and practices to achieve it.
 Especially automated testing with agile methodologies built on top of it are examined thoroughly. Related research to thesis topic is also
-examined in chapter \ref{chapter:background}. Chapter \ref{chapter:environment} studies the \textit{xUnit family testing} frameworks
-in detail together with various implementation level BDD testing frameworks. Chapter \ref{chapter:methods} introduces
+examined in chapter \ref{chapter:background}. Chapter \ref{chapter:environment} studies the \textit{xUnit family} testing frameworks
+in detail together with various implementation level BDD-testing frameworks. Chapter \ref{chapter:methods} introduces
 the research questions and research hypotheses. It also explains the empirical study methods in detail.
-After methods, chapter \ref{chapter:projects} introduces the projects and the practical use of BDD testing frameworks in them.
+After methods, chapter \ref{chapter:projects} introduces the projects and the practical use of BDD-testing frameworks in them.
 Next, chapter \ref{chapter:results} explores the study results and discussion related to earlier research in detail.
 Finally chapter \ref{chapter:conclusions} summarizes the main findings of the thesis and proposes ideas for possible
 future research on the thesis topic.

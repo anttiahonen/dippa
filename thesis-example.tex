@@ -401,14 +401,13 @@ innerleftmargin=0cm,innerrightmargin=0cm,roundcorner=0pt, innertopmargin=0pt, in
 % variants you use (they are all there in the same place). 
 % ------------------------------------------------------------------
 \newcommand{\TITLE}{Unit and Integration Testing of Java:}
-\newcommand{\FTITLE}{Ohjelmistoprosessit mänteille:}
+\newcommand{\FTITLE}{Javan yksikkö- ja integraatiotestaus:}
 \newcommand{\STITLE}{Den stora stygga vargen:}
 \newcommand{\SUBTITLE}{JVM Behavior-Driven Development testing frameworks vs. JUnit}
-\newcommand{\FSUBTITLE}{Uusi organisaatio, uudet pyörät}
+\newcommand{\FSUBTITLE}{JVM:n käyttäytymisvetoiset testaustyökalut vastaan JUnit}
 \newcommand{\SSUBTITLE}{Lilla Vargens universum}
-\newcommand{\DATE}{June 18, 2011}
-\newcommand{\FDATE}{18. kesäkuuta 2011}
-\newcommand{\SDATE}{Den 18 Juni 2011}
+\newcommand{\DATE}{May 10, 2017}
+\newcommand{\FDATE}{10. toukokuuta 2017}
 
 % Supervisors and instructors
 % ------------------------------------------------------------------
@@ -456,10 +455,10 @@ innerleftmargin=0cm,innerrightmargin=0cm,roundcorner=0pt, innertopmargin=0pt, in
 \newcommand{\SPROFESSORSHIP}{Datateknik}
 % Professorship code is the same in all languages
 \newcommand{\PROFCODE}{SCI3042}
-\newcommand{\KEYWORDS}{ocean, sea, marine, ocean mammal, marine mammal, whales,
-cetaceans, dolphins, porpoises}
-\newcommand{\FKEYWORDS}{AEL, aineistot, aitta, akustiikka, Alankomaat,
-aluerakentaminen, Anttolanhovi, Arcada, ArchiCad, arkki}
+\newcommand{\KEYWORDS}{Test automation, Unit testing, Integration testing, Behavior-driven development, JVM, Java, Spring Framework, JUnit, Spock,
+Spectrum, RSpec}
+\newcommand{\FKEYWORDS}{testiautomaatio, yksikkötestaus, integraatiotestaus, käyttäytymisvetoinen kehitys, JVM, Java, Spring-sovelluskehys,
+JUnit, Spock, Spectrum, RSpec}
 \newcommand{\SKEYWORDS}{omsättning, kassaflöde, värdepappersmarknadslagen,
 yrkesutövare, intresseföretag, verifieringskedja}
 \newcommand{\LANGUAGE}{English}
@@ -559,30 +558,30 @@ yrkesutövare, intresseföretag, verifieringskedja}
 % Abstract in English
 % ------------------------------------------------------------------
 \thesisabstract{english}{
-A dissertation or thesis is a document submitted in support of candidature
-for a degree or professional qualification presenting the author's research and
-findings. In some countries/universities, the word thesis or a cognate is used
-as part of a bachelor's or master's course, while dissertation is normally
-applied to a doctorate, whilst, in others, the reverse is true.
+This master's thesis studied how do Behavior-Driven Development testing frameworks
+change the testing of Java-code compared to JUnit. The research was done as a case study.
+The case study was conducted in industry context
+at Vincit Plc, were two projects changed new unit and integration tests classes to use
+a new BDD-testing framework instead of JUnit.
+Before designing the study methods, related research and their findings were reviewed to
+guide the study to inspect problematic areas found in unit testing.
+Case study data collection methods included surveys, interviews and test code analysis.
 
-\fixme{Abstract text goes here (and this is an example how to use fixme).} 
-Fixme is a command that helps you identify parts of your thesis that still
-require some work. When compiled in the custom \texttt{mydraft} mode, text
-parts tagged with fixmes are shown in bold and with fixme tags around them. When
-compiled in normal mode, the fixme-tagged text is shown normally (without
-special formatting). The draft mode also causes the ``Draft'' text to appear on
-the front page, alongside with the document compilation date. The custom
-\texttt{mydraft} mode is selected by the \texttt{mydraft} option given for the
-package \texttt{aalto-thesis}, near the top of the \texttt{thesis-example.tex}
-file.
+Case study provided promising results for problematic areas highlighted by earlier researh.
+To summerize the developer practice changes, the collected data displayed an increase in unit test case granularity.
+Results also displayed unanimously that BDD-testing frameworks guide to write more self-documenting tests than JUnit,
+where the test structure highlights better the different parts of the test.
+Study also revealed that the majority of participants had easier time understanding tests and removing
+repetition from test code.
+Developer perception changes in testing included the majority of study participants enjoying writing of tests more than with JUnit.
+The same majority also perceived that BDD-testing frameworks promote in writing higher quality test code than JUnit. Generally test code was perceived
+more understandable and maintanable than tests with JUnit, although this was not unanimous.
+Tool support of BDD-testing frameworks
+for testing Java Spring Framework were found ranging from adequate to good.
 
-The thesis example file (\texttt{thesis-example.tex}), all the chapter content
-files (\texttt{1introduction.tex} and so on), and the Aalto style file
-(\texttt{aalto-thesis.sty}) are commented with explanations on how the Aalto
-thesis works. The files also contain some examples on how to customize various
-details of the thesis layout, and of course the example text works as an
-example in itself. Please read the comments and the example text; that should
-get you well on your way!}
+In conclusion, this thesis results provide small scale evidence that BDD-testing frameworks could potentially ease the maintainaibility and readability
+of unit and integration tests while same time rising the enjoyment in testing.
+}
 
 % Abstract in Finnish
 % ------------------------------------------------------------------
@@ -635,7 +634,7 @@ Kivi on materiaalina kalliimpaa mutta kestävämpää kuin esimerkiksi puu.}
 % entry to the table of contents, which is kind of redundant.
 % The text ``Contents'' is shown in the PDF bookmark. 
 \pdfbookmark[0]{Contents}{bookmark.0.contents}
-\setcounter{tocdepth}{2}
+\setcounter{tocdepth}{1}
 \tableofcontents
 
 % List of tables

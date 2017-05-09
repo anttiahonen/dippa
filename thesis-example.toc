@@ -34,7 +34,7 @@
 \contentsline {section}{\numberline {3.1}xUnit testing frameworks}{25}{section.3.1}
 \contentsline {subsection}{\numberline {3.1.1}JUnit}{25}{subsection.3.1.1}
 \contentsline {subsection}{\numberline {3.1.2}Extending Junit for Spring Framework domain}{27}{subsection.3.1.2}
-\contentsline {section}{\numberline {3.2}Implementation level BDD testing frameworks for JVM}{29}{section.3.2}
+\contentsline {section}{\numberline {3.2}Implementation level BDD-testing frameworks for JVM}{29}{section.3.2}
 \contentsline {subsection}{\numberline {3.2.1}xSpec family}{29}{subsection.3.2.1}
 \contentsline {subsubsection}{\numberline {3.2.1.1}RSpec}{29}{subsubsection.3.2.1.1}
 \contentsline {subsubsection}{\numberline {3.2.1.2}Spectrum}{33}{subsubsection.3.2.1.2}
@@ -49,8 +49,8 @@
 \contentsline {subsection}{\numberline {4.3.3}Data collection}{43}{subsection.4.3.3}
 \contentsline {subsubsection}{\numberline {4.3.3.1}Interview for demographic purposes}{44}{subsubsection.4.3.3.1}
 \contentsline {subsubsection}{\numberline {4.3.3.2}JUnit survey}{44}{subsubsection.4.3.3.2}
-\contentsline {subsubsection}{\numberline {4.3.3.3}BDD testing frameworks survey}{45}{subsubsection.4.3.3.3}
-\contentsline {subsubsection}{\numberline {4.3.3.4}Interview about benefits and drawbacks of new BDD testing framework}{46}{subsubsection.4.3.3.4}
+\contentsline {subsubsection}{\numberline {4.3.3.3}BDD-testing frameworks survey}{45}{subsubsection.4.3.3.3}
+\contentsline {subsubsection}{\numberline {4.3.3.4}Interview about benefits and drawbacks of new BDD-testing framework}{46}{subsubsection.4.3.3.4}
 \contentsline {subsubsection}{\numberline {4.3.3.5}Test code analysis}{46}{subsubsection.4.3.3.5}
 \contentsline {section}{\numberline {4.4}Validity and reliability}{49}{section.4.4}
 \contentsline {subsection}{\numberline {4.4.1}Construct validity}{49}{subsection.4.4.1}
@@ -79,13 +79,13 @@
 \contentsline {subsection}{\numberline {6.3.1}Automated unit testing level}{87}{subsection.6.3.1}
 \contentsline {subsection}{\numberline {6.3.2}Automated unit \& integration testing levels}{89}{subsection.6.3.2}
 \contentsline {subsection}{\numberline {6.3.3}Change summary}{93}{subsection.6.3.3}
-\contentsline {section}{\numberline {6.4}Comparison of BDD testing frameworks}{94}{section.6.4}
-\contentsline {chapter}{\numberline {7}Conclusions}{96}{chapter.7}
-\contentsline {section}{\numberline {7.1}Summary}{96}{section.7.1}
-\contentsline {section}{\numberline {7.2}Future work}{96}{section.7.2}
-\contentsline {chapter}{\numberline {A}Interview questions}{104}{appendix.A}
-\contentsline {section}{\numberline {A.1}Interview for demographic purposes}{104}{section.A.1}
-\contentsline {chapter}{\numberline {B}Surveys}{106}{appendix.B}
-\contentsline {section}{\numberline {B.1}Survey regarding JUnit in automated low-level testing}{106}{section.B.1}
-\contentsline {section}{\numberline {B.2}Survey regarding BDD testing framework in automated low-level testing}{110}{section.B.2}
-\contentsline {chapter}{\numberline {C}Gradle build configurations}{114}{appendix.C}
+\contentsline {chapter}{\numberline {7}Conclusions}{95}{chapter.7}
+\contentsline {section}{\numberline {7.1}Summary}{95}{section.7.1}
+\contentsline {section}{\numberline {7.2}Comparison of BDD-testing frameworks}{96}{section.7.2}
+\contentsline {section}{\numberline {7.3}Future work}{97}{section.7.3}
+\contentsline {chapter}{\numberline {A}Interview questions}{106}{appendix.A}
+\contentsline {section}{\numberline {A.1}Interview for demographic purposes}{106}{section.A.1}
+\contentsline {chapter}{\numberline {B}Surveys}{108}{appendix.B}
+\contentsline {section}{\numberline {B.1}Survey regarding JUnit in automated low-level testing}{108}{section.B.1}
+\contentsline {section}{\numberline {B.2}Survey regarding BDD-testing framework in automated low-level testing}{112}{section.B.2}
+\contentsline {chapter}{\numberline {C}Gradle build configurations}{116}{appendix.C}

@@ -1,20 +1,111 @@
 \chapter{Conclusions}
 \label{chapter:conclusions}
+First in this chapter, the summary of case study and its results are presented. Second, the results are presented
+from the viewpoint of comparing studied implementation level BDD-testing frameworks. Third, possible directions for future work
+on the studied topic are discussed.
 
 \section{Summary}
+With today's trends in software development, agile practices are used more and more in producing software. What these practices
+usually have in common, is the incrementally built quality where automated testing done by developers plays a crucial role.
+Traditionally developers use \textit{xUnit family} testing frameworks for low-level automated testing. Although easy
+to get started, research has shown multiple possible problematic areas in the practice of unit testing with the said
+frameworks. This thesis studied alternative ways for low-level testing in the JVM context for testing Java-code.
+This was conducted as a case study in multi-project industry context.
+Idea was to see whether implementation level BDD-testing frameworks could help in problematic testing areas and how they
+change the practices and perception of low-level testing Java-code in general.
+
+\textbf{Practice changes} in low-level testing with BDD-testing frameworks included developers writing \textit{more granular}
+and \textit{self-documenting} test cases. Especially the analyzed test code changes provided strong evidence for these changes.
+Other changes included developers feeling that it was \textit{easier to identify separate test parts} than before with
+\textit{JUnit}. There was also evidence to support \textit{easier understanding of tests, more informative test output} and
+possibly \textit{easier ways to remove repetition} from test code. Practice changes with BDD-testing frameworks were not only
+positive, as studied framework \textit{Spectrum} displayed a somewhat \textit{steep learning curve} with more time
+and effort needed in low-level testing compared to \textit{JUnit}.
+
+\textbf{Perception changes} in low-level testing with BDD-testing frameworks displayed some \textit{rise in enjoyment} in testing.
+There was also change in perception where two out of three practitioners perceived test done with BDD-testing frameworks
+more \textit{understandable} and \textit{maintanable} than before. Amongst the same participants, this was also accompanied
+together with the perception that BDD-testing frameworks \textit{promote to write higher quality} test code than \textit{JUnit}.
+One of the participants perceived changes in testing as neutral or slightly negative during the study period.
+
+In conclusion, these results are quite promising as possible solutions to common problems found in unit testing, such as \textit{low enjoyment} in testing
+together with \textit{hard readability} and \textit{maintainability} of tests. Future work section discusses in more detail
+how the use of implementation level BDD-testing frameworks in low-level testing could be studied further. Before that,
+next section summarizes the test changes as a comparison between used BDD-testing frameworks.
+
+\section{Comparison of BDD-testing frameworks}
+{\renewcommand{\arraystretch}{1.3}
+\begin{table}[H]
+    \resizebox{\textwidth}{!}{%
+        \begin{tabular}{p{9.0cm}*{2}{p{3cm}}}
+
+        \headcol \textbf{Studied aspect} & \textbf{Spectrum} & \textbf{Spock} \\ \hline
+
+        \rowcol Learning curve & Slow & Fast \\
+        More granular test cases & Yes & Yes \\
+        \rowcol Easier to structure tests & Potentially & Yes \\
+        Easier to understand tests & Potentially & Yes \\
+        \rowcol More enjoyable to test code & Potentially & Yes \\
+        More informative test output & Yes & Yes \\
+        \rowcol More maintainable tests & Potentially & Yes \\
+        More self-documenting tests & Yes & Yes \\
+        \rowcol Framework and tool support & Adequate & Good \\
+        \end{tabular}}
+        \caption {Summary of studied aspects of low-level testing with BDD frameworks } \label{tab:bdd-comparison}
+\end{table}
+}
+
+Table \ref{tab:bdd-comparison} summarizes the most important findings in this study from the viewpoint of the
+BDD-testing frameworks. There are two keypoints when comparing the alternatives: \textit{Spock} offers more mature
+and easier to begin starting point for \textit{Spring Framework} low-level testing than \textit{Spectrum}.
+
+Both produce more
+granular test cases than \textit{JUnit}, where \textit{Spock} achieves this with DDT and \textit{Given-When-Then} blocks. \textit{Spectrum} does this with more individually separated
+code examples describing behavior. \textit{Spock} and its DDT should promote more easily maintainable tests, whereas \textit{Spectrum}
+way of writing tests promotes individually passing or failing test conditions. \textit{Spectrum} and
+its nested example groups with lifecycle hooks can be used for removing repetition from the code.
+
+There is evidence to support that both can potentially allow more easily to structure and understand tests than \textit{JUnit}. Although, the structure of
+\textit{Spock} doesn't contain nesting and as such might allow more easily to understand individual tests.
+With \textit{Spectrum}, there exists a longer learning curve to 1earn how to structure and understand the nested structure
+properly. Especially the Java lambda-features used to structure \textit{Spectrum} tests were found troublesome within the two months
+study time.
+Both BDD frameworks
+promote to write more self-documenting test cases than before. This is especially visible with \textit{Spectrum}, where it
+can reduce the need for explicit commenting with test info embedded into test descriptive naming. This self-documenting
+aspect of tests is also visible in more information displayed in test output.
+
+Summed up, these changes make both BDD frameworks good candidates to rise enjoyment in low-level testing compared to traditional
+\textit{JUnit} testing. Although with \textit{Spectrum}, the rise in enjoyment was not perceived unanimously. \textit{Spock} could potentially rise enjoyment in low-level
+testing more quickly than \textit{Spectrum}.
+\textit{Spock}'s structure seems easier to learn when switching from \textit{JUnit} and thus resulting more quickly in well structured tests.
+
 
 \section{Future work}
-Time to wrap it up! 
-Write down the most important findings from your work. 
-Like the introduction, this chapter is not very long.
-Two to four pages might be a good limit. 
+Due to the limited scope of this study, together with constraints of master thesis, this case study has acted as preliminary
+research on the topic of comparing traditional unit testing framework \textit{JUnit} against
+implementation level BDD-testing frameworks. This was conducted in an environment where BDD-testing frameworks were used
+as an alternative for \textit{JUnit} in automated unit and integration testing, without the practice of BDD.
+There exists interesting possible research to continue
+on the topic of studying the use of implementation level BDD-testing frameworks for low-level testing.
 
+Potential future work on the topic could include replicating this study on a larger scale on the JVM enviroment.
+This kind of
+study could also possibly be conducted in different environment, such as the \textit{.NET} environment. With
+larger projects and number of study participants, it would be interesting to see whether the larger scale results
+follow the same trend as results gathered in this study.
+As many of the \textit{xSpec family} drawbacks in this study was found out to
+come from the Java language features used in \textit{Spectrum}, it could be one possible change in future studies to use
+alternative \textit{xSpec family} framework.
+For example framework from a dynamic programming language could be used, such as earlier demonstrated \textit{RSpec} from JRuby.
 
-%THIS IS HERE FOR STORAGE
-%In my opinion, this view on software quality has strong correlation to customer value. Customer value can be seen as
-%    the benefits and sacrifices the end user experiences using the product~\cite{woodruff1997customer}. Therefore traditional
-%    defect free software quality is an important part of providing end user with software that delights, as defects
-%    can be seen as sacrifices that devour the trust towards software. Nevertheless this is not the only part of AQM,
-%    but providing software that delights the end user needs to also solve the right problem for the user.
-%    Thus software quality on the AQM is almost directly linked to customer value; it needs to be defect free but also
-%    provide benefits in use to delight the end user.
+Another future work possibility could be to further explore the studied aspects of this research in multiple isolated settings.
+This means using the same kind of survey that was used in this thesis to study for example long time Java developers using \textit{JUnit},
+Ruby developers using \textit{RSpec} and Groovy developers using \textit{Spock}.
+This kind of research could be done with a large number of participants and the results
+could be used to compare \textit{xUnit family}, \textit{xSpec family} and \textit{Gherkin family} for low-level testing on
+a grand scale.
+It would offer insight on low-level testing
+practices and perception towards it without the possible resistance to change that can surface in replicating exact
+same study as in this thesis. The test code analysis could also be done on a grand scale, for example mining
+public \textit{GitHub} repositories and their \textit{JUnit, RSpec} or \textit{Spock} tests to calculate different metrics.

@@ -1,7 +1,7 @@
 \chapter{Environment}
 \label{chapter:environment}
 This chapter demonstrates few of the different options available for low-level automated testing in Java-projects. First,
-\textbf{xUnit testing frameworks} are explained with \textit{JUnit} as an example of them. Second, \textbf{implementation level BDD testing frameworks}
+\textbf{xUnit testing frameworks} are explained with \textit{JUnit} as an example of them. Second, \textbf{implementation level BDD-testing frameworks}
 running on top of JVM programming languages are demonstrated as an alternative for automated low-level Java-code testing.
 
 \section{xUnit testing frameworks} %2p
@@ -134,14 +134,14 @@ running on top of JVM programming languages are demonstrated as an alternative f
     Build configuration of \textit{JUnit4} used in examples can be found in Appendix \ref{chapter:gradle-build} figure \ref{fig:junit-build}.
     Used build tool is Groovy-based \textit{Gradle}~\cite{gradle}.
     \textit{JUnit} and its extensions provide a base for automated low-level testing of Java-code.
-    In the next section alternatives for Java-code testing are presented with implementation level BDD testing frameworks from
+    In the next section alternatives for Java-code testing are presented with implementation level BDD-testing frameworks from
     various JVM programming languages.
 
-\section{Implementation level BDD testing frameworks for JVM}
+\section{Implementation level BDD-testing frameworks for JVM}
     As this thesis is interested in testing Java-code, the scope of implementation level BDD is limited to testing frameworks
     found from JVM programming languages. As stated before, these languages hold ones such as \textit{Ruby, Groovy, Python,
     Clojure} and \textit{Scala}. Through all these languages there exists many alternatives for both implementation and
-    acceptance level BDD testing frameworks. For implementation level, there exists two alternative approaches to practicing
+    acceptance level BDD-testing frameworks. For implementation level, there exists two alternative approaches to practicing
     BDD: \textbf{xSpec family}~\cite{solis2011study} and \textbf{Gherkin family} testing frameworks.
 
     \subsection{xSpec family}
@@ -152,7 +152,7 @@ running on top of JVM programming languages are demonstrated as an alternative f
 
     \subsubsection{RSpec}
     Ruby community has been for a long time a steady advocate of TDD~\cite{lerner2009forge}. It is also the birth place
-    of first implementation level BDD testing framework: \textit{RSpec}~\cite{astels2006new}. Whereas first BDD framework
+    of first implementation level BDD-testing framework: \textit{RSpec}~\cite{astels2006new}. Whereas first BDD framework
     JBehave~\cite{bdd2006north} was aimed for acceptance level and all stakeholders, \textit{RSpec} brought the behavior-driven thinking for developer
     audience~\cite{astels2006new}.
 
@@ -440,19 +440,19 @@ running on top of JVM programming languages are demonstrated as an alternative f
 
     Essentially \textit{Spectrum} is a Java-based implementation of a \textbf{subset of features present in RSpec}. It is at early version,
     and is not yet mature or widely used framework. Still, it can be considered as a fully working instance of a xSpec family
-    testing framework. Next section examines the alternative implementation level BDD testing approach: Gherkin family.
+    testing framework. Next section examines the alternative implementation level BDD-testing approach: Gherkin family.
 
 
     \subsection{Gherkin family}
-    Gherkin family is a term defined in this thesis, containing BDD testing frameworks that use predetermined ubiquitous
-    language \textbf{Gherkin}~\cite{gherkin}. There exists research related to usage of Gherkin in BDD testing frameworks~\cite{okolnychyi2016study}.
+    Gherkin family is a term defined in this thesis, containing BDD-testing frameworks that use predetermined ubiquitous
+    language \textbf{Gherkin}~\cite{gherkin}. There exists research related to usage of Gherkin in BDD-testing frameworks~\cite{okolnychyi2016study}.
     Gherkin family frameworks exists for both acceptance and implementation testing level~\cite{okolnychyi2016study}. For Java-code testing at
     implementation level with Gherkin, JVM offers for example \textbf{\textit{Spock}}~\cite{spock} via Groovy, Java 8 -based \textbf{\textit{Spectrum}}~\cite{spectrum},
     JRuby-based \textbf{RSpec-given}~\cite{rspec-given} for \textit{RSpec} and Scala-based \textbf{FeatureSpec}~\cite{featurespec} for ScalaTest.
     \textit{Spock} will be used as an example for inspecting implementation level testing with a Gherkin family framework.
 
     \subsubsection{Spock}
-    \textit{Spock} is a BDD testing framework for JVM programming language Groovy~\cite{kapelonis2016java}. It supports
+    \textit{Spock} is a BDD-testing framework for JVM programming language Groovy~\cite{kapelonis2016java}. It supports
     testing both Java and Groovy code and it can be considered a superset of \textit{JUnit}, as it extends the \textit{JUnit} runner~\cite{spock}.
     As a result of this, it is considered "enterprise ready" with \textit{support for IDEs, \textit{JUnit} rules, external tools} that use
     \textit{JUnit} runner and easy \textit{build tool integrations}~\cite{kapelonis2016java}.
@@ -480,7 +480,7 @@ running on top of JVM programming languages are demonstrated as an alternative f
       \end{center}
     \end{figure}
 
-    As stated earlier, \textit{Spock} is a BDD testing framework with Gherkin support.
+    As stated earlier, \textit{Spock} is a BDD-testing framework with Gherkin support.
     Full functionality of Gherkin includes feature and scenario information described
     with \textbf{Given-When-Then} steps for plain text test input~\cite{gherkin}. This makes it easier for stakeholder collaboration
     and is aimed at acceptance testing level.

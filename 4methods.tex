@@ -7,7 +7,7 @@ Third, the empirical study and its methodology are explained in detail.
 
 \section{Research questions}
 This thesis studies low-level testing done with xUnit family testing framework	\textit{JUnit}  and how it changes after putting
-an implementation level BDD testing framework into operation. The scope in research is testing Java-code. The following
+an implementation level BDD-testing framework into operation. The scope in research is testing Java-code. The following
 research questions are aimed to highlight the change in low-level testing after the testing framework change:
 \begin{addmargin}[2em]{0em}
 \vspace{20px}
@@ -29,7 +29,7 @@ research questions are aimed to highlight the change in low-level testing after 
     \textbf{Hypothesis 1 (H1):} Developers will write more granular test cases
     \vspace{5px}
     \newline
-    As has been noted before in benefits of implementation level behavior-driven development, BDD testing frameworks operating on this
+    As has been noted before in benefits of implementation level behavior-driven development, BDD-testing frameworks operating on this
     level aim to produce granular test cases with descriptive named test methods~\cite{chelimsky2010rspec, astels2006new, kapelonis2016java}.
     For example RSpec was originally intended to help the shifting of viewpoint from 1-1 relationship between test-code
     and only one test method per function to more granular test cases~\cite{astels2006new}.
@@ -42,9 +42,9 @@ research questions are aimed to highlight the change in low-level testing after 
     \textbf{Hypothesis 2 (H2):} Developers will find it easier to understand test cases
     \vspace{5px}
     \newline
-    As stated earlier, implementation level BDD testing frameworks should produce test cases of the component under test,
+    As stated earlier, implementation level BDD-testing frameworks should produce test cases of the component under test,
     that \textbf{describe behavior} with examples~\cite{chelimsky2010rspec}~\cite{astels2006new}~\cite{amodeo2015learning}.
-    The close to natural language DSL used to create these behavior specifying tests with BDD testing frameworks should
+    The close to natural language DSL used to create these behavior specifying tests with BDD-testing frameworks should
     have a natural tendency to "force" developers to write more descriptive tests. This is provided for example
     with xSpec family keywords \textit{describe} \& \textit{it} and with Gherkin family \textit{Given, When \& Then}-steps.
     The context, stimulus and assertions of the tests should be more visible with these mentioned structures and the test output
@@ -60,7 +60,7 @@ research questions are aimed to highlight the change in low-level testing after 
     \newline
     Implementation level BDD specifications should produce up-to-date living documentation, which can help in overall
     maintenance of the the system~\cite{smart2014bdd}. Especially the maintaining of test cases should be easier
-    with repetition reducing techniques provided by these BDD testing frameworks~\cite{chelimsky2010rspec}~\cite{kapelonis2016java}.
+    with repetition reducing techniques provided by these BDD-testing frameworks~\cite{chelimsky2010rspec}~\cite{kapelonis2016java}.
     xSpec family nested group examples and lifecycle hooks should allow efficient repetition removal compared to traditional xUnit family testing frameworks.
     Data Driven Testing DSL of \textit{Spock} testing framework should allow to more easily test parameter variations and remove
     the need for separate test methods, therefore making it easier to maintain the test case.
@@ -96,10 +96,10 @@ explained. Finally, threats to validity and limitations in this study are review
 
     \textbf{Rationale} of this case study was to improve existing traditional low-level automated testing practices research with studying
     relevant technologies used in the industry. At the same time, this case study could act as a starting point for future
-    research on the differences of traditional xUnit testing frameworks and implementation level BDD testing frameworks for larger
+    research on the differences of traditional xUnit testing frameworks and implementation level BDD-testing frameworks for larger
     scale studies.
 
-    \textbf{Objective} of the study was to compare traditional xUnit testing frameworks and implementation level BDD testing frameworks
+    \textbf{Objective} of the study was to compare traditional xUnit testing frameworks and implementation level BDD-testing frameworks
     and how they change the developer practices and perception towards low-level automated testing. The change was also measured
     with changes in written test code.
     As this thesis is done at industry context, the purpose was also to determine how well these
@@ -116,10 +116,10 @@ explained. Finally, threats to validity and limitations in this study are review
     the study before April.
 
     With these constraints, two projects and their teams were chosen to be studied. The teams were first introduced to
-    implementation level BDD testing frameworks. Both teams were presented with \textit{RSpec, Spock} and \textit{Spectrum}, from
+    implementation level BDD-testing frameworks. Both teams were presented with \textit{RSpec, Spock} and \textit{Spectrum}, from
     which they chose one technology to take into use in the projects for new created unit and integration test cases. This
     process is explained in more detail in chapter \ref{chapter:projects}. Two months after the initial introduction and time in use for
-    the selected BDD testing framework the data collecting was ended. The two months time was chosen to see, how the early
+    the selected BDD-testing framework the data collecting was ended. The two months time was chosen to see, how the early
     adoption of new technologies had gone.
     The limited time available was also a practical constraint that resulted to study only for two months time. All the participants
     in this study were restricted to developers, as the purpose was to study developer testing practices. The projects
@@ -169,11 +169,11 @@ explained. Finally, threats to validity and limitations in this study are review
     The survey questions and how they are related to research survey questions and related research can be found
     in Appendix \ref{chapter:surveys} section \ref{section:junit-survey}.
 
-    \subsubsection{BDD testing frameworks survey}
+    \subsubsection{BDD-testing frameworks survey}
     Second survey was built to directly get insight on RQ1 and RQ2 about automated low-level testing
-    and it was conducted two months after new implementation level BDD testing framework was taken into use.
+    and it was conducted two months after new implementation level BDD-testing framework was taken into use.
     The second survey used all the questions (with modifications) from the first survey regarding \textit{JUnit} testing practices and
-    also added couple additional questions related to selected BDD testing framework. The survey was built using \textit{LimeSurvey}.
+    also added couple additional questions related to selected BDD-testing framework. The survey was built using \textit{LimeSurvey}.
     Modifications to questions include changing the question setup to a direct comparison of JUnit.
     For example, figure \ref{fig:survey-junit-comments} displays the original 5 point scale Likert question used in \textit{JUnit} survey and
     figure \ref{fig:survey-bdd-comments} shows the comparison question used in \textit{Spectrum} survey.
@@ -195,17 +195,17 @@ explained. Finally, threats to validity and limitations in this study are review
     \end{figure}
 
     The reason to change the questions was to provide direct comparison between the test frameworks.
-    If the same question set was repeated to gather insight on the new BDD testing framework, there exists the risk that
+    If the same question set was repeated to gather insight on the new BDD-testing framework, there exists the risk that
     the participant doesn't remember what he or she answered the last time. It could result in choosing the same answer option,
     despite the slight change in practice or perception in testing.
 
     The used question types were mostly 1 to 7 point Likert scale questions for the direct comparisons, combined with a few NPS questions for
-    determining developer loyalty towards low-level automated testing in general and also towards the new BDD testing framework.
+    determining developer loyalty towards low-level automated testing in general and also towards the new BDD-testing framework.
     A few other type of questions were also added.
     The survey questions and how they are related to research survey questions and related research can be found
     in Appendix \ref{chapter:surveys} section \ref{section:bdd-survey}.
 
-    \subsubsection{Interview about benefits and drawbacks of new BDD testing framework}
+    \subsubsection{Interview about benefits and drawbacks of new BDD-testing framework}
     At the end of the two month data collecting period, a loosely structured semi-structured interview was conducted with the participants
     to get more input on the change period. The interview holds only three basic questions to start with:
     \begin{enumerate}
@@ -216,13 +216,13 @@ explained. Finally, threats to validity and limitations in this study are review
     The idea to practice these questions with a interview, instead of survey questions, was to lead the discussion
     to possible new topics on the subject if they rose upon interviewing. Also some clarifications were asked to interesting
     answers on the second survey questions. Framework X part of the question relates
-    to chosen BDD testing framework in the project, as it was not the same for both projects.
+    to chosen BDD-testing framework in the project, as it was not the same for both projects.
 
     \subsubsection{Test code analysis}
     \label{subsub:test}
     Research question 3 is answered with test code analysis done with observation metrics from actual test data of the projects.
     First the baseline is calculated from existing automated low-level tests with JUnit. Second, the same values are calculated
-    after the two months period of using an implementation level BDD testing framework. These metric values are then compared
+    after the two months period of using an implementation level BDD-testing framework. These metric values are then compared
     against each other, to see how the following aspects of test code have changed:
     \clearpage
     \begin{addmargin}[0em]{0em}
@@ -354,15 +354,15 @@ a trustful relationship with the study participants.
 Internal validity threat includes the unexpected sources of bias~\cite{kitchenham2002preliminary}. The before mentioned
 prolonged involvement could lead to \textbf{researcher bias}.
 Another source of unwanted bias comes from the process of finding relevant projects and teams for the study.
-I first had the task of convincing participants to take a new BDD testing framework into use in the middle of the
+I first had the task of convincing participants to take a new BDD-testing framework into use in the middle of the
 project. This process is explained in detail in chapter \ref{chapter:projects}, but it can be summerized as an enthusiastic selling of the
-BDD testing frameworks and their features. This can cause some unwanted \textbf{response bias} influenced by a presence
+BDD-testing frameworks and their features. This can cause some unwanted \textbf{response bias} influenced by a presence
 of a \textbf{"champion"}~\cite{kitchenham2002preliminary} driving the change and initial impressions.
 
 \subsection{External validity}
 External validity reflects how well the findings in the study can be generalized and how they could interest other people
 outside the study~\cite{runeson2012case}. To mitigate the risks to external validity, there was kept attention in
-studying the BDD testing tools in relevant industrial context in actual project settings. Study participants were also selected from senior
+studying the BDD-testing tools in relevant industrial context in actual project settings. Study participants were also selected from senior
 developers with same degree experience level. \textbf{Data triangulation} was also used to study the applicability of BDD
 tools in different projects with multiple participant data sources.
 
@@ -387,14 +387,14 @@ Reliability of this study is the aspect of the study being dependent on the rese
 research methods and especially data collection methods are explained in detail and thus they should be able to be replicated by other researchers.
 Also the source code for enabling needed build configurations and test framework extensions are provided.
 
-One aspect that hinders the reliability is the provided refactoring of \textit{JUnit} tests to BDD testing framework examples explained
+One aspect that hinders the reliability is the provided refactoring of \textit{JUnit} tests to BDD-testing framework examples explained
 in chapter \ref{chapter:projects}. This step is hard to reproduce by other research on a larger scale, as it involves time and effort not
 possibly available. This example providing can also cause bias in the studying by
 shifting the written new tests to a certain structure that supports the research hypothesis. Although providing examples
-of good practices should only help to produce test code closer to as originally intended by the authors of these BDD testing framework creators.
+of good practices should only help to produce test code closer to as originally intended by the authors of these BDD-testing framework creators.
 
 This chapter discussed the case study details; what was studied and how it was done. Before chapter \ref{chapter:results} and case study results,
-the next chapter illustrates how selected project teams chose their new implementation level BDD testing framework to take in use.
+the next chapter illustrates how selected project teams chose their new implementation level BDD-testing framework to take in use.
 
 
 
