@@ -455,7 +455,7 @@ innerleftmargin=0cm,innerrightmargin=0cm,roundcorner=0pt, innertopmargin=0pt, in
 \newcommand{\SPROFESSORSHIP}{Datateknik}
 % Professorship code is the same in all languages
 \newcommand{\PROFCODE}{SCI3042}
-\newcommand{\KEYWORDS}{Test automation, Unit testing, Integration testing, Behavior-driven development, JVM, Java, Spring Framework, JUnit, Spock,
+\newcommand{\KEYWORDS}{Test automation, Unit testing, Integration testing, Behavior-Driven Development, JVM, Java, Spring Framework, JUnit, Spock,
 Spectrum, RSpec}
 \newcommand{\FKEYWORDS}{testiautomaatio, yksikkötestaus, integraatiotestaus, käyttäytymisvetoinen kehitys, JVM, Java, Spring-sovelluskehys,
 JUnit, Spock, Spectrum, RSpec}
@@ -567,44 +567,52 @@ Before designing the study methods, related research and their findings were rev
 guide the study to inspect problematic areas found in unit testing.
 Case study data collection methods included surveys, interviews and test code analysis.
 
-Case study provided promising results for problematic areas highlighted by earlier researh.
-To summerize the developer practice changes, the collected data displayed an increase in unit test case granularity.
-Results also displayed unanimously that BDD-testing frameworks guide to write more self-documenting tests than JUnit,
-where the test structure highlights better the different parts of the test.
+Case study provided promising results for problematic areas highlighted by earlier research.
+To summarize the developer practice changes, the collected data displayed an increase in unit test case granularity.
+Results also displayed unanimously that BDD-testing frameworks guide to write more self-documenting tests than JUnit.
+The structure of BDD tests highlighted better the different parts of the test.
 Study also revealed that the majority of participants had easier time understanding tests and removing
 repetition from test code.
 Developer perception changes in testing included the majority of study participants enjoying writing of tests more than with JUnit.
-The same majority also perceived that BDD-testing frameworks promote in writing higher quality test code than JUnit. Generally test code was perceived
-more understandable and maintanable than tests with JUnit, although this was not unanimous.
+The same majority also perceived that BDD-testing frameworks promote in writing higher quality test code than JUnit. Generally new test code was perceived
+more understandable and maintainable than tests with JUnit, although this was not unanimous. Learning curve
+to be effective varied between studied frameworks.
 Tool support of BDD-testing frameworks
 for testing Java Spring Framework were found ranging from adequate to good.
 
-In conclusion, this thesis results provide small scale evidence that BDD-testing frameworks could potentially ease the maintainaibility and readability
+In conclusion, this thesis results provide small scale evidence that BDD-testing frameworks could potentially ease the maintainability and readability
 of unit and integration tests while same time rising the enjoyment in testing.
 }
 
 % Abstract in Finnish
 % ------------------------------------------------------------------
+\newgeometry{top=5cm}
 \thesisabstract{finnish}{
-Kivi on materiaali, joka muodostuu mineraaleista ja luokitellaan
-mineraalisisältönsä mukaan. Kivet luokitellaan yleensä ne muodostaneiden
-prosessien mukaan magmakiviin, sedimenttikiviin ja metamorfisiin kiviin.
-Magmakivet ovat muodostuneet kiteytyneestä magmasta, sedimenttikivet vanhempien
-kivilajien rapautuessa ja muodostaessa iskostuneita yhdisteitä, metamorfiset
-kivet taas kun magma- ja sedimenttikivet joutuvat syvällä maan kuoressa
-lämpötilan ja kovan paineen alaiseksi.
+Tässä diplomityössä tutkittiin, kuinka käyttäytymisvetoiset testisovelluskehykset muuttavat Java-koodin testausta
+verrattuna JUnit:iin. Tutkimus suoritettiin tapaustutkimuksen menetelmin Vincit Oy:ssa.
+Tutkimukseen valittiin kaksi projektia, joissa uudet yksikkö- ja integraatiotestausluokat kirjoitettiin
+käyttäytymisvetoisilla testaussovelluskehyksillä JUnit:in sijaan.
+Työhön liittyvät aiempien tutkimusten havainnot ohjasivat työtä tarkastelemaan näissä löydettyjä ongelmallisia
+alueita.
+Tiedonkeruukeinoina käytettiin kyselyitä, haastatteluita sekä
+testikoodin analyysia.
 
-Kivi on epäorgaaninen eli elottoman luonnon aine, mikä tarkoittaa ettei se
-sisällä hiiltä tai muita elollisen orgaanisen luonnon aineita. Niinpä kivestä
-tehdyt esineet säilyvät maaperässä tuhansien vuosien ajan mätänemättä. Kun
-orgaaninen materiaali jättää jälkensä kiveen, tulos tunnetaan nimellä fossiili.
+Työn tulokset osoittautuivat lupaaviksi aiemmin löydettyihin ongelmallisiin seikkoihin.
+Kokonaisuudessaan sovelluskehittäjien testauskäytännöissä löytyi useita muutoksia. Yksikkötestien rakenne
+ohjautui aiempaa hienojakoisemmaksi. Tulokset osoittivat myös yksimielisesti, että käyttäytymisvetoiset
+testaussovelluskehykset ohjaavat kirjoittamaan aiempaa paremmin itseänsä dokumentoivia testejä. Myös testin eri loogiset
+osat olivat uusien testien rakenteesta helpommin luettavissa. Suurimmalla osalla tutkimukseen osallistujilla
+testit olivat aiempaa helpompia ymmärtää sekä niistä oli helpompi poistaa toistoa. Suurin osa koki
+testien kirjoittamisen myös aiempaa nautittavampana. Suurin osa kehittäjistä koki uusien menetelmien
+ohjaavan kirjoittamaan laadukkampaa testikoodia kuin aiemmin. Yleisesti ottaen uutta testikoodia pidettiin
+ymmärrettävämpänä ja ylläpidettävämpänä kuin aiemmin, tosin ei täysin yksimielisesti.
+Oppismiskäyrä uusien testauskehyksien parissa vaihteli tutkittujen kehysten välillä. Java Spring-sovelluskehyksen
+testaustuki vaihteli riittävästä tuesta hyvään tukeen.
 
-Suomen peruskallio on suurimmaksi osaksi graniittia, gneissiä ja
-Kaakkois-Suomessa rapakiveä.
-
-Kiveä käytetään teollisuudessa moniin eri tarkoituksiin, kuten keittiötasoihin.
-Kivi on materiaalina kalliimpaa mutta kestävämpää kuin esimerkiksi puu.}
-
+Kokonaisuudessaan työ tarjosi pienessä skaalassa näyttöä siitä, että käyttäytymisvetoiset testaussovelluskehykset
+voivat mahdollisesti helpottaa yksikkö- ja integraatiotestien ylläpidettävyyttä, luettavuutta sekä koettua nautintoa näiden parissa.
+}
+\restoregeometry
 % Acknowledgements
 % ------------------------------------------------------------------
 % Select the language you use in your acknowledgements

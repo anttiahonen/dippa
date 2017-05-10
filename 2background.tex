@@ -9,8 +9,8 @@ After this, agile methodologies Test-Driven Development, Acceptance Test-Driven 
 related research on the thesis study topic is presented.
 
 \section{Java Virtual Machine} %1p
-    JVM and its programming language Java was originally designed for building software on networked devices~\cite{lindholm2015java}. From there
-    next major usage possibilities for Java came from Web HTML-sites. Web-sites with Java embedded programs first appeared in HotJava-browser~\cite{lindholm2015java}.
+    JVM and its programming language Java was originally designed for building software on networked devices~\cite{lindholm2015java}. From there,
+    next major usage possibilities for Java came in form of Web HTML-sites. Web-sites with Java embedded programs first appeared in HotJava-browser~\cite{lindholm2015java}.
     From those days usage of Java has explored new fields and JVM itself hosts nowadays many more programming languages than
     just Java~\cite{wiki:jvm}.
 
@@ -18,7 +18,7 @@ related research on the thesis study topic is presented.
     Current implementations of JVM have brought the environment to mobile, desktop and server devices, yet the JVM itself
     isn't tied to any specific technology. The basic information for JVM comes from \textit{class} files. These files include
     binary JVM bytecode instructions. Instead of having Java code in class files, it compiles to these binary instructions
-    that are run on JVM. Figure \ref{fig:JVM} illustrates the runtime memory areas and the class loader system.
+    that are run on the JVM. Figure \ref{fig:JVM} illustrates the runtime memory areas and the class loader system.
     JVM has support for \textit{primitive} and \textit{reference} types, from which latter enables support for referencing JVM objects. ~\cite{lindholm2015java}
 
     JVM is interesting target for a vast amount of programming languages, thanks to its maturity, ubiquity and performance~\cite{sarimbekov2013characteristics}.
@@ -43,9 +43,10 @@ related research on the thesis study topic is presented.
         of all actions necessary to provide adequate confidence
         that the item or product conforms to established
         technical requirements"}.~\cite{buckley1978standard}
+
     Although modern software quality assurance differs from the original standard definition, it is still definitely found
     at the core of SQA. To fully understand SQA and why it is important, first the software quality concept in itself is illustrated.
-    Motivation for practicing SQA is examined second and third the overall activities in SQA are explained briefly.
+    Motivation for practicing SQA is examined second and third, the overall activities in SQA are explained briefly.
     \subsection{Definitions of quality}
     Quality in software development is a multifaceted entity that has had many viewpoints for a long time.
     Some of these earlier views include \textit{product, transcendental, user, manufacturing} and \textit{value based} view~\cite{kitchenham1996elusive}.
@@ -53,7 +54,7 @@ related research on the thesis study topic is presented.
     Business goals and their priorities should determine the needed level of software quality~\cite{kitchenham1996elusive} so therefore
     quality in itself is not set in stone, but it can alter between software services and products to fit the purpose.
     This can be easily demonstrated with an example of software inside a missile defence system or an online dating application.
-    Two different systems with different goals and consequences of use and therefore obviously different standards for needed quality.
+    Two different systems with different goals and consequences of use, and therefore obviously different standards for needed quality.
 
     {\renewcommand{\arraystretch}{1.1}
     \begin{table}[H]
@@ -107,28 +108,28 @@ related research on the thesis study topic is presented.
     defect detection rate than implicit ones~\cite{mantyla2014software}. \textit{Continuous integration} can also be seen
     as a explicit defect detection as it illustrates integration defects and problems with frequent integration cycle~\cite{huo2004software}.
 
-    Code enhancement activities aim to produce better design and maintainability of the codebase and these include practices
+    Code enhancement activities aim to produce better design and maintainability of the codebase, and these include practices
     like \textit{pair programming, refactoring}~\cite{huo2004software} and \textit{code reviews}~\cite{rigby2013convergent}.
     Although code reviews are also a form of inspection and explicit defect detection, one of their primary uses in modern
-    code review is to share knowledge between team members~\cite{mantyla2014software}~\cite{rigby2013convergent}.
+    code review is to share knowledge between team members~\cite{mantyla2014software,rigby2013convergent}.
 
-    Verification \& Validation aims to guarantee the quality of product or intermediate products and it can be used for
-    example to design and requirement artifacts. It is a static method, which involves stakeholder(s)
+    Verification \& Validation aims to guarantee the quality of product or intermediate products. It can be used for
+    example for design and requirement artifacts. It is a static method, which involves stakeholder(s)
     inspecting the artifact. It is more of a traditional waterfall software project activity, but agile practices such as code reviews
     can be categorized as a V\&V activity. ~\cite{huo2004software}
 
-    Collaboration and communication between stakeholders are used in agile methodologies frequently being one of the
-    cornerstones of agile practices in general~\cite{huo2004software}. Frequent customer collaboration with \textit{On-site customer}~\cite{huo2004software}
-    is an agile SQA-practice that establishes a foundation for many agile practices and is essential in delivering
+    Collaboration and communication between stakeholders are used in agile methodologies frequently, being one of the
+    cornerstones of agile practices in general~\cite{huo2004software}. Frequent customer collaboration with \textit{on-site customer}~\cite{huo2004software}
+    is an agile SQA-practice that establishes a foundation for many agile practices. It is essential in delivering
     quality on the AQM.
 
     There are many more specific SQA practices that have their foundations on the activities mentioned in this section.
-    Next in this thesis testing is examined in detail through automated testing as it provides a base for agile SQA practices \textbf{TDD},
+    Next in this thesis, testing is examined in detail through automated testing as it provides a base for agile SQA practices \textbf{TDD},
     \textbf{ATDD} and \textbf{BDD}.
 
 \section{Automated testing}
-    First in this section different levels of test automation are explored. Second lower levels of test automation are explained in more
-    detail and third overall benefits and drawbacks of test automation are discussed.
+    First in this section different levels of test automation are explored. Second, lower levels of test automation are explained in more
+    detail and third, overall benefits and drawbacks of test automation are discussed.
 
     \subsection{Levels of automation}
     {\renewcommand{\arraystretch}{1.3}
@@ -154,11 +155,11 @@ related research on the thesis study topic is presented.
     }
 
     Test automation comes at many levels of granularity regarding the system and its requirements. The four main levels for
-    functional testing are \textit{unit, integration, system} and \textit{acceptance} testing~\cite{itkonen2016}.
+    functional testing are \textit{unit, integration, system} and \textit{acceptance} testing.
     Table \ref{tab:testlevels} illustrates how different levels of design relate to levels of test automation in traditional
     \textbf{Test Last Development (TLD)}. At the bottom
     of table \ref{tab:testlevels} there is code, which is the result of design and foundation (in traditional automated testing)
-    for different testing levels. Different levels of design guide the automated tests at the specified level.
+    for different testing levels. Different levels of design guide the automated tests at the specified level. ~\cite{itkonen2016}
 
     The introduced test automation levels are a part of functional testing. There exists also different non-functional
     requirements for software projects that can be automatically tested, such as \textit{performance} and \textit{security} testing~\cite{crispin2009agile}.
@@ -170,11 +171,11 @@ related research on the thesis study topic is presented.
     definitions and usages inside software projects, but the distinction between the two can be found confusing by many developers~\cite{artofunit2013}.
     Table \ref{tab:testlevels} illustrates how unit testing adheres to component design and integration testing to architecture design ~\cite{itkonen2016}.
 
-    \textbf{Unit test} has many similar definitions which all agree that it tests individual unit or collection of these units working as one
-    ~\cite{runeson2006survey}~\cite{whittaker2000software}. Unit test also has the property of being isolated from the rest
+    \textbf{Unit test} has many similar definitions, which all agree that it tests individual unit or collection of these units working as one
+    ~\cite{runeson2006survey,whittaker2000software}. Unit test also has the property of being isolated from the rest
     of the system~\cite{whittaker2000software}. Unit testing can in a sense also be seen as an intersection of design,
     coding and debugging~\cite{langr2015pragmatic}.
-    Dedicated practitioner of unit testing Osherove~\cite{artofunit2013} has identified important aspects of a good unit test:
+    Dedicated practitioner of unit testing, Osherove~\cite{artofunit2013}, has identified important aspects of a good unit test:
     \textit{trustworthiness, maintainability, readability, isolated,} has \textit{single concern} and contains \textit{minimal repetition}.
 
     \textbf{Isolation} is an important part of unit testing. This means in practice using test doubles also known as \textit{mocks}.
@@ -186,8 +187,8 @@ related research on the thesis study topic is presented.
 
     \textbf{Integration testing} is the second, higher level of automated testing in the low-level testing scope of thesis.
     The definitions of integration testing state that it is a testing
-    activity which involves multiple components~\cite{whittaker2000software}~\cite{artofunit2013}. Osherove~\cite{artofunit2013}
-    defines integration testing as testing a unit of work with real dependencies in place, for instance database and  networking.
+    activity which involves multiple components~\cite{whittaker2000software,artofunit2013}. Osherove~\cite{artofunit2013}
+    defines integration testing as testing a unit of work with real dependencies in place: for instance database and  networking.
     Integration tests are not usually as fasts as unit tests~\cite{artofunit2013}. Many times this results from including
     full context of the system through dependency injection container, such as \textit{Spring Framework} or \textit{Guice}~\cite{kapelonis2016java}.
 
@@ -201,13 +202,13 @@ related research on the thesis study topic is presented.
             \headcol \textbf{Benefits} & \textbf{Drawbacks} \\ \hline
 
             \rowcol Rapid feedback~\cite{prechelt2016quality} & Can't replace manual testing~\cite{rafi2012benefits} \\
-            Improved product quality~\cite{rafi2012benefits}~\cite{williams2009effectiveness} & Maintaining difficulty~\cite{rafi2012benefits}~\cite{runeson2006survey} \\
-            \rowcol Increased test coverage~\cite{rafi2012benefits} & Lack of skilled people~\cite{rafi2012benefits}~\cite{runeson2006survey} \\
-            Increased developer confidence~\cite{rafi2012benefits} & Hard to select correct testing strategies~\cite{rafi2012benefits}~\cite{berner2005observations} \\
+            Improved product quality~\cite{rafi2012benefits,williams2009effectiveness} & Maintaining difficulty~\cite{rafi2012benefits,runeson2006survey} \\
+            \rowcol Increased test coverage~\cite{rafi2012benefits} & Lack of skilled people~\cite{rafi2012benefits,runeson2006survey} \\
+            Increased developer confidence~\cite{rafi2012benefits} & Hard to select correct testing strategies~\cite{rafi2012benefits,berner2005observations} \\
             \rowcol Reduced testing time~\cite{rafi2012benefits} & Brittle tests~\cite{berner2005observations} \\
             Shorter release cycle~\cite{berner2005observations} & More development time~\cite{williams2009effectiveness} \\
             \rowcol Increased testability design~\cite{berner2005observations} & Cost versus value~\cite{runeson2006survey} \\
-            Act as documentation~\cite{langr2015pragmatic}~\cite{chelimsky2010rspec}~\cite{kapelonis2016java} & Unmaintaned tests can lose all value~\cite{berner2005observations} \\
+            Act as documentation~\cite{langr2015pragmatic,chelimsky2010rspec,kapelonis2016java} & Unmaintaned tests can lose all value~\cite{berner2005observations} \\
             \rowcol Continuous regression~\cite{williams2009effectiveness} &  \\ \bottomlinec
             \end{tabular}
             \caption {Automated Testing Benefits \& Drawbacks} \label{tab:automated-title}
@@ -225,22 +226,22 @@ related research on the thesis study topic is presented.
     increase in developer confidence} and \textit{reduced testing time}.
 
     Automated testing was found also to allow \textit{shorter release cycles}. This is a result of
-    tests executed more often and therefore allowing defects to be detected earlier with reduced cost to fix.
-    Quality and depth of test cases also increase with automation, as less time is needed for executing them and more time is available
+    tests executed more often, and therefore allowing defects to be detected earlier with reduced cost to fix.
+    Quality and depth of test cases also increased with automation, as less time is needed for executing them and more time is available
     to design the test cases. Another benefit of automated testing is the more layered, testable design of the software.
     To achieve the \textbf{benefits}, test automation \textbf{strategy needs to combine different approaches} and testing levels. ~\cite{berner2005observations}
 
     Automated test cases can also \textbf{help to understand} the system. This is enabled by writing information how the production code should behave
-    into the test cases and test methods. ~\cite{langr2015pragmatic}~\cite{chelimsky2010rspec}~\cite{kapelonis2016java}
+    into the test cases and test methods. ~\cite{langr2015pragmatic,chelimsky2010rspec,kapelonis2016java}
 
     At unit testing level, benefits of test automation was found to include over 20\% decrease in test defects~\cite{williams2009effectiveness}.
     Also the defects found by largely increased customer base in first 2 years of use was decreased by introducing unit testing practices~\cite{williams2009effectiveness}.
     Another strength of automated unit testing is also the continuous regression suite it provides~\cite{runeson2006survey}.
 
-    Unfortunately test automation isn't only beneficial compared to manual testing. In the earlier mentioned review by Rafi et al.~\cite{rafi2012benefits}
+    Test automation isn't only beneficial compared to manual testing. In the earlier mentioned review by Rafi et al.~\cite{rafi2012benefits},
     some of the \textbf{limitations} include for instance: \textit{automation can't replace manual testing, difficulty in maintaining}
     and \textit{lack of skilled people} for test automation. Usually the lack of skilled people tends to result in projects as
-    \textit{inapporiate test automation strategies}~\cite{rafi2012benefits}~\cite{berner2005observations}. These kind of projects
+    \textit{inapporiate test automation strategies}~\cite{rafi2012benefits,berner2005observations}. These kind of projects
     usually automate testing at wrong levels, for instance automatically testing through Graphical User Interface (GUI). This
     can lead to brittle tests that are hard to maintain as the GUI changes~\cite{berner2005observations}. Neglecting automated
     testing maintenance can lead to knowledge diminishing and tests that lose totally their capability to run~\cite{berner2005observations}.
@@ -258,7 +259,7 @@ related research on the thesis study topic is presented.
 \section{Test-Driven Development} %2p
     \subsection{Definition}
     Kent Beck~\cite{beck2003test} defines TDD as techniques aimed to produce clean code that works.
-    This is done by driving development with automated tests - Test-Driven Development. TDD consists of two basic rules:
+    This is done by driving development with automated tests: Test-Driven Development. TDD consists of two basic rules:
     \textit{write new production code only when automated test fails} and
     \textit{eliminate duplicated code}. These two rules are the base for \textbf{Red-Green cycle} of TDD:
 
@@ -289,7 +290,7 @@ related research on the thesis study topic is presented.
     \end{table}
     }
     The tests written in TDD cycle are unit tests, providing incremental functionality to small pieces of software at a time~\cite{bissi2016effects}.
-    Beck~\cite{beck2001aim} also defines test-first principle to be much more than just testing and he states that TDD is
+    Beck~\cite{beck2001aim} also defines test-first principle to be much more than just testing. He states that TDD is
     also a software design technique. Table \ref{tab:TDD} illustrates how component design and unit testing are now in a relation
     where both can affect each other. Code is produced only through design captured in unit tests.
 
@@ -300,23 +301,23 @@ related research on the thesis study topic is presented.
             \begin{tabular}{ p{6.3cm} p{6.3cm} }
             \headcol & \\[-0.8em]
             \headcol \textbf{Benefits} & \textbf{Drawbacks} \\ \hline
-            \rowcol Increased external quality~\cite{kollanus2010test}~\cite{bissi2016effects} & Increased\newline development time~\cite{kollanus2010test}~\cite{bissi2016effects}~\cite{williams2009effectiveness}  \\
+            \rowcol Increased external quality~\cite{kollanus2010test,bissi2016effects} & Increased\newline development time~\cite{kollanus2010test,bissi2016effects,williams2009effectiveness}  \\
             Increased test coverage~\cite{bissi2016effects} &  Requires high discipline~\cite{aniche2010most} \\
-            \rowcol Tests executed more~\cite{williams2009effectiveness} & Can lead to brittle tests~\cite{chelimsky2010rspec}~\cite{astels2006new}~\cite{amodeo2015learning} \\
+            \rowcol Tests executed more~\cite{williams2009effectiveness} & Can lead to brittle tests~\cite{chelimsky2010rspec,astels2006new,amodeo2015learning} \\
             More precise test cases~\cite{williams2009effectiveness} &  \\ \bottomlinec
             \end{tabular}
             \caption {TDD Benefits \& Drawbacks} \label{tab:tdd-title}
         \end{center}
     \end{table}
     }
-    \textbf{Benefits} of TDD are not totally clear and exact. On earlier systematic literature review by Kollanus~\cite{kollanus2010test} in 2010 there was found
+    \textbf{Benefits} of TDD are not totally clear and exact. On earlier systematic literature review by Kollanus~\cite{kollanus2010test} in 2010, there was found
     weak evidence regarding better \textbf{external software quality} with TDD and even less evidence for better \textbf{internal software quality} with TDD.
     In any case, there was still results pointing to better quality, even though evidence was not uniform.
     External quality was measured with two methods, passing acceptance tests done by researchers and number of defects found before
     reported by the customer. Internal quality had multiple metrics, such as \textit{code coverage, number of test cases, method size, cyclomatic complexity}
     and so on. The metrics was found at times contradicting and consensus of internal quality was left unclear.
 
-    In 2016 systematic literature review of TDD by Bissi et al.~\cite{bissi2016effects} the benefits of TDD was found more uniform and quite
+    In 2016 systematic literature review of TDD by Bissi et al.~\cite{bissi2016effects}, the benefits of TDD was found more uniform and quite
     promising. 88\% of studies showed significant increase in external software quality and 76\% of studies identified
     significant increase in internal software quality. This time external quality was measured only with acceptance tests and compared
     to TLD approach. Internal quality was inspected with the only common metric found in the literature: code coverage. It could
@@ -327,7 +328,7 @@ related research on the thesis study topic is presented.
     creating more tests that are executed more frequently. This seems to correlate with earlier mentioned increased internal
     quality measured by test coverage. TDD was also shown to promote more precise and accurate test cases than TLD~\cite{williams2009effectiveness}.
 
-    \textbf{Drawbacks} of TDD was found unanimously to include increase in development time~\cite{kollanus2010test}~\cite{bissi2016effects}~\cite{williams2009effectiveness}.
+    \textbf{Drawbacks} of TDD was found unanimously to include increase in development time~\cite{kollanus2010test,bissi2016effects,williams2009effectiveness}.
     For example in the study done by Williams et al.~\cite{williams2009effectiveness} the increase was ranging from 15\% to 35\%.
     As earlier mentioned, Beck~\cite{beck2001aim} defined TDD to be also a design technique. This aspect could make TDD too demanding practice for junior
     level developers~\cite{hammond2012test}.
@@ -338,7 +339,7 @@ related research on the thesis study topic is presented.
 
     BDD literature frequently states that TDD can have a tendency to shift viewpoint in testing to verifying system state
     rather than behavior of it. This can lead to brittle tests that are tightly coupled to what the object is, instead of
-    what the object does. ~\cite{chelimsky2010rspec}~\cite{astels2006new}~\cite{amodeo2015learning}
+    what the object does. ~\cite{chelimsky2010rspec,astels2006new,amodeo2015learning}
 
     In conclusion, it could be said that TDD \textbf{is not} the \textbf{silver bullet} for software development that solves all the quality problems.
     The two systematic reviews mentioned provide somewhat conflicting results. Nevertheless, it could be argued that in the right
@@ -346,12 +347,12 @@ related research on the thesis study topic is presented.
 
 \section{Acceptance Test-Driven Development}
     ATDD is an agile practice that has many forms and names: \textit{Specification by Example, Agile Acceptance Testing, Story Testing} and
-    obviously \textit{Acceptance Test-Driven Development}~\cite{gartner2012atdd}. BDD inholds also
+    obviously \textit{Acceptance Test-Driven Development}~\cite{gartner2012atdd}. BDD contains also
     ATDD~\cite{gartner2012atdd}, but as later is discovered, it is actually a superset of it.
 
-    ATDD is an collaboration tool for stakeholders of the project~\cite{gartner2012atdd}~\cite{haugset2012automated}. It means driving the
-    development with features specified with executable acceptance level tests~\cite{gartner2012atdd}~\cite{haugset2012automated}.
-    ATDD can have many formats, such as \textit{Gherkin, Keyword-driven testing and Tabular formats} ~\cite{gartner2012atdd}.
+    ATDD is an collaboration tool for stakeholders of the project~\cite{gartner2012atdd,haugset2012automated}. It means driving the
+    development with features specified with executable acceptance level tests~\cite{gartner2012atdd,haugset2012automated}.
+    ATDD can have many formats, such as \textit{Gherkin, Keyword-driven testing} and \textit{tabular formats} ~\cite{gartner2012atdd}.
 
     Instead of traditional automated testing, ATDD can be seen as a mixture of documentation centric traditional RE and communication focused agile RE~\cite{haugset2012automated}.
     The key is the communication and collaboration between stakeholders~\cite{haugset2012automated}. The executable automated tests are a very useful byproduct.
@@ -400,8 +401,8 @@ related research on the thesis study topic is presented.
     in detail to see how it relates to TDD and ATDD and how it combines the two approaches.
 \clearpage
 \section{Behavior-Driven Development} %2p
-    This section will first examine the history behind BDD. Second BDD definition is explained.
-    Third the BDD process and different levels in it are examined, together with tools to support them. Finally
+    This section will first examine the history behind BDD. Second, BDD definition is explained.
+    Third, the BDD process and different levels in it are examined, together with tools to support them. Finally
     the benefits and drawbacks of BDD are discussed.
 
     \subsection{History}
@@ -477,7 +478,7 @@ related research on the thesis study topic is presented.
     From there, through different levels of system, implementation is driven with tests first to specify behavior~\cite{chelimsky2010rspec}.
     This all correlates well with quality measured by the earlier introduced alternative quality model. BDD
     process aims to provide features with value in use and high internal \& external software quality. This happens through
-    \textit{collaboration, incremental delivery} and \textit{vast \& repeatable automated test suites}~\cite{chelimsky2010rspec}~\cite{smart2014bdd}.
+    \textit{collaboration, incremental delivery} and \textit{vast \& repeatable automated test suites}~\cite{chelimsky2010rspec,smart2014bdd}.
     The outcome should be quality that delights the end user, thus performing well on the AQM~\cite{denning2016sq}.
     Table \ref{tab:BDD} visualizes how business outcomes and the value derived from them drive the process from outside-in through
     test automation levels to code.
@@ -500,7 +501,7 @@ related research on the thesis study topic is presented.
     the end result will be a working feature providing value related to business outcomes~\cite{chelimsky2010rspec}.
 
     \subsection{Levels of specification}
-    The first automation level is \textbf{acceptance level} testing ~\cite{chelimsky2010rspec}~\cite{solis2011study}~\cite{smart2014bdd}~\cite{okolnychyi2016study}.
+    The first automation level is \textbf{acceptance level} testing ~\cite{chelimsky2010rspec,solis2011study,smart2014bdd,okolnychyi2016study}.
     This level can be seen as a form of ATDD~\cite{gartner2012atdd}. As earlier explained, BDD also includes the ubiquitous language~\cite{bdd2006north}
     from Domain Driven Design and thus all ATDD does not pass as acceptance level BDD.
 
@@ -515,7 +516,7 @@ related research on the thesis study topic is presented.
     Main characteristic of acceptance level tools is business readable plain text input that is expressed with the earlier mentioned
     user stories and their scenarios~\cite{okolnychyi2016study}.
 
-    The second automated level in BDD is \textbf{implementation level} testing ~\cite{chelimsky2010rspec}~\cite{solis2011study}\newline~\cite{smart2014bdd}~\cite{okolnychyi2016study}.
+    The second automated level in BDD is \textbf{implementation level} testing ~\cite{chelimsky2010rspec,solis2011study,smart2014bdd,okolnychyi2016study}.
     Implementation level can be seen as testing, where behavior of objects and components are described with examples~\cite{chelimsky2010rspec}.
     This means the earlier mentioned \textit{unit} and \textit{integration} testing done with a new point of view. BDD is not limited to acceptancel level
     only, as one of the core values in it is:
@@ -524,11 +525,11 @@ related research on the thesis study topic is presented.
     shows how the two explained automation levels in BDD work together in a cycle.
 
     Implementation level BDD can be seen to follow the principles of TDD, like the earlier mentioned red-green cycle driving
-    the design~\cite{smart2014bdd}. The tests produced by BDD differ from TDD tests, they are more granular pieces of
+    the design~\cite{smart2014bdd}. The tests produced by BDD differ from TDD tests; they are more granular pieces of
     describing examples of used code~\cite{astels2006new}. They help to shift the viewpoint from test centric approach by
     changing the often found 1-1 mappings between test cases and test methods to classes and their methods with more descriptive naming~\cite{astels2006new}.
 
-    The outcome from implementation level BDD specifications is readable, behavior oriented living documentation aimed for developers~\cite{chelimsky2010rspec}~\cite{smart2014bdd}.
+    The outcome from implementation level BDD specifications is readable, behavior oriented living documentation aimed for developers~\cite{chelimsky2010rspec,smart2014bdd}.
     Although implementation level BDD can be done with traditional xUnit tools,
     there exists dedicated BDD tools for writing easily \textbf{more concise} and \textbf{more expressive} low-level specifications~\cite{smart2014bdd}.
     These implementation level BDD tools provide the base for research work
@@ -572,10 +573,10 @@ related research on the thesis study topic is presented.
             \begin{tabular}{  p{6.3cm}  p{6.3cm} }
             \headcol & \\[-0.8em]
             \headcol \textbf{Benefits} & \textbf{Drawbacks} \\ \hline
-            \rowcol Increased external quality*~\cite{kollanus2010test}~\cite{bissi2016effects} & Increased\newline development time*~\cite{kollanus2010test}~\cite{bissi2016effects}~\cite{williams2009effectiveness} \\
+            \rowcol Increased external quality*~\cite{kollanus2010test,bissi2016effects} & Increased\newline development time*~\cite{kollanus2010test,bissi2016effects,williams2009effectiveness} \\
             Increased internal quality*~\cite{bissi2016effects} & Requires high discipline~\cite{smart2014bdd} \\
-            \rowcol Helps to test right aspects of component~\cite{chelimsky2010rspec}~\cite{astels2006new}~\cite{amodeo2015learning} & \\
-            More granular test cases~\cite{chelimsky2010rspec}~\cite{astels2006new} & \\
+            \rowcol Helps to test right aspects of component~\cite{chelimsky2010rspec,astels2006new,amodeo2015learning} & \\
+            More granular test cases~\cite{chelimsky2010rspec,astels2006new} & \\
             \rowcol Can help in maintenance~\cite{smart2014bdd} & \\ \bottomlinec
             \end{tabular}
             \caption {Implementation Level BDD Benefits \& Drawbacks} \label{tab:bdd-imp-title}
@@ -588,15 +589,15 @@ related research on the thesis study topic is presented.
     on how the external and internal quality of software changes with BDD, it should share the same traits as described
     earlier with benefits of TDD. This is a result of implementation level BDD being an evolution of TDD~\cite{astels2006new}.
     As mentioned before, compared to TDD, BDD should help to focus on verifying the right aspects regarding the component.
-    This means verifying the behavior of the component instead its structure~\cite{chelimsky2010rspec}~\cite{astels2006new}~\cite{amodeo2015learning}.
+    This means verifying the behavior of the component instead its structure~\cite{chelimsky2010rspec,astels2006new,amodeo2015learning}.
 
-    Implementation level BDD aims to produce more granular and descriptive test methods and test cases than TDD~\cite{chelimsky2010rspec}~\cite{astels2006new}.
+    Implementation level BDD aims to produce more granular and descriptive test methods and test cases than TDD~\cite{chelimsky2010rspec,astels2006new}.
     These test cases are also describing the behavior of production code by examples~\cite{chelimsky2010rspec}.
     This can help the system maintenance, providing up-to-date documentation for future developers or even the original developer
     later on in the future~\cite{smart2014bdd}.
 
     \textbf{Drawbacks} of implementation level BDD are not clear, as empirical research on the topic is nonexistent.
-    Because of the close relation to TDD, practicing it should introduce a growth in development time~\cite{kollanus2010test}~\cite{bissi2016effects}~\cite{williams2009effectiveness}.
+    Because of the close relation to TDD, practicing it should introduce a growth in development time~\cite{kollanus2010test,bissi2016effects,williams2009effectiveness}.
     BDD as whole needs discipline~\cite{smart2014bdd}, therefore it might not be a good fit for all projects and their stakeholders.
     It was also found that BDD is most beneficial when it is used as a holistic approach~\cite{solis2011study}.
     This means including both levels of specification and accommodating working practices to fully support it}.
