@@ -31,7 +31,7 @@
 \contentsline {subsection}{\numberline {2.6.5}Benefits and drawbacks}{20}{subsection.2.6.5}
 \contentsline {section}{\numberline {2.7}Related research}{22}{section.2.7}
 \contentsline {chapter}{\numberline {3}Environment}{25}{chapter.3}
-\contentsline {section}{\numberline {3.1}xUnit testing frameworks}{25}{section.3.1}
+\contentsline {section}{\numberline {3.1}xUnit family testing frameworks}{25}{section.3.1}
 \contentsline {subsection}{\numberline {3.1.1}JUnit}{25}{subsection.3.1.1}
 \contentsline {subsection}{\numberline {3.1.2}Extending Junit for Spring Framework domain}{27}{subsection.3.1.2}
 \contentsline {section}{\numberline {3.2}Implementation level BDD-testing frameworks for JVM}{29}{section.3.2}
@@ -85,7 +85,7 @@
 \contentsline {section}{\numberline {7.3}Future work}{97}{section.7.3}
 \contentsline {chapter}{\numberline {A}Interview questions}{106}{appendix.A}
 \contentsline {section}{\numberline {A.1}Interview for demographic purposes}{106}{section.A.1}
-\contentsline {chapter}{\numberline {B}Surveys}{108}{appendix.B}
-\contentsline {section}{\numberline {B.1}Survey regarding JUnit in automated low-level testing}{108}{section.B.1}
-\contentsline {section}{\numberline {B.2}Survey regarding BDD-testing framework in automated low-level testing}{112}{section.B.2}
-\contentsline {chapter}{\numberline {C}Gradle build configurations}{116}{appendix.C}
+\contentsline {chapter}{\numberline {B}Surveys}{107}{appendix.B}
+\contentsline {section}{\numberline {B.1}Survey regarding JUnit in automated low-level testing}{107}{section.B.1}
+\contentsline {section}{\numberline {B.2}Survey regarding BDD-testing framework in automated low-level testing}{111}{section.B.2}
+\contentsline {chapter}{\numberline {C}Gradle build configurations}{115}{appendix.C}

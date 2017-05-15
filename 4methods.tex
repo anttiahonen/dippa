@@ -1,12 +1,12 @@
 \chapter{Methods}
 \label{chapter:methods}
 This chapter discusses the design of the study. First, research questions are introduced.
-Second, research hypothesis is made based on the reviewed practices \& related research findings introduced in the chapter \ref{chapter:background}
-and features of studied testing frameworks explained in chapter \ref{chapter:environment}.
+Second, research hypothesis is made based on the reviewed practices \& related research findings introduced in the chapter \ref{chapter:background},
+together with features of studied testing frameworks explained in chapter \ref{chapter:environment}.
 Third, the empirical study and its methodology are explained in detail.
 
 \section{Research questions}
-This thesis studies low-level testing done with xUnit family testing framework	\textit{JUnit}  and how it changes after putting
+This thesis studies low-level testing done with \textit{xUnit family} testing framework	\textit{JUnit}  and how it changes after putting
 an implementation level BDD-testing framework into operation. The scope in research is testing Java-code. The following
 research questions are aimed to highlight the change in low-level testing after the testing framework change:
 \begin{addmargin}[2em]{0em}
@@ -31,7 +31,7 @@ research questions are aimed to highlight the change in low-level testing after 
     \newline
     As has been noted before in benefits of implementation level behavior-driven development, BDD-testing frameworks operating on this
     level aim to produce granular test cases with descriptive named test methods~\cite{chelimsky2010rspec, astels2006new, kapelonis2016java}.
-    For example RSpec was originally intended to help the shifting of viewpoint from 1-1 relationship between test-code
+    For example \textit{RSpec} was originally intended to help the shifting of viewpoint from 1-1 relationship between test-code
     and only one test method per function to more granular test cases~\cite{astels2006new}.
     Compared to earlier average in the project, hypothesis should be visible in test cases through more measured test methods
     per method of component under test. In addition, the phenomena is also studied with a participant survey.
@@ -43,14 +43,14 @@ research questions are aimed to highlight the change in low-level testing after 
     \vspace{5px}
     \newline
     As stated earlier, implementation level BDD-testing frameworks should produce test cases of the component under test,
-    that \textbf{describe behavior} with examples~\cite{chelimsky2010rspec}~\cite{astels2006new}~\cite{amodeo2015learning}.
+    that \textbf{describe behavior} with examples~\cite{chelimsky2010rspec,astels2006new,amodeo2015learning}.
     The close to natural language DSL used to create these behavior specifying tests with BDD-testing frameworks should
     have a natural tendency to "force" developers to write more descriptive tests. This is provided for example
     with xSpec family keywords \textit{describe} \& \textit{it} and with Gherkin family \textit{Given, When \& Then}-steps.
     The context, stimulus and assertions of the tests should be more visible with these mentioned structures and the test output
     should be more understandable~\cite{smart2014bdd}. Master's thesis by Laplante had also studied that BDD specifications
     was perceived by developers to produce more readable tests than the ones written with xUnit testing family tools~\cite{laplante2009behavior}.
-    Hypothesis is measured with surveys, interview and with data from test code analysis.
+    Hypothesis is measured with surveys, interview and with data from the test code analysis.
     \end{addmargin}
 
     \begin{addmargin}[0em]{0em}
@@ -60,9 +60,10 @@ research questions are aimed to highlight the change in low-level testing after 
     \newline
     Implementation level BDD specifications should produce up-to-date living documentation, which can help in overall
     maintenance of the the system~\cite{smart2014bdd}. Especially the maintaining of test cases should be easier
-    with repetition reducing techniques provided by these BDD-testing frameworks~\cite{chelimsky2010rspec}~\cite{kapelonis2016java}.
-    xSpec family nested group examples and lifecycle hooks should allow efficient repetition removal compared to traditional xUnit family testing frameworks.
-    Data Driven Testing DSL of \textit{Spock} testing framework should allow to more easily test parameter variations and remove
+    with repetition reducing techniques provided by these BDD-testing frameworks~\cite{chelimsky2010rspec,kapelonis2016java}.
+    \textit{xSpec family} nested group examples and lifecycle hooks should allow efficient repetition removal compared to
+    traditional \textit{xUnit family} testing frameworks.
+    Data-Driven Testing DSL of \textit{Spock} testing framework should allow to more easily test parameter variations and remove
     the need for separate test methods, therefore making it easier to maintain the test case.
     Hypothesis is measured with surveys and interview.
     \end{addmargin}
@@ -81,7 +82,7 @@ research questions are aimed to highlight the change in low-level testing after 
 \section{Empirical study}
 First in this section the type of study is determined, together with rationale and objectives of it. Second, the case selection
 is explained with process for selecting teams and developers. Third, the data selection methods of this empirical study are
-explained. Finally, threats to validity and limitations in this study are reviewed.
+explained. Finally, validity and reliability of this study are reviewed.
 
 \subsection{Type of study and purpose}
     This section explains the design of the empirical \textbf{case study} collecting evidence from multiple sources with methodological triangulation.
@@ -96,10 +97,10 @@ explained. Finally, threats to validity and limitations in this study are review
 
     \textbf{Rationale} of this case study was to improve existing traditional low-level automated testing practices research with studying
     relevant technologies used in the industry. At the same time, this case study could act as a starting point for future
-    research on the differences of traditional xUnit testing frameworks and implementation level BDD-testing frameworks for larger
+    research on the differences of traditional \textit{xUnit family} testing frameworks and implementation level BDD-testing frameworks for larger
     scale studies.
 
-    \textbf{Objective} of the study was to compare traditional xUnit testing frameworks and implementation level BDD-testing frameworks
+    \textbf{Objective} of the study was to compare traditional \textit{xUnit family} testing frameworks and implementation level BDD-testing frameworks
     and how they change the developer practices and perception towards low-level automated testing. The change was also measured
     with changes in written test code.
     As this thesis is done at industry context, the purpose was also to determine how well these
@@ -110,7 +111,7 @@ explained. Finally, threats to validity and limitations in this study are review
     The study was conducted in industry context at IT-consulting software firm \textbf{Vincit Plc}, Helsinki Mikonkatu 15 office.
     Related to objective of studying the automated low-level testing differences, context for the development environment was chosen as JVM.
     JVM provides interesting possibilities through various programming languages in use for low-level automated testing.
-    For the selection of teams, there was limitations; team should be implementing a Java-based \textit{Spring Framework} project with prior JUnit
+    For the selection of teams, there was limitations; team should be implementing a Java-based \textit{Spring Framework} project with prior \textit{JUnit}
     unit and integration testing in place. Limiting factor in team selection was also the amount of effort available,
     as my intention was to graduate in the current spring semester of 2017.  This filtered out projects that could not start
     the study before April.
@@ -119,7 +120,7 @@ explained. Finally, threats to validity and limitations in this study are review
     implementation level BDD-testing frameworks. Both teams were presented with \textit{RSpec, Spock} and \textit{Spectrum}, from
     which they chose one technology to take into use in the projects for new created unit and integration test cases. This
     process is explained in more detail in chapter \ref{chapter:projects}. Two months after the initial introduction and time in use for
-    the selected BDD-testing framework the data collecting was ended. The two months time was chosen to see, how the early
+    the selected BDD-testing framework, the data collecting was ended. The two months time was chosen to see, how the early
     adoption of new technologies had gone.
     The limited time available was also a practical constraint that resulted to study only for two months time. All the participants
     in this study were restricted to developers, as the purpose was to study developer testing practices. The projects
@@ -131,7 +132,7 @@ explained. Finally, threats to validity and limitations in this study are review
 
     Data collection from projects is done with methodological triangulation using first degree study participant interviews, second degree
     participant surveys and third degree quantative test code analysis. The main tool is the second degree surveys.
-    First the \textbf{interview for demographic purposes} is explained. Second, the two \textbf{surveys} used to answer
+    First, the \textbf{interview for demographic purposes} is explained. Second, the two \textbf{surveys} used to answer
     \textbf{RQ1 and RQ2} are examined. In addition to surveys for RQ1 and RQ2, an \textbf{interview} was conducted at the end with participants to
     learn more about general thoughts on the new testing frameworks used.
     Third, \textbf{test code analysis}, aimed to help answering \textbf{RQ3}, is defined.
@@ -149,11 +150,11 @@ explained. Finally, threats to validity and limitations in this study are review
     the participants of the survey where currently working with \textit{JUnit} in particular projects, they were asked to answer
     in more broader context of using \textit{JUnit} through the years in different projects.
     The survey was designed and built using \textit{LimeSurvey}~\cite{limesurvey}. The reason to use survey as the main tool for data collection
-    was the related unit testing research surveys~\cite{williams2009effectiveness}~\cite{daka2014survey}~\cite{li2016automatically}.
+    was the related unit testing research surveys~\cite{williams2009effectiveness,daka2014survey,li2016automatically}.
     Some of the survey questions were interesting starting points
-    for the built survey in this study. As there were many survey questions, it was logical to conduct the identifying
+    for the built survey in this study. As there were many survey questions to begin with, it was logical to conduct the identifying
     of the baseline for low-level testing practices and perception with a survey. Additional motivation to use
-    survey was to quantify results and to provide a more specific survey question set to study problematic
+    survey was to quantify results, and to provide a more specific survey question set to study problematic
     areas risen from related research problems.
 
     Copied survey questions were used as close to their original form as possible.
@@ -165,7 +166,7 @@ explained. Finally, threats to validity and limitations in this study are review
     Questions created for this research were mainly 1 to 7 point Likert scale questions.
     The reason to use 7 point Likert scale was to increase the discriminating power of the questions~\cite{cummins2000we}.
     At the end of the survey \textbf{Network Promoter Score (NPS)}~\cite{reichheld2003one} was used to see how enthuastic and "loyal" the participants
-    were at the beginning of the study to low-level automated testing in general and in more specific to JUnit.
+    were at the beginning of the study to low-level automated testing in general and in more specific to \textit{JUnit}.
     The survey questions and how they are related to research survey questions and related research can be found
     in Appendix \ref{chapter:surveys} section \ref{section:junit-survey}.
 
@@ -174,7 +175,7 @@ explained. Finally, threats to validity and limitations in this study are review
     and it was conducted two months after new implementation level BDD-testing framework was taken into use.
     The second survey used all the questions (with modifications) from the first survey regarding \textit{JUnit} testing practices and
     also added couple additional questions related to selected BDD-testing framework. The survey was built using \textit{LimeSurvey}.
-    Modifications to questions include changing the question setup to a direct comparison of JUnit.
+    Modifications to questions include changing the question setup to a direct comparison of \textit{JUnit}.
     For example, figure \ref{fig:survey-junit-comments} displays the original 5 point scale Likert question used in \textit{JUnit} survey and
     figure \ref{fig:survey-bdd-comments} shows the comparison question used in \textit{Spectrum} survey.
     \begin{figure}[H]
@@ -291,16 +292,16 @@ explained. Finally, threats to validity and limitations in this study are review
     \newline
     \end{addmargin}
 
-    For \textbf{xSpec family} low-level test method name is counted starting from the first code example group description string,
+    For \textbf{xSpec family}, low-level test method name is counted starting from the first code example group description string,
     concatenating nested example group string descriptions and ending in the code example description string.
-    For example figure \ref{fig:rspec-example} first concatenated code example name (with word count of 11) is:
+    For example from the figure \ref{fig:rspec-example}, the first concatenated code example name (with word count of 11) is:
 
     \begin{center}
     \textit{Java::FiAaltoEkanbanServices::GameService startGame() with normal difficulty should create game with given name}
     \end{center}
 
-    For \textbf{\textit{Spock}} low-level test method name is counted from feature method string name. For example DDT feature method name at
-    line 27 in figure \ref{fig:spock-example}:
+    For \textbf{Spock} low-level test method name is counted from feature method string name. For example, DDT feature method name at
+    line \#27 in figure \ref{fig:spock-example}:
     \begin{center}
     \textit{GameService startGame() with playerName \#playerName and difficulty \#gameDifficulty}
     \end{center}
@@ -377,7 +378,7 @@ The survey regarding changes in low-level testing after introduction of the impl
 as a valuable developer experience report with its direct comparison questions, but isn't statistically relevant.
 
 Another problem in generalization is the fact that the study was conducted within Java-projects and JVM-environment, thus this
-study is \textbf{specific} to the studied \textbf{environment} and generalizations to other environments can't be made directly.
+study is \textbf{specific} to the studied \textbf{environment}. Thus generalizations to other environments can't be made directly.
 Additional threats to external validity were the short
 \textbf{limited} two months period of \textbf{time} were the study was conducted and the \textbf{limited amount of new test cases} studied
 in the test code analysis part of the research.

@@ -1,3 +1,4 @@
+\newgeometry{top=3cm}
 \chapter{Interview questions}
 \label{chapter:interview}
 \section{Interview for demographic purposes}
@@ -22,18 +23,17 @@
         \2 Unit testing and with what frameworks?
         \2 Integration testing and with what frameworks?
     \1 How much experience do you have with automated behavior-driven development testing frameworks before this experiment?
-    \1 What are your expectations regardings the switch to a new testing framework?
     \end{outline}
-
+\restoregeometry
 \newgeometry{top=1.5cm, bottom=1.5cm}
 \chapter{Surveys}
 \label{chapter:surveys}
 This appendix explains in detail the two surveys used in this case study: their questions and relationship to related
-research surveys \& found problems. First the survey regarding JUnit is examined, followed by the inspection of BDD-testing
+research surveys \& found problems. First, the survey regarding JUnit is examined, followed by the inspection of BDD-testing
 framework survey.
 \section{Survey regarding JUnit in automated low-level testing}
 \label{section:junit-survey}
-Survey regarding JUnit contains base questions from multiple previous research studies~\cite{williams2009effectiveness}~\cite{daka2014survey}~\cite{li2016automatically}.
+Survey regarding JUnit contains base questions from multiple previous research studies~\cite{williams2009effectiveness,daka2014survey,li2016automatically}.
 They were used as base to see how the participants in this study are positioned related to other studied practitioners.
 Related research in chapter \ref{chapter:background} section \ref{section:research} highlighted findings from previous studies.
 This survey is aimed to study about the participants practices and perception related to common problems and other findings found in earlier research.
@@ -47,8 +47,8 @@ they will later help answering:
         \headcol \textbf{Related research questions} & \textbf{Survey questions} & \textbf{Related research findings} \\ \hline
         \rowcol RQ1 & Q3 & Developers are mainly trying to find realistic scenarios on what to test~\cite{daka2014survey} \\
         RQ1 & Q11, Q12 & Developers finding isolating of unit under test hard~\cite{daka2014survey} \\
-        \rowcol RQ2 & Q14 & Only half of the survey respondents enjoy writing unit tests~\cite{daka2014survey}~\cite{runeson2006survey} \\
-        RQ1, RQ2 & Q2, Q7, Q14, Q15 & Maintaining unit tests was found hard~\cite{daka2014survey}~\cite{runeson2006survey} \\
+        \rowcol RQ2 & Q14 & Only half of the survey respondents enjoy writing unit tests~\cite{daka2014survey,runeson2006survey} \\
+        RQ1, RQ2 & Q2, Q7, Q14, Q15 & Maintaining unit tests was found hard~\cite{daka2014survey,runeson2006survey} \\
         \rowcol RQ1 & Q4, Q5, Q6 & For 60.38\% of developers, understanding unit tests is at least moderately difficult~\cite{li2016automatically} \\
         RQ1 & Q8, Q9 & Developers find updated documentation and comments in test cases useful, but writing comments to unit tests is rarely or never done~\cite{li2016automatically} \\
         \rowcol RQ2 & Q14, Q15 & Majority of developers find unit tests helpful in producing higher quality code~\cite{williams2009effectiveness} \\
@@ -245,7 +245,7 @@ towards low-level testing.
 Survey regarding BDD-testing framework was aimed for the projects A and B explained in chapter \ref{chapter:projects}. This means
 that for project A, the survey was aimed at to study the differences between JUnit and \textit{xSpec family} testing done with \textbf{\textit{Spectrum}}.
 For project B, survey was targeted to study the change from JUnit to \textit{Gherkin family} \textbf{\textit{Spock}} testing framework.
-BDD-testing framework survey questions together with base JUnit survey questions are used to answer to researh questions
+BDD-testing framework survey questions, together with base JUnit survey questions, are used to answer to researh questions
 RQ1 and RQ2. Table \ref{tab:bdd-survey} demonstrates how BDD-testing framework survey questions are related to previous research findings
 and research questions in this thesis:
 
@@ -257,8 +257,8 @@ and research questions in this thesis:
         \headcol \textbf{Related research questions} & \textbf{Survey questions} & \textbf{Related research findings} \\ \hline
         \rowcol RQ1 & Q3' & Developers are mainly trying to find realistic scenarios on what to test~\cite{daka2014survey} \\
         RQ1 & Q11', Q12' & Developers finding isolating of unit under test hard~\cite{daka2014survey} \\
-        \rowcol RQ2 & *Q14' & Only half of the survey respondents enjoy writing unit tests~\cite{daka2014survey}~\cite{runeson2006survey} \\
-        RQ1, RQ2 & Q2', Q7', *Q14', Q15 & Maintaining unit tests was found hard~\cite{daka2014survey}~\cite{runeson2006survey} \\
+        \rowcol RQ2 & *Q14' & Only half of the survey respondents enjoy writing unit tests~\cite{daka2014survey,runeson2006survey} \\
+        RQ1, RQ2 & Q2', Q7', *Q14', Q15 & Maintaining unit tests was found hard~\cite{daka2014survey,runeson2006survey} \\
         \rowcol RQ1 & Q4', Q5', Q6', Q15 & For 60.38\% of developers, understanding unit tests is at least moderately difficult~\cite{li2016automatically} \\
         RQ1 & Q8', Q9' & Developers find updated documentation and comments in test cases useful, but writing comments to unit tests is rarely or never done~\cite{li2016automatically} \\
         \rowcol RQ2 & *Q14' & Majority of developers find unit tests helpful in producing higher quality code~\cite{williams2009effectiveness} \\
@@ -276,7 +276,7 @@ Questions marked with '-character are direct comparison questions to question wi
 in section \ref{section:junit-survey}. For example original question \textbf{Q2} in JUnit survey:
 \textit{"How do you spend your low-level automated testing time?"} has its direct comparison question \textbf{Q2'}:
 \textit{"Compared to JUnit, How do you spend your low-level automated testing time?"}. Although there were individual surveys
-used for each Spock and Spectrum, their questions are both displayed in same tables. The only change is in the words
+used for each \textit{Spock} and \textit{Spectrum}, their questions are both displayed in same tables. The only change is in the words
 \textit{Spectrum/Spock}, which are marked in questions. Full questions used in BDD surveys are displayed in tables \ref{tab:spock-spectrum-pt1},
 \ref{tab:spock-spectrum-pt2}, \ref{tab:spock-spectrum-pt3} and \ref{tab:spock-spectrum-pt4}.
 
